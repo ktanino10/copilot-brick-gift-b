@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297.5mm" viewBox="0 0 1200 850"><rect width="1200" height="850" fill="white"/><text x="42" y="42" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#587085" font-weight="normal" text-anchor="start">BRICK PORTRAIT / PUBLIC TEMPLATE / 5-COURSE BASE / DIGITAL PROTOTYPE</text><text x="42" y="79" font-family="Helvetica,Arial,sans-serif" font-size="27" fill="#142c41" font-weight="bold" text-anchor="start">NP3 / BASE-FRONT CAPTURE &amp; REMOVAL</text><text x="42" y="107" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#587085" font-weight="normal" text-anchor="start">Actual BREP sections; precise dimensions apply to the nominal model, not guaranteed printed fit.</text><line x1="42" y1="127" x2="1158" y2="127" stroke="#c5d3df" stroke-width="1"/><text x="70" y="164" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#142c41" font-weight="bold" text-anchor="start">B / HORIZONTAL SECTION Z=24 / FRONT 8mm BAND</text><g transform="translate(70,255) scale(5) "><g   fill="none"
+   stroke="#142c41"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.1"
+   transform="scale(1, -1)"
+  >
+<path d=" M 23.9 7 L 23.9 3.5 " />
+<path d=" M 3.8 3.5 L 23.9 3.5 " />
+<path d=" M 0.1 7 L 0.1 0.1 " />
+<path d=" M 0.1 0.1 L 5.8 0.1 " />
+<path d=" M 3.8 3.5 L 3.8 3.3 " />
+<path d=" M 3.8 3.3 L 5.8 0.9 " />
+<path d=" M 5.8 0.9 L 5.8 0.1 " />
+<path d="M6.751 7 A1.6 1.6 0 0 1 9.249 7" /><path d=" M 10.249 5.7 L 13.751 5.7 " />
+<path d="M10.249 5.7 A3.21685 3.21685 0 0 1 11.0575 7" /><path d="M12.9425 7 A3.21685 3.21685 0 0 1 13.751 5.7" /><path d="M14.751 7 A1.6 1.6 0 0 1 17.249 7" /><path d=" M 18.249 5.7 L 22.44 5.7 " />
+<path d="M18.249 5.7 A3.21685 3.21685 0 0 1 19.0575 7" /><path d=" M 22.44 7 L 22.44 5.7 " />
+<path d=" M 1.56 5.7 L 5.75097 5.7 " />
+<path d=" M 1.56 7 L 1.56 5.7 " />
+<path d="M4.94253 7 A3.21685 3.21685 0 0 1 5.75097 5.7" /><path d=" M 71.9 7 L 71.9 3.5 " />
+<path d=" M 24.1 3.5 L 71.9 3.5 " />
+<path d=" M 24.1 7 L 24.1 3.5 " />
+<path d="M30.751 7 A1.6 1.6 0 0 1 33.249 7" /><path d=" M 34.249 5.7 L 37.751 5.7 " />
+<path d="M34.249 5.7 A3.21685 3.21685 0 0 1 35.0575 7" /><path d="M36.9425 7 A3.21685 3.21685 0 0 1 37.751 5.7" /><path d="M38.751 7 A1.6 1.6 0 0 1 41.249 7" /><path d=" M 42.249 5.7 L 45.751 5.7 " />
+<path d="M42.249 5.7 A3.21685 3.21685 0 0 1 43.0575 7" /><path d="M44.9425 7 A3.21685 3.21685 0 0 1 45.751 5.7" /><path d="M46.751 7 A1.6 1.6 0 0 1 49.249 7" /><path d=" M 50.249 5.7 L 53.751 5.7 " />
+<path d="M50.249 5.7 A3.21685 3.21685 0 0 1 51.0575 7" /><path d="M52.9425 7 A3.21685 3.21685 0 0 1 53.751 5.7" /><path d="M54.751 7 A1.6 1.6 0 0 1 57.249 7" /><path d=" M 58.249 5.7 L 61.751 5.7 " />
+<path d="M58.249 5.7 A3.21685 3.21685 0 0 1 59.0575 7" /><path d="M60.9425 7 A3.21685 3.21685 0 0 1 61.751 5.7" /><path d="M62.751 7 A1.6 1.6 0 0 1 65.249 7" /><path d=" M 66.249 5.7 L 70.44 5.7 " />
+<path d="M66.249 5.7 A3.21685 3.21685 0 0 1 67.0575 7" /><path d=" M 70.44 7 L 70.44 5.7 " />
+<path d=" M 25.56 5.7 L 29.751 5.7 " />
+<path d=" M 25.56 7 L 25.56 5.7 " />
+<path d="M28.9425 7 A3.21685 3.21685 0 0 1 29.751 5.7" /><path d=" M 119.9 7 L 119.9 3.5 " />
+<path d=" M 72.1 3.5 L 119.9 3.5 " />
+<path d=" M 72.1 7 L 72.1 3.5 " />
+<path d="M78.751 7 A1.6 1.6 0 0 1 81.249 7" /><path d=" M 82.249 5.7 L 85.751 5.7 " />
+<path d="M82.249 5.7 A3.21685 3.21685 0 0 1 83.0575 7" /><path d="M84.9425 7 A3.21685 3.21685 0 0 1 85.751 5.7" /><path d="M86.751 7 A1.6 1.6 0 0 1 89.249 7" /><path d=" M 90.249 5.7 L 93.751 5.7 " />
+<path d="M90.249 5.7 A3.21685 3.21685 0 0 1 91.0575 7" /><path d="M92.9425 7 A3.21685 3.21685 0 0 1 93.751 5.7" /><path d="M94.751 7 A1.6 1.6 0 0 1 97.249 7" /><path d=" M 98.249 5.7 L 101.751 5.7 " />
+<path d="M98.249 5.7 A3.21685 3.21685 0 0 1 99.0575 7" /><path d="M100.943 7 A3.21685 3.21685 0 0 1 101.751 5.7" /><path d="M102.751 7 A1.6 1.6 0 0 1 105.249 7" /><path d=" M 106.249 5.7 L 109.751 5.7 " />
+<path d="M106.249 5.7 A3.21685 3.21685 0 0 1 107.057 7" /><path d="M108.943 7 A3.21685 3.21685 0 0 1 109.751 5.7" /><path d="M110.751 7 A1.6 1.6 0 0 1 113.249 7" /><path d=" M 114.249 5.7 L 118.44 5.7 " />
+<path d="M114.249 5.7 A3.21685 3.21685 0 0 1 115.057 7" /><path d=" M 118.44 7 L 118.44 5.7 " />
+<path d=" M 73.56 5.7 L 77.751 5.7 " />
+<path d=" M 73.56 7 L 73.56 5.7 " />
+<path d="M76.9425 7 A3.21685 3.21685 0 0 1 77.751 5.7" /><path d=" M 167.9 7 L 167.9 3.9 " />
+<path d=" M 147.8 3.9 L 167.9 3.9 " />
+<path d=" M 120.1 7 L 120.1 3.5 " />
+<path d=" M 120.1 3.5 L 146.2 3.5 " />
+<path d=" M 147.8 3.9 L 147.8 3.7 " />
+<path d=" M 147.8 3.7 L 149.8 1.3 " />
+<path d=" M 149.8 1.3 L 149.8 0.1 " />
+<path d=" M 144.2 0.1 L 149.8 0.1 " />
+<path d=" M 144.2 0.1 L 144.2 0.9 " />
+<path d=" M 144.2 0.9 L 146.2 3.3 " />
+<path d=" M 146.2 3.3 L 146.2 3.5 " />
+<path d="M126.751 7 A1.6 1.6 0 0 1 129.249 7" /><path d=" M 130.249 5.7 L 133.751 5.7 " />
+<path d="M130.249 5.7 A3.21685 3.21685 0 0 1 131.057 7" /><path d="M132.943 7 A3.21685 3.21685 0 0 1 133.751 5.7" /><path d="M134.751 7 A1.6 1.6 0 0 1 137.249 7" /><path d=" M 138.249 5.7 L 141.751 5.7 " />
+<path d="M138.249 5.7 A3.21685 3.21685 0 0 1 139.057 7" /><path d="M140.943 7 A3.21685 3.21685 0 0 1 141.751 5.7" /><path d="M142.751 7 A1.6 1.6 0 0 1 145.249 7" /><path d=" M 146.249 5.7 L 149.751 5.7 " />
+<path d="M146.249 5.7 A3.21685 3.21685 0 0 1 147.057 7" /><path d="M148.943 7 A3.21685 3.21685 0 0 1 149.751 5.7" /><path d="M150.751 7 A1.6 1.6 0 0 1 153.249 7" /><path d=" M 154.249 5.7 L 157.751 5.7 " />
+<path d="M154.249 5.7 A3.21685 3.21685 0 0 1 155.057 7" /><path d="M156.943 7 A3.21685 3.21685 0 0 1 157.751 5.7" /><path d="M158.751 7 A1.6 1.6 0 0 1 161.249 7" /><path d=" M 162.249 5.7 L 166.44 5.7 " />
+<path d="M162.249 5.7 A3.21685 3.21685 0 0 1 163.057 7" /><path d=" M 166.44 7 L 166.44 5.7 " />
+<path d=" M 121.56 5.7 L 125.751 5.7 " />
+<path d=" M 121.56 7 L 121.56 5.7 " />
+<path d="M124.943 7 A3.21685 3.21685 0 0 1 125.751 5.7" /><path d=" M 191.9 7 L 191.9 0.1 " />
+<path d=" M 186.2 0.1 L 191.9 0.1 " />
+<path d=" M 168.1 7 L 168.1 3.9 " />
+<path d=" M 188.2 3.9 L 168.1 3.9 " />
+<path d=" M 186.2 0.1 L 186.2 1.3 " />
+<path d=" M 186.2 1.3 L 188.2 3.7 " />
+<path d=" M 188.2 3.7 L 188.2 3.9 " />
+<path d="M174.751 7 A1.6 1.6 0 0 1 177.249 7" /><path d=" M 178.249 5.7 L 181.751 5.7 " />
+<path d="M178.249 5.7 A3.21685 3.21685 0 0 1 179.057 7" /><path d="M180.943 7 A3.21685 3.21685 0 0 1 181.751 5.7" /><path d="M182.751 7 A1.6 1.6 0 0 1 185.249 7" /><path d=" M 186.249 5.7 L 190.44 5.7 " />
+<path d="M186.249 5.7 A3.21685 3.21685 0 0 1 187.057 7" /><path d=" M 190.44 7 L 190.44 5.7 " />
+<path d=" M 169.56 5.7 L 173.751 5.7 " />
+<path d=" M 169.56 7 L 169.56 5.7 " />
+<path d="M172.943 7 A3.21685 3.21685 0 0 1 173.751 5.7" /></g>
+</g><g transform="translate(150,720) scale(7) rotate(-90)"><g   fill="none"
+   stroke="#142c41"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.1"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 -0.1 L 0 -6.4 " />
+<path d=" M 3.82222 -0.1 L 0 -0.1 " />
+<path d=" M 0 -6.4 L 8 -6.4 " />
+<path d=" M 9.6 -3.5 L 9.6 -6.4 " />
+<path d=" M 9.6 -3.5 L 5.2 -3.5 " />
+<path d=" M 19.2 -3.5 L 9.6 -3.5 " />
+<path d=" M 9.6 -6.4 L 9.6 -8 " />
+<path d=" M 9.6 -6.4 L 17.6 -6.4 " />
+<path d=" M 3.82222 -0.1 L 4 -0.9 " />
+<path d=" M 8 -6.4 L 8 -8 " />
+<path d=" M 5.2 -3.3 L 5.2 -3.5 " />
+<path d="M4, -0.9 L5.2, -2.5 " /><path d="M5.2, -2.5 C5.2, -2.7664 5.2, -3.03493 5.2, -3.3 " /><path d=" M 19.2 -3.5 L 19.2 -6.4 " />
+<path d=" M 28.8 -3.5 L 19.2 -3.5 " />
+<path d=" M 19.2 -6.4 L 19.2 -8 " />
+<path d=" M 19.2 -6.4 L 27.2 -6.4 " />
+<path d=" M 17.6 -6.4 L 17.6 -8 " />
+<path d=" M 28.8 -3.5 L 28.8 -6.4 " />
+<path d=" M 38.4 -3.5 L 28.8 -3.5 " />
+<path d=" M 28.8 -6.4 L 28.8 -8 " />
+<path d=" M 28.8 -6.4 L 36.8 -6.4 " />
+<path d=" M 27.2 -6.4 L 27.2 -8 " />
+<path d=" M 38.4 -3.5 L 38.4 -6.4 " />
+<path d=" M 48 -3.5 L 38.4 -3.5 " />
+<path d=" M 38.4 -6.4 L 38.4 -8 " />
+<path d=" M 38.4 -6.4 L 46.4 -6.4 " />
+<path d=" M 36.8 -6.4 L 36.8 -8 " />
+<path d=" M 48 -3.5 L 48 -8 " />
+<path d=" M 46.4 -6.4 L 46.4 -8 " />
+</g>
+</g><g transform="translate(70,255) scale(5) "><g   fill="none"
+   stroke="#2952a6"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.1"
+   transform="scale(1, -1)"
+  >
+<path d=" M 4 3.3 L 146 3.3 " />
+<path d=" M 4.66667 2.5 L 4 3.3 " />
+<path d=" M 146 3.3 L 145.333 2.5 " />
+<path d="M145.333, 2.5 L144, 0.9 " /><path d="M4.66667, 2.5 L6, 0.9 " /><path d=" M 6 0.9 L 144 0.9 " />
+<path d=" M 148 3.7 L 188 3.7 " />
+<path d=" M 148.667 2.9 L 148 3.7 " />
+<path d=" M 188 3.7 L 187.333 2.9 " />
+<path d="M187.333, 2.9 L186, 1.3 " /><path d="M148.667, 2.9 L150, 1.3 " /><path d=" M 186 1.3 L 186 0.9 " />
+<path d=" M 150 1.3 L 150 0.9 " />
+<path d=" M 156.634 0.9 L 150 0.9 " />
+<path d=" M 186 0.9 L 179.486 0.9 " />
+<path d=" M 179.486 0.1 L 179.486 0.9 " />
+<path d=" M 156.634 0.9 L 156.634 0.1 " />
+<path d=" M 179.486 0.1 L 156.634 0.1 " />
+</g>
+</g><g transform="translate(150,720) scale(7) rotate(-90)"><g   fill="none"
+   stroke="#2952a6"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.1"
+   transform="scale(1, -1)"
+  >
+<path d="M5.2, -3.3 C5.2, -3.0336 5.2, -2.76507 5.2, -2.5 " /><path d=" M 42.8 -3.3 L 5.2 -3.3 " />
+<path d="M5.2, -2.5 L4, -0.9 " /><path d="M42.8, -3.3 C42.8, -3.0336 42.8, -2.76507 42.8, -2.5 " /><path d=" M 16.7358 -0.9 L 4 -0.9 " />
+<path d="M42.8, -2.5 L44, -0.9 " /><path d=" M 44 -0.9 L 17.8601 -0.9 " />
+<path d="M17.8601, -0.1 Q17.8601, -0.29571 17.8601, -0.4928  Q17.8601, -0.5928 17.8601, -0.6928  Q17.8601, -0.745277 17.8601, -0.7984  Q17.8601, -0.8212 17.8601, -0.844001  Q17.8601, -0.875342 17.8601, -0.9 " /><path d="M16.7358, -0.1 Q16.7358, -0.29571 16.7358, -0.4928  Q16.7358, -0.5928 16.7358, -0.6928  Q16.7358, -0.745277 16.7358, -0.7984  Q16.7358, -0.8212 16.7358, -0.844001  Q16.7358, -0.875342 16.7358, -0.9 " /><path d="M16.7358, -0.1 L17.8601, -0.1 " /></g>
+</g><line x1="90" y1="285" x2="800" y2="285" stroke="#2952a6" stroke-width="1"/><line x1="90" y1="280" x2="90" y2="290" stroke="#2952a6" stroke-width="1"/><line x1="800" y1="280" x2="800" y2="290" stroke="#2952a6" stroke-width="1"/><text x="445.0" y="276" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#2952a6" font-weight="normal" text-anchor="middle">B message: 142.00</text><line x1="810" y1="320" x2="1010" y2="320" stroke="#2952a6" stroke-width="1"/><line x1="810" y1="315" x2="810" y2="325" stroke="#2952a6" stroke-width="1"/><line x1="1010" y1="315" x2="1010" y2="325" stroke="#2952a6" stroke-width="1"/><text x="910.0" y="311" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#2952a6" font-weight="normal" text-anchor="middle">B logo carrier: 40.00</text><text x="70" y="352" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#142c41" font-weight="bold" text-anchor="start">VERTICAL SECTION X=40</text><line x1="105" y1="384" x2="105" y2="720" stroke="#2952a6" stroke-width="1"/><line x1="100" y1="384" x2="110" y2="384" stroke="#2952a6" stroke-width="1"/><line x1="100" y1="720" x2="110" y2="720" stroke="#2952a6" stroke-width="1"/><text x="97" y="552.0" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#2952a6" font-weight="normal" text-anchor="end">48.00</text><text x="365" y="388" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#587085" font-weight="normal" text-anchor="start">Blue: installed modules; black: actual receiver / keepers</text><text x="365" y="420" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#587085" font-weight="normal" text-anchor="start">Carrier thickness2.40 / rear flat0.80 / edge relief1.20</text><text x="365" y="452" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#587085" font-weight="normal" text-anchor="start">Rear width -&gt; front width: 2.00 inset on each X side</text><text x="365" y="484" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#587085" font-weight="normal" text-anchor="start">Default side clearance0.20; coupon candidates0.15/0.20/0.25</text><text x="365" y="516" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#587085" font-weight="normal" text-anchor="start">Text backY=3.30; logo backY=3.70; relief frontY=0.10</text><text x="365" y="548" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#587085" font-weight="normal" text-anchor="start">Both front modules fit in Z=4.00..44.00, inside48mm base</text><text x="365" y="580" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#587085" font-weight="normal" text-anchor="start">3 separate up-stops: text2 / logo1; stud-grid mounting</text><text x="365" y="612" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#587085" font-weight="normal" text-anchor="start">Remove: up-stops up6, forward&gt;=32; module up45</text><text x="365" y="644" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#587085" font-weight="normal" text-anchor="start">Thread / glue / magnet / purchased fastener not required</text><text x="365" y="676" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#587085" font-weight="normal" text-anchor="start">Physical clutch, retention, flatness and stability NOT tested</text><line x1="42" y1="801" x2="1158" y2="801" stroke="#c5d3df" stroke-width="1"/><text x="42" y="824" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#587085" font-weight="normal" text-anchor="start">UNITS mm | Fixed 8 mm pitch | Physical fit / strength / stability NOT tested</text><text x="1158" y="824" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#587085" font-weight="normal" text-anchor="end">Do not scale STL. Calibrate male + female coupons first.</text></svg>

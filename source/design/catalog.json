@@ -1,0 +1,4597 @@
+{
+  "schema_version": 1,
+  "revision": "4.0-B-personal-kit.1",
+  "units": "mm",
+  "parameters_sha256": "6d994ff9f400b3732fcd01e8bf98ddd6a993ce45e924369b21b20c47ae13931e",
+  "interface": {
+    "pitch": 8.0,
+    "brick_height": 9.6,
+    "plate_height": 3.2,
+    "body_gap": 0.2,
+    "reference_stud_diameter": 4.8,
+    "stud_diameter_correction": 0.0,
+    "stud_height": 1.8,
+    "stud_lead_in": 0.25,
+    "female_radial_clearance": 0.04,
+    "socket_lead_in": 0.2,
+    "socket_lead_in_height": 0.3,
+    "roof": 1.6,
+    "thin_plate_roof": 1.0,
+    "tube_inner_diameter": 3.2,
+    "roof_support_rib_width": 1.2
+  },
+  "message": {
+    "interface_id": "BASE-FRONT-NP3",
+    "lines": [
+      "Same icon, New adventures",
+      "github.com/tomokota"
+    ],
+    "height": 40.0,
+    "thickness": 2.4,
+    "relief": 0.8,
+    "minimum_straight_stroke": 0.84,
+    "font": "resources/fonts/barlow-condensed/BarlowCondensed-Black.ttf",
+    "line_bottoms": [
+      22.0,
+      8.0
+    ],
+    "side_taper": 2.0,
+    "rear_vertical_margin": 1.2,
+    "rear_flat_thickness": 0.8,
+    "clearance": 0.2,
+    "back_y": 3.3,
+    "bottom_z": 4.0,
+    "front_beam_depth": 5.6,
+    "base_color": "black",
+    "letter_color": "white",
+    "base_courses": 5,
+    "x": 4.0,
+    "retention": "Vertical dovetail slide; two removable stud-mounted top keepers."
+  },
+  "logo": {
+    "outline": "resources/github-mark-relief.json",
+    "disc_height": 0.4,
+    "relief": 0.8,
+    "back_y": 3.7,
+    "base_color": "black",
+    "relief_color": "white",
+    "finish_color_change_z": 2.8,
+    "provenance": "Printable relief derived from user-provided artwork; no original raster distributed."
+  },
+  "colors": {
+    "black": {
+      "hex": "#171d28",
+      "name_ja": "ブラック"
+    },
+    "cyan": {
+      "hex": "#21bdd6",
+      "name_ja": "シアン"
+    },
+    "magenta": {
+      "hex": "#c42eaa",
+      "name_ja": "マゼンタ"
+    },
+    "green": {
+      "hex": "#42df83",
+      "name_ja": "グリーン"
+    },
+    "white": {
+      "hex": "#f5f3eb",
+      "name_ja": "ホワイト"
+    }
+  },
+  "parts": {
+    "NP3-KEEPER": {
+      "id": "NP3-KEEPER",
+      "kind": "front_keeper",
+      "studs": [
+        2,
+        1
+      ],
+      "height": 3.2,
+      "top_studs": false,
+      "socket": true,
+      "socket_grid_offset": [
+        0,
+        8
+      ],
+      "stl": "parts/NP3-KEEPER.stl",
+      "orientation": "flat_front_pad_and_socket_down",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          -0.0
+        ],
+        [
+          15.9,
+          15.9,
+          3.2
+        ]
+      ],
+      "volume_mm3": 680.95341,
+      "mesh_triangles": 414,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "b523f99637728aa9e51b4025ec778016f0c9d78f9959aa7823abb71ce691978f",
+      "local_center_mm": [
+        8.0,
+        7.30747338363192,
+        1.68845885875004
+      ]
+    },
+    "BR-02x02-H096": {
+      "id": "BR-02x02-H096",
+      "kind": "brick",
+      "studs": [
+        2,
+        2
+      ],
+      "height": 9.6,
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/BR-02x02-H096.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          15.9,
+          15.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 1516.073314,
+      "mesh_triangles": 2148,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "16726dd1b4b1e1a44bc8c0871ab681cf12c200643be356c5f1903c0017395d30",
+      "local_center_mm": [
+        7.999999999999996,
+        8.000000000000005,
+        5.819593911451394
+      ]
+    },
+    "BASE3-24x10-B-562406": {
+      "studs": [
+        24,
+        10
+      ],
+      "height": 9.6,
+      "slots": [
+        {
+          "x": 4.0,
+          "width": 142.0,
+          "back_y": 3.3
+        },
+        {
+          "x": 148.0,
+          "width": 40.0,
+          "back_y": 3.7
+        }
+      ],
+      "bottom_course": true,
+      "id": "BASE3-24x10-B-562406",
+      "kind": "front_base",
+      "top_studs": true,
+      "socket": true,
+      "reserved_rows": [
+        0
+      ],
+      "source_brick": "BR-24x10-H096",
+      "stl": "parts/BASE3-24x10-B-562406.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          -0.0
+        ],
+        [
+          191.9,
+          79.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 87913.648938,
+      "mesh_triangles": 202406,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "b5ba60b51926f20171f8238979d43b4331b451db7b3b87f6d51d56b5c75dba24",
+      "local_center_mm": [
+        95.97231999016665,
+        39.57700571666397,
+        5.745225167346449
+      ]
+    },
+    "BASE3-06x10-T-e1945a": {
+      "studs": [
+        6,
+        10
+      ],
+      "height": 9.6,
+      "slots": [
+        {
+          "x": 4.0,
+          "width": 47.2,
+          "back_y": 3.3
+        }
+      ],
+      "bottom_course": false,
+      "id": "BASE3-06x10-T-e1945a",
+      "kind": "front_base",
+      "top_studs": true,
+      "socket": true,
+      "reserved_rows": [
+        0
+      ],
+      "source_brick": "BR-06x10-H096",
+      "stl": "parts/BASE3-06x10-T-e1945a.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          -0.0
+        ],
+        [
+          47.9,
+          79.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 21390.547435,
+      "mesh_triangles": 46450,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "adf23aa19fd6aa1485d943e4b28c904b8e58a903d4e8b66279c12461b6627be7",
+      "local_center_mm": [
+        23.8406822260963,
+        40.74610492243735,
+        5.84783341363699
+      ]
+    },
+    "BASE3-06x10-T-838259": {
+      "studs": [
+        6,
+        10
+      ],
+      "height": 9.6,
+      "slots": [
+        {
+          "x": -3.2,
+          "width": 54.4,
+          "back_y": 3.3
+        }
+      ],
+      "bottom_course": false,
+      "id": "BASE3-06x10-T-838259",
+      "kind": "front_base",
+      "top_studs": true,
+      "socket": true,
+      "reserved_rows": [
+        0
+      ],
+      "source_brick": "BR-06x10-H096",
+      "stl": "parts/BASE3-06x10-T-838259.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          3.5,
+          -0.0
+        ],
+        [
+          47.9,
+          79.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 21231.379435,
+      "mesh_triangles": 46756,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "a14b55f137996d1bf3fcaa7210e0c15a3dc034c6a28b2b3f1256a1439be2fc61",
+      "local_center_mm": [
+        23.999999999999776,
+        41.039126185949435,
+        5.855688840519971
+      ]
+    },
+    "BASE3-06x10-T-3f87ac": {
+      "studs": [
+        6,
+        10
+      ],
+      "height": 9.6,
+      "slots": [
+        {
+          "x": -3.2,
+          "width": 53.2,
+          "back_y": 3.3
+        }
+      ],
+      "bottom_course": false,
+      "id": "BASE3-06x10-T-3f87ac",
+      "kind": "front_base",
+      "top_studs": true,
+      "socket": true,
+      "reserved_rows": [
+        0
+      ],
+      "source_brick": "BR-06x10-H096",
+      "stl": "parts/BASE3-06x10-T-3f87ac.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          3.5,
+          -0.0
+        ],
+        [
+          47.9,
+          79.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 21231.379435,
+      "mesh_triangles": 46756,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "a14b55f137996d1bf3fcaa7210e0c15a3dc034c6a28b2b3f1256a1439be2fc61",
+      "local_center_mm": [
+        23.999999999999787,
+        41.039126185949435,
+        5.855688840519957
+      ]
+    },
+    "BASE3-06x10-T-6e100f": {
+      "studs": [
+        6,
+        10
+      ],
+      "height": 9.6,
+      "slots": [
+        {
+          "x": -3.2,
+          "width": 5.2,
+          "back_y": 3.3
+        },
+        {
+          "x": 4.0,
+          "width": 40.0,
+          "back_y": 3.7
+        }
+      ],
+      "bottom_course": false,
+      "id": "BASE3-06x10-T-6e100f",
+      "kind": "front_base",
+      "top_studs": true,
+      "socket": true,
+      "reserved_rows": [
+        0
+      ],
+      "source_brick": "BR-06x10-H096",
+      "stl": "parts/BASE3-06x10-T-6e100f.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          -0.0
+        ],
+        [
+          47.9,
+          79.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 21379.795435,
+      "mesh_triangles": 46810,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "f782d20a7cef5f8ac290a0b8487a5334463b54b22aaa140fc82f895a17c0a5a3",
+      "local_center_mm": [
+        24.032665906561203,
+        40.75018008397835,
+        5.848360374004623
+      ]
+    },
+    "BASE3-03x10-T-aa77a9": {
+      "studs": [
+        3,
+        10
+      ],
+      "height": 9.6,
+      "slots": [
+        {
+          "x": 4.0,
+          "width": 23.2,
+          "back_y": 3.3
+        }
+      ],
+      "bottom_course": false,
+      "id": "BASE3-03x10-T-aa77a9",
+      "kind": "front_base",
+      "top_studs": true,
+      "socket": true,
+      "reserved_rows": [
+        0
+      ],
+      "source_brick": "BR-03x10-H096",
+      "stl": "parts/BASE3-03x10-T-aa77a9.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          -0.0
+        ],
+        [
+          23.9,
+          79.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 10804.057778,
+      "mesh_triangles": 20686,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "0eedec766e01cdbef5539540873c80f90309018d6958a6b77b19516be633f18e",
+      "local_center_mm": [
+        11.861359645530769,
+        40.52899946852879,
+        5.829752288624018
+      ]
+    },
+    "BASE3-06x10-T-6159e6": {
+      "studs": [
+        6,
+        10
+      ],
+      "height": 9.6,
+      "slots": [
+        {
+          "x": -3.2,
+          "width": 29.2,
+          "back_y": 3.3
+        },
+        {
+          "x": 28.0,
+          "width": 23.2,
+          "back_y": 3.7
+        }
+      ],
+      "bottom_course": false,
+      "id": "BASE3-06x10-T-6159e6",
+      "kind": "front_base",
+      "top_studs": true,
+      "socket": true,
+      "reserved_rows": [
+        0
+      ],
+      "source_brick": "BR-06x10-H096",
+      "stl": "parts/BASE3-06x10-T-6159e6.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          -0.0
+        ],
+        [
+          47.9,
+          79.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 21290.899435,
+      "mesh_triangles": 46792,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "ef3308e68f08ba88b8fa4fbeb067a16780fa958bf9b64b3922859d97e835d73f",
+      "local_center_mm": [
+        23.969702435448962,
+        40.92063112667693,
+        5.852737598371754
+      ]
+    },
+    "BASE3-03x10-T-d79875": {
+      "studs": [
+        3,
+        10
+      ],
+      "height": 9.6,
+      "slots": [
+        {
+          "x": -3.2,
+          "width": 23.2,
+          "back_y": 3.7
+        }
+      ],
+      "bottom_course": false,
+      "id": "BASE3-03x10-T-d79875",
+      "kind": "front_base",
+      "top_studs": true,
+      "socket": true,
+      "reserved_rows": [
+        0
+      ],
+      "source_brick": "BR-03x10-H096",
+      "stl": "parts/BASE3-03x10-T-d79875.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          -0.0
+        ],
+        [
+          23.9,
+          79.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 10734.553778,
+      "mesh_triangles": 20848,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "a0fbfcb0972918c1e99392650ad64f4b674b7211fb0a1d1c94f74d892edc6415",
+      "local_center_mm": [
+        12.157991178313374,
+        40.76645794438721,
+        5.836419720223976
+      ]
+    },
+    "NP3-TEXT-B": {
+      "id": "NP3-TEXT-B",
+      "kind": "front_plaque",
+      "width": 142.0,
+      "text_sizes": [
+        5.0,
+        3.2
+      ],
+      "text_heights": [
+        12.0,
+        8.0
+      ],
+      "text": [
+        "Same icon, New adventures",
+        "github.com/tomokota"
+      ],
+      "top_studs": false,
+      "socket": false,
+      "stl": "parts/NP3-TEXT-B.stl",
+      "orientation": "flat_rear_on_bed_letters_up",
+      "optional_color_change_z": 2.4,
+      "letter_color": "white",
+      "bounds": [
+        [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        [
+          142.0,
+          40.0,
+          3.2
+        ]
+      ],
+      "volume_mm3": 13697.339571,
+      "mesh_triangles": 54280,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "83ff7a42af4062b0e4a405edd64a8828ab218843d111d13961843fc0fe7044af",
+      "local_center_mm": [
+        70.97258855718295,
+        20.214378344968704,
+        1.3007821487066822
+      ]
+    },
+    "NP3-LOGO-B": {
+      "id": "NP3-LOGO-B",
+      "kind": "front_logo",
+      "width": 40.0,
+      "diameter": 36.0,
+      "top_studs": false,
+      "socket": false,
+      "stl": "parts/NP3-LOGO-B.stl",
+      "orientation": "flat_rear_on_bed_relief_up",
+      "optional_color_change_z": 2.8,
+      "letter_color": "white",
+      "bounds": [
+        [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        [
+          40.0,
+          40.0,
+          3.6
+        ]
+      ],
+      "volume_mm3": 4275.556908,
+      "mesh_triangles": 1694,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "96135856f694c111da16975ad7d7948f20c9fa1c5c3ca11b102477df0a77a7e6",
+      "local_center_mm": [
+        19.97328668461128,
+        19.815408695011094,
+        1.4997272476294927
+      ]
+    },
+    "BR-04x04-H096": {
+      "id": "BR-04x04-H096",
+      "kind": "brick",
+      "studs": [
+        4,
+        4
+      ],
+      "height": 9.6,
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/BR-04x04-H096.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          31.9,
+          31.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 5861.6831,
+      "mesh_triangles": 11436,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "20a7fe6e15bdfd5901d0776f55b5e5353feec8ca86817690276094c4564f74d7",
+      "local_center_mm": [
+        15.99999999999999,
+        16.00000000000004,
+        5.898755281517282
+      ]
+    },
+    "BR-02x04-H096": {
+      "id": "BR-02x04-H096",
+      "kind": "brick",
+      "studs": [
+        2,
+        4
+      ],
+      "height": 9.6,
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/BR-02x04-H096.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          15.9,
+          31.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 2967.680917,
+      "mesh_triangles": 4860,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "31b61fbf103450546cda92dfe50bfc24393e776bbe62a45d24d6084cb0c7a269",
+      "local_center_mm": [
+        8.000000000000002,
+        16.000000000000025,
+        5.867097000674511
+      ]
+    },
+    "BR-02x06-H096": {
+      "id": "BR-02x06-H096",
+      "kind": "brick",
+      "studs": [
+        2,
+        6
+      ],
+      "height": 9.6,
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/BR-02x06-H096.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          15.9,
+          47.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 4419.288519,
+      "mesh_triangles": 7572,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "28bfad450343c1aa8cfce2091efedd9434d16262e32e4abe29df62330ea749d1",
+      "local_center_mm": [
+        7.99999999999999,
+        23.99999999999997,
+        5.883393326560127
+      ]
+    },
+    "BR-01x04-H096": {
+      "id": "BR-01x04-H096",
+      "kind": "brick",
+      "studs": [
+        1,
+        4
+      ],
+      "height": 9.6,
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/BR-01x04-H096.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          7.9,
+          31.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 1615.958128,
+      "mesh_triangles": 2628,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "4eeb53d6220950e593a63baa8a388498f41bc509ad26df642cbaffbca772a8f8",
+      "local_center_mm": [
+        4.0,
+        15.999999999999998,
+        5.701094070534834
+      ]
+    },
+    "BR-03x04-H096": {
+      "id": "BR-03x04-H096",
+      "kind": "brick",
+      "studs": [
+        3,
+        4
+      ],
+      "height": 9.6,
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/BR-03x04-H096.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          23.9,
+          31.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 4414.682008,
+      "mesh_triangles": 8148,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "8a1f560361a0e7792f9ddcb9315f45c521719eaa4dca9bd729e4a4c780079759",
+      "local_center_mm": [
+        11.999999999999991,
+        16.0,
+        5.88811446121229
+      ]
+    },
+    "BR-05x04-H096": {
+      "id": "BR-05x04-H096",
+      "kind": "brick",
+      "studs": [
+        5,
+        4
+      ],
+      "height": 9.6,
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/BR-05x04-H096.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          39.9,
+          31.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 7308.684192,
+      "mesh_triangles": 14724,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "db19a404e4b5dcbcdc0e80e13d3d775ba55c4667bb018b2a911f1e2c1d667b6a",
+      "local_center_mm": [
+        19.999999999999932,
+        16.000000000000025,
+        5.9051826816786726
+      ]
+    },
+    "BR-02x05-H096": {
+      "id": "BR-02x05-H096",
+      "kind": "brick",
+      "studs": [
+        2,
+        5
+      ],
+      "height": 9.6,
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/BR-02x05-H096.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          15.9,
+          39.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 3693.484718,
+      "mesh_triangles": 6216,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "121dd98b5c43f0e231eafa889dd696d3422f6d5b0b7fdeb27aec4cd0f2ad1014",
+      "local_center_mm": [
+        7.999999999999986,
+        19.999999999999947,
+        5.876846352762463
+      ]
+    },
+    "BR-04x05-H096": {
+      "id": "BR-04x05-H096",
+      "kind": "brick",
+      "studs": [
+        4,
+        5
+      ],
+      "height": 9.6,
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/BR-04x05-H096.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          31.9,
+          39.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 7308.684192,
+      "mesh_triangles": 14724,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "5f9273b6b55e39f4f019499b5914fbb40ab4aa78e7114454880b82526d570bf5",
+      "local_center_mm": [
+        15.99999999999992,
+        19.99999999999997,
+        5.905182681678646
+      ]
+    },
+    "BR-02x04-H064": {
+      "id": "BR-02x04-H064",
+      "kind": "brick",
+      "studs": [
+        2,
+        4
+      ],
+      "height": 6.4,
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/BR-02x04-H064.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          15.9,
+          31.9,
+          8.2
+        ]
+      ],
+      "volume_mm3": 2203.397717,
+      "mesh_triangles": 4860,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "743dcbaca56491a9be99b04f088ee6153fcbaf3234132d7e37f3b2c38a1c917f",
+      "local_center_mm": [
+        8.0,
+        16.000000000000004,
+        4.141588810065535
+      ]
+    },
+    "BR-04x04-H064": {
+      "id": "BR-04x04-H064",
+      "kind": "brick",
+      "studs": [
+        4,
+        4
+      ],
+      "height": 6.4,
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/BR-04x04-H064.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          31.9,
+          31.9,
+          8.2
+        ]
+      ],
+      "volume_mm3": 4366.744542,
+      "mesh_triangles": 11436,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "b2c741f948af015929774e3ef9d73fb06271d1229676f86ea60a09e972bbb614",
+      "local_center_mm": [
+        15.999999999999963,
+        15.999999999999957,
+        4.164905915710567
+      ]
+    },
+    "FIT-M-D470": {
+      "id": "FIT-M-D470",
+      "kind": "male_coupon",
+      "studs": [
+        4,
+        2
+      ],
+      "height": 3.2,
+      "top_studs": true,
+      "socket": false,
+      "male_correction": -0.1,
+      "stl": "parts/FIT-M-D470.stl",
+      "orientation": "flat_bottom_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          31.9,
+          15.9,
+          5.0
+        ]
+      ],
+      "volume_mm3": 1854.079543,
+      "mesh_triangles": 2940,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "d076c2c611b0de94733469eab2253097717dc4ced997805fd0731258d497df12",
+      "local_center_mm": [
+        15.999999999999988,
+        7.9999999999999964,
+        1.930500310676311
+      ]
+    },
+    "FIT-M-D480": {
+      "id": "FIT-M-D480",
+      "kind": "male_coupon",
+      "studs": [
+        4,
+        2
+      ],
+      "height": 3.2,
+      "top_studs": true,
+      "socket": false,
+      "male_correction": 0.0,
+      "stl": "parts/FIT-M-D480.stl",
+      "orientation": "flat_bottom_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          31.9,
+          15.9,
+          5.0
+        ]
+      ],
+      "volume_mm3": 1864.74525,
+      "mesh_triangles": 2940,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "43d9be1906e0e3a11b47ade2cccf4eacc59d3080e202da860488dd931605f252",
+      "local_center_mm": [
+        15.999999999999996,
+        8.0,
+        1.9428747126521866
+      ]
+    },
+    "FIT-M-D490": {
+      "id": "FIT-M-D490",
+      "kind": "male_coupon",
+      "studs": [
+        4,
+        2
+      ],
+      "height": 3.2,
+      "top_studs": true,
+      "socket": false,
+      "male_correction": 0.1,
+      "stl": "parts/FIT-M-D490.stl",
+      "orientation": "flat_bottom_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          31.9,
+          15.9,
+          5.0
+        ]
+      ],
+      "volume_mm3": 1875.637151,
+      "mesh_triangles": 2940,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "08d71c6e146a148805cc6ea7d7605807eae0a75182aab000d9812e1542dc0d00",
+      "local_center_mm": [
+        16.000000000000004,
+        8.000000000000005,
+        1.9553670306801414
+      ]
+    },
+    "FIT-F-CM04": {
+      "id": "FIT-F-CM04",
+      "kind": "female_coupon",
+      "studs": [
+        4,
+        2
+      ],
+      "height": 9.6,
+      "top_studs": false,
+      "socket": true,
+      "female_clearance": -0.04,
+      "stl": "parts/FIT-F-CM04.stl",
+      "orientation": "socket_down",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          31.9,
+          15.9,
+          9.6
+        ]
+      ],
+      "volume_mm3": 2787.842308,
+      "mesh_triangles": 1932,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "a54ef4da9adc8dc2cd87398f9a86c5c7cecbabfe5ebdf3fde65a22a78c4329be",
+      "local_center_mm": [
+        16.000000000000018,
+        8.000000000000002,
+        5.389579032110088
+      ]
+    },
+    "FIT-F-CP00": {
+      "id": "FIT-F-CP00",
+      "kind": "female_coupon",
+      "studs": [
+        4,
+        2
+      ],
+      "height": 9.6,
+      "top_studs": false,
+      "socket": true,
+      "female_clearance": 0.0,
+      "stl": "parts/FIT-F-CP00.stl",
+      "orientation": "socket_down",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          31.9,
+          15.9,
+          9.6
+        ]
+      ],
+      "volume_mm3": 2749.223219,
+      "mesh_triangles": 1932,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "ae6b907514e7333a4f41920e0d8489fe90b91e379303297925186eabc5089259",
+      "local_center_mm": [
+        16.000000000000032,
+        8.0,
+        5.409080266988864
+      ]
+    },
+    "FIT-F-CP04": {
+      "id": "FIT-F-CP04",
+      "kind": "female_coupon",
+      "studs": [
+        4,
+        2
+      ],
+      "height": 9.6,
+      "top_studs": false,
+      "socket": true,
+      "female_clearance": 0.04,
+      "stl": "parts/FIT-F-CP04.stl",
+      "orientation": "socket_down",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          31.9,
+          15.9,
+          9.6
+        ]
+      ],
+      "volume_mm3": 2710.743667,
+      "mesh_triangles": 1932,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "93bcc5532cf11053585d6a53263bc1e12100b5b26fe5a3acee4220c02bce86c6",
+      "local_center_mm": [
+        15.999999999999995,
+        8.000000000000007,
+        5.429063616576632
+      ]
+    },
+    "FIT-F-CP08": {
+      "id": "FIT-F-CP08",
+      "kind": "female_coupon",
+      "studs": [
+        4,
+        2
+      ],
+      "height": 9.6,
+      "top_studs": false,
+      "socket": true,
+      "female_clearance": 0.08,
+      "stl": "parts/FIT-F-CP08.stl",
+      "orientation": "socket_down",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          31.9,
+          15.9,
+          9.6
+        ]
+      ],
+      "volume_mm3": 2672.403678,
+      "mesh_triangles": 1932,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "68ad192ad5f93415c1a0f137f46f8b57e2cbfb1792fd980fd0d0f3b32311c5d8",
+      "local_center_mm": [
+        15.999999999999996,
+        8.0,
+        5.449546762230462
+      ]
+    },
+    "FIT-F-CP12": {
+      "id": "FIT-F-CP12",
+      "kind": "female_coupon",
+      "studs": [
+        4,
+        2
+      ],
+      "height": 9.6,
+      "top_studs": false,
+      "socket": true,
+      "female_clearance": 0.12,
+      "stl": "parts/FIT-F-CP12.stl",
+      "orientation": "socket_down",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          0.0
+        ],
+        [
+          31.9,
+          15.9,
+          9.6
+        ]
+      ],
+      "volume_mm3": 2634.20328,
+      "mesh_triangles": 1932,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "9a910e4701d6848fbd126e07902b492911fa75fcde4b0ac68d81181248f25675",
+      "local_center_mm": [
+        15.999999999999984,
+        8.000000000000009,
+        5.4705482561360155
+      ]
+    },
+    "NP3-FIT-PLAQUE": {
+      "id": "NP3-FIT-PLAQUE",
+      "kind": "front_fit_plaque",
+      "width": 24,
+      "top_studs": false,
+      "socket": false,
+      "stl": "parts/NP3-FIT-PLAQUE.stl",
+      "orientation": "flat_rear_on_bed",
+      "bounds": [
+        [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        [
+          24.0,
+          9.2,
+          2.4
+        ]
+      ],
+      "volume_mm3": 399.146667,
+      "mesh_triangles": 60,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "c85e9d8f787a4c28ab542d12ee7d8d144ded0892d237edf3d8043fce9b5cc6e0",
+      "local_center_mm": [
+        11.999999999999996,
+        4.599999999999999,
+        1.2331373597006947
+      ]
+    },
+    "NP3-FIT-SOCKET-C15": {
+      "id": "NP3-FIT-SOCKET-C15",
+      "kind": "front_fit_socket",
+      "studs": [
+        4,
+        2
+      ],
+      "height": 9.6,
+      "bottom_course": true,
+      "reserved_rows": [
+        0
+      ],
+      "slots": [
+        {
+          "width": 24,
+          "x": 4,
+          "clearance": 0.15,
+          "back_y": 3.3,
+          "bottom_z": 0.2
+        }
+      ],
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/NP3-FIT-SOCKET-C15.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          -0.0
+        ],
+        [
+          31.9,
+          15.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 2992.469041,
+      "mesh_triangles": 3210,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "c182ebdf9883f2707ef2817cbd3ba9febfb38f4da193d4f9d10fe52c85bebba7",
+      "local_center_mm": [
+        15.999999999999995,
+        8.320576631822188,
+        5.312547688223794
+      ]
+    },
+    "NP3-FIT-SOCKET-C20": {
+      "id": "NP3-FIT-SOCKET-C20",
+      "kind": "front_fit_socket",
+      "studs": [
+        4,
+        2
+      ],
+      "height": 9.6,
+      "bottom_course": true,
+      "reserved_rows": [
+        0
+      ],
+      "slots": [
+        {
+          "width": 24,
+          "x": 4,
+          "clearance": 0.2,
+          "back_y": 3.3,
+          "bottom_z": 0.2
+        }
+      ],
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/NP3-FIT-SOCKET-C20.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          -0.0
+        ],
+        [
+          31.9,
+          15.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 2979.51893,
+      "mesh_triangles": 3212,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "0627313687b8f259bb19725a87bde7c4a561a79d63f94683c9cdb303861c2eb8",
+      "local_center_mm": [
+        15.999999999999993,
+        8.34337372124729,
+        5.312042164341249
+      ]
+    },
+    "NP3-FIT-SOCKET-C25": {
+      "id": "NP3-FIT-SOCKET-C25",
+      "kind": "front_fit_socket",
+      "studs": [
+        4,
+        2
+      ],
+      "height": 9.6,
+      "bottom_course": true,
+      "reserved_rows": [
+        0
+      ],
+      "slots": [
+        {
+          "width": 24,
+          "x": 4,
+          "clearance": 0.25,
+          "back_y": 3.3,
+          "bottom_z": 0.2
+        }
+      ],
+      "top_studs": true,
+      "socket": true,
+      "stl": "parts/NP3-FIT-SOCKET-C25.stl",
+      "orientation": "underside_on_bed_studs_up",
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          -0.0
+        ],
+        [
+          31.9,
+          15.9,
+          11.4
+        ]
+      ],
+      "volume_mm3": 2966.486819,
+      "mesh_triangles": 3214,
+      "mesh_linear_deflection_mm": 0.025,
+      "sha256": "cab6b4c43978d9340f2a871492cf9ce3526ebbe1a64b46d20333ac78d37ce771",
+      "local_center_mm": [
+        16.000000000000014,
+        8.366335745060622,
+        5.311527017231574
+      ]
+    }
+  },
+  "models": [
+    {
+      "id": "B",
+      "name": "DESK CLASSIC",
+      "name_ja": "輪郭と厚みの標準型",
+      "target_mm": [
+        192,
+        80,
+        238.4
+      ],
+      "initial_target_mm": [
+        192,
+        80,
+        200
+      ],
+      "base_studs": [
+        24,
+        10
+      ],
+      "base_segments_x": [
+        24
+      ],
+      "message_width": 142.0,
+      "text_sizes": [
+        5.0,
+        3.2
+      ],
+      "text_heights": [
+        12.0,
+        8.0
+      ],
+      "logo_x": 148.0,
+      "logo_module_width": 40.0,
+      "logo_diameter": 36.0,
+      "body_width": 20,
+      "body_courses": 19,
+      "bottom_inset": 5,
+      "goggle_bottom": 9,
+      "eye_courses": [
+        4,
+        7
+      ],
+      "eye_columns": [
+        7,
+        12
+      ],
+      "face_y": [
+        3,
+        7
+      ],
+      "goggle_y": [
+        2,
+        7
+      ],
+      "headset_y": [
+        2,
+        8
+      ],
+      "chin_y": [
+        3,
+        7
+      ],
+      "crest_width": 8,
+      "crest_height": 6.4,
+      "description_ja": "32 mm厚の顔、段差のあるゴーグル。写真の印象に近い推奨標準型。",
+      "placements": [
+        {
+          "id": "B-001",
+          "part": "BASE3-24x10-B-562406",
+          "color": "black",
+          "position": [
+            0.0,
+            0,
+            0.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 1,
+          "role": "base_course",
+          "course": 0
+        },
+        {
+          "id": "B-002",
+          "part": "BASE3-06x10-T-e1945a",
+          "color": "black",
+          "position": [
+            0.0,
+            0,
+            9.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 2,
+          "role": "base_course",
+          "course": 1
+        },
+        {
+          "id": "B-003",
+          "part": "BASE3-06x10-T-838259",
+          "color": "black",
+          "position": [
+            48.0,
+            0,
+            9.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 2,
+          "role": "base_course",
+          "course": 1
+        },
+        {
+          "id": "B-004",
+          "part": "BASE3-06x10-T-3f87ac",
+          "color": "black",
+          "position": [
+            96.0,
+            0,
+            9.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 2,
+          "role": "base_course",
+          "course": 1
+        },
+        {
+          "id": "B-005",
+          "part": "BASE3-06x10-T-6e100f",
+          "color": "black",
+          "position": [
+            144.0,
+            0,
+            9.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 2,
+          "role": "base_course",
+          "course": 1
+        },
+        {
+          "id": "B-006",
+          "part": "BASE3-03x10-T-aa77a9",
+          "color": "black",
+          "position": [
+            0.0,
+            0,
+            19.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 3,
+          "role": "base_course",
+          "course": 2
+        },
+        {
+          "id": "B-007",
+          "part": "BASE3-06x10-T-838259",
+          "color": "black",
+          "position": [
+            24.0,
+            0,
+            19.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 3,
+          "role": "base_course",
+          "course": 2
+        },
+        {
+          "id": "B-008",
+          "part": "BASE3-06x10-T-838259",
+          "color": "black",
+          "position": [
+            72.0,
+            0,
+            19.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 3,
+          "role": "base_course",
+          "course": 2
+        },
+        {
+          "id": "B-009",
+          "part": "BASE3-06x10-T-6159e6",
+          "color": "black",
+          "position": [
+            120.0,
+            0,
+            19.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 3,
+          "role": "base_course",
+          "course": 2
+        },
+        {
+          "id": "B-010",
+          "part": "BASE3-03x10-T-d79875",
+          "color": "black",
+          "position": [
+            168.0,
+            0,
+            19.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 3,
+          "role": "base_course",
+          "course": 2
+        },
+        {
+          "id": "B-011",
+          "part": "BASE3-06x10-T-e1945a",
+          "color": "black",
+          "position": [
+            0.0,
+            0,
+            28.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 4,
+          "role": "base_course",
+          "course": 3
+        },
+        {
+          "id": "B-012",
+          "part": "BASE3-06x10-T-838259",
+          "color": "black",
+          "position": [
+            48.0,
+            0,
+            28.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 4,
+          "role": "base_course",
+          "course": 3
+        },
+        {
+          "id": "B-013",
+          "part": "BASE3-06x10-T-3f87ac",
+          "color": "black",
+          "position": [
+            96.0,
+            0,
+            28.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 4,
+          "role": "base_course",
+          "course": 3
+        },
+        {
+          "id": "B-014",
+          "part": "BASE3-06x10-T-6e100f",
+          "color": "black",
+          "position": [
+            144.0,
+            0,
+            28.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 4,
+          "role": "base_course",
+          "course": 3
+        },
+        {
+          "id": "B-015",
+          "part": "BASE3-03x10-T-aa77a9",
+          "color": "black",
+          "position": [
+            0.0,
+            0,
+            38.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 5,
+          "role": "base_course",
+          "course": 4
+        },
+        {
+          "id": "B-016",
+          "part": "BASE3-06x10-T-838259",
+          "color": "black",
+          "position": [
+            24.0,
+            0,
+            38.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 5,
+          "role": "base_course",
+          "course": 4
+        },
+        {
+          "id": "B-017",
+          "part": "BASE3-06x10-T-838259",
+          "color": "black",
+          "position": [
+            72.0,
+            0,
+            38.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 5,
+          "role": "base_course",
+          "course": 4
+        },
+        {
+          "id": "B-018",
+          "part": "BASE3-06x10-T-6159e6",
+          "color": "black",
+          "position": [
+            120.0,
+            0,
+            38.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 5,
+          "role": "base_course",
+          "course": 4
+        },
+        {
+          "id": "B-019",
+          "part": "BASE3-03x10-T-d79875",
+          "color": "black",
+          "position": [
+            168.0,
+            0,
+            38.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 5,
+          "role": "base_course",
+          "course": 4
+        },
+        {
+          "id": "B-020",
+          "part": "NP3-TEXT-B",
+          "color": "black",
+          "position": [
+            4.0,
+            3.3,
+            4.0
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "step": 6,
+          "role": "front_module",
+          "module": "text"
+        },
+        {
+          "id": "B-021",
+          "part": "NP3-LOGO-B",
+          "color": "black",
+          "position": [
+            148.0,
+            3.7,
+            4.0
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "step": 6,
+          "role": "front_module",
+          "module": "logo"
+        },
+        {
+          "id": "B-022",
+          "part": "NP3-KEEPER",
+          "color": "black",
+          "position": [
+            0,
+            0,
+            48.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 7,
+          "role": "keeper",
+          "module": "text"
+        },
+        {
+          "id": "B-023",
+          "part": "NP3-KEEPER",
+          "color": "black",
+          "position": [
+            128.0,
+            0,
+            48.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 7,
+          "role": "keeper",
+          "module": "text"
+        },
+        {
+          "id": "B-024",
+          "part": "NP3-KEEPER",
+          "color": "black",
+          "position": [
+            160.0,
+            0,
+            48.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 7,
+          "role": "keeper",
+          "module": "logo"
+        },
+        {
+          "id": "B-025",
+          "part": "BR-04x04-H096",
+          "color": "magenta",
+          "position": [
+            56.0,
+            24.0,
+            48.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 8,
+          "role": "face"
+        },
+        {
+          "id": "B-026",
+          "part": "BR-04x04-H096",
+          "color": "magenta",
+          "position": [
+            88.0,
+            24.0,
+            48.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 8,
+          "role": "face"
+        },
+        {
+          "id": "B-027",
+          "part": "BR-02x04-H096",
+          "color": "magenta",
+          "position": [
+            120.0,
+            24.0,
+            48.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 8,
+          "role": "face"
+        },
+        {
+          "id": "B-028",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            48.0,
+            16.0,
+            57.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 9,
+          "role": "face"
+        },
+        {
+          "id": "B-029",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            64.0,
+            24.0,
+            57.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 9,
+          "role": "face"
+        },
+        {
+          "id": "B-030",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            80.0,
+            24.0,
+            57.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 9,
+          "role": "face"
+        },
+        {
+          "id": "B-031",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            112.0,
+            24.0,
+            57.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 9,
+          "role": "face"
+        },
+        {
+          "id": "B-032",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            128.0,
+            16.0,
+            57.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 9,
+          "role": "face"
+        },
+        {
+          "id": "B-033",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            40.0,
+            16.0,
+            67.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 10,
+          "role": "face"
+        },
+        {
+          "id": "B-034",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            56.0,
+            24.0,
+            67.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 10,
+          "role": "face"
+        },
+        {
+          "id": "B-035",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            88.0,
+            24.0,
+            67.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 10,
+          "role": "face"
+        },
+        {
+          "id": "B-036",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            120.0,
+            24.0,
+            67.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 10,
+          "role": "face"
+        },
+        {
+          "id": "B-037",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            136.0,
+            16.0,
+            67.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 10,
+          "role": "face"
+        },
+        {
+          "id": "B-038",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            32.0,
+            16.0,
+            76.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 11,
+          "role": "face"
+        },
+        {
+          "id": "B-039",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            48.0,
+            24.0,
+            76.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 11,
+          "role": "face"
+        },
+        {
+          "id": "B-040",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            64.0,
+            24.0,
+            76.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 11,
+          "role": "face"
+        },
+        {
+          "id": "B-041",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            96.0,
+            24.0,
+            76.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 11,
+          "role": "face"
+        },
+        {
+          "id": "B-042",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            128.0,
+            24.0,
+            76.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 11,
+          "role": "face"
+        },
+        {
+          "id": "B-043",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            144.0,
+            16.0,
+            76.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 11,
+          "role": "face"
+        },
+        {
+          "id": "B-044",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            24.0,
+            16.0,
+            86.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 12,
+          "role": "face"
+        },
+        {
+          "id": "B-045",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            40.0,
+            24.0,
+            86.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 12,
+          "role": "face"
+        },
+        {
+          "id": "B-046",
+          "part": "BR-01x04-H096",
+          "color": "green",
+          "position": [
+            72.0,
+            24.0,
+            86.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 12,
+          "role": "face"
+        },
+        {
+          "id": "B-047",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            80.0,
+            24.0,
+            86.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 12,
+          "role": "face"
+        },
+        {
+          "id": "B-048",
+          "part": "BR-01x04-H096",
+          "color": "green",
+          "position": [
+            112.0,
+            24.0,
+            86.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 12,
+          "role": "face"
+        },
+        {
+          "id": "B-049",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            120.0,
+            24.0,
+            86.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 12,
+          "role": "face"
+        },
+        {
+          "id": "B-050",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            152.0,
+            16.0,
+            86.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 12,
+          "role": "face"
+        },
+        {
+          "id": "B-051",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            16.0,
+            16.0,
+            96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 13,
+          "role": "face"
+        },
+        {
+          "id": "B-052",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            32.0,
+            24.0,
+            96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 13,
+          "role": "face"
+        },
+        {
+          "id": "B-053",
+          "part": "BR-03x04-H096",
+          "color": "black",
+          "position": [
+            48.0,
+            24.0,
+            96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 13,
+          "role": "face"
+        },
+        {
+          "id": "B-054",
+          "part": "BR-01x04-H096",
+          "color": "green",
+          "position": [
+            72.0,
+            24.0,
+            96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 13,
+          "role": "face"
+        },
+        {
+          "id": "B-055",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            80.0,
+            24.0,
+            96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 13,
+          "role": "face"
+        },
+        {
+          "id": "B-056",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            96.0,
+            24.0,
+            96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 13,
+          "role": "face"
+        },
+        {
+          "id": "B-057",
+          "part": "BR-01x04-H096",
+          "color": "green",
+          "position": [
+            112.0,
+            24.0,
+            96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 13,
+          "role": "face"
+        },
+        {
+          "id": "B-058",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            120.0,
+            24.0,
+            96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 13,
+          "role": "face"
+        },
+        {
+          "id": "B-059",
+          "part": "BR-03x04-H096",
+          "color": "black",
+          "position": [
+            136.0,
+            24.0,
+            96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 13,
+          "role": "face"
+        },
+        {
+          "id": "B-060",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            160.0,
+            16.0,
+            96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 13,
+          "role": "face"
+        },
+        {
+          "id": "B-061",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            16.0,
+            16.0,
+            105.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 14,
+          "role": "face"
+        },
+        {
+          "id": "B-062",
+          "part": "BR-05x04-H096",
+          "color": "black",
+          "position": [
+            32.0,
+            24.0,
+            105.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 14,
+          "role": "face"
+        },
+        {
+          "id": "B-063",
+          "part": "BR-01x04-H096",
+          "color": "green",
+          "position": [
+            72.0,
+            24.0,
+            105.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 14,
+          "role": "face"
+        },
+        {
+          "id": "B-064",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            80.0,
+            24.0,
+            105.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 14,
+          "role": "face"
+        },
+        {
+          "id": "B-065",
+          "part": "BR-01x04-H096",
+          "color": "green",
+          "position": [
+            112.0,
+            24.0,
+            105.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 14,
+          "role": "face"
+        },
+        {
+          "id": "B-066",
+          "part": "BR-05x04-H096",
+          "color": "black",
+          "position": [
+            120.0,
+            24.0,
+            105.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 14,
+          "role": "face"
+        },
+        {
+          "id": "B-067",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            160.0,
+            16.0,
+            105.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 14,
+          "role": "face"
+        },
+        {
+          "id": "B-068",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            16.0,
+            16.0,
+            115.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 15,
+          "role": "face"
+        },
+        {
+          "id": "B-069",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            32.0,
+            24.0,
+            115.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 15,
+          "role": "face"
+        },
+        {
+          "id": "B-070",
+          "part": "BR-03x04-H096",
+          "color": "black",
+          "position": [
+            48.0,
+            24.0,
+            115.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 15,
+          "role": "face"
+        },
+        {
+          "id": "B-071",
+          "part": "BR-01x04-H096",
+          "color": "green",
+          "position": [
+            72.0,
+            24.0,
+            115.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 15,
+          "role": "face"
+        },
+        {
+          "id": "B-072",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            80.0,
+            24.0,
+            115.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 15,
+          "role": "face"
+        },
+        {
+          "id": "B-073",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            96.0,
+            24.0,
+            115.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 15,
+          "role": "face"
+        },
+        {
+          "id": "B-074",
+          "part": "BR-01x04-H096",
+          "color": "green",
+          "position": [
+            112.0,
+            24.0,
+            115.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 15,
+          "role": "face"
+        },
+        {
+          "id": "B-075",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            120.0,
+            24.0,
+            115.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 15,
+          "role": "face"
+        },
+        {
+          "id": "B-076",
+          "part": "BR-03x04-H096",
+          "color": "black",
+          "position": [
+            136.0,
+            24.0,
+            115.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 15,
+          "role": "face"
+        },
+        {
+          "id": "B-077",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            160.0,
+            16.0,
+            115.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 15,
+          "role": "face"
+        },
+        {
+          "id": "B-078",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            16.0,
+            16.0,
+            124.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 16,
+          "role": "face"
+        },
+        {
+          "id": "B-079",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            32.0,
+            24.0,
+            124.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 16,
+          "role": "face"
+        },
+        {
+          "id": "B-080",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            64.0,
+            24.0,
+            124.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 16,
+          "role": "face"
+        },
+        {
+          "id": "B-081",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            96.0,
+            24.0,
+            124.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 16,
+          "role": "face"
+        },
+        {
+          "id": "B-082",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            128.0,
+            24.0,
+            124.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 16,
+          "role": "face"
+        },
+        {
+          "id": "B-083",
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "position": [
+            160.0,
+            16.0,
+            124.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 16,
+          "role": "face"
+        },
+        {
+          "id": "B-084",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            16.0,
+            16.0,
+            134.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 17,
+          "role": "face"
+        },
+        {
+          "id": "B-085",
+          "part": "BR-04x05-H096",
+          "color": "cyan",
+          "position": [
+            32.0,
+            16.0,
+            134.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 17,
+          "role": "face"
+        },
+        {
+          "id": "B-086",
+          "part": "BR-04x05-H096",
+          "color": "cyan",
+          "position": [
+            64.0,
+            16.0,
+            134.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 17,
+          "role": "face"
+        },
+        {
+          "id": "B-087",
+          "part": "BR-04x05-H096",
+          "color": "cyan",
+          "position": [
+            96.0,
+            16.0,
+            134.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 17,
+          "role": "face"
+        },
+        {
+          "id": "B-088",
+          "part": "BR-04x05-H096",
+          "color": "cyan",
+          "position": [
+            128.0,
+            16.0,
+            134.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 17,
+          "role": "face"
+        },
+        {
+          "id": "B-089",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            160.0,
+            16.0,
+            134.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 17,
+          "role": "face"
+        },
+        {
+          "id": "B-090",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            16.0,
+            16.0,
+            144.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 18,
+          "role": "face"
+        },
+        {
+          "id": "B-091",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            32.0,
+            24.0,
+            144.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 18,
+          "role": "face"
+        },
+        {
+          "id": "B-092",
+          "part": "BR-03x04-H096",
+          "color": "black",
+          "position": [
+            64.0,
+            24.0,
+            144.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 18,
+          "role": "face"
+        },
+        {
+          "id": "B-093",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            88.0,
+            16.0,
+            144.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 18,
+          "role": "face"
+        },
+        {
+          "id": "B-094",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            104.0,
+            24.0,
+            144.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 18,
+          "role": "face"
+        },
+        {
+          "id": "B-095",
+          "part": "BR-03x04-H096",
+          "color": "black",
+          "position": [
+            136.0,
+            24.0,
+            144.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 18,
+          "role": "face"
+        },
+        {
+          "id": "B-096",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            160.0,
+            16.0,
+            144.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 18,
+          "role": "face"
+        },
+        {
+          "id": "B-097",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            16.0,
+            16.0,
+            153.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 19,
+          "role": "face"
+        },
+        {
+          "id": "B-098",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            32.0,
+            24.0,
+            153.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 19,
+          "role": "face"
+        },
+        {
+          "id": "B-099",
+          "part": "BR-05x04-H096",
+          "color": "black",
+          "position": [
+            48.0,
+            24.0,
+            153.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 19,
+          "role": "face"
+        },
+        {
+          "id": "B-100",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            88.0,
+            16.0,
+            153.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 19,
+          "role": "face"
+        },
+        {
+          "id": "B-101",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            104.0,
+            24.0,
+            153.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 19,
+          "role": "face"
+        },
+        {
+          "id": "B-102",
+          "part": "BR-05x04-H096",
+          "color": "black",
+          "position": [
+            120.0,
+            24.0,
+            153.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 19,
+          "role": "face"
+        },
+        {
+          "id": "B-103",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            160.0,
+            16.0,
+            153.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 19,
+          "role": "face"
+        },
+        {
+          "id": "B-104",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            16.0,
+            16.0,
+            163.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 20,
+          "role": "face"
+        },
+        {
+          "id": "B-105",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            32.0,
+            24.0,
+            163.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 20,
+          "role": "face"
+        },
+        {
+          "id": "B-106",
+          "part": "BR-03x04-H096",
+          "color": "black",
+          "position": [
+            64.0,
+            24.0,
+            163.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 20,
+          "role": "face"
+        },
+        {
+          "id": "B-107",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            88.0,
+            16.0,
+            163.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 20,
+          "role": "face"
+        },
+        {
+          "id": "B-108",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            104.0,
+            24.0,
+            163.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 20,
+          "role": "face"
+        },
+        {
+          "id": "B-109",
+          "part": "BR-03x04-H096",
+          "color": "black",
+          "position": [
+            136.0,
+            24.0,
+            163.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 20,
+          "role": "face"
+        },
+        {
+          "id": "B-110",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            160.0,
+            16.0,
+            163.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 20,
+          "role": "face"
+        },
+        {
+          "id": "B-111",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            16.0,
+            16.0,
+            172.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 21,
+          "role": "face"
+        },
+        {
+          "id": "B-112",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            32.0,
+            24.0,
+            172.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 21,
+          "role": "face"
+        },
+        {
+          "id": "B-113",
+          "part": "BR-05x04-H096",
+          "color": "black",
+          "position": [
+            48.0,
+            24.0,
+            172.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 21,
+          "role": "face"
+        },
+        {
+          "id": "B-114",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            88.0,
+            16.0,
+            172.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 21,
+          "role": "face"
+        },
+        {
+          "id": "B-115",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            104.0,
+            24.0,
+            172.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 21,
+          "role": "face"
+        },
+        {
+          "id": "B-116",
+          "part": "BR-05x04-H096",
+          "color": "black",
+          "position": [
+            120.0,
+            24.0,
+            172.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 21,
+          "role": "face"
+        },
+        {
+          "id": "B-117",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            160.0,
+            16.0,
+            172.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 21,
+          "role": "face"
+        },
+        {
+          "id": "B-118",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            16.0,
+            16.0,
+            182.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 22,
+          "role": "face"
+        },
+        {
+          "id": "B-119",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            32.0,
+            24.0,
+            182.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 22,
+          "role": "face"
+        },
+        {
+          "id": "B-120",
+          "part": "BR-03x04-H096",
+          "color": "black",
+          "position": [
+            64.0,
+            24.0,
+            182.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 22,
+          "role": "face"
+        },
+        {
+          "id": "B-121",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            88.0,
+            16.0,
+            182.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 22,
+          "role": "face"
+        },
+        {
+          "id": "B-122",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            104.0,
+            24.0,
+            182.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 22,
+          "role": "face"
+        },
+        {
+          "id": "B-123",
+          "part": "BR-03x04-H096",
+          "color": "black",
+          "position": [
+            136.0,
+            24.0,
+            182.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 22,
+          "role": "face"
+        },
+        {
+          "id": "B-124",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            160.0,
+            16.0,
+            182.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 22,
+          "role": "face"
+        },
+        {
+          "id": "B-125",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            16.0,
+            16.0,
+            192.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 23,
+          "role": "face"
+        },
+        {
+          "id": "B-126",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            32.0,
+            24.0,
+            192.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 23,
+          "role": "face"
+        },
+        {
+          "id": "B-127",
+          "part": "BR-05x04-H096",
+          "color": "black",
+          "position": [
+            48.0,
+            24.0,
+            192.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 23,
+          "role": "face"
+        },
+        {
+          "id": "B-128",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            88.0,
+            16.0,
+            192.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 23,
+          "role": "face"
+        },
+        {
+          "id": "B-129",
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "position": [
+            104.0,
+            24.0,
+            192.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 23,
+          "role": "face"
+        },
+        {
+          "id": "B-130",
+          "part": "BR-05x04-H096",
+          "color": "black",
+          "position": [
+            120.0,
+            24.0,
+            192.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 23,
+          "role": "face"
+        },
+        {
+          "id": "B-131",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            160.0,
+            16.0,
+            192.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 23,
+          "role": "face"
+        },
+        {
+          "id": "B-132",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            16.0,
+            16.0,
+            201.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 24,
+          "role": "face"
+        },
+        {
+          "id": "B-133",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            32.0,
+            24.0,
+            201.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 24,
+          "role": "face"
+        },
+        {
+          "id": "B-134",
+          "part": "BR-03x04-H096",
+          "color": "black",
+          "position": [
+            64.0,
+            24.0,
+            201.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 24,
+          "role": "face"
+        },
+        {
+          "id": "B-135",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            88.0,
+            16.0,
+            201.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 24,
+          "role": "face"
+        },
+        {
+          "id": "B-136",
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "position": [
+            104.0,
+            24.0,
+            201.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 24,
+          "role": "face"
+        },
+        {
+          "id": "B-137",
+          "part": "BR-03x04-H096",
+          "color": "black",
+          "position": [
+            136.0,
+            24.0,
+            201.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 24,
+          "role": "face"
+        },
+        {
+          "id": "B-138",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            160.0,
+            16.0,
+            201.6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 24,
+          "role": "face"
+        },
+        {
+          "id": "B-139",
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "position": [
+            24.0,
+            16.0,
+            211.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 25,
+          "role": "face"
+        },
+        {
+          "id": "B-140",
+          "part": "BR-04x05-H096",
+          "color": "cyan",
+          "position": [
+            40.0,
+            16.0,
+            211.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 25,
+          "role": "face"
+        },
+        {
+          "id": "B-141",
+          "part": "BR-04x05-H096",
+          "color": "cyan",
+          "position": [
+            72.0,
+            16.0,
+            211.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 25,
+          "role": "face"
+        },
+        {
+          "id": "B-142",
+          "part": "BR-04x05-H096",
+          "color": "cyan",
+          "position": [
+            104.0,
+            16.0,
+            211.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 25,
+          "role": "face"
+        },
+        {
+          "id": "B-143",
+          "part": "BR-04x05-H096",
+          "color": "cyan",
+          "position": [
+            136.0,
+            16.0,
+            211.2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 25,
+          "role": "face"
+        },
+        {
+          "id": "B-144",
+          "part": "BR-04x05-H096",
+          "color": "cyan",
+          "position": [
+            32.0,
+            16.0,
+            220.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 26,
+          "role": "face"
+        },
+        {
+          "id": "B-145",
+          "part": "BR-04x05-H096",
+          "color": "cyan",
+          "position": [
+            64.0,
+            16.0,
+            220.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 26,
+          "role": "face"
+        },
+        {
+          "id": "B-146",
+          "part": "BR-04x05-H096",
+          "color": "cyan",
+          "position": [
+            96.0,
+            16.0,
+            220.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 26,
+          "role": "face"
+        },
+        {
+          "id": "B-147",
+          "part": "BR-04x05-H096",
+          "color": "cyan",
+          "position": [
+            128.0,
+            16.0,
+            220.8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 26,
+          "role": "face"
+        },
+        {
+          "id": "B-148",
+          "part": "BR-02x04-H064",
+          "color": "magenta",
+          "position": [
+            64.0,
+            24.0,
+            230.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 27,
+          "role": "face"
+        },
+        {
+          "id": "B-149",
+          "part": "BR-04x04-H064",
+          "color": "magenta",
+          "position": [
+            80.0,
+            24.0,
+            230.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 27,
+          "role": "face"
+        },
+        {
+          "id": "B-150",
+          "part": "BR-02x04-H064",
+          "color": "magenta",
+          "position": [
+            112.0,
+            24.0,
+            230.4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "step": 27,
+          "role": "face"
+        }
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "title": "黒い台座 1 / 5段目を積む（縦の継ぎ目をずらす）",
+          "instances": [
+            "B-001"
+          ]
+        },
+        {
+          "number": 2,
+          "title": "黒い台座 2 / 5段目を積む（縦の継ぎ目をずらす）",
+          "instances": [
+            "B-002",
+            "B-003",
+            "B-004",
+            "B-005"
+          ]
+        },
+        {
+          "number": 3,
+          "title": "黒い台座 3 / 5段目を積む（縦の継ぎ目をずらす）",
+          "instances": [
+            "B-006",
+            "B-007",
+            "B-008",
+            "B-009",
+            "B-010"
+          ]
+        },
+        {
+          "number": 4,
+          "title": "黒い台座 4 / 5段目を積む（縦の継ぎ目をずらす）",
+          "instances": [
+            "B-011",
+            "B-012",
+            "B-013",
+            "B-014"
+          ]
+        },
+        {
+          "number": 5,
+          "title": "黒い台座 5 / 5段目を積む（縦の継ぎ目をずらす）",
+          "instances": [
+            "B-015",
+            "B-016",
+            "B-017",
+            "B-018",
+            "B-019"
+          ]
+        },
+        {
+          "number": 6,
+          "title": "大きい2行銘板と、その右隣のロゴを別々に前面の溝へ差し込む",
+          "instances": [
+            "B-020",
+            "B-021"
+          ]
+        },
+        {
+          "number": 7,
+          "title": "銘板用2個・ロゴ用1個の黒いキーパーを2列目のスタッドに載せる",
+          "instances": [
+            "B-022",
+            "B-023",
+            "B-024"
+          ]
+        },
+        {
+          "number": 8,
+          "title": "本体 1 段目を左から載せる",
+          "instances": [
+            "B-025",
+            "B-026",
+            "B-027"
+          ]
+        },
+        {
+          "number": 9,
+          "title": "本体 2 段目を左から載せる",
+          "instances": [
+            "B-028",
+            "B-029",
+            "B-030",
+            "B-031",
+            "B-032"
+          ]
+        },
+        {
+          "number": 10,
+          "title": "本体 3 段目を左から載せる",
+          "instances": [
+            "B-033",
+            "B-034",
+            "B-035",
+            "B-036",
+            "B-037"
+          ]
+        },
+        {
+          "number": 11,
+          "title": "本体 4 段目を左から載せる",
+          "instances": [
+            "B-038",
+            "B-039",
+            "B-040",
+            "B-041",
+            "B-042",
+            "B-043"
+          ]
+        },
+        {
+          "number": 12,
+          "title": "本体 5 段目を左から載せる",
+          "instances": [
+            "B-044",
+            "B-045",
+            "B-046",
+            "B-047",
+            "B-048",
+            "B-049",
+            "B-050"
+          ]
+        },
+        {
+          "number": 13,
+          "title": "本体 6 段目を左から載せる",
+          "instances": [
+            "B-051",
+            "B-052",
+            "B-053",
+            "B-054",
+            "B-055",
+            "B-056",
+            "B-057",
+            "B-058",
+            "B-059",
+            "B-060"
+          ]
+        },
+        {
+          "number": 14,
+          "title": "本体 7 段目を左から載せる",
+          "instances": [
+            "B-061",
+            "B-062",
+            "B-063",
+            "B-064",
+            "B-065",
+            "B-066",
+            "B-067"
+          ]
+        },
+        {
+          "number": 15,
+          "title": "本体 8 段目を左から載せる",
+          "instances": [
+            "B-068",
+            "B-069",
+            "B-070",
+            "B-071",
+            "B-072",
+            "B-073",
+            "B-074",
+            "B-075",
+            "B-076",
+            "B-077"
+          ]
+        },
+        {
+          "number": 16,
+          "title": "本体 9 段目を左から載せる",
+          "instances": [
+            "B-078",
+            "B-079",
+            "B-080",
+            "B-081",
+            "B-082",
+            "B-083"
+          ]
+        },
+        {
+          "number": 17,
+          "title": "本体 10 段目を左から載せる",
+          "instances": [
+            "B-084",
+            "B-085",
+            "B-086",
+            "B-087",
+            "B-088",
+            "B-089"
+          ]
+        },
+        {
+          "number": 18,
+          "title": "本体 11 段目を左から載せる",
+          "instances": [
+            "B-090",
+            "B-091",
+            "B-092",
+            "B-093",
+            "B-094",
+            "B-095",
+            "B-096"
+          ]
+        },
+        {
+          "number": 19,
+          "title": "本体 12 段目を左から載せる",
+          "instances": [
+            "B-097",
+            "B-098",
+            "B-099",
+            "B-100",
+            "B-101",
+            "B-102",
+            "B-103"
+          ]
+        },
+        {
+          "number": 20,
+          "title": "本体 13 段目を左から載せる",
+          "instances": [
+            "B-104",
+            "B-105",
+            "B-106",
+            "B-107",
+            "B-108",
+            "B-109",
+            "B-110"
+          ]
+        },
+        {
+          "number": 21,
+          "title": "本体 14 段目を左から載せる",
+          "instances": [
+            "B-111",
+            "B-112",
+            "B-113",
+            "B-114",
+            "B-115",
+            "B-116",
+            "B-117"
+          ]
+        },
+        {
+          "number": 22,
+          "title": "本体 15 段目を左から載せる",
+          "instances": [
+            "B-118",
+            "B-119",
+            "B-120",
+            "B-121",
+            "B-122",
+            "B-123",
+            "B-124"
+          ]
+        },
+        {
+          "number": 23,
+          "title": "本体 16 段目を左から載せる",
+          "instances": [
+            "B-125",
+            "B-126",
+            "B-127",
+            "B-128",
+            "B-129",
+            "B-130",
+            "B-131"
+          ]
+        },
+        {
+          "number": 24,
+          "title": "本体 17 段目を左から載せる",
+          "instances": [
+            "B-132",
+            "B-133",
+            "B-134",
+            "B-135",
+            "B-136",
+            "B-137",
+            "B-138"
+          ]
+        },
+        {
+          "number": 25,
+          "title": "本体 18 段目を左から載せる",
+          "instances": [
+            "B-139",
+            "B-140",
+            "B-141",
+            "B-142",
+            "B-143"
+          ]
+        },
+        {
+          "number": 26,
+          "title": "本体 19 段目を左から載せる",
+          "instances": [
+            "B-144",
+            "B-145",
+            "B-146",
+            "B-147"
+          ]
+        },
+        {
+          "number": 27,
+          "title": "頭頂のマゼンタのプレートを載せる",
+          "instances": [
+            "B-148",
+            "B-149",
+            "B-150"
+          ]
+        },
+        {
+          "number": 28,
+          "title": "2行と右ロゴが5段台座の正面内に収まること、保持と転倒を確認する",
+          "instances": []
+        }
+      ],
+      "bom": [
+        {
+          "part": "BASE3-03x10-T-aa77a9",
+          "color": "black",
+          "quantity": 2,
+          "stl": "parts/BASE3-03x10-T-aa77a9.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BASE3-03x10-T-d79875",
+          "color": "black",
+          "quantity": 2,
+          "stl": "parts/BASE3-03x10-T-d79875.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BASE3-06x10-T-3f87ac",
+          "color": "black",
+          "quantity": 2,
+          "stl": "parts/BASE3-06x10-T-3f87ac.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BASE3-06x10-T-6159e6",
+          "color": "black",
+          "quantity": 2,
+          "stl": "parts/BASE3-06x10-T-6159e6.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BASE3-06x10-T-6e100f",
+          "color": "black",
+          "quantity": 2,
+          "stl": "parts/BASE3-06x10-T-6e100f.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BASE3-06x10-T-838259",
+          "color": "black",
+          "quantity": 6,
+          "stl": "parts/BASE3-06x10-T-838259.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BASE3-06x10-T-e1945a",
+          "color": "black",
+          "quantity": 2,
+          "stl": "parts/BASE3-06x10-T-e1945a.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BASE3-24x10-B-562406",
+          "color": "black",
+          "quantity": 1,
+          "stl": "parts/BASE3-24x10-B-562406.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BR-01x04-H096",
+          "color": "green",
+          "quantity": 8,
+          "stl": "parts/BR-01x04-H096.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BR-02x04-H064",
+          "color": "magenta",
+          "quantity": 2,
+          "stl": "parts/BR-02x04-H064.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BR-02x04-H096",
+          "color": "black",
+          "quantity": 19,
+          "stl": "parts/BR-02x04-H096.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BR-02x04-H096",
+          "color": "magenta",
+          "quantity": 1,
+          "stl": "parts/BR-02x04-H096.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BR-02x05-H096",
+          "color": "cyan",
+          "quantity": 24,
+          "stl": "parts/BR-02x05-H096.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BR-02x06-H096",
+          "color": "magenta",
+          "quantity": 16,
+          "stl": "parts/BR-02x06-H096.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BR-03x04-H096",
+          "color": "black",
+          "quantity": 12,
+          "stl": "parts/BR-03x04-H096.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BR-04x04-H064",
+          "color": "magenta",
+          "quantity": 1,
+          "stl": "parts/BR-04x04-H064.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BR-04x04-H096",
+          "color": "black",
+          "quantity": 21,
+          "stl": "parts/BR-04x04-H096.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BR-04x04-H096",
+          "color": "magenta",
+          "quantity": 2,
+          "stl": "parts/BR-04x04-H096.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BR-04x05-H096",
+          "color": "cyan",
+          "quantity": 12,
+          "stl": "parts/BR-04x05-H096.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "BR-05x04-H096",
+          "color": "black",
+          "quantity": 8,
+          "stl": "parts/BR-05x04-H096.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "NP3-KEEPER",
+          "color": "black",
+          "quantity": 3,
+          "stl": "parts/NP3-KEEPER.stl",
+          "finish_color": "",
+          "color_change_z_mm": ""
+        },
+        {
+          "part": "NP3-LOGO-B",
+          "color": "black",
+          "quantity": 1,
+          "stl": "parts/NP3-LOGO-B.stl",
+          "finish_color": "white",
+          "color_change_z_mm": 2.8
+        },
+        {
+          "part": "NP3-TEXT-B",
+          "color": "black",
+          "quantity": 1,
+          "stl": "parts/NP3-TEXT-B.stl",
+          "finish_color": "white",
+          "color_change_z_mm": 2.4
+        }
+      ],
+      "presentation": {
+        "exploded_course_gap_mm": 20.0,
+        "keeper_release_mm": 6.0,
+        "keeper_forward_mm": 20.0,
+        "plaque_release_mm": 45.0,
+        "plaque_front_clearance_mm": 14.0,
+        "plaque_display_drop_mm": 56.0,
+        "note": "Display-only centered vertical separation; not a physical disassembly simulation."
+      },
+      "base_courses": 5,
+      "base_body_height_mm": 48.0,
+      "part_count": 150,
+      "unique_prints": 21,
+      "bounds": [
+        [
+          0.1,
+          0.1,
+          -0.0
+        ],
+        [
+          191.9,
+          79.9,
+          238.6
+        ]
+      ],
+      "actual_mm": [
+        191.8,
+        79.8,
+        238.6
+      ],
+      "cad_solid_volume_mm3": 1023355.8009603666,
+      "center_of_material_mm": [
+        96.01516413155262,
+        38.84311214967765,
+        93.47975685388946
+      ],
+      "center_note": "Uniform solid-CAD material only; not sliced mass or proven stability."
+    }
+  ],
+  "publication": {
+    "mode": "private",
+    "public_text_approved": false
+  }
+}

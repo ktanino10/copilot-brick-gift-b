@@ -1,0 +1,5 @@
+part,quantity,color,stage,stl,sha256,width_mm,depth_mm,height_mm,orientation
+BR-02x02-H096,2,black,real-blocks,parts/BR-02x02-H096.stl,16726dd1b4b1e1a44bc8c0871ab681cf12c200643be356c5f1903c0017395d30,15.8,15.8,11.4,underside_on_bed_studs_up
+BR-02x04-H096,2,black,real-blocks,../B/parts/BR-02x04-H096.stl,31b61fbf103450546cda92dfe50bfc24393e776bbe62a45d24d6084cb0c7a269,15.8,31.8,11.4,underside_on_bed_studs_up
+NP3-KEEPER,1,black,keeper-base,../B/parts/NP3-KEEPER.stl,b523f99637728aa9e51b4025ec778016f0c9d78f9959aa7823abb71ce691978f,15.8,15.8,3.2,flat_front_pad_and_socket_down
+BASE3-03x10-T-aa77a9,2,black,keeper-base,../B/parts/BASE3-03x10-T-aa77a9.stl,0eedec766e01cdbef5539540873c80f90309018d6958a6b77b19516be633f18e,23.8,79.8,11.4,underside_on_bed_studs_up

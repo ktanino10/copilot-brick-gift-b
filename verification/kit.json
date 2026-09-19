@@ -1,0 +1,750 @@
+{
+  "status": "PASS",
+  "revision": "4.0-B-personal-kit.1",
+  "model": "B",
+  "units": "mm",
+  "assembly_parts": 150,
+  "B_unique_parts": 21,
+  "B_bom_rows": 23,
+  "B_plates": 14,
+  "color_quantities": {
+    "black": 84,
+    "magenta": 22,
+    "green": 8,
+    "cyan": 36
+  },
+  "steps": 28,
+  "pdf_pages": 54,
+  "trial_parts": 7,
+  "fit_masters": 12,
+  "nameplate_lines": [
+    "Same icon, New adventures",
+    "github.com/tomokota"
+  ],
+  "native_reopen_report": "verification/native.json",
+  "relative_links_checked": 181,
+  "zip_duplicate_members": 0,
+  "sliced": false,
+  "pause_encoded": false,
+  "physical_fit_strength_stability": "NOT_TESTED",
+  "libraries": {
+    "numpy": "2.4.4",
+    "trimesh": "4.11.5"
+  },
+  "meshes": [
+    {
+      "file": "kit/B/parts/BASE3-03x10-T-aa77a9.stl",
+      "sha256": "0eedec766e01cdbef5539540873c80f90309018d6958a6b77b19516be633f18e",
+      "triangles": 20686,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          23.899999618530273,
+          79.9000015258789,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 10798.624744684086
+    },
+    {
+      "file": "kit/B/parts/BASE3-03x10-T-d79875.stl",
+      "sha256": "a0fbfcb0972918c1e99392650ad64f4b674b7211fb0a1d1c94f74d892edc6415",
+      "triangles": 20848,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          23.899999618530273,
+          79.9000015258789,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 10729.172076736215
+    },
+    {
+      "file": "kit/B/parts/BASE3-06x10-T-3f87ac.stl",
+      "sha256": "a14b55f137996d1bf3fcaa7210e0c15a3dc034c6a28b2b3f1256a1439be2fc61",
+      "triangles": 46756,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          3.5,
+          0.0
+        ],
+        [
+          47.900001525878906,
+          79.9000015258789,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 21218.695146722595
+    },
+    {
+      "file": "kit/B/parts/BASE3-06x10-T-6159e6.stl",
+      "sha256": "ef3308e68f08ba88b8fa4fbeb067a16780fa958bf9b64b3922859d97e835d73f",
+      "triangles": 46792,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          47.900001525878906,
+          79.9000015258789,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 21278.215091619288
+    },
+    {
+      "file": "kit/B/parts/BASE3-06x10-T-6e100f.stl",
+      "sha256": "f782d20a7cef5f8ac290a0b8487a5334463b54b22aaa140fc82f895a17c0a5a3",
+      "triangles": 46810,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          47.900001525878906,
+          79.9000015258789,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 21367.11115134585
+    },
+    {
+      "file": "kit/B/parts/BASE3-06x10-T-838259.stl",
+      "sha256": "a14b55f137996d1bf3fcaa7210e0c15a3dc034c6a28b2b3f1256a1439be2fc61",
+      "triangles": 46756,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          3.5,
+          0.0
+        ],
+        [
+          47.900001525878906,
+          79.9000015258789,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 21218.695146722595
+    },
+    {
+      "file": "kit/B/parts/BASE3-06x10-T-e1945a.stl",
+      "sha256": "adf23aa19fd6aa1485d943e4b28c904b8e58a903d4e8b66279c12461b6627be7",
+      "triangles": 46450,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          47.900001525878906,
+          79.9000015258789,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 21377.76042412873
+    },
+    {
+      "file": "kit/B/parts/BASE3-24x10-B-562406.stl",
+      "sha256": "b5ba60b51926f20171f8238979d43b4331b451db7b3b87f6d51d56b5c75dba24",
+      "triangles": 202406,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          191.89999389648438,
+          79.9000015258789,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 87857.11916454435
+    },
+    {
+      "file": "kit/B/parts/BR-01x04-H096.stl",
+      "sha256": "4eeb53d6220950e593a63baa8a388498f41bc509ad26df642cbaffbca772a8f8",
+      "triangles": 2628,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          7.900000095367432,
+          31.899999618530273,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 1615.486429533615
+    },
+    {
+      "file": "kit/B/parts/BR-02x04-H064.stl",
+      "sha256": "743dcbaca56491a9be99b04f088ee6153fcbaf3234132d7e37f3b2c38a1c917f",
+      "triangles": 4860,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          15.899999618530273,
+          31.899999618530273,
+          8.199999809265137
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 2202.545199711381
+    },
+    {
+      "file": "kit/B/parts/BR-02x04-H096.stl",
+      "sha256": "31b61fbf103450546cda92dfe50bfc24393e776bbe62a45d24d6084cb0c7a269",
+      "triangles": 4860,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          15.899999618530273,
+          31.899999618530273,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 2966.5598816521083
+    },
+    {
+      "file": "kit/B/parts/BR-02x05-H096.stl",
+      "sha256": "121dd98b5c43f0e231eafa889dd696d3422f6d5b0b7fdeb27aec4cd0f2ad1014",
+      "triangles": 6216,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          15.899999618530273,
+          39.900001525878906,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 3692.028264512585
+    },
+    {
+      "file": "kit/B/parts/BR-02x06-H096.stl",
+      "sha256": "28bfad450343c1aa8cfce2091efedd9434d16262e32e4abe29df62330ea749d1",
+      "triangles": 7572,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          15.899999618530273,
+          47.900001525878906,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 4417.496081307966
+    },
+    {
+      "file": "kit/B/parts/BR-03x04-H096.stl",
+      "sha256": "8a1f560361a0e7792f9ddcb9315f45c521719eaa4dca9bd729e4a4c780079759",
+      "triangles": 8148,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          23.899999618530273,
+          31.899999618530273,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 4412.666853636231
+    },
+    {
+      "file": "kit/B/parts/BR-04x04-H064.stl",
+      "sha256": "b2c741f948af015929774e3ef9d73fb06271d1229676f86ea60a09e972bbb614",
+      "triangles": 11436,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          31.899999618530273,
+          8.199999809265137
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 4364.641165681907
+    },
+    {
+      "file": "kit/B/parts/BR-04x04-H096.stl",
+      "sha256": "20a7fe6e15bdfd5901d0776f55b5e5353feec8ca86817690276094c4564f74d7",
+      "triangles": 11436,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          31.899999618530273,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 5858.774044838411
+    },
+    {
+      "file": "kit/B/parts/BR-04x05-H096.stl",
+      "sha256": "5f9273b6b55e39f4f019499b5914fbb40ab4aa78e7114454880b82526d570bf5",
+      "triangles": 14724,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          39.900001525878906,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 7304.882052865968
+    },
+    {
+      "file": "kit/B/parts/BR-05x04-H096.stl",
+      "sha256": "db19a404e4b5dcbcdc0e80e13d3d775ba55c4667bb018b2a911f1e2c1d667b6a",
+      "triangles": 14724,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          39.900001525878906,
+          31.899999618530273,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 7304.88205154808
+    },
+    {
+      "file": "kit/B/parts/NP3-KEEPER.stl",
+      "sha256": "b523f99637728aa9e51b4025ec778016f0c9d78f9959aa7823abb71ce691978f",
+      "triangles": 414,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          15.899999618530273,
+          15.899999618530273,
+          3.200000047683716
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 680.9307331572066
+    },
+    {
+      "file": "kit/B/parts/NP3-LOGO-B.stl",
+      "sha256": "96135856f694c111da16975ad7d7948f20c9fa1c5c3ca11b102477df0a77a7e6",
+      "triangles": 1694,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          40.0,
+          40.0,
+          3.5999999046325684
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 4275.251522546506
+    },
+    {
+      "file": "kit/B/parts/NP3-TEXT-B.stl",
+      "sha256": "83ff7a42af4062b0e4a405edd64a8828ab218843d111d13961843fc0fe7044af",
+      "triangles": 54280,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          142.0,
+          40.0,
+          3.200000047683716
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 13696.40998809369
+    },
+    {
+      "file": "kit/fit/FIT-F-CM04.stl",
+      "sha256": "a54ef4da9adc8dc2cd87398f9a86c5c7cecbabfe5ebdf3fde65a22a78c4329be",
+      "triangles": 1932,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          15.899999618530273,
+          9.600000381469727
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 2787.1021653819644
+    },
+    {
+      "file": "kit/fit/FIT-F-CP00.stl",
+      "sha256": "ae6b907514e7333a4f41920e0d8489fe90b91e379303297925186eabc5089259",
+      "triangles": 1932,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          15.899999618530273,
+          9.600000381469727
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 2748.5201754798604
+    },
+    {
+      "file": "kit/fit/FIT-F-CP04.stl",
+      "sha256": "93bcc5532cf11053585d6a53263bc1e12100b5b26fe5a3acee4220c02bce86c6",
+      "triangles": 1932,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          15.899999618530273,
+          9.600000381469727
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 2710.0768542646083
+    },
+    {
+      "file": "kit/fit/FIT-F-CP08.stl",
+      "sha256": "68ad192ad5f93415c1a0f137f46f8b57e2cbfb1792fd980fd0d0f3b32311c5d8",
+      "triangles": 1932,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          15.899999618530273,
+          9.600000381469727
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 2671.7725871891125
+    },
+    {
+      "file": "kit/fit/FIT-F-CP12.stl",
+      "sha256": "9a910e4701d6848fbd126e07902b492911fa75fcde4b0ac68d81181248f25675",
+      "triangles": 1932,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          15.899999618530273,
+          9.600000381469727
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 2633.6068812442213
+    },
+    {
+      "file": "kit/fit/FIT-M-D470.stl",
+      "sha256": "d076c2c611b0de94733469eab2253097717dc4ced997805fd0731258d497df12",
+      "triangles": 2940,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          15.899999618530273,
+          5.0
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 1853.644257810244
+    },
+    {
+      "file": "kit/fit/FIT-M-D480.stl",
+      "sha256": "43d9be1906e0e3a11b47ade2cccf4eacc59d3080e202da860488dd931605f252",
+      "triangles": 2940,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          15.899999618530273,
+          5.0
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 1864.2911024205998
+    },
+    {
+      "file": "kit/fit/FIT-M-D490.stl",
+      "sha256": "08d71c6e146a148805cc6ea7d7605807eae0a75182aab000d9812e1542dc0d00",
+      "triangles": 2940,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          15.899999618530273,
+          5.0
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 1875.1637536028993
+    },
+    {
+      "file": "kit/fit/NP3-FIT-PLAQUE.stl",
+      "sha256": "c85e9d8f787a4c28ab542d12ee7d8d144ded0892d237edf3d8043fce9b5cc6e0",
+      "triangles": 60,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          24.0,
+          9.199999809265137,
+          2.4000000953674316
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 399.14668139990005
+    },
+    {
+      "file": "kit/fit/NP3-FIT-SOCKET-C15.stl",
+      "sha256": "c182ebdf9883f2707ef2817cbd3ba9febfb38f4da193d4f9d10fe52c85bebba7",
+      "triangles": 3210,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          15.899999618530273,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 2991.805488040393
+    },
+    {
+      "file": "kit/fit/NP3-FIT-SOCKET-C20.stl",
+      "sha256": "0627313687b8f259bb19725a87bde7c4a561a79d63f94683c9cdb303861c2eb8",
+      "triangles": 3212,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          15.899999618530273,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 2978.855372269369
+    },
+    {
+      "file": "kit/fit/NP3-FIT-SOCKET-C25.stl",
+      "sha256": "cab6b4c43978d9340f2a871492cf9ce3526ebbe1a64b46d20333ac78d37ce771",
+      "triangles": 3214,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          31.899999618530273,
+          15.899999618530273,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 2965.8232759433954
+    },
+    {
+      "file": "kit/trial/parts/BR-02x02-H096.stl",
+      "sha256": "16726dd1b4b1e1a44bc8c0871ab681cf12c200643be356c5f1903c0017395d30",
+      "triangles": 2148,
+      "bounds_mm": [
+        [
+          0.10000000149011612,
+          0.10000000149011612,
+          0.0
+        ],
+        [
+          15.899999618530273,
+          15.899999618530273,
+          11.399999618530273
+        ]
+      ],
+      "closed": true,
+      "vertex_manifold": true,
+      "connected_bodies": 1,
+      "positive_volume_mm3": 1515.6239540635518
+    }
+  ]
+}

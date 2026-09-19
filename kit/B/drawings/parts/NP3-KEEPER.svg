@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297.5mm" viewBox="0 0 1200 850"><rect width="1200" height="850" fill="white"/><text x="42" y="42" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#587085" font-weight="normal" text-anchor="start">BRICK PORTRAIT / PUBLIC TEMPLATE / 5-COURSE BASE / DIGITAL PROTOTYPE</text><text x="42" y="79" font-family="Helvetica,Arial,sans-serif" font-size="27" fill="#142c41" font-weight="bold" text-anchor="start">NP3-KEEPER</text><text x="42" y="107" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#587085" font-weight="normal" text-anchor="start">Three orthographic views + underside from the actual solid. Exterior heights include studs / text.</text><line x1="42" y1="127" x2="1158" y2="127" stroke="#c5d3df" stroke-width="1"/><text x="95" y="171" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#142c41" font-weight="bold" text-anchor="start">FRONT</text><g transform="translate(109.2,440) scale(8) "><g data-coordinate-system="screen" ><g transform="translate(8.0,-1.5500000000000016)"><g fill="none" stroke="#142c41" stroke-opacity="1" stroke-width="0.18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4">
+<path d=" M -7.9 -1.6 L 7.9 -1.6 " />
+<path d=" M 7.9 1.6 L 7.9 -1.6 " />
+<path d=" M -7.9 1.6 L 7.9 1.6 " />
+<path d=" M -7.9 1.6 L -7.9 -1.6 " />
+</g>
+</g></g></g><line x1="110" y1="475" x2="236.4" y2="475" stroke="#2952a6" stroke-width="1"/><line x1="110" y1="470" x2="110" y2="480" stroke="#2952a6" stroke-width="1"/><line x1="236.4" y1="470" x2="236.4" y2="480" stroke="#2952a6" stroke-width="1"/><text x="173.2" y="466" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#2952a6" font-weight="normal" text-anchor="middle">15.80</text><line x1="78" y1="414.4" x2="78" y2="440" stroke="#2952a6" stroke-width="1"/><line x1="73" y1="414.4" x2="83" y2="414.4" stroke="#2952a6" stroke-width="1"/><line x1="73" y1="440" x2="83" y2="440" stroke="#2952a6" stroke-width="1"/><text x="70" y="427.2" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#2952a6" font-weight="normal" text-anchor="end">3.20</text><text x="570" y="171" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#142c41" font-weight="bold" text-anchor="start">SIDE</text><g transform="translate(584.2,440) scale(8) "><g data-coordinate-system="screen" ><g transform="translate(8.0,-1.5500000000000016)"><g fill="none" stroke="#142c41" stroke-opacity="1" stroke-width="0.18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4">
+<path d=" M -7.9 1.6 L 7.9 1.6 " />
+<path d=" M -7.9 -1.6 L 7.9 -1.6 " />
+<path d=" M -7.9 1.6 L -7.9 -1.6 " />
+<path d=" M 7.9 1.6 L 7.9 -1.6 " />
+</g>
+</g></g></g><line x1="585" y1="475" x2="711.4" y2="475" stroke="#2952a6" stroke-width="1"/><line x1="585" y1="470" x2="585" y2="480" stroke="#2952a6" stroke-width="1"/><line x1="711.4" y1="470" x2="711.4" y2="480" stroke="#2952a6" stroke-width="1"/><text x="648.2" y="466" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#2952a6" font-weight="normal" text-anchor="middle">15.80</text><text x="95" y="525" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#142c41" font-weight="bold" text-anchor="start">TOP / PRINT ORIENTATION</text><g transform="translate(109.3,772) scale(7) "><g data-coordinate-system="screen" ><g transform="translate(8.0,-8.0)"><g fill="none" stroke="#142c41" stroke-opacity="1" stroke-width="0.18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4">
+<path d=" M 7.9 7.9 L 7.9 -7.9 " />
+<path d=" M -7.9 7.9 L 7.9 7.9 " />
+<path d=" M -7.9 7.9 L -7.9 -7.9 " />
+<path d=" M -7.9 -7.9 L 7.9 -7.9 " />
+</g>
+</g></g></g><text x="585" y="526" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#142c41" font-weight="bold" text-anchor="start">BOTTOM / REAL CAVITIES</text><g transform="translate(599.3,772) scale(7) "><g data-coordinate-system="screen" transform="scale(-1,1)"><g transform="translate(-8.0,-8.0)"><g fill="none" stroke="#142c41" stroke-opacity="1" stroke-width="0.18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4">
+<path d=" M -1.51705 -3.63646 L -1.56 -4 " />
+<path d=" M -1.39056 -3.29294 L -1.51705 -3.63646 " />
+<path d=" M -1.1875 -2.98835 L -1.39056 -3.29294 " />
+<path d=" M -0.919056 -2.73947 L -1.1875 -2.98835 " />
+<path d=" M -0.6 -2.56 L -0.919056 -2.73947 " />
+<path d=" M -0.919056 -5.26053 L -0.6 -5.44 " />
+<path d=" M -1.1875 -5.01165 L -0.919056 -5.26053 " />
+<path d=" M -1.39056 -4.70706 L -1.1875 -5.01165 " />
+<path d=" M -1.51705 -4.36354 L -1.39056 -4.70706 " />
+<path d=" M -1.56 -4 L -1.51705 -4.36354 " />
+<path d=" M 0.919056 -2.73947 L 0.6 -2.56 " />
+<path d=" M 1.1875 -2.98835 L 0.919056 -2.73947 " />
+<path d=" M 1.39056 -3.29294 L 1.1875 -2.98835 " />
+<path d=" M 1.51705 -3.63646 L 1.39056 -3.29294 " />
+<path d=" M 1.56 -4 L 1.51705 -3.63646 " />
+<path d=" M 1.51705 -4.36354 L 1.56 -4 " />
+<path d=" M 1.39056 -4.70706 L 1.51705 -4.36354 " />
+<path d=" M 1.1875 -5.01165 L 1.39056 -4.70706 " />
+<path d=" M 0.919056 -5.26053 L 1.1875 -5.01165 " />
+<path d=" M 0.6 -5.44 L 0.919056 -5.26053 " />
+<path d=" M -1.32639 -3.69952 L -1.36 -4 " />
+<path d=" M -1.22723 -3.4139 L -1.32639 -3.69952 " />
+<path d=" M -1.0674 -3.15724 L -1.22723 -3.4139 " />
+<path d=" M -0.854827 -2.94223 L -1.0674 -3.15724 " />
+<path d=" M -0.6 -2.77951 L -0.854827 -2.94223 " />
+<path d=" M -0.854827 -5.05777 L -0.6 -5.22049 " />
+<path d=" M -1.0674 -4.84276 L -0.854827 -5.05777 " />
+<path d=" M -1.22723 -4.5861 L -1.0674 -4.84276 " />
+<path d=" M -1.32639 -4.30048 L -1.22723 -4.5861 " />
+<path d=" M -1.36 -4 L -1.32639 -4.30048 " />
+<path d=" M -0.6 -5.22049 L -0.6 -6.44 " />
+<path d=" M 0.6 -5.22049 L 0.6 -6.44 " />
+<path d=" M 0.880745 -2.96371 L 0.6 -2.77951 " />
+<path d=" M 1.1078 -3.21109 L 0.880745 -2.96371 " />
+<path d=" M 1.26733 -3.50656 L 1.1078 -3.21109 " />
+<path d=" M 1.3496 -3.83211 L 1.26733 -3.50656 " />
+<path d=" M 1.3496 -4.16789 L 1.3496 -3.83211 " />
+<path d=" M 1.26733 -4.49344 L 1.3496 -4.16789 " />
+<path d=" M 1.1078 -4.78891 L 1.26733 -4.49344 " />
+<path d=" M 0.880745 -5.03629 L 1.1078 -4.78891 " />
+<path d=" M 0.6 -5.22049 L 0.880745 -5.03629 " />
+<path d=" M -0.6 -1.56 L -0.6 -2.77951 " />
+<path d=" M 0.6 -1.56 L 0.6 -2.77951 " />
+<path d=" M 0.6 -6.44 L -0.6 -6.44 " />
+<path d=" M 0.6 -1.56 L -0.6 -1.56 " />
+<path d=" M 0.6 -6.44 L 6.44 -6.44 " />
+<path d=" M -6.44 -6.44 L -0.6 -6.44 " />
+<path d=" M -6.44 -1.56 L -6.44 -6.44 " />
+<path d=" M -6.64 -6.64 L -6.44 -6.44 " />
+<path d=" M 6.64 -6.64 L 6.44 -6.44 " />
+<path d=" M 6.44 -6.44 L 6.44 -1.56 " />
+<path d=" M 6.64 -1.36 L 6.44 -1.56 " />
+<path d=" M -0.6 -1.56 L -6.44 -1.56 " />
+<path d=" M 6.44 -1.56 L 0.6 -1.56 " />
+<path d=" M -6.64 -1.36 L -6.44 -1.56 " />
+<path d=" M 6.64 -6.64 L 6.64 -1.36 " />
+<path d=" M -6.64 -6.64 L 6.64 -6.64 " />
+<path d=" M -6.64 -1.36 L -6.64 -6.64 " />
+<path d=" M 6.64 -1.36 L -6.64 -1.36 " />
+<path d=" M -7.9 7.9 L -7.9 -7.9 " />
+<path d=" M 7.9 7.9 L -7.9 7.9 " />
+<path d=" M 7.9 7.9 L 7.9 -7.9 " />
+<path d=" M 7.9 -7.9 L -7.9 -7.9 " />
+</g>
+</g></g></g><text x="908" y="196" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#587085" font-weight="normal" text-anchor="start">Kind: front_keeper</text><text x="908" y="219" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#587085" font-weight="normal" text-anchor="start">STL: NP3-KEEPER.stl</text><text x="908" y="242" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#587085" font-weight="normal" text-anchor="start">STL units: mm / scale 100%</text><text x="908" y="265" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#587085" font-weight="normal" text-anchor="start">Grid: 2 x 1 @ 8.00</text><text x="908" y="288" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#587085" font-weight="normal" text-anchor="start">Body height: 3.20</text><text x="908" y="311" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#587085" font-weight="normal" text-anchor="start">Female radial c: +0.04</text><text x="908" y="334" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#587085" font-weight="normal" text-anchor="start">Outer wall: 1.46</text><text x="908" y="357" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#587085" font-weight="normal" text-anchor="start">Tube bore: 3.20 (not accessory fit)</text><text x="908" y="380" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#587085" font-weight="normal" text-anchor="start">Roof ribs: 1.20; bridge gap &lt;=6.80</text><text x="908" y="403" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#587085" font-weight="normal" text-anchor="start">Socket row at local Y=12.00</text><text x="908" y="426" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#587085" font-weight="normal" text-anchor="start">Flat front stop covers module top</text><text x="908" y="449" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#587085" font-weight="normal" text-anchor="start">Lift 6mm, then forward &gt;=32mm and aside</text><line x1="42" y1="801" x2="1158" y2="801" stroke="#c5d3df" stroke-width="1"/><text x="42" y="824" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#587085" font-weight="normal" text-anchor="start">UNITS mm | Fixed 8 mm pitch | Physical fit / strength / stability NOT tested</text><text x="1158" y="824" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#587085" font-weight="normal" text-anchor="end">Do not scale STL. Calibrate male + female coupons first.</text></svg>

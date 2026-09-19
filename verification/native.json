@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "freecad_version": "1.1.3",
+  "native_files_sha256": {
+    "source/native/B.FCStd": "c76b0dbbc6b3280b2efd2d2d97ca5e63a89a50864e897650e4d4914b23982755",
+    "source/native/NP3-TEXT-B.FCStd": "72e2284f25cd3190ef9993cf12e5751e88d27718e8b0d2628bcbc547a1ab3b22"
+  },
+  "native_files_modified": false,
+  "model": "B",
+  "assembly_objects": 150,
+  "steps": 28,
+  "bounds_mm": [
+    [
+      0.1,
+      0.1,
+      -0.0
+    ],
+    [
+      191.9,
+      79.9,
+      238.6
+    ]
+  ],
+  "dimensions_mm": [
+    191.8,
+    79.8,
+    238.6
+  ],
+  "nameplate_lines": [
+    "Same icon, New adventures",
+    "github.com/tomokota"
+  ],
+  "nameplate_dimensions_mm": [
+    142,
+    40,
+    3.2
+  ],
+  "assembly_plate_symmetric_difference_mm3": 0.0,
+  "nameplate_native_volume_mm3": 13697.339570953634,
+  "minimum_measured_straight_stroke_mm": 1.4746666666666712,
+  "nameplate_interference_candidates": 9,
+  "maximum_nameplate_intersection_mm3": 0.0,
+  "physical_fit_strength_stability": "NOT_TESTED",
+  "sliced": false
+}

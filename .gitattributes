@@ -1,0 +1,12 @@
+# Preserve approved artifact bytes and checksums on every platform.
+* -text
+*.stl binary
+*.3mf binary
+*.FCStd binary
+*.step binary
+*.pdf binary
+*.png binary
+*.ttf binary
+*.zip binary
+*.csv whitespace=cr-at-eol
+source/resources/fonts/barlow-condensed/OFL.txt whitespace=-blank-at-eol

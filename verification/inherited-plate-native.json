@@ -1,0 +1,26 @@
+{
+  "status": "PASS_ACTUAL_B_REPLACEMENT_NATIVE",
+  "model": "B",
+  "part": "NP3-TEXT-B",
+  "quantity": 1,
+  "bounds_mm": [
+    [
+      -0.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      142.0,
+      40.0,
+      3.2
+    ]
+  ],
+  "minimum_measured_straight_stroke_mm": 1.4746666666666712,
+  "native_step_volume_difference_mm3": 1.5897967386990786e-09,
+  "carrier_symmetric_difference_from_current_B_mm3": 0.0,
+  "assembled_candidate_pairs": 9,
+  "maximum_assembled_intersection_mm3": 0,
+  "exact_approved_two_lines_checked_privately": true,
+  "public_native_sha256_before_and_after": "cf07d2d2ecfecafb3cbd2f8897a026c1c32d8fb2d7ae1b0ae14aa1fd789e1750",
+  "physical_fit_and_strength": "NOT_TESTED"
+}

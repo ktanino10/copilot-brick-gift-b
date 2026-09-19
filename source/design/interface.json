@@ -1,0 +1,72 @@
+{
+  "id": "BASE-FRONT-NP3",
+  "revision": "4.0-B-personal-kit.1",
+  "units": "mm",
+  "status": "digital_prototype_physical_fit_unverified",
+  "brick": {
+    "pitch": 8.0,
+    "brick_height": 9.6,
+    "plate_height": 3.2,
+    "body_gap": 0.2,
+    "reference_stud_diameter": 4.8,
+    "stud_diameter_correction": 0.0,
+    "stud_height": 1.8,
+    "stud_lead_in": 0.25,
+    "female_radial_clearance": 0.04,
+    "socket_lead_in": 0.2,
+    "socket_lead_in_height": 0.3,
+    "roof": 1.6,
+    "thin_plate_roof": 1.0,
+    "tube_inner_diameter": 3.2,
+    "roof_support_rib_width": 1.2
+  },
+  "message": {
+    "interface_id": "BASE-FRONT-NP3",
+    "lines": [
+      "Same icon, New adventures",
+      "github.com/tomokota"
+    ],
+    "height": 40.0,
+    "thickness": 2.4,
+    "relief": 0.8,
+    "minimum_straight_stroke": 0.84,
+    "font": "resources/fonts/barlow-condensed/BarlowCondensed-Black.ttf",
+    "line_bottoms": [
+      22.0,
+      8.0
+    ],
+    "side_taper": 2.0,
+    "rear_vertical_margin": 1.2,
+    "rear_flat_thickness": 0.8,
+    "clearance": 0.2,
+    "back_y": 3.3,
+    "bottom_z": 4.0,
+    "front_beam_depth": 5.6,
+    "base_color": "black",
+    "letter_color": "white",
+    "base_courses": 5,
+    "x": 4.0,
+    "retention": "Vertical dovetail slide; two removable stud-mounted top keepers."
+  },
+  "logo": {
+    "outline": "resources/github-mark-relief.json",
+    "disc_height": 0.4,
+    "relief": 0.8,
+    "back_y": 3.7,
+    "base_color": "black",
+    "relief_color": "white",
+    "finish_color_change_z": 2.8,
+    "provenance": "Printable relief derived from user-provided artwork; no original raster distributed."
+  },
+  "variants": [
+    {
+      "id": "B",
+      "message_width": 142.0,
+      "logo_x": 148.0,
+      "logo_module_width": 40.0,
+      "logo_diameter": 36.0
+    }
+  ],
+  "note": "Design candidates, not a LEGO specification or compatibility certification.",
+  "insertion": "Independent downward dovetail slides into the five-course base front; 2 text keepers and 1 logo keeper prevent upward escape."
+}

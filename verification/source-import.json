@@ -1,0 +1,784 @@
+{
+  "upstream_repository": "ktanino10/copilot-brick-display",
+  "upstream_commit": "1eaae1288816ec9575eeb6e2abbe74ed53289d74",
+  "approved_geometry_revision": "4.0-public-template",
+  "selected_personal_archive_sha256": "5bf47de71cf9adbb2702cb9420d675f4ff29df5bc5a388f12b7757427dbc5a23",
+  "selected_personal_archive_master_matches": 21,
+  "note": "Only explicitly selected B members were imported; no source history or archive was copied. Hashes record the initial import, before documented metadata adaptations.",
+  "files": [
+    {
+      "file": "kit/B/bom.csv",
+      "source": "site/downloads/B/bom.csv",
+      "sha256": "98f9988e8ea58ac1414b348cbfdba479d5ff811da91aac7922083c0ee43ba889",
+      "bytes": 1307
+    },
+    {
+      "file": "kit/B/assembly.json",
+      "source": "site/downloads/B/assembly.json",
+      "sha256": "17a0b15408e2bb97a4e303f5576c42d71ba7f37a5bff08f8537bb82bf36d8adb",
+      "bytes": 50337
+    },
+    {
+      "file": "kit/B/parts/BASE3-03x10-T-aa77a9.stl",
+      "source": "site/downloads/parts/BASE3-03x10-T-aa77a9.stl",
+      "sha256": "0eedec766e01cdbef5539540873c80f90309018d6958a6b77b19516be633f18e",
+      "bytes": 1034384
+    },
+    {
+      "file": "kit/B/drawings/parts/BASE3-03x10-T-aa77a9.svg",
+      "source": "site/drawings/parts/BASE3-03x10-T-aa77a9.svg",
+      "sha256": "74aa558cdd140fc075814a5e595aca3d3473655e1c481bf161a172b36cc1ccab",
+      "bytes": 171838
+    },
+    {
+      "file": "kit/B/parts/BASE3-03x10-T-d79875.stl",
+      "source": "site/downloads/parts/BASE3-03x10-T-d79875.stl",
+      "sha256": "a0fbfcb0972918c1e99392650ad64f4b674b7211fb0a1d1c94f74d892edc6415",
+      "bytes": 1042484
+    },
+    {
+      "file": "kit/B/drawings/parts/BASE3-03x10-T-d79875.svg",
+      "source": "site/drawings/parts/BASE3-03x10-T-d79875.svg",
+      "sha256": "705d603a77c88717eb43f2c200350bf76c11aaa4aff7d141fbb3368e171771c1",
+      "bytes": 171456
+    },
+    {
+      "file": "kit/B/parts/BASE3-06x10-T-3f87ac.stl",
+      "source": "site/downloads/parts/BASE3-06x10-T-3f87ac.stl",
+      "sha256": "a14b55f137996d1bf3fcaa7210e0c15a3dc034c6a28b2b3f1256a1439be2fc61",
+      "bytes": 2337884
+    },
+    {
+      "file": "kit/B/drawings/parts/BASE3-06x10-T-3f87ac.svg",
+      "source": "site/drawings/parts/BASE3-06x10-T-3f87ac.svg",
+      "sha256": "f6c53b00acad948e6e73402b79524ce2c2df312819432ae2fc572823e874306e",
+      "bytes": 354017
+    },
+    {
+      "file": "kit/B/parts/BASE3-06x10-T-6159e6.stl",
+      "source": "site/downloads/parts/BASE3-06x10-T-6159e6.stl",
+      "sha256": "ef3308e68f08ba88b8fa4fbeb067a16780fa958bf9b64b3922859d97e835d73f",
+      "bytes": 2339684
+    },
+    {
+      "file": "kit/B/drawings/parts/BASE3-06x10-T-6159e6.svg",
+      "source": "site/drawings/parts/BASE3-06x10-T-6159e6.svg",
+      "sha256": "90dcf64409d348b809f168337c386112a26ae72b216d05d9c0b2fdb4b390b417",
+      "bytes": 354287
+    },
+    {
+      "file": "kit/B/parts/BASE3-06x10-T-6e100f.stl",
+      "source": "site/downloads/parts/BASE3-06x10-T-6e100f.stl",
+      "sha256": "f782d20a7cef5f8ac290a0b8487a5334463b54b22aaa140fc82f895a17c0a5a3",
+      "bytes": 2340584
+    },
+    {
+      "file": "kit/B/drawings/parts/BASE3-06x10-T-6e100f.svg",
+      "source": "site/drawings/parts/BASE3-06x10-T-6e100f.svg",
+      "sha256": "8ccbf7c8798bdf482c0810a7075d27f69a7b2bdf53d4da6c2c0c1ff900da2882",
+      "bytes": 354428
+    },
+    {
+      "file": "kit/B/parts/BASE3-06x10-T-838259.stl",
+      "source": "site/downloads/parts/BASE3-06x10-T-838259.stl",
+      "sha256": "a14b55f137996d1bf3fcaa7210e0c15a3dc034c6a28b2b3f1256a1439be2fc61",
+      "bytes": 2337884
+    },
+    {
+      "file": "kit/B/drawings/parts/BASE3-06x10-T-838259.svg",
+      "source": "site/drawings/parts/BASE3-06x10-T-838259.svg",
+      "sha256": "cef0f0b3d94a704ff10c18169fbc0e19ca3da69879f5d6a022616f32c5bfb1d2",
+      "bytes": 354017
+    },
+    {
+      "file": "kit/B/parts/BASE3-06x10-T-e1945a.stl",
+      "source": "site/downloads/parts/BASE3-06x10-T-e1945a.stl",
+      "sha256": "adf23aa19fd6aa1485d943e4b28c904b8e58a903d4e8b66279c12461b6627be7",
+      "bytes": 2322584
+    },
+    {
+      "file": "kit/B/drawings/parts/BASE3-06x10-T-e1945a.svg",
+      "source": "site/drawings/parts/BASE3-06x10-T-e1945a.svg",
+      "sha256": "cb1ad10475089dd1c2852b4cffe227a86122030155b522185ff095b0a5726c95",
+      "bytes": 353767
+    },
+    {
+      "file": "kit/B/parts/BASE3-24x10-B-562406.stl",
+      "source": "site/downloads/parts/BASE3-24x10-B-562406.stl",
+      "sha256": "b5ba60b51926f20171f8238979d43b4331b451db7b3b87f6d51d56b5c75dba24",
+      "bytes": 10120384
+    },
+    {
+      "file": "kit/B/drawings/parts/BASE3-24x10-B-562406.svg",
+      "source": "site/drawings/parts/BASE3-24x10-B-562406.svg",
+      "sha256": "117a4c20a3ff093750fbb1ae946e7ef6c59bfdea965df9ea6a95a02168e04ce2",
+      "bytes": 1447346
+    },
+    {
+      "file": "kit/B/parts/BR-01x04-H096.stl",
+      "source": "site/downloads/parts/BR-01x04-H096.stl",
+      "sha256": "4eeb53d6220950e593a63baa8a388498f41bc509ad26df642cbaffbca772a8f8",
+      "bytes": 131484
+    },
+    {
+      "file": "kit/B/drawings/parts/BR-01x04-H096.svg",
+      "source": "site/drawings/parts/BR-01x04-H096.svg",
+      "sha256": "c220b0630880682f9ea309ee32ce36106e3eb73d850e50156ddb2e88312f3ea6",
+      "bytes": 17731
+    },
+    {
+      "file": "kit/B/parts/BR-02x04-H064.stl",
+      "source": "site/downloads/parts/BR-02x04-H064.stl",
+      "sha256": "743dcbaca56491a9be99b04f088ee6153fcbaf3234132d7e37f3b2c38a1c917f",
+      "bytes": 243084
+    },
+    {
+      "file": "kit/B/drawings/parts/BR-02x04-H064.svg",
+      "source": "site/drawings/parts/BR-02x04-H064.svg",
+      "sha256": "9396a096a147d4fabd135aae74d8d70b9d626233c8922a0e30923b5b83d60d5b",
+      "bytes": 21380
+    },
+    {
+      "file": "kit/B/parts/BR-02x04-H096.stl",
+      "source": "site/downloads/parts/BR-02x04-H096.stl",
+      "sha256": "31b61fbf103450546cda92dfe50bfc24393e776bbe62a45d24d6084cb0c7a269",
+      "bytes": 243084
+    },
+    {
+      "file": "kit/B/drawings/parts/BR-02x04-H096.svg",
+      "source": "site/drawings/parts/BR-02x04-H096.svg",
+      "sha256": "79cf81020b6ea29a5f8b628eacf556bcea4d47f7d8406d77ff5398de39b207a7",
+      "bytes": 21955
+    },
+    {
+      "file": "kit/B/parts/BR-02x05-H096.stl",
+      "source": "site/downloads/parts/BR-02x05-H096.stl",
+      "sha256": "121dd98b5c43f0e231eafa889dd696d3422f6d5b0b7fdeb27aec4cd0f2ad1014",
+      "bytes": 310884
+    },
+    {
+      "file": "kit/B/drawings/parts/BR-02x05-H096.svg",
+      "source": "site/drawings/parts/BR-02x05-H096.svg",
+      "sha256": "a3e84b2d4e48cbc94845efb94487d66edf20aa607da9cf21851dd2e22d5f1fec",
+      "bytes": 25600
+    },
+    {
+      "file": "kit/B/parts/BR-02x06-H096.stl",
+      "source": "site/downloads/parts/BR-02x06-H096.stl",
+      "sha256": "28bfad450343c1aa8cfce2091efedd9434d16262e32e4abe29df62330ea749d1",
+      "bytes": 378684
+    },
+    {
+      "file": "kit/B/drawings/parts/BR-02x06-H096.svg",
+      "source": "site/drawings/parts/BR-02x06-H096.svg",
+      "sha256": "d0bfccf11808919ef3ab46019e31b5b1dc6cca56d1e389a4977c806447f5df48",
+      "bytes": 29239
+    },
+    {
+      "file": "kit/B/parts/BR-03x04-H096.stl",
+      "source": "site/downloads/parts/BR-03x04-H096.stl",
+      "sha256": "8a1f560361a0e7792f9ddcb9315f45c521719eaa4dca9bd729e4a4c780079759",
+      "bytes": 407484
+    },
+    {
+      "file": "kit/B/drawings/parts/BR-03x04-H096.svg",
+      "source": "site/drawings/parts/BR-03x04-H096.svg",
+      "sha256": "efde09f5255b24821b0b299a176ce560604a03b38791d56a1a8d1b8947e9b283",
+      "bytes": 26855
+    },
+    {
+      "file": "kit/B/parts/BR-04x04-H064.stl",
+      "source": "site/downloads/parts/BR-04x04-H064.stl",
+      "sha256": "b2c741f948af015929774e3ef9d73fb06271d1229676f86ea60a09e972bbb614",
+      "bytes": 571884
+    },
+    {
+      "file": "kit/B/drawings/parts/BR-04x04-H064.svg",
+      "source": "site/drawings/parts/BR-04x04-H064.svg",
+      "sha256": "599488cef116da690ab6e32b11232bc198fa6923662e91d3a9648a36d3eadcb6",
+      "bytes": 31055
+    },
+    {
+      "file": "kit/B/parts/BR-04x04-H096.stl",
+      "source": "site/downloads/parts/BR-04x04-H096.stl",
+      "sha256": "20a7fe6e15bdfd5901d0776f55b5e5353feec8ca86817690276094c4564f74d7",
+      "bytes": 571884
+    },
+    {
+      "file": "kit/B/drawings/parts/BR-04x04-H096.svg",
+      "source": "site/drawings/parts/BR-04x04-H096.svg",
+      "sha256": "6563b79debd9ee8792e88b9e468cdf646985e8a4863f3220b1c736ec4bf423aa",
+      "bytes": 31662
+    },
+    {
+      "file": "kit/B/parts/BR-04x05-H096.stl",
+      "source": "site/downloads/parts/BR-04x05-H096.stl",
+      "sha256": "5f9273b6b55e39f4f019499b5914fbb40ab4aa78e7114454880b82526d570bf5",
+      "bytes": 736284
+    },
+    {
+      "file": "kit/B/drawings/parts/BR-04x05-H096.svg",
+      "source": "site/drawings/parts/BR-04x05-H096.svg",
+      "sha256": "57bf82464fc70d427c3ef55aad1c52e3d3f1ad72748067ee892b2a2f53f4e2d6",
+      "bytes": 37897
+    },
+    {
+      "file": "kit/B/parts/BR-05x04-H096.stl",
+      "source": "site/downloads/parts/BR-05x04-H096.stl",
+      "sha256": "db19a404e4b5dcbcdc0e80e13d3d775ba55c4667bb018b2a911f1e2c1d667b6a",
+      "bytes": 736284
+    },
+    {
+      "file": "kit/B/drawings/parts/BR-05x04-H096.svg",
+      "source": "site/drawings/parts/BR-05x04-H096.svg",
+      "sha256": "2184534592e46fc8df9d35311e2a3962f64f55ad2d97b696db1b33423eb8c12e",
+      "bytes": 36571
+    },
+    {
+      "file": "kit/B/parts/NP3-KEEPER.stl",
+      "source": "site/downloads/parts/NP3-KEEPER.stl",
+      "sha256": "b523f99637728aa9e51b4025ec778016f0c9d78f9959aa7823abb71ce691978f",
+      "bytes": 20784
+    },
+    {
+      "file": "kit/B/drawings/parts/NP3-KEEPER.svg",
+      "source": "site/drawings/parts/NP3-KEEPER.svg",
+      "sha256": "107481da4ad614b7128843001bd735ec757cef15cb4098c26fb2c85a8fc41599",
+      "bytes": 9640
+    },
+    {
+      "file": "kit/B/parts/NP3-LOGO-B.stl",
+      "source": "site/downloads/parts/NP3-LOGO-B.stl",
+      "sha256": "96135856f694c111da16975ad7d7948f20c9fa1c5c3ca11b102477df0a77a7e6",
+      "bytes": 84784
+    },
+    {
+      "file": "kit/B/drawings/parts/NP3-LOGO-B.svg",
+      "source": "site/drawings/parts/NP3-LOGO-B.svg",
+      "sha256": "a0d7df6c7ca700ef9f475f644e4d04df49002b33da14fac9a2da4b3c2ccbf344",
+      "bytes": 49324
+    },
+    {
+      "file": "kit/B/parts/NP3-TEXT-B.stl",
+      "source": ".private/temporary-b-transfer/generated/B/plate.stl",
+      "sha256": "83ff7a42af4062b0e4a405edd64a8828ab218843d111d13961843fc0fe7044af",
+      "bytes": 2714084
+    },
+    {
+      "file": "kit/B/plates/B-black-01.3mf",
+      "source": "site/downloads/B/plates/B-black-01.3mf",
+      "sha256": "957b19685a7e5c7973e2b8ac62952a976cadefdf23e18d56fe0a075ebe1de101",
+      "bytes": 1201323
+    },
+    {
+      "file": "kit/B/plates/B-black-02.3mf",
+      "source": "site/downloads/B/plates/B-black-02.3mf",
+      "sha256": "865ca3cfeb098702b4992561c017ff5b91aaccbf2b403a32aa6f99cdab2548ce",
+      "bytes": 2179857
+    },
+    {
+      "file": "kit/B/plates/B-black-03.3mf",
+      "source": "site/downloads/B/plates/B-black-03.3mf",
+      "sha256": "57cbdbf4347abf6312957f078e18ed74470fd8c283e5eaff4500ef68227cdae2",
+      "bytes": 835618
+    },
+    {
+      "file": "kit/B/plates/B-black-04.3mf",
+      "source": "site/downloads/B/plates/B-black-04.3mf",
+      "sha256": "c7a46d0cb2c6474639e227b14a64c6365d930e36a49650f6964f386d33a0cedc",
+      "bytes": 461237
+    },
+    {
+      "file": "kit/B/plates/B-black-05.3mf",
+      "source": "site/downloads/B/plates/B-black-05.3mf",
+      "sha256": "2fe039f0aaa4cc5c84397fb2ad6a372c6af60531b06277e09ad24b1c7c2a67f5",
+      "bytes": 217922
+    },
+    {
+      "file": "kit/B/plates/B-black-06.3mf",
+      "source": "site/downloads/B/plates/B-black-06.3mf",
+      "sha256": "9d070e009fd94904c4d560167fe21c63df5a2f3ccfb19c7152294154c3ccc2ab",
+      "bytes": 231663
+    },
+    {
+      "file": "kit/B/plates/B-black-07.3mf",
+      "source": "site/downloads/B/plates/B-black-07.3mf",
+      "sha256": "182a2966bad178edf77f265a104817a22b599075df32cb15d8cd6f1de8ef4369",
+      "bytes": 134119
+    },
+    {
+      "file": "kit/B/plates/B-green-01.3mf",
+      "source": "site/downloads/B/plates/B-green-01.3mf",
+      "sha256": "b3f3cc461a57327878a7951a21fe35a7791ad342bc6b3536080c21eef5753c78",
+      "bytes": 25570
+    },
+    {
+      "file": "kit/B/plates/B-magenta-01.3mf",
+      "source": "site/downloads/B/plates/B-magenta-01.3mf",
+      "sha256": "fdc528860447cce5a2623649da3469c971967f6b4962e4bc61c5599fbedb4e37",
+      "bytes": 255417
+    },
+    {
+      "file": "kit/B/plates/B-magenta-02.3mf",
+      "source": "site/downloads/B/plates/B-magenta-02.3mf",
+      "sha256": "62e828fc57ce0698ef68e9e82324782f453c10b9cd4ed3eaf25d6b7ba7156418",
+      "bytes": 100837
+    },
+    {
+      "file": "kit/B/plates/B-cyan-01.3mf",
+      "source": "site/downloads/B/plates/B-cyan-01.3mf",
+      "sha256": "a4e4f92fbc6b103d98db0fe4de40368fcc496239af946ed6cad22a8f314b867f",
+      "bytes": 186758
+    },
+    {
+      "file": "kit/B/plates/B-cyan-02.3mf",
+      "source": "site/downloads/B/plates/B-cyan-02.3mf",
+      "sha256": "0c55ba28ce790e5404afff3723c3b96e4160104dde8577dcb4d9c08efc61d898",
+      "bytes": 129902
+    },
+    {
+      "file": "kit/B/plates/B-black-to-white-z2p8-01.3mf",
+      "source": "site/downloads/B/plates/B-black-to-white-z2p8-01.3mf",
+      "sha256": "36b88a7b0b499d4346974e79307cdeea02d72963be3f0c727c792be7eb0e62ff",
+      "bytes": 18396
+    },
+    {
+      "file": "kit/B/plates/B-black-to-white-z2p4-01.3mf",
+      "source": ".private/temporary-b-transfer/bundle/plate.3mf",
+      "sha256": "45d3d3a47243b9d994aeab5b6c3744cbf7e6805912e0441db23acbb38fa2629c",
+      "bytes": 584185
+    },
+    {
+      "file": "kit/B/plates/manifest.json",
+      "source": "adapted:site/downloads/B/plates/manifest.json",
+      "sha256": "f556c56ba662472218f8e0079e203d128448e1bce0adf2ed14bccaf4ded96239",
+      "bytes": 46397
+    },
+    {
+      "file": "source/personalization.json",
+      "source": ".private/temporary-b-transfer/personalization.json",
+      "sha256": "9a06cecab51fa07b1f99a516b0a694fffb7460bf879be431edae44df455d39fe",
+      "bytes": 134
+    },
+    {
+      "file": "source/native/NP3-TEXT-B.FCStd",
+      "source": ".private/temporary-b-transfer/generated/B/plate.FCStd",
+      "sha256": "72e2284f25cd3190ef9993cf12e5751e88d27718e8b0d2628bcbc547a1ab3b22",
+      "bytes": 288812
+    },
+    {
+      "file": "source/native/NP3-TEXT-B.step",
+      "source": ".private/temporary-b-transfer/generated/B/plate.step",
+      "sha256": "e757b88bcb91c33c3f396d80449e5a3cfa5391829696a85021153cc750977be6",
+      "bytes": 2361423
+    },
+    {
+      "file": "docs/images/nameplate-front.png",
+      "source": ".private/temporary-b-transfer/plate-preview.png",
+      "sha256": "d45faf86d9ca01287bbfa1705e83e7d4e298549aef4b3a95962b49b4e88d4acf",
+      "bytes": 77266
+    },
+    {
+      "file": "verification/inherited-plate-native.json",
+      "source": ".private/temporary-b-transfer/native-verification.json",
+      "sha256": "6f310459f7a44e3b64d56c87708e552916b242f164bdb517876b1c27ebda83fb",
+      "bytes": 694
+    },
+    {
+      "file": "verification/inherited-plate-package.json",
+      "source": ".private/temporary-b-transfer/package-verification.json",
+      "sha256": "5271fb9833f68739d1d84e5214c0e1a52b5a6a9e97cc0ab768e1c06a99d2cdac",
+      "bytes": 1383
+    },
+    {
+      "file": "docs/images/B-base-front.png",
+      "source": "owner-selected-personal-B:site/media/B-base-front.png",
+      "sha256": "b5e75881558c0a4b41bee9d8a96beccd4d52ba865fa99b53bcc6e4bf2559cda2",
+      "bytes": 621713
+    },
+    {
+      "file": "docs/images/B-hero.png",
+      "source": "owner-selected-personal-B:site/media/B-hero.png",
+      "sha256": "f56b0706aee55d9f46430e8227dcc5a6b65ebc21fa399c8e5c9ae30ecf0e8fe5",
+      "bytes": 973006
+    },
+    {
+      "file": "source/native/B.FCStd",
+      "source": "owner-selected-personal-B:site/downloads/B/B.FCStd",
+      "sha256": "c76b0dbbc6b3280b2efd2d2d97ca5e63a89a50864e897650e4d4914b23982755",
+      "bytes": 6527778
+    },
+    {
+      "file": "kit/B/drawings.pdf",
+      "source": "owner-selected-personal-B:site/downloads/B/drawings.pdf",
+      "sha256": "ddb35332e23b5f6bee755392aa8aff4acaa18381cbdb8e7c44df74c63ce5c78c",
+      "bytes": 1338677
+    },
+    {
+      "file": "kit/B/drawings/overview.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/overview.svg",
+      "sha256": "9411a527e9fdc03d9a3c4e20818121b6f3ea138e25f79a8b0a459a5de5c79d41",
+      "bytes": 1038081
+    },
+    {
+      "file": "kit/B/drawings/step-06.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-06.svg",
+      "sha256": "df96ee916d9c2ea248f71a15e1c992e4513dcb72a2bdbcf148adcefd2c434c6a",
+      "bytes": 10377
+    },
+    {
+      "file": "kit/B/drawings/step-12.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-12.svg",
+      "sha256": "5f14eb5c8aee40c601d3d481b0cfe61bd3b86d248a6eb6349712103b270f747d",
+      "bytes": 17324
+    },
+    {
+      "file": "kit/B/drawings/step-13.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-13.svg",
+      "sha256": "e6b01f25edd6cbe0d38b4ffd407879b434ddc82110214516983264e05a1dc0ad",
+      "bytes": 20286
+    },
+    {
+      "file": "kit/B/drawings/step-07.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-07.svg",
+      "sha256": "f907d9fb2fe08c4ccf2602752d69fdf8cd2bafd171fa9649236c59dda6272224",
+      "bytes": 11316
+    },
+    {
+      "file": "kit/B/drawings/step-11.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-11.svg",
+      "sha256": "c583ac5ee11fb443dc568830200c8d88ff01f9cabf4b38bb4b54eda54b167769",
+      "bytes": 15751
+    },
+    {
+      "file": "kit/B/drawings/step-05.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-05.svg",
+      "sha256": "7437e49e6683102f4820794d57b7749f1ddd30c76b46ed4181cd43bf1d8bad43",
+      "bytes": 11529
+    },
+    {
+      "file": "kit/B/drawings/step-04.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-04.svg",
+      "sha256": "4f9c14eb3234c33df3369e56e30db09fe0a478ec4d71dc36c5abd71b73f73730",
+      "bytes": 10291
+    },
+    {
+      "file": "kit/B/drawings/step-10.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-10.svg",
+      "sha256": "6866f5475e06ebe59c605ba945b3647a93ff77479572e64b7b6cccf0694f15aa",
+      "bytes": 14300
+    },
+    {
+      "file": "kit/B/drawings/step-28.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-28.svg",
+      "sha256": "19b0133f6ea96687350afe7b77d67a04ef88926d0a07be3fd151fef75d690bd6",
+      "bytes": 29517
+    },
+    {
+      "file": "kit/B/drawings/step-14.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-14.svg",
+      "sha256": "90accdda0094ef0b23a1feea525507fa5ee4df376150b1340c3e6ceba40dcd69",
+      "bytes": 19917
+    },
+    {
+      "file": "kit/B/drawings/step-01.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-01.svg",
+      "sha256": "439d521fe1842ee0c30c6a1e5b6c44f2d6e7e42f5b24c0dcf8d9184ae1cd5be0",
+      "bytes": 6880
+    },
+    {
+      "file": "kit/B/drawings/step-15.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-15.svg",
+      "sha256": "e3e15370b8d907e90edf7891832f862bf2ae04d5be33b916db0f1c67c031fb02",
+      "bytes": 22924
+    },
+    {
+      "file": "kit/B/drawings/step-03.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-03.svg",
+      "sha256": "48f38b9681b51a93786f4688aaae6c171d4a4e3e4ca97d60781e2be993bf3b71",
+      "bytes": 10162
+    },
+    {
+      "file": "kit/B/drawings/step-17.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-17.svg",
+      "sha256": "a2e59c5931b5f45f448c013eefa70bcd6c5274595cc2ffa77a33cb65191c15b7",
+      "bytes": 22729
+    },
+    {
+      "file": "kit/B/drawings/step-16.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-16.svg",
+      "sha256": "9b412a89b470030652912d4bb67bb54e357a84eaa802d634703b904a9796ac51",
+      "bytes": 21855
+    },
+    {
+      "file": "kit/B/drawings/step-02.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-02.svg",
+      "sha256": "f2740a2404caf3c06e60ce5a5cfc324f458db59596a1a1664b7366f044c0cafb",
+      "bytes": 8920
+    },
+    {
+      "file": "kit/B/drawings/step-27.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-27.svg",
+      "sha256": "057258208e92621d59888cf0c5c84bdb71056598418e7bc176a1b28cea593b1d",
+      "bytes": 30951
+    },
+    {
+      "file": "kit/B/drawings/step-26.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-26.svg",
+      "sha256": "5efb7144413f89adcf16eefb0f60b21018b879cd6321378372e2d58762b94482",
+      "bytes": 30924
+    },
+    {
+      "file": "kit/B/drawings/step-24.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-24.svg",
+      "sha256": "d4a6358cf06983696e465661e61008fbf363ebe7733113c020deb15ddbdce1f2",
+      "bytes": 30944
+    },
+    {
+      "file": "kit/B/drawings/step-18.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-18.svg",
+      "sha256": "20f89e986cea52c7ddf7e04b58efa62ff8ff31a8f9a7a9858bc7718e950d8a5d",
+      "bytes": 24324
+    },
+    {
+      "file": "kit/B/drawings/step-19.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-19.svg",
+      "sha256": "eed8554ed45810aaf0b70179fd31addc0e1ab459850b8dbff069fd32030ff459",
+      "bytes": 25465
+    },
+    {
+      "file": "kit/B/drawings/step-25.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-25.svg",
+      "sha256": "ed11579f25be950844ac2be234efa683f1bfde74c0815e95a51f48c7bc3cee2f",
+      "bytes": 30788
+    },
+    {
+      "file": "kit/B/drawings/step-09.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-09.svg",
+      "sha256": "40fb35bbb60ec7ff0031725e12b32dc4368467098ac6514c7c5d3643efebb6f2",
+      "bytes": 13532
+    },
+    {
+      "file": "kit/B/drawings/step-21.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-21.svg",
+      "sha256": "46391cec75f193557ef2653e765fc96c29db53f2d3e6c3ee369bcfcf191666d1",
+      "bytes": 27667
+    },
+    {
+      "file": "kit/B/drawings/step-20.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-20.svg",
+      "sha256": "952eb233a76ae30fc80e35ae8cc6f736f213d5610b77ac97c6126a873862c533",
+      "bytes": 26540
+    },
+    {
+      "file": "kit/B/drawings/step-08.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-08.svg",
+      "sha256": "9df163431ad35bc6479781a82da13130abcce168b7c556f65250a201a7580742",
+      "bytes": 11801
+    },
+    {
+      "file": "kit/B/drawings/step-22.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-22.svg",
+      "sha256": "bb31303b3acd47cbfbe18228ed07e2de4232b48287a9e94f399711582e1db98e",
+      "bytes": 28742
+    },
+    {
+      "file": "kit/B/drawings/step-23.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/step-23.svg",
+      "sha256": "849ccb4a0966b2dcdc267a3e7d0d22e22f254ca437a15076cbe6faef47264ddd",
+      "bytes": 29855
+    },
+    {
+      "file": "kit/B/drawings/bom-1.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/bom-1.svg",
+      "sha256": "8ee4a5b4532ff675a2915a9e5f61e5936cd953d2897bf07d8adb90ea6a1a964d",
+      "bytes": 16337
+    },
+    {
+      "file": "kit/B/drawings/exploded.svg",
+      "source": "owner-selected-personal-B:site/drawings/B/exploded.svg",
+      "sha256": "a59d575ce7ee46886c9691a1ee6a54f2c518b6a65d873b0ff5aaf661e734a97f",
+      "bytes": 1193028
+    },
+    {
+      "file": "kit/B/drawings/parts/NP3-TEXT-B.svg",
+      "source": "owner-selected-personal-B:site/drawings/parts/NP3-TEXT-B.svg",
+      "sha256": "563b2431a6b5ccdb3ade632507047dbe64a6753fdf31c624a6fe8cd9da71e6f6",
+      "bytes": 300202
+    },
+    {
+      "file": "kit/fit/FIT-F-CM04.stl",
+      "source": "site/downloads/fit-coupons.zip:FIT-F-CM04.stl",
+      "sha256": "a54ef4da9adc8dc2cd87398f9a86c5c7cecbabfe5ebdf3fde65a22a78c4329be",
+      "bytes": 96684
+    },
+    {
+      "file": "kit/fit/FIT-F-CP00.stl",
+      "source": "site/downloads/fit-coupons.zip:FIT-F-CP00.stl",
+      "sha256": "ae6b907514e7333a4f41920e0d8489fe90b91e379303297925186eabc5089259",
+      "bytes": 96684
+    },
+    {
+      "file": "kit/fit/FIT-F-CP04.stl",
+      "source": "site/downloads/fit-coupons.zip:FIT-F-CP04.stl",
+      "sha256": "93bcc5532cf11053585d6a53263bc1e12100b5b26fe5a3acee4220c02bce86c6",
+      "bytes": 96684
+    },
+    {
+      "file": "kit/fit/FIT-F-CP08.stl",
+      "source": "site/downloads/fit-coupons.zip:FIT-F-CP08.stl",
+      "sha256": "68ad192ad5f93415c1a0f137f46f8b57e2cbfb1792fd980fd0d0f3b32311c5d8",
+      "bytes": 96684
+    },
+    {
+      "file": "kit/fit/FIT-F-CP12.stl",
+      "source": "site/downloads/fit-coupons.zip:FIT-F-CP12.stl",
+      "sha256": "9a910e4701d6848fbd126e07902b492911fa75fcde4b0ac68d81181248f25675",
+      "bytes": 96684
+    },
+    {
+      "file": "kit/fit/FIT-M-D470.stl",
+      "source": "site/downloads/fit-coupons.zip:FIT-M-D470.stl",
+      "sha256": "d076c2c611b0de94733469eab2253097717dc4ced997805fd0731258d497df12",
+      "bytes": 147084
+    },
+    {
+      "file": "kit/fit/FIT-M-D480.stl",
+      "source": "site/downloads/fit-coupons.zip:FIT-M-D480.stl",
+      "sha256": "43d9be1906e0e3a11b47ade2cccf4eacc59d3080e202da860488dd931605f252",
+      "bytes": 147084
+    },
+    {
+      "file": "kit/fit/FIT-M-D490.stl",
+      "source": "site/downloads/fit-coupons.zip:FIT-M-D490.stl",
+      "sha256": "08d71c6e146a148805cc6ea7d7605807eae0a75182aab000d9812e1542dc0d00",
+      "bytes": 147084
+    },
+    {
+      "file": "kit/fit/NP3-FIT-PLAQUE.stl",
+      "source": "site/downloads/fit-coupons.zip:NP3-FIT-PLAQUE.stl",
+      "sha256": "c85e9d8f787a4c28ab542d12ee7d8d144ded0892d237edf3d8043fce9b5cc6e0",
+      "bytes": 3084
+    },
+    {
+      "file": "kit/fit/NP3-FIT-SOCKET-C15.stl",
+      "source": "site/downloads/fit-coupons.zip:NP3-FIT-SOCKET-C15.stl",
+      "sha256": "c182ebdf9883f2707ef2817cbd3ba9febfb38f4da193d4f9d10fe52c85bebba7",
+      "bytes": 160584
+    },
+    {
+      "file": "kit/fit/NP3-FIT-SOCKET-C20.stl",
+      "source": "site/downloads/fit-coupons.zip:NP3-FIT-SOCKET-C20.stl",
+      "sha256": "0627313687b8f259bb19725a87bde7c4a561a79d63f94683c9cdb303861c2eb8",
+      "bytes": 160684
+    },
+    {
+      "file": "kit/fit/NP3-FIT-SOCKET-C25.stl",
+      "source": "site/downloads/fit-coupons.zip:NP3-FIT-SOCKET-C25.stl",
+      "sha256": "cab6b4c43978d9340f2a871492cf9ce3526ebbe1a64b46d20333ac78d37ce771",
+      "bytes": 160784
+    },
+    {
+      "file": "kit/fit/interface.pdf",
+      "source": "site/downloads/interface.pdf",
+      "sha256": "eeffe40792867c76d5ea53f2added169587cc8e7823fcf5cabd3936b2ee20241",
+      "bytes": 9174
+    },
+    {
+      "file": "kit/fit/interface.svg",
+      "source": "site/drawings/interface.svg",
+      "sha256": "1602d18600216f0d0b93b5f0756337ffcb119cc82fec57fa07b29171927d187a",
+      "bytes": 8898
+    },
+    {
+      "file": "kit/fit/front-interface.svg",
+      "source": "site/drawings/front-interface.svg",
+      "sha256": "6adac14eb27138e46a0bc073e7fe48dddb1b47c776a06e717daafb28c8b16c73",
+      "bytes": 13797
+    },
+    {
+      "file": "kit/fit-log.csv",
+      "source": "site/downloads/fit-log.csv",
+      "sha256": "13bc3ca1c0da0a43dbc74fd70ff22a2f534834a6a79c1641c4146324e6c37f5b",
+      "bytes": 869
+    },
+    {
+      "file": "kit/trial/parts/BR-02x02-H096.stl",
+      "source": "site/downloads/parts/BR-02x02-H096.stl",
+      "sha256": "16726dd1b4b1e1a44bc8c0871ab681cf12c200643be356c5f1903c0017395d30",
+      "bytes": 107484
+    },
+    {
+      "file": "kit/trial/bom.csv",
+      "source": "adapted:site/downloads/trial-subset/bom-B.csv",
+      "sha256": "6bc29e036108b90cd52d39e654bb1d24e678d345bbb7f1a2c03517cdfa46d44a",
+      "bytes": 765
+    },
+    {
+      "file": "source/scripts/design.py",
+      "source": "scripts/design.py",
+      "sha256": "6fcb098025df1e046718190e010b2533bf93f12f263a061b511deb737435cacc",
+      "bytes": 13456
+    },
+    {
+      "file": "source/scripts/freecad_geometry.py",
+      "source": "scripts/freecad_geometry.py",
+      "sha256": "2a97d70c72fea83d387fb1eb2fc9bcb99a05c672b185ab7b60c69e8ae0beb0b3",
+      "bytes": 6993
+    },
+    {
+      "file": "source/scripts/front_nameplate.py",
+      "source": "scripts/front_nameplate.py",
+      "sha256": "292cac48832277834cf43d2a2611c518fbc7f82fd2b94b3abff1996108b10326",
+      "bytes": 6565
+    },
+    {
+      "file": "source/scripts/letter_metrics.py",
+      "source": "scripts/letter_metrics.py",
+      "sha256": "5f44bfc8e71635107acd884738416db0991160c8f48af38495e286e579a49430",
+      "bytes": 2227
+    },
+    {
+      "file": "source/resources/fonts/barlow-condensed/BarlowCondensed-Black.ttf",
+      "source": "resources/fonts/barlow-condensed/BarlowCondensed-Black.ttf",
+      "sha256": "e74b750df582c608f35db467b711b2b60d2217618e85e60b72b42dfd00446cab",
+      "bytes": 110828
+    },
+    {
+      "file": "source/resources/fonts/barlow-condensed/OFL.txt",
+      "source": "resources/fonts/barlow-condensed/OFL.txt",
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+      "bytes": 4377
+    },
+    {
+      "file": "source/resources/github-mark-relief.json",
+      "source": "resources/github-mark-relief.json",
+      "sha256": "d5935b88cbeb7266fad7a1ea216ef388520f3f8b670d5da3772cb044cd2c473c",
+      "bytes": 21869
+    },
+    {
+      "file": "notices/upstream-rights.md",
+      "source": "docs/licensing.md",
+      "sha256": "b55bcc25347a14ed06143b6d1262bd7059eb7aaf3095fe78dffd87cac9f491dd",
+      "bytes": 1612
+    },
+    {
+      "file": "source/design/parameters.json",
+      "source": "adapted:design/parameters.json",
+      "sha256": "6d994ff9f400b3732fcd01e8bf98ddd6a993ce45e924369b21b20c47ae13931e",
+      "bytes": 3846
+    },
+    {
+      "file": "source/design/catalog.json",
+      "source": "adapted:design/catalog.json",
+      "sha256": "4863c9ebbe4a3953a152140995f979c945029f06f12fda8c1b541f95e81f5d2d",
+      "bytes": 95814
+    },
+    {
+      "file": "source/design/interface.json",
+      "source": "adapted:design/interface.json",
+      "sha256": "f805dc9cd2b0f2754a6240928bbbd12a8885a61e778b1c8b511083cab1b725ef",
+      "bytes": 2025
+    }
+  ]
+}

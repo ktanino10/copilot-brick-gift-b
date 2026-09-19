@@ -1,0 +1,52 @@
+{
+  "status": "PASS_B_ONLY_MINIMAL_TRANSFER_PACKAGE",
+  "model": "B",
+  "quantity": 1,
+  "bounds_mm": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      142.0,
+      40.0,
+      3.200000047683716
+    ]
+  ],
+  "single_closed_vertex_manifold_body": true,
+  "mesh_positive_volume_mm3": 13696.409988093692,
+  "generic_3mf_reopened_instances": 1,
+  "nominal_single_part_footprint_with_6mm_brim_mm": [
+    154.0,
+    52.0
+  ],
+  "file_hashes": {
+    "plate.stl": "83ff7a42af4062b0e4a405edd64a8828ab218843d111d13961843fc0fe7044af",
+    "plate.3mf": "45d3d3a47243b9d994aeab5b6c3744cbf7e6805912e0441db23acbb38fa2629c",
+    "PRINT-README.txt": "d3dc1f543ab83e89acbad7eb279b1a1b7814d7992f2ecf3ecc81427c0c518196"
+  },
+  "archive_filename": "temporary-b-nameplate.zip",
+  "archive_bytes": 1413149,
+  "archive_sha256": "db4033daf4128d720a5fc96c053c8c4fdf61393821a71b396fe71bf1ac74bf88",
+  "included_members": [
+    "PRINT-README.txt",
+    "SHA256SUMS.txt",
+    "plate.3mf",
+    "plate.stl"
+  ],
+  "excluded": [
+    "personalization source/config",
+    "private paths",
+    "native files",
+    "assembly files",
+    "images or videos",
+    "G-code",
+    "slicer configuration",
+    "printer connection details"
+  ],
+  "personalization": "Encoded as authorized geometry in this single plate, not text metadata.",
+  "sliced": false,
+  "pause_encoded": false,
+  "physical_fit_tested": false
+}

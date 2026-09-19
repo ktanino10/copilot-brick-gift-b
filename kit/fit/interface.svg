@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297.5mm" viewBox="0 0 1200 850"><rect width="1200" height="850" fill="white"/><text x="42" y="42" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#587085" font-weight="normal" text-anchor="start">BRICK PORTRAIT / PUBLIC TEMPLATE / 5-COURSE BASE / DIGITAL PROTOTYPE</text><text x="42" y="79" font-family="Helvetica,Arial,sans-serif" font-size="27" fill="#142c41" font-weight="bold" text-anchor="start">INTERFACE / SECTION &amp; CLEARANCE</text><text x="42" y="107" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#587085" font-weight="normal" text-anchor="start">Project design candidates, NOT a proprietary tolerance standard. Geometry from FreeCAD planar sections.</text><line x1="42" y1="127" x2="1158" y2="127" stroke="#c5d3df" stroke-width="1"/><text x="90" y="169" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#142c41" font-weight="bold" text-anchor="start">SECTION: Y = 4.00 / TWO 2x2 BRICKS</text><g transform="translate(155,645) scale(18) rotate(90)"><g   fill="none"
+   stroke="#2952a6"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.07"
+   transform="scale(1, -1)"
+  >
+<path d=" M -9.6 0.1 L 0 0.1 " />
+<path d=" M -9.6 0.1 L -9.6 1.6 " />
+<path d=" M 0 0.1 L 0 1.36 " />
+<path d=" M -9.6 1.6 L -11.15 1.6 " />
+<path d=" M -9.6 6.4 L -9.6 9.6 " />
+<path d=" M -9.6 6.4 L -11.15 6.4 " />
+<path d=" M -9.6 9.6 L -11.15 9.6 " />
+<path d=" M -9.6 14.4 L -9.6 15.9 " />
+<path d=" M -9.6 14.4 L -11.15 14.4 " />
+<path d=" M -9.6 15.9 L 0 15.9 " />
+<path d="M0, 1.36 C-0.0504, 1.3936 -0.1008, 1.4272 -0.1512, 1.4608  C-0.1764, 1.4776 -0.2016, 1.4944 -0.2268, 1.5112  C-0.2391, 1.5194 -0.2514, 1.5276 -0.2637, 1.5358  C-0.2702, 1.54013 -0.2767, 1.54447 -0.2832, 1.5488  C-0.288652, 1.55243 -0.298723, 1.55915 -0.3, 1.56 " /><path d=" M 0 14.64 L 0 15.9 " />
+<path d="M0, 14.64 C-0.0504, 14.6064 -0.1008, 14.5728 -0.1512, 14.5392  C-0.1764, 14.5224 -0.2016, 14.5056 -0.2268, 14.4888  C-0.2391, 14.4806 -0.2514, 14.4724 -0.2637, 14.4642  C-0.2702, 14.4599 -0.2767, 14.4555 -0.2832, 14.4512  C-0.288652, 14.4476 -0.298723, 14.4409 -0.3, 14.44 " /><path d=" M -11.4 1.85 L -11.15 1.6 " />
+<path d=" M -11.4 9.85 L -11.15 9.6 " />
+<path d=" M -8 14.44 L -0.3 14.44 " />
+<path d=" M -8 1.56 L -0.3 1.56 " />
+<path d=" M -11.4 1.85 L -11.4 6.15 " />
+<path d=" M -11.4 9.85 L -11.4 14.15 " />
+<path d=" M -8 8.6 L -8 14.44 " />
+<path d=" M -8 1.56 L -8 7.4 " />
+<path d=" M -11.15 6.4 L -11.4 6.15 " />
+<path d=" M -11.15 14.4 L -11.4 14.15 " />
+<path d=" M -8 7.4 L 8.88178e-16 7.4 " />
+<path d=" M 0 8.6 L 0 7.4 " />
+<path d=" M -8 8.6 L 8.88178e-16 8.6 " />
+</g>
+</g><g transform="translate(765,505) scale(17) "><g   fill="none"
+   stroke="#2952a6"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.035"
+   transform="scale(1, -1)"
+  >
+<circle cx ="4" cy ="4" r ="2.4" /><circle cx ="12" cy ="4" r ="2.4" /><circle cx ="4" cy ="12" r ="2.4" /><circle cx ="12" cy ="12" r ="2.4" /></g>
+</g><g transform="translate(155,645) scale(18) rotate(90)"><g   fill="none"
+   stroke="#142c41"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.07"
+   transform="scale(1, -1)"
+  >
+<path d=" M -19.2 0.1 L -9.6 0.1 " />
+<path d=" M -19.2 0.1 L -19.2 1.6 " />
+<path d=" M -9.6 0.1 L -9.6 1.36 " />
+<path d=" M -19.2 1.6 L -20.75 1.6 " />
+<path d=" M -19.2 6.4 L -19.2 9.6 " />
+<path d=" M -19.2 6.4 L -20.75 6.4 " />
+<path d=" M -19.2 9.6 L -20.75 9.6 " />
+<path d=" M -19.2 14.4 L -19.2 15.9 " />
+<path d=" M -19.2 14.4 L -20.75 14.4 " />
+<path d=" M -19.2 15.9 L -9.6 15.9 " />
+<path d="M-9.6, 1.36 C-9.6504, 1.3936 -9.7008, 1.4272 -9.7512, 1.4608  C-9.7764, 1.4776 -9.8016, 1.4944 -9.8268, 1.5112  C-9.8391, 1.5194 -9.8514, 1.5276 -9.8637, 1.5358  C-9.8702, 1.54013 -9.8767, 1.54447 -9.8832, 1.5488  C-9.88865, 1.55243 -9.89872, 1.55915 -9.9, 1.56 " /><path d=" M -9.6 14.64 L -9.6 15.9 " />
+<path d="M-9.6, 14.64 C-9.6504, 14.6064 -9.7008, 14.5728 -9.7512, 14.5392  C-9.7764, 14.5224 -9.8016, 14.5056 -9.8268, 14.4888  C-9.8391, 14.4806 -9.8514, 14.4724 -9.8637, 14.4642  C-9.8702, 14.4599 -9.8767, 14.4555 -9.8832, 14.4512  C-9.88865, 14.4476 -9.89872, 14.4409 -9.9, 14.44 " /><path d=" M -21 1.85 L -20.75 1.6 " />
+<path d=" M -21 9.85 L -20.75 9.6 " />
+<path d=" M -17.6 14.44 L -9.9 14.44 " />
+<path d=" M -17.6 1.56 L -9.9 1.56 " />
+<path d=" M -21 1.85 L -21 6.15 " />
+<path d=" M -21 9.85 L -21 14.15 " />
+<path d=" M -17.6 8.6 L -17.6 14.44 " />
+<path d=" M -17.6 1.56 L -17.6 7.4 " />
+<path d=" M -20.75 6.4 L -21 6.15 " />
+<path d=" M -20.75 14.4 L -21 14.15 " />
+<path d=" M -17.6 7.4 L -9.6 7.4 " />
+<path d=" M -9.6 8.6 L -9.6 7.4 " />
+<path d=" M -17.6 8.6 L -9.6 8.6 " />
+</g>
+</g><g transform="translate(765,505) scale(17) "><g   fill="none"
+   stroke="#142c41"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.035"
+   transform="scale(1, -1)"
+  >
+<circle cx ="8" cy ="8" r ="1.6" /><path d=" M 0.1 15.9 L 0.1 0.1 " />
+<path d=" M 0.1 15.9 L 15.9 15.9 " />
+<path d=" M 0.1 0.1 L 15.9 0.1 " />
+<path d=" M 15.9 15.9 L 15.9 0.1 " />
+<path d=" M 1.56 1.56 L 7.4 1.56 " />
+<path d=" M 1.56 7.4 L 1.56 1.56 " />
+<path d=" M 7.4 4.8396 L 7.4 1.56 " />
+<path d=" M 8.6 1.56 L 14.44 1.56 " />
+<path d=" M 8.6 4.8396 L 8.6 1.56 " />
+<path d=" M 14.44 7.4 L 14.44 1.56 " />
+<path d=" M 11.1604 7.4 L 14.44 7.4 " />
+<path d=" M 14.44 14.44 L 14.44 8.6 " />
+<path d=" M 8.6 14.44 L 14.44 14.44 " />
+<path d=" M 11.1604 8.6 L 14.44 8.6 " />
+<path d=" M 8.6 14.44 L 8.6 11.1604 " />
+<path d=" M 1.56 14.44 L 7.4 14.44 " />
+<path d=" M 1.56 14.44 L 1.56 8.6 " />
+<path d=" M 7.4 14.44 L 7.4 11.1604 " />
+<path d=" M 1.56 8.6 L 4.8396 8.6 " />
+<path d=" M 1.56 7.4 L 4.8396 7.4 " />
+<path d="M4.8396 7.4 A3.21685 3.21685 0 0 1 7.4 4.8396" /><path d="M8.6 4.8396 A3.21685 3.21685 0 0 1 11.1604 7.4" /><path d="M11.1604 8.6 A3.21685 3.21685 0 0 1 8.6 11.1604" /><path d="M7.4 11.1604 A3.21685 3.21685 0 0 1 4.8396 8.6" /></g>
+</g><line x1="155" y1="689" x2="443" y2="689" stroke="#2952a6" stroke-width="1"/><line x1="155" y1="684" x2="155" y2="694" stroke="#2952a6" stroke-width="1"/><line x1="443" y1="684" x2="443" y2="694" stroke="#2952a6" stroke-width="1"/><text x="299.0" y="680" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#2952a6" font-weight="normal" text-anchor="middle">8.00 nominal pitch x 2</text><text x="715" y="169" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#142c41" font-weight="bold" text-anchor="start">JOINT SECTION: Z = 10.50</text><text x="715" y="194" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#587085" font-weight="normal" text-anchor="start">Actual wall, tube, rib + mating stud outlines</text><text x="680" y="547" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#587085" font-weight="normal" text-anchor="start">Blue: lower brick / black: upper socket</text><text x="680" y="572" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#587085" font-weight="normal" text-anchor="start">Reference stud dia 4.80; candidate height 1.80</text><text x="680" y="597" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#587085" font-weight="normal" text-anchor="start">Radial clearance c=+0.04 (default; untested)</text><text x="680" y="622" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#587085" font-weight="normal" text-anchor="start">Inside wall offset 1.56 / wall thickness 1.46</text><text x="680" y="647" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#587085" font-weight="normal" text-anchor="start">Tube OD 6.433708 / ID 3.20; grid rib 1.20</text><text x="680" y="672" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#587085" font-weight="normal" text-anchor="start">Tip lead-in 0.25 / female lead-in 0.20 x 0.30</text><text x="680" y="697" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#587085" font-weight="normal" text-anchor="start">Roof 1.60; thin plate roof 1.00</text><text x="680" y="722" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#587085" font-weight="normal" text-anchor="start">Thin plate / keeper: nominal headroom 0.40</text><text x="680" y="747" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#587085" font-weight="normal" text-anchor="start">No forced fit. Tune male and female separately.</text><line x1="42" y1="801" x2="1158" y2="801" stroke="#c5d3df" stroke-width="1"/><text x="42" y="824" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#587085" font-weight="normal" text-anchor="start">UNITS mm | Fixed 8 mm pitch | Physical fit / strength / stability NOT tested</text><text x="1158" y="824" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#587085" font-weight="normal" text-anchor="end">Do not scale STL. Calibrate male + female coupons first.</text></svg>

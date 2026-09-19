@@ -1,0 +1,347 @@
+#!/usr/bin/env python3
+"""Targeted geometry, counts, offline links, privacy and ZIP verification."""
+
+import argparse
+from collections import Counter
+import csv
+import hashlib
+import json
+from pathlib import Path, PurePosixPath
+import re
+import struct
+import subprocess
+import sys
+from urllib.parse import unquote, urlsplit
+import xml.etree.ElementTree as ET
+import zipfile
+
+import numpy as np
+import trimesh
+
+from build_print_kit import ARCHIVE, ROOT, payload_files
+
+NS = {"m": "http://schemas.microsoft.com/3dmanufacturing/core/2015/02"}
+LINES = ["Same icon, New adventures", "github.com/tomokota"]
+
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def read_csv(path):
+    with path.open(newline="") as stream:
+        return list(csv.DictReader(stream))
+
+
+def read_stl(path):
+    data = path.read_bytes()
+    count = struct.unpack_from("<I", data, 80)[0]
+    require(len(data) == 84 + 50 * count, f"Not a binary STL of the declared size: {path.name}")
+    records = np.frombuffer(data, dtype=np.dtype([
+        ("normal", "<f4", (3,)), ("vertices", "<f4", (3, 3)), ("attribute", "<u2")
+    ]), offset=84, count=count)
+    triangles = records["vertices"].astype(np.float64)
+    require(np.isfinite(triangles).all(), f"Nonfinite vertices: {path.name}")
+    vertices, inverse = np.unique(triangles.reshape(-1, 3), axis=0, return_inverse=True)
+    mesh = trimesh.Trimesh(vertices=vertices, faces=inverse.reshape(-1, 3), process=False)
+    require(mesh.is_watertight and mesh.is_winding_consistent and mesh.volume > 0,
+            f"Mesh is not closed, consistently wound and positive-volume: {path.name}")
+    require((mesh.area_faces > 0).all(), f"Degenerate triangle: {path.name}")
+    verify_vertex_links(mesh, path.name)
+    return mesh, triangles
+
+
+def verify_vertex_links(mesh, name):
+    links = [[] for _ in mesh.vertices]
+    parents = list(range(len(mesh.vertices)))
+
+    def root(index):
+        while parents[index] != index:
+            parents[index] = parents[parents[index]]
+            index = parents[index]
+        return index
+
+    for a, b, c in mesh.faces.tolist():
+        links[a].append((b, c))
+        links[b].append((c, a))
+        links[c].append((a, b))
+        parents[root(a)] = root(b)
+        parents[root(b)] = root(c)
+    require(len({root(index) for index in range(len(parents))}) == 1,
+            f"Mesh contains disconnected bodies: {name}")
+    for pairs in links:
+        adjacent = {}
+        for a, b in pairs:
+            adjacent.setdefault(a, []).append(b)
+            adjacent.setdefault(b, []).append(a)
+        require(all(len(values) == 2 for values in adjacent.values()),
+                f"Nonmanifold vertex link: {name}")
+        start = next(iter(adjacent))
+        previous, current = None, start
+        visited = set()
+        while current not in visited:
+            visited.add(current)
+            choices = adjacent[current]
+            following = choices[1] if choices[0] == previous else choices[0]
+            previous, current = current, following
+        require(current == start and len(visited) == len(adjacent),
+                f"Pinched/nonmanifold vertex: {name}")
+
+
+def check_3mf(path, expected, meshes, colors):
+    with zipfile.ZipFile(path) as archive:
+        names = archive.namelist()
+        require(len(names) == len(set(names)) == 3
+                and set(names) == {"[Content_Types].xml", "_rels/.rels", "3D/3dmodel.model"},
+                f"Unexpected 3MF members/settings: {path.name}")
+        model = ET.fromstring(archive.read("3D/3dmodel.model"))
+    require(model.attrib["unit"] == "millimeter", f"Wrong 3MF units: {path.name}")
+    materials = {
+        material.attrib["id"]: [base.attrib for base in material.findall("m:base", NS)]
+        for material in model.findall("m:resources/m:basematerials", NS)
+    }
+    objects = {}
+    for obj in model.findall("m:resources/m:object", NS):
+        name = obj.attrib["name"]
+        require(name in meshes, f"Unknown 3MF master: {name}")
+        material = materials[obj.attrib["pid"]][int(obj.attrib["pindex"])]
+        require(material["name"] == expected["color"]
+                and material["displaycolor"].upper() == colors[expected["color"]]["hex"].upper() + "FF",
+                f"3MF material color differs: {path.name}/{name}")
+        vertices = np.array([[float(v.attrib[axis]) for axis in ("x", "y", "z")]
+                             for v in obj.findall("m:mesh/m:vertices/m:vertex", NS)])
+        faces = np.array([[int(t.attrib[axis]) for axis in ("v1", "v2", "v3")]
+                          for t in obj.findall("m:mesh/m:triangles/m:triangle", NS)])
+        reference = meshes[name][1]
+        require(vertices[faces].shape == reference.shape
+                and np.allclose(vertices[faces], reference, atol=1e-5, rtol=0),
+                f"3MF geometry differs from its STL: {path.name}/{name}")
+        objects[obj.attrib["id"]] = (name, vertices.min(axis=0), vertices.max(axis=0))
+    items = model.findall("m:build/m:item", NS)
+    require(len(items) == len(expected["items"]), f"3MF instance count differs: {path.name}")
+    counts = Counter()
+    boxes = []
+    for item, planned in zip(items, expected["items"]):
+        name, lower, upper = objects[item.attrib["objectid"]]
+        require(name == planned["part"], f"3MF master order differs: {path.name}")
+        transform = [float(value) for value in item.attrib["transform"].split()]
+        require(np.allclose(transform[:9], [1, 0, 0, 0, 1, 0, 0, 0, 1], atol=1e-8)
+                and np.allclose(transform[9:], planned["position"], atol=1e-6),
+                f"3MF print transform differs: {path.name}")
+        position = np.array(transform[9:])
+        require(abs(lower[2] + position[2]) < 1e-6, f"Part not seated on Z=0: {path.name}")
+        box = [lower[0] + position[0] - 6, lower[1] + position[1] - 6,
+               upper[0] + position[0] + 6, upper[1] + position[1] + 6]
+        require(np.allclose(box, planned["brim_box"], atol=2e-5), f"Brim envelope differs: {path.name}")
+        require(min(box) >= 0 and max(box) <= 256, f"Nominal bed envelope exceeded: {path.name}")
+        for other in boxes:
+            require(min(box[2], other[2]) <= max(box[0], other[0])
+                    or min(box[3], other[3]) <= max(box[1], other[1]),
+                    f"Candidate brim envelopes intersect: {path.name}")
+        boxes.append(box)
+        counts[(name, expected["color"])] += 1
+    require({name for name, _, _ in objects.values()} == {name for name, _ in counts},
+            f"Unused/unexpected 3MF resources: {path.name}")
+    return counts
+
+
+def headings(path):
+    result = set()
+    repetitions = Counter()
+    for line in path.read_text().splitlines():
+        if re.match(r"^#{1,6} ", line):
+            text = re.sub(r"^#{1,6} ", "", line).lower()
+            slug = re.sub(r"[^\w\s-]", "", text).replace(" ", "-")
+            suffix = f"-{repetitions[slug]}" if repetitions[slug] else ""
+            result.add(slug + suffix)
+            repetitions[slug] += 1
+    return result
+
+
+def verify_links(creating_report=False):
+    count = 0
+    for path in [ROOT / "README.md", *ROOT.glob("docs/*.md"), *ROOT.glob("notices/*.md")]:
+        for url in re.findall(r"\]\(([^)\s]+)\)", path.read_text()):
+            parsed = urlsplit(url)
+            if parsed.scheme:
+                require(parsed.scheme == "https", f"Non-HTTPS document URL: {path.name}")
+                continue
+            resolved = (path.parent / unquote(parsed.path)).resolve() if parsed.path else path
+            pending_report = creating_report and resolved == ROOT / "verification/kit.json"
+            require(resolved.is_relative_to(ROOT) and (resolved.exists() or pending_report),
+                    f"Broken relative link: {path.relative_to(ROOT)} -> {url}")
+            if parsed.fragment and resolved.suffix == ".md":
+                require(unquote(parsed.fragment) in headings(resolved),
+                        f"Broken heading link: {path.name} -> {url}")
+            count += 1
+    return count
+
+
+def privacy_scan():
+    forbidden = re.compile(
+        r"/(?:Users|home|Applications)/|file:\x2f\x2f|[A-Z]:\\Users\\|"
+        r"gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|"
+        r"AKIA[A-Z0-9]{16}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"
+    )
+    for path in payload_files():
+        if path.suffix in {".md", ".txt", ".csv", ".json", ".svg", ".py", ".step"}:
+            text = path.read_text()
+            require(not forbidden.search(text), f"Private path or credential-like value: {path.relative_to(ROOT)}")
+            if path.is_relative_to(ROOT / "kit") or path.is_relative_to(ROOT / "source/design"):
+                require("YOUR-USERNAME" not in text, f"Generic nameplate remains: {path.name}")
+        if path.suffix == ".FCStd":
+            with zipfile.ZipFile(path) as archive:
+                for name in archive.namelist():
+                    if name.endswith(".xml"):
+                        text = archive.read(name).decode()
+                        require(not forbidden.search(text) and "YOUR-USERNAME" not in text,
+                                f"Unexpected native metadata: {path.name}/{name}")
+        if path.suffix == ".svg":
+            svg = ET.parse(path).getroot()
+            require(not any(node.tag.endswith("}script") for node in svg.iter()),
+                    f"Unexpected script in drawing: {path.name}")
+    require(not (ROOT / ".github/workflows").exists() and not (ROOT / "CNAME").exists(),
+            "No deployment workflows or Pages configuration may be included.")
+
+
+def verify_package():
+    files = payload_files()
+    listed = {}
+    for line in (ROOT / "SHA256SUMS.txt").read_text().splitlines():
+        digest, name = line.split("  ", 1)
+        require(name not in listed, f"Duplicate checksum entry: {name}")
+        listed[name] = digest
+    require(set(listed) == {path.relative_to(ROOT).as_posix() for path in files},
+            "Delivery checksum inventory differs.")
+    for name, digest in listed.items():
+        require(sha((ROOT / name).read_bytes()) == digest, f"File checksum differs: {name}")
+    expected = {path.relative_to(ROOT).as_posix() for path in files} | {"SHA256SUMS.txt"}
+    with zipfile.ZipFile(ARCHIVE) as archive:
+        require(archive.testzip() is None, "ZIP CRC failure.")
+        names = archive.namelist()
+        require(len(names) == len(set(names)) and set(names) == expected,
+                "Offline ZIP members missing, duplicated or unexpected.")
+        require(not any(PurePosixPath(name).is_absolute() or ".." in PurePosixPath(name).parts for name in names),
+                "Unsafe ZIP paths.")
+        for name in names:
+            require(archive.read(name) == (ROOT / name).read_bytes(), f"ZIP content differs: {name}")
+        require(sum(name.endswith(".stl") for name in names) == 34, "ZIP must contain 21+12+1 STL masters.")
+        require(sum(name.endswith(".3mf") for name in names) == 14, "ZIP must contain 14 unsliced 3MFs.")
+        require(not any(name.endswith(".zip") for name in names), "No nested duplicate kits.")
+    digest, filename = (ROOT / "downloads/SHA256SUMS.txt").read_text().strip().split("  ", 1)
+    require(filename == ARCHIVE.name and digest == sha(ARCHIVE.read_bytes()), "ZIP checksum differs.")
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--write-report", action="store_true")
+    args = parser.parse_args()
+    assembly = json.loads((ROOT / "kit/B/assembly.json").read_text())
+    catalog = json.loads((ROOT / "source/design/catalog.json").read_text())
+    bom = read_csv(ROOT / "kit/B/bom.csv")
+    expected = Counter({(row["part"], row["color"]): int(row["quantity"]) for row in bom})
+    require(len(bom) == len(expected) == 23 and sum(expected.values()) == 150, "BOM differs.")
+    require(Counter((row["part"], row["color"]) for row in assembly["placements"]) == expected,
+            "Assembly counts differ from BOM.")
+    require(len({row["part"] for row in bom}) == 21, "B must have 21 masters.")
+    require(catalog["message"]["lines"] == LINES
+            and [model["id"] for model in catalog["models"]] == ["B"], "Private catalog scope differs.")
+    require(catalog["parameters_sha256"] == sha((ROOT / "source/design/parameters.json").read_bytes()),
+            "Parameter hash differs from catalog.")
+    meshes = {}
+    mesh_reports = []
+    for path in sorted((ROOT / "kit").rglob("*.stl")):
+        mesh, triangles = read_stl(path)
+        require(path.stem not in meshes, f"Duplicate STL master: {path.name}")
+        require(np.allclose(mesh.bounds, catalog["parts"][path.stem]["bounds"], atol=2e-5, rtol=0),
+                f"STL bounds differ from catalog: {path.name}")
+        require(abs(mesh.bounds[0, 2]) < 1e-6, f"STL is not on bed: {path.name}")
+        require(sha(path.read_bytes()) == catalog["parts"][path.stem]["sha256"], f"Master hash differs: {path.name}")
+        meshes[path.stem] = (mesh, triangles)
+        mesh_reports.append({"file": path.relative_to(ROOT).as_posix(), "sha256": sha(path.read_bytes()),
+                             "triangles": len(mesh.faces), "bounds_mm": mesh.bounds.tolist(),
+                             "closed": True, "vertex_manifold": True, "connected_bodies": 1,
+                             "positive_volume_mm3": float(mesh.volume)})
+    require(len(meshes) == 34, "Expected only 21 B + 12 fit + 1 extra trial masters.")
+    require(set(meshes) == set(catalog["parts"]), "Catalog master selection differs.")
+    require(np.allclose(meshes["NP3-TEXT-B"][0].extents, [142, 40, 3.2], atol=1e-5), "Plate size differs.")
+    manifest = json.loads((ROOT / "kit/B/plates/manifest.json").read_text())
+    require(manifest["nameplate"]["lines"] == LINES and manifest["sliced"] is False
+            and manifest["pause_encoded"] is False and manifest["printer_settings_validated"] is False,
+            "Plate status or personalization differs.")
+    require(len(manifest["plates"]) == 14
+            and {row["file"] for row in manifest["plates"]} == {p.name for p in (ROOT / "kit/B/plates").glob("*.3mf")},
+            "Unexpected plate files.")
+    actual = Counter()
+    for plate in manifest["plates"]:
+        for item in plate["items"]:
+            finish, height = ("white", 2.4) if item["part"] == "NP3-TEXT-B" else (
+                ("white", 2.8) if item["part"] == "NP3-LOGO-B" else ("", "")
+            )
+            require((plate["finish_color"], plate["manual_change_after_z_mm"]) == (finish, height),
+                    "A body or front plate has the wrong color-change guidance.")
+        actual.update(check_3mf(ROOT / "kit/B/plates" / plate["file"], plate, meshes, catalog["colors"]))
+    require(actual == expected, "3MF aggregate part/color counts differ from BOM.")
+    trial = read_csv(ROOT / "kit/trial/bom.csv")
+    require({row["part"]: int(row["quantity"]) for row in trial} == {
+        "BR-02x02-H096": 2, "BR-02x04-H096": 2, "NP3-KEEPER": 1, "BASE3-03x10-T-aa77a9": 2,
+    }, "B trial selection differs.")
+    for row in trial:
+        path = (ROOT / "kit/trial" / row["stl"]).resolve()
+        require(path.is_relative_to(ROOT / "kit") and sha(path.read_bytes()) == row["sha256"],
+                "Trial paths or hashes differ.")
+    steps = read_csv(ROOT / "kit/B/steps.csv")
+    require(len(steps) == len(assembly["steps"]) == 28 and sum(int(row["quantity"]) for row in steps) == 150,
+            "Step counts differ.")
+    require([identifier for step in assembly["steps"] for identifier in step["instances"]]
+            == [row["id"] for row in assembly["placements"]], "Step instance order differs.")
+    for step in steps:
+        require((ROOT / "kit/B" / step["drawing"]).is_file(), "Step drawing missing.")
+    sys.path.insert(0, str(ROOT / "source/scripts"))
+    import design
+    regenerated = design.build_catalog(design.load_parameters())
+    for field in ("placements", "steps", "bom"):
+        require(regenerated["models"][0][field] == assembly[field], f"Source layout differs: {field}")
+    native = json.loads((ROOT / "verification/native.json").read_text())
+    require(native["status"] == "PASS" and native["nameplate_lines"] == LINES, "Native verification missing.")
+    for filename, digest in native["native_files_sha256"].items():
+        require(sha((ROOT / filename).read_bytes()) == digest, "Native changed after verification.")
+    pdf_text = subprocess.check_output(["pdftotext", str(ROOT / "kit/B/drawings.pdf"), "-"], text=True)
+    require("github.com/tomokota" in pdf_text and "YOUR-USERNAME" not in pdf_text
+            and pdf_text.count("\f") == 54, "Personal PDF content differs.")
+    relative_links = verify_links(creating_report=args.write_report)
+    privacy_scan()
+    print_manifest = json.loads((ROOT / "kit/manifest.json").read_text())
+    require(print_manifest["status"] == "NOT_SLICED" and print_manifest["sliced"] is False
+            and print_manifest["pause_encoded"] is False and print_manifest["physical_tested"] is False,
+            "Print package status differs.")
+    require({row["file"] for row in print_manifest["files"]} == {
+        path.relative_to(ROOT / "kit").as_posix() for path in (ROOT / "kit").rglob("*")
+        if path.is_file() and path != ROOT / "kit/manifest.json"
+    }, "Print manifest inventory differs.")
+    for row in print_manifest["files"]:
+        require(sha((ROOT / "kit" / row["file"]).read_bytes()) == row["sha256"], "Print manifest hash differs.")
+    verify_package()
+    report = {
+        "status": "PASS", "revision": "4.0-B-personal-kit.1", "model": "B", "units": "mm",
+        "assembly_parts": 150, "B_unique_parts": 21, "B_bom_rows": 23, "B_plates": 14,
+        "color_quantities": dict(Counter(row["color"] for row in assembly["placements"])),
+        "steps": 28, "pdf_pages": 54, "trial_parts": 7, "fit_masters": 12,
+        "nameplate_lines": LINES, "native_reopen_report": "verification/native.json",
+        "relative_links_checked": relative_links, "zip_duplicate_members": 0,
+        "sliced": False, "pause_encoded": False, "physical_fit_strength_stability": "NOT_TESTED",
+        "libraries": {"numpy": np.__version__, "trimesh": trimesh.__version__}, "meshes": mesh_reports,
+    }
+    if args.write_report:
+        (ROOT / "verification/kit.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+        print("Wrote verification/kit.json. Rebuild the ZIP/checksums, then verify again without --write-report.")
+    print(f"PASS: 150 parts / 14 plates / 34 closed vertex-manifold STL masters / {relative_links} relative links / offline ZIP")
+
+
+if __name__ == "__main__":
+    main()
