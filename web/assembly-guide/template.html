@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src data: blob:; connect-src 'none'; font-src 'none'; media-src data: blob:; worker-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>@@TITLE@@</title>
+  @@STYLE@@
+</head>
+<body>
+<main id="guide-app" data-ready="false">
+  <header class="masthead">
+    <span class="wordmark">BRICK / ASSEMBLY LAB</span>
+    <span class="edition" id="revision"></span>
+    <h1 id="guide-title">@@TITLE@@</h1>
+    <p class="lead">印刷したファイルを、実物の部品の形で探す。<br>見つけたら、1個ずつ組み立てよう。</p>
+  </header>
+  <section class="start-card" aria-label="最初に読むこと">
+    <strong>印刷順 ≠ 組立順。プレート番号は「段数」ではありません。</strong>
+    <p id="first-file">最初の部品を確認しています。</p>
+    <button id="start-first" class="primary" disabled>最初の1個を見せる</button>
+    <details><summary>5段台座に必要なファイルを確認</summary>
+      <p>下のファイルにある対象部品を先に仕分けます。同じ形・同じ色のコピーは交換可能ですが、必要な個数は減りません。</p>
+      <ul id="base-files"></ul>
+    </details>
+  </section>
+  <p id="loading" role="status">実STLとプレート対応を読み込み中…</p>
+  <p id="guide-error" class="error" role="alert" hidden></p>
+  <div id="interactive" hidden>
+    <section id="capture-card" aria-label="印刷ファイルと組立の対応">
+      <div class="capture-heading">
+        <div><span class="eyebrow" id="mode-label">1個ずつ組む</span><h2 id="action-title">最初の1個</h2></div>
+        <span class="count" id="cursor-value"></span>
+      </div>
+      <p id="capture-caption" class="trace"></p>
+      <div class="view-grid">
+        <section class="panel" aria-label="印刷プレートの3D見本">
+          <header><h3><span class="panel-number">01</span> ファイルから部品を探す</h3>
+            <label for="plate-select">印刷した3MF</label><select id="plate-select"></select>
+          </header>
+          <div class="view-tools" data-scene="plate" aria-label="プレートの見る方向">
+            <button data-view="iso">斜め</button><button data-view="top">上</button>
+            <button data-view="front">前</button><button data-view="side">右</button>
+            <button data-view="back">背面</button><button data-view="bottom">裏面</button>
+          </div>
+          <label class="check"><input type="checkbox" id="plate-isolate"> 選んだ1個を拡大（裏面・溝の違いを見る）</label>
+          <div class="viewport" id="plate-viewport">
+            <canvas id="plate-canvas" tabindex="0" aria-label="実印刷配置。ドラッグで回転、ホイールで拡大、左右キーで回転"></canvas>
+            <div class="labels" id="plate-labels"></div>
+            <span class="orientation">手前 = −Y / 印刷面は上</span>
+          </div>
+          <p id="plate-note" class="small"></p>
+        </section>
+        <section class="panel" aria-label="1個ずつ進める3D組立">
+          <header><h3><span class="panel-number">02</span> 場所と向きを確認して組む</h3>
+            <label for="step-select">組立工程（プレート番号とは別）</label><select id="step-select"></select>
+          </header>
+          <div class="view-tools" data-scene="assembly" aria-label="組立の見る方向">
+            <button data-view="iso">斜め</button><button data-view="front">前</button>
+            <button data-view="side">右</button><button data-view="top">上</button>
+            <button data-view="back">背面</button><button data-view="bottom">裏面</button>
+          </div>
+          <label class="check"><input type="checkbox" id="ghost" checked> 組立済みを淡くして、隠れた接続を見る</label>
+          <div class="viewport" id="assembly-viewport">
+            <canvas id="assembly-canvas" tabindex="0" aria-label="実STLの組立。ドラッグで回転、ホイールで拡大、左右キーで回転"></canvas>
+            <div class="labels" id="assembly-labels"></div>
+            <span class="orientation">正面 = 銘板・右ロゴの側</span>
+          </div>
+          <p id="insertion-note" class="small"></p>
+        </section>
+      </div>
+      <div class="transport" aria-label="組立の再生操作">
+        <button id="restart">やり直し</button><button id="previous">1個戻る</button>
+        <button id="play" class="primary" aria-pressed="false">再生</button><button id="next">次の1個</button>
+        <button id="replay-step">この工程だけ再生</button>
+        <label for="speed">速さ</label><select id="speed"><option value="2600">ゆっくり</option><option value="1500" selected>標準</option><option value="700">速い</option></select>
+      </div>
+      <label class="range-label" for="assembly-cursor">手順の区切りへ移動（今の1個は「次の1個」で確認）</label>
+      <input type="range" id="assembly-cursor" min="0" value="0" step="1">
+      <div class="motion-row"><label for="motion-progress">今の1個の動き</label>
+        <input type="range" id="motion-progress" min="0" max="100" value="0"><output id="motion-value">0%</output>
+      </div>
+      <p id="progress-note" class="progress-note"></p>
+    </section>
+    <section class="selection-card" aria-label="選択した部品の対応詳細">
+      <h2>プレート内の番号から選ぶ</h2>
+      <p>番号はこのガイド用のslotです。<strong>部品への刻印ではありません。</strong> Bambu Studio側の並べ替え後の番号でもありません。元の配置と形で照合してください。</p>
+      <div id="slot-list" class="slot-list"></div>
+      <div id="selection-details" aria-live="polite">
+        <h3 id="selected-part"></h3>
+        <p id="selected-size"></p>
+        <p class="exchange-note">同じpart ID＋同じ色の部品は交換可能です。「便宜割当」は仕分け例であり、その実物1個だけの行き先を断定しません。寸法が同じでも、IDや溝が違うものは交換しません。</p>
+        <div class="detail-grid">
+          <div><h3>使える組立場所 <span id="target-count"></span></h3><p>選ぶとその場所を示します。「ここから組む」で、その直前まで組立済みの状態へ移動します。</p><div id="target-list" class="target-list"></div></div>
+          <div><h3>同じ形・色を取り出せる全ファイル</h3><div id="source-list" class="source-list"></div></div>
+        </div>
+      </div>
+      <p class="small">3D内の部品も選択できます。図形が重なる場合は上のslot・場所ボタンを使ってください。回転はドラッグ／左右キー、ズームはホイール／ピンチです。</p>
+    </section>
+  </div>
+  <footer class="safety">
+    <h2>図で分かることと、実物で確認すること</h2>
+    <p>実STL・実配置から作った説明用3DCGです。動きは手順の案内であり、物理シミュレーションや嵌合合格の証拠ではありません。無接着。無理押し・打撃をしないでください。</p>
+    <p><strong>NOT_SLICED / 実機嵌合・keeper保持・強度・転倒は未試験。</strong> 先にFIT・NP3-FIT・少量試作。閉塞・白化・強い力・着座不良があれば全数印刷と組立を止めます。</p>
+    <p>本体は色別単色。銘板は黒支持体2.4 mm、右ロゴは2.8 mmの後に白レリーフが続きます。実レイヤープレビューで最初の白経路の直前にPauseを設定します。固定層番号ではありません。汎用3MFにPauseやプリンタ設定は入っていません。</p>
+    <p>STLを100%・mmで使用。同じ部品のSTLと3MFは重ねて読み込まないでください。スロット一覧はダウンロード・スライス・プリンタ送信を実行しません。</p>
+    <details><summary>オフライン・使用ライブラリ</summary><p>実形状と対応データはこのHTMLに埋め込まれています。通信、CDN、API、解析サービスは使用しません。Chrome・Edge・Firefox・Safariの現行版で開いてください。Three.js / OrbitControls / STLLoader はMITライセンス（Copyright © 2010–2025 three.js authors）。著作権表示とライセンス全文は同梱runtimeにも保持されています。本作品は非公式で、包括ライセンス・互換認証・玩具認証は付与していません。</p></details>
+  </footer>
+</main>
+<script type="application/json" id="assembly-guide-data">@@DATA@@</script>
+@@SCRIPT@@
+</body>
+</html>

@@ -1,0 +1,56 @@
+{
+  "source_repository": "ktanino10/copilot-brick-display",
+  "guide_revision": "print-to-place-1",
+  "scope": "Read-only generic source/runtime/license import; no personal model, input or media sent upstream",
+  "common_handoff_sha256": "10c5bb0a3baa19ac9f8a7ec4c8f44c00da9763c47f3743310fd8d09a96ed4e65",
+  "runtime_reproduced_locally": true,
+  "build_dependencies": {
+    "three": "0.180.0",
+    "esbuild": "0.25.10"
+  },
+  "files": [
+    {
+      "source_path": "scripts/build_assembly_guide.py",
+      "destination": "scripts/build_assembly_guide.py",
+      "sha256": "02036ac52153faf470ffc7b0c6e867c51db275031c73e5798f29b7112d4cff31"
+    },
+    {
+      "source_path": "scripts/bundle_assembly_guide.mjs",
+      "destination": "scripts/bundle_assembly_guide.mjs",
+      "sha256": "c414a384e7717d91e642ca8c4f402f08f2b889600256f268c0b03c75d862a050"
+    },
+    {
+      "source_path": "web/assembly-guide/model.js",
+      "destination": "web/assembly-guide/model.js",
+      "sha256": "ec9f5db73f6bc48850f63c358b9d4ec649859fd434da3d2ad3b627d2da2d6ab6"
+    },
+    {
+      "source_path": "web/assembly-guide/viewer.js",
+      "destination": "web/assembly-guide/viewer.js",
+      "sha256": "477e0fb3e901800fa43d5f007661e460e0ad66a9c1bbd2b1e8005cd03656fd44"
+    },
+    {
+      "source_path": "web/assembly-guide/template.html",
+      "destination": "web/assembly-guide/template.html",
+      "sha256": "8fae78729f808a5c811946be045fac9a90770b065ee9c2be0a826fd9878a274e"
+    },
+    {
+      "source_path": "web/assembly-guide/style.css",
+      "destination": "web/assembly-guide/style.css",
+      "sha256": "a5169b93d2ee103006dd7ea8a5f25d2a24f795878521a434b91991d2730f6c39"
+    },
+    {
+      "source_path": "build/assembly-guide/runtime.js",
+      "destination": "web/assembly-guide/runtime.js",
+      "sha256": "6d64837a1f04d6ce37989dcfe08d655eeaf5319900629c111a11e05c49100c43"
+    },
+    {
+      "source_path": "site/vendor/THREE-LICENSE.txt",
+      "destination": "notices/THREE-LICENSE.txt",
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    }
+  ],
+  "common_ui_revision": "1.3",
+  "source_commit": "35ebc11234779424ebbda83b3f1b7d31d8518b24",
+  "source_commit_verified": true
+}

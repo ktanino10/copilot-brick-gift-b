@@ -1,0 +1,17 @@
+{
+  "name": "copilot-brick-gift-b-guide",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Build-time dependencies only; the shipped B assembly guide runs offline.",
+  "scripts": {
+    "build:guide-runtime": "node scripts/bundle_assembly_guide.mjs --output web/assembly-guide/runtime.js",
+    "test:guide-model": "node --test scripts/test_guide_model.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  }
+}

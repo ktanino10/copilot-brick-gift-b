@@ -17,7 +17,7 @@
 | 共通形状revision | `4.0-public-template`。B非文字20形状、150配置、取付け仕様を再利用 |
 | 個人銘板 | 元担当が検証したB用 `plate.stl`／`plate.3mf`／native。正確な2行、142×40×3.2 mm |
 | 個人B完成native・PDF・画像 | 元担当が指定した保存済みBだけを選別。21 masterすべてが今回の採用STLとbyte一致 |
-| 今回のキットrevision | `4.0-B-personal-kit.1`。梱包・B専用文書・個人版メタデータの統合であり、機構の再設計ではない |
+| 今回のキットrevision | `4.0-B-personal-kit.2`。梱包・B専用文書・オフライン3D案内の更新であり、機構の再設計ではない |
 
 各採用ファイルの出典相対パス、取得時のbytesとSHA-256は
 [source-import.json](../verification/source-import.json)にあります。
@@ -56,7 +56,7 @@
 ## 画像・図面を混同しない
 
 `docs/images/B-hero.png` と `B-base-front.png` は、個人2行が入った
-保存済みの実STL由来Blenderレンダーです。今回新しい顔・動画を作っていません。
+保存済みの実STL由来Blenderレンダーです。この2画像は再レンダーしていません。
 `nameplate-front.png` は直近の個人銘板の実CAD正面投影で、白背景の輪郭図です。
 `nameplate-print-orientation.svg` だけは、姿勢と色替え高さを説明する模式図です。
 いずれも実物写真・実スライス成功例ではありません。
@@ -69,6 +69,30 @@
 `kit/fit/interface.*`、`front-interface.svg`、非文字部品の寸法SVGは**共通形状の参考図**です。
 `PUBLIC TEMPLATE` という元ヘッダーは来歴の表示で、個人完成図や公開配布の指示ではありません。
 個人文字が見える銘板図・完成画像・PDFは、すべて今回の確定2行に対応しています。
+
+## オフライン3Dガイドと新しい案内画像
+
+[`guide/index.html`](../guide/index.html)は、承認済みBの実STL・実3MF・assemblyを照合し、
+描画ランタイムと圧縮STLを1つのHTMLへ埋め込んだものです。
+`guide/index.mapping.json`はその対応表、`kit/B/part-map.csv`は全150slotの表です。
+同形同色の全候補と便宜割当を分け、刻印や実物個体の識別とは扱いません。
+STL、3MF、native、取付け機構、色、150配置は再設計・再配置していません。
+
+共通のviewer／mapping generatorだけを`ktanino10/copilot-brick-display`の担当者から
+限定pathでread-only取得しました。共通案内コードの固定commitは
+`35ebc11234779424ebbda83b3f1b7d31d8518b24`（UI v1.3）で、
+形状の出典commit `1eaae1288816ec9575eeb6e2abbe74ed53289d74`とは別です。
+取り込みのファイル別SHA-256と版は
+[guide-source-import.json](../verification/guide-source-import.json)に記録しています。
+個人source、銘板、画像、生成HTMLを公開側へ送り返していません。
+privateではPagesを作らず、保存したローカルHTMLを開きます。
+
+`docs/images/B-guide-start.png`、`B-guide-front.png`、
+`B-guide-base-front.gif`は、この同梱ビューアをオフラインの実ブラウザで描画・撮影したものです。
+GIFは空の机から`B-001`〜`B-024`の24個を追加し、台座5段・前面2個・keeper3個までを示します。
+銘板の90度回転、黒2.4 mm／白0.8 mmとロゴ黒2.8 mm後の白は実形状の高さ・配置を使います。
+軌跡や着地点の透過表示は説明用で、物理シミュレーションではありません。
+[ブラウザ検証](../verification/guide-browser.json)は表示・操作の確認であり、実機の合格証拠ではありません。
 
 ## 元generatorと寸法source
 
@@ -83,7 +107,7 @@
 新しいローカル出力先だけを使うよう入口を適応しました。配置・寸法の計算は変えていません。
 
 Barlow Condensed BlackとOFL、元マークの派生輪郭を保持しました。
-元写真・人物画像、不要なBlenderファイル／動画／フレーム、公開用workflow・CNAME・Pages設定、
+元写真・人物画像、不要なBlenderファイル／旧動画／中間フレーム、公開用workflow・CNAME・Pages設定、
 会話履歴、端末の絶対パス、プリンタID・tokenは含めません。
 元プロジェクト全体のビルドやサイト公開手順は、このキットの利用に必要ありません。
 

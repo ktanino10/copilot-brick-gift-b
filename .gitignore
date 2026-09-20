@@ -3,5 +3,7 @@ __pycache__/
 *.pyc
 .venv/
 .work/
+node_modules/
+build/
 *.FCStd1
 *.FCBak

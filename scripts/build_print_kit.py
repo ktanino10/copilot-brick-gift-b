@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build B-only indexes, checksums and one deterministic offline kit archive."""
+"""Build B-only indexes, guide inventory and one deterministic offline kit archive."""
 
 from collections import Counter
 import csv
@@ -8,11 +8,17 @@ import json
 from pathlib import Path
 import zipfile
 
+from verify_guide_mapping import verify_mapping
+
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE = ROOT / "downloads/B-personal-print-kit.zip"
-DELIVERY_DIRS = ("docs", "kit", "source", "notices", "scripts", "verification")
-DELIVERY_FILES = (".gitattributes", ".gitignore", "README.md", "requirements-verify.txt")
+DELIVERY_DIRS = ("docs", "guide", "kit", "source", "web", "notices", "scripts", "verification")
+DELIVERY_FILES = (
+    ".gitattributes", ".gitignore", "README.md", "requirements-verify.txt", "requirements-guide.txt",
+    "package.json", "package-lock.json",
+)
+REVISION = "4.0-B-personal-kit.2"
 COLORS = {"black": "黒", "cyan": "シアン", "magenta": "マゼンタ", "green": "緑"}
 
 
@@ -29,9 +35,47 @@ def payload_files():
     return sorted(paths)
 
 
+def mapping_rows(mapping):
+    placements = {item["id"]: item for item in mapping["placements"]}
+    rows = []
+    for plate in mapping["plates"]:
+        counts = Counter(slot["part"] for slot in plate["slots"])
+        for slot in plate["slots"]:
+            part = mapping["parts"][slot["part"]]
+            group = mapping["groups"][slot["group"]]
+            assigned = placements[slot["suggested_placement"]]
+            rows.append({
+                "plate": plate["file"], "slot": slot["number"], "part": slot["part"],
+                "color": plate["color"], "finish_color": part.get("finish_color", ""),
+                "dimensions_mm": " x ".join(f"{size:g}" for size in part["dimensions"]),
+                "quantity_on_plate": counts[slot["part"]], "quantity_in_assembly": group["quantity"],
+                "suggested_placement": assigned["id"], "suggested_step": assigned["step"],
+                "candidate_placements": " ".join(slot["candidate_placements"]),
+                "candidate_steps": " ".join(str(step) for step in sorted({
+                    placements[identifier]["step"] for identifier in slot["candidate_placements"]
+                })),
+                "all_source_slots": " ".join(source["slot_id"] for source in group["sources"]),
+            })
+    return rows
+
+
+def plate_anchor(filename):
+    return filename.lower().replace(".", "")
+
+
 def write_indexes():
+    if not (ROOT / "guide/index.html").is_file():
+        raise ValueError("Build the standalone guide/index.html before packaging the print kit.")
     assembly = json.loads((ROOT / "kit/B/assembly.json").read_text())
     manifest = json.loads((ROOT / "kit/B/plates/manifest.json").read_text())
+    mapping = json.loads((ROOT / "guide/index.mapping.json").read_text())
+    verify_mapping(mapping)
+    mapped_placements = {item["id"]: item for item in mapping["placements"]}
+    occurrences = mapping_rows(mapping)
+    with (ROOT / "kit/B/part-map.csv").open("w", newline="", encoding="utf-8") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(occurrences[0]))
+        writer.writeheader()
+        writer.writerows(occurrences)
     with (ROOT / "kit/B/bom.csv").open(newline="") as stream:
         bom = list(csv.DictReader(stream))
     if assembly["model"] != "B" or len(assembly["placements"]) != 150:
@@ -42,39 +86,88 @@ def write_indexes():
         steps.append({
             "step": step["number"], "title": step["title"], "quantity": len(ids),
             "placement_ids": " ".join(ids), "drawing": f"drawings/step-{step['number']:02}.svg",
+            "source_slots": " ".join(mapped_placements[identifier]["suggested_source"]["slot_id"] for identifier in ids),
+            "parts": " ".join(mapped_placements[identifier]["part"] for identifier in ids),
         })
     with (ROOT / "kit/B/steps.csv").open("w", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=list(steps[0]))
         writer.writeheader()
         writer.writerows(steps)
     step_lines = [
-        "# Bの28工程", "", "[入口](../README.md) · [組立・交換・分解](ASSEMBLY.md) · "
+        "# Bの28工程", "", "[入口](../README.md) · [オフライン3D](../guide/index.html) · "
+        "[3Dの使い方](GUIDE.md) · [組立・交換・分解](ASSEMBLY.md) · "
         "[全図PDF](../kit/B/drawings.pdf)", "",
+        "**ZIPを展開して `guide/index.html` をダブルクリック。空の机から全28工程を3Dで進められます。**",
+        "Python／Node／ネット接続は閲覧に不要です。印刷順と組立順は別です。",
+        "**工程1は `B-black-02.3mf` のslot 3、`BASE3-24x10-B-562406` → `B-001`。**",
+        "black-01の8個は2〜5段目用です。台座5段の出処はblack-01〜04にまたがります。",
+        "slot番号は案内用で刻印なし。同一ID・色の実物は可換で、特定個体の割当ではありません。",
+        "",
         "図の下が手前（銘板側）です。追加する配置番号を、その工程の図で確認します。",
         "最終工程は確認だけで、新しい部品はありません。図は実CAD由来で、実物の合格証拠ではありません。",
-        "", "| 工程図 | 内容 | 追加数 | 配置番号 |", "|---|---|---:|---|",
+        "", "[全150slotの対応CSV](../kit/B/part-map.csv) · [全14枚の部品・寸法表](FILES.md)",
+        "", "| 工程図 | 内容 | 追加数 | 配置番号 | 3MFの便宜出処 |", "|---|---|---:|---|---|",
     ]
     for row in steps:
         ids = row["placement_ids"].split()
         label = (f"`{ids[0]}`〜`{ids[-1]}`" if len(ids) > 1 else f"`{ids[0]}`") if ids else "追加なし"
-        step_lines.append(f"| [{row['step']:02}](../kit/B/{row['drawing']}) | {row['title']} | {row['quantity']} | {label} |")
+        files = sorted({mapped_placements[identifier]["suggested_source"]["plate"] for identifier in ids})
+        source_label = "、".join(f"`{file}`" for file in files) or "追加なし"
+        step_lines.append(
+            f"| [{row['step']:02}](../kit/B/{row['drawing']}) | {row['title']} | "
+            f"{row['quantity']} | {label} | {source_label} |"
+        )
     step_lines += [
         "", "工程1〜5は台座、6は前面2部品、7はkeeper、8〜26は顔19段、27は頭頂、28は確認です。",
         "試作の端部2個だけを積む操作を、正式な5段配置と取り違えないでください。",
+        "", "![実形状による空の机から台座・前面・keeperへの短い組立アニメーション]"
+        "(images/B-guide-base-front.gif)",
+        "",
+        "最初の1枚はblack-02 slot 3。前面はblack-to-white-z2p4／z2p8の各slot 1、"
+        "keeperはblack-07 slot 8〜10です。持ち上げ・透過・分解表示は説明用で、物理的な経路保証ではありません。",
         "", "## 前面の取り付け図", "",
         "![前面2部品の取り付け位置](../kit/B/drawings/step-06.svg)", "",
         "![keeper3個の配置](../kit/B/drawings/step-07.svg)", "",
+        "## 1個ごとの取り出し表", "",
+        "以下は3MFの元の順番に対応させた便宜割当です。同一ID・同一色なら別slotの良品を使えます。",
+        "実物への刻印ではありません。試作から流用した分もここへ引き当て、再印刷を重複させません。", "",
     ]
+    for step in mapping["steps"]:
+        step_lines += [
+            f"### 工程{step['number']}：{step['title']}", "",
+        ]
+        if not step["instances"]:
+            step_lines += ["追加0個。150個がそろったら実物の保持・着座・安定を確認します。", ""]
+            continue
+        step_lines += [
+            "| 配置番号 | 部品ID | 3MF | slot | 印刷姿勢の外形 mm |",
+            "|---|---|---|---:|---|",
+        ]
+        for identifier in step["instances"]:
+            item = mapped_placements[identifier]
+            source = item["suggested_source"]
+            dimensions = " × ".join(f"{size:g}" for size in mapping["parts"][item["part"]]["dimensions"])
+            step_lines.append(
+                f"| `{identifier}` | [{item['part']}](../kit/B/parts/{item['part']}.stl) | "
+                f"[{source['plate']}](../kit/B/plates/{source['plate']}) | {source['slot']} | {dimensions} |"
+            )
+        step_lines.append("")
     (ROOT / "docs/STEPS.md").write_text("\n".join(step_lines))
 
     file_lines = [
         "# Bのファイル一覧と数量", "",
-        "[入口](../README.md) · [印刷手順](PRINTING.md) · [少量試作](TRIAL.md)", "",
+        "[入口](../README.md) · [オフライン3D](../guide/index.html) · [3Dの使い方](GUIDE.md) · "
+        "[印刷手順](PRINTING.md) · [少量試作](TRIAL.md)", "",
+        "**印刷したファイルから探す：ZIPを展開して `guide/index.html` をダブルクリックし、"
+        "3MFとslotを選びます。実プレートの配置と完成／途中の対応位置が3Dで見られます。**",
+        "全14枚／150配置を照合しています。slotは案内用の番号で、実物には刻印されていません。",
+        "同じ部品ID・色は可換です。便宜上の割当を実物の固有番号とは扱いません。",
+        "**色表とblack-01からの印刷順は組立順ではありません。1段目はblack-02 slot 3のB-001です。**", "",
         "**全ファイルNOT_SLICED。STLと3MFは代替です。同じ部品の両形式を読み込まないでください。**",
         "この一覧はBOM・3MF manifestから生成しています。各プレートを空のプロジェクトへ1枚ずつ開きます。",
         "3MFにはPause、検証済みプリンタ設定、G-codeがありません。個人銘板は既に置換済みです。",
         "", "## 配置済み3MF：全14枚、計150個", "",
-        "| ファイル | 色・用途 | 配置個数 |", "|---|---|---:|",
+        "| ファイル | 色・用途 | 配置個数 | slotと組立位置 |", "|---|---|---:|---|",
     ]
     plates = sorted(manifest["plates"], key=lambda row: (
         4 if row["finish_color"] else list(COLORS).index(row["color"]),
@@ -84,7 +177,10 @@ def write_indexes():
         color = COLORS[plate["color"]]
         if plate["finish_color"]:
             color += "→白・" + ("個人銘板（2.4 mm後）" if plate["manual_change_after_z_mm"] == 2.4 else "右ロゴ（2.8 mm後）")
-        file_lines.append(f"| [{plate['file']}](../kit/B/plates/{plate['file']}) | {color} | {len(plate['items'])} |")
+        file_lines.append(
+            f"| [{plate['file']}](../kit/B/plates/{plate['file']}) | {color} | {len(plate['items'])} | "
+            f"[対応表](#{plate_anchor(plate['file'])}) |"
+        )
     file_lines += [
         "", "色替えの高さは目安となる境界です。実レイヤープレビューで黒地終了後／最初の白path前へPauseを入れ、",
         "停止・交換・再開を本人が確認してください。固定層番号には変換しません。",
@@ -109,8 +205,37 @@ def write_indexes():
         "| [NP3-KEEPER](../kit/B/parts/NP3-KEEPER.stl) | 1 |",
         "| [BASE3-03x10-T-aa77a9](../kit/B/parts/BASE3-03x10-T-aa77a9.stl) | 2（同じ左端形状） |",
         "", "4個→3個と段階を分けます。2×2は完成BOMにない共通接続の試験用で、完成150個には数えません。",
+        "", "## 各3MFのslot・形状・寸法・適用先：全150項目", "",
+        "[対応CSV](../kit/B/part-map.csv) · [検査用mapping JSON](../guide/index.mapping.json) · "
+        "[実プレートを3Dで見る](../guide/index.html)", "",
+        "slotは元3MFの順番です。各行は印刷配置1個で、同形の行でも別の印刷配置を数えています。",
+        "「同形数」はこのプレート内／完成B全体の同ID・同色数。「全適用先」は可換な全候補で、"
+        "各行の実物を候補全部へ同時に使う意味ではありません。",
+        "便宜割当は150個を過不足なく数える案内です。寸法は印刷姿勢のスタッド・レリーフ込み外形です。", "",
+    ]
+    for plate in plates:
+        file_lines += [
+            f"### {plate['file']}", "",
+            "[3Dガイド](../guide/index.html)でこのファイルを選び、同じslot番号の実形状を確認します。", "",
+            "| slot | 部品ID | 外形 W×D×H mm | 同形数（板内／全体） | 便宜割当／工程 | 全適用先 | 適用工程 |",
+            "|---:|---|---|---:|---|---|---|",
+        ]
+        for row in occurrences:
+            if row["plate"] != plate["file"]:
+                continue
+            ids = "、".join(f"`{identifier}`" for identifier in row["candidate_placements"].split())
+            dimensions = row["dimensions_mm"].replace(" x ", " × ")
+            file_lines.append(
+                f"| {row['slot']} | [{row['part']}](../kit/B/parts/{row['part']}.stl) | {dimensions} | "
+                f"{row['quantity_on_plate']}／{row['quantity_in_assembly']} | "
+                f"`{row['suggested_placement']}`／{row['suggested_step']} | {ids} | "
+                f"{'、'.join(row['candidate_steps'].split())} |"
+            )
+        file_lines.append("")
+    file_lines += [
         "", "## 保管・照合", "",
-        "[BOM](../kit/B/bom.csv) · [工程CSV](../kit/B/steps.csv) · [組立配置](../kit/B/assembly.json) · "
+        "[BOM](../kit/B/bom.csv) · [slot対応CSV](../kit/B/part-map.csv) · "
+        "[工程CSV](../kit/B/steps.csv) · [組立配置](../kit/B/assembly.json) · "
         "[全図PDF](../kit/B/drawings.pdf) · [印刷ファイルmanifest](../kit/manifest.json)",
         "", "[完成FreeCAD](../source/native/B.FCStd) · [銘板FreeCAD](../source/native/NP3-TEXT-B.FCStd) · "
         "[銘板STEP](../source/native/NP3-TEXT-B.step)",
@@ -120,7 +245,7 @@ def write_indexes():
     ]
     (ROOT / "docs/FILES.md").write_text("\n".join(file_lines))
     kit_manifest = {
-        "revision": "4.0-B-personal-kit.1", "visibility": "private",
+        "revision": REVISION, "visibility": "private",
         "model": "B", "units": "mm", "status": "NOT_SLICED", "sliced": False,
         "printer_settings_validated": False, "pause_encoded": False, "physical_tested": False,
         "assembly_dimensions_mm": [191.8, 79.8, 238.6], "assembly_quantity": 150,
@@ -128,6 +253,17 @@ def write_indexes():
         "unique_assembly_stl": 21, "assembly_bom_rows": 23, "plates": 14,
         "trial_quantity_separate_from_assembly": 7, "fit_master_count": 12,
         "nameplate": manifest["nameplate"],
+        "offline_guide": {
+            "entry": "guide/index.html", "self_contained": True,
+            "mapping": "guide/index.mapping.json", "occurrence_csv": "kit/B/part-map.csv",
+            "network_required": False, "server_required": False, "webgl_required": True,
+            "assembly_placements": 150, "plate_slots": 150,
+            "files": [
+                {"file": path.relative_to(ROOT).as_posix(),
+                 "bytes": path.stat().st_size, "sha256": sha(path)}
+                for path in sorted((ROOT / "guide").rglob("*")) if path.is_file()
+            ],
+        },
         "files": [
             {"file": str(path.relative_to(ROOT / "kit")), "bytes": path.stat().st_size, "sha256": sha(path)}
             for path in sorted((ROOT / "kit").rglob("*"))

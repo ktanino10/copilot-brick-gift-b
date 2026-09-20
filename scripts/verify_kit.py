@@ -18,7 +18,9 @@ import zipfile
 import numpy as np
 import trimesh
 
-from build_print_kit import ARCHIVE, ROOT, payload_files
+from build_print_kit import ARCHIVE, REVISION, ROOT, payload_files
+from verify_guide_mapping import verify_embedded, verify_mapping
+from verify_offline_html import verify_file as verify_offline_html
 
 NS = {"m": "http://schemas.microsoft.com/3dmanufacturing/core/2015/02"}
 LINES = ["Same icon, New adventures", "github.com/tomokota"]
@@ -189,7 +191,7 @@ def privacy_scan():
         r"AKIA[A-Z0-9]{16}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"
     )
     for path in payload_files():
-        if path.suffix in {".md", ".txt", ".csv", ".json", ".svg", ".py", ".step"}:
+        if path.suffix in {".md", ".txt", ".csv", ".json", ".svg", ".py", ".step", ".html", ".js", ".mjs", ".css"}:
             text = path.read_text()
             require(not forbidden.search(text), f"Private path or credential-like value: {path.relative_to(ROOT)}")
             if path.is_relative_to(ROOT / "kit") or path.is_relative_to(ROOT / "source/design"):
@@ -232,6 +234,7 @@ def verify_package():
             require(archive.read(name) == (ROOT / name).read_bytes(), f"ZIP content differs: {name}")
         require(sum(name.endswith(".stl") for name in names) == 34, "ZIP must contain 21+12+1 STL masters.")
         require(sum(name.endswith(".3mf") for name in names) == 14, "ZIP must contain 14 unsliced 3MFs.")
+        require("guide/index.html" in names, "ZIP is missing the offline 3D guide entry.")
         require(not any(name.endswith(".zip") for name in names), "No nested duplicate kits.")
     digest, filename = (ROOT / "downloads/SHA256SUMS.txt").read_text().strip().split("  ", 1)
     require(filename == ARCHIVE.name and digest == sha(ARCHIVE.read_bytes()), "ZIP checksum differs.")
@@ -317,7 +320,7 @@ def main():
     relative_links = verify_links(creating_report=args.write_report)
     privacy_scan()
     print_manifest = json.loads((ROOT / "kit/manifest.json").read_text())
-    require(print_manifest["status"] == "NOT_SLICED" and print_manifest["sliced"] is False
+    require(print_manifest["revision"] == REVISION and print_manifest["status"] == "NOT_SLICED" and print_manifest["sliced"] is False
             and print_manifest["pause_encoded"] is False and print_manifest["physical_tested"] is False,
             "Print package status differs.")
     require({row["file"] for row in print_manifest["files"]} == {
@@ -326,21 +329,102 @@ def main():
     }, "Print manifest inventory differs.")
     for row in print_manifest["files"]:
         require(sha((ROOT / "kit" / row["file"]).read_bytes()) == row["sha256"], "Print manifest hash differs.")
+    guide = print_manifest["offline_guide"]
+    require(guide["entry"] == "guide/index.html" and guide["self_contained"] is True
+            and guide["network_required"] is False and guide["server_required"] is False
+            and guide["mapping"] == "guide/index.mapping.json" and guide["occurrence_csv"] == "kit/B/part-map.csv"
+            and guide["assembly_placements"] == guide["plate_slots"] == 150,
+            "Offline guide manifest contract differs.")
+    guide_files = {path.relative_to(ROOT).as_posix() for path in (ROOT / "guide").rglob("*") if path.is_file()}
+    require({row["file"] for row in guide["files"]} == guide_files, "Guide manifest inventory differs.")
+    require(len(guide["files"]) == len(guide_files), "Guide manifest contains duplicate entries.")
+    for row in guide["files"]:
+        path = ROOT / row["file"]
+        require(path.stat().st_size == row["bytes"] and sha(path.read_bytes()) == row["sha256"],
+                "Offline guide manifest bytes or hash differ.")
+    offline_document = verify_offline_html(ROOT / guide["entry"])
+    guide_mapping = json.loads((ROOT / guide["mapping"]).read_text())
+    guide_report = verify_mapping(guide_mapping)
+    guide_report.update(verify_embedded(guide_mapping, ROOT / guide["entry"]))
+    rows = read_csv(ROOT / guide["occurrence_csv"])
+    slots = {slot["id"]: (plate, slot) for plate in guide_mapping["plates"] for slot in plate["slots"]}
+    guide_placements = {row["id"]: row for row in guide_mapping["placements"]}
+    require(len(rows) == len(slots) == 150
+            and {f"{row['plate']}#{row['slot']}" for row in rows} == set(slots), "Slot CSV inventory differs.")
+    for row in rows:
+        plate, slot = slots[f"{row['plate']}#{row['slot']}"]
+        placement = guide_placements[slot["suggested_placement"]]
+        group = guide_mapping["groups"][slot["group"]]
+        require(row["part"] == slot["part"] and row["color"] == plate["color"]
+                and row["finish_color"] == guide_mapping["parts"][slot["part"]].get("finish_color", "")
+                and row["suggested_placement"] == placement["id"] and int(row["suggested_step"]) == placement["step"]
+                and row["candidate_placements"].split() == slot["candidate_placements"]
+                and [int(step) for step in row["candidate_steps"].split()]
+                == sorted({guide_placements[identifier]["step"] for identifier in slot["candidate_placements"]})
+                and row["all_source_slots"].split() == [source["slot_id"] for source in group["sources"]],
+                "Slot CSV mapping differs.")
+        require(int(row["quantity_in_assembly"]) == group["quantity"]
+                and int(row["quantity_on_plate"]) == sum(s["part"] == slot["part"] for s in plate["slots"])
+                and [float(value) for value in row["dimensions_mm"].split(" x ")]
+                == guide_mapping["parts"][slot["part"]]["dimensions"], "Slot CSV dimensions or counts differ.")
+    for step in steps:
+        members = [guide_placements[identifier] for identifier in step["placement_ids"].split()]
+        require(step["source_slots"].split() == [row["suggested_source"]["slot_id"] for row in members]
+                and step["parts"].split() == [row["part"] for row in members], "Step CSV source mapping differs.")
+    browser_report = json.loads((ROOT / "verification/guide-browser.json").read_text())
+    require(browser_report["status"] == "PASS" and browser_report["navigation_scheme"] == "file"
+            and browser_report["browser_network_offline"] is True and browser_report["external_network_requests"] == 0
+            and browser_report["console_or_page_errors"] == 0
+            and browser_report["entry_sha256"] == sha((ROOT / guide["entry"]).read_bytes()),
+            "Offline browser verification is missing or stale.")
+    require(browser_report["checks"]["mapping_slots_checked"] == 150
+            and browser_report["checks"]["mapping_placements_checked"] == 150
+            and browser_report["checks"]["plate_ui_selections"] == 14
+            and browser_report["checks"]["part_color_groups_ui_checked"] == 23
+            and browser_report["checks"]["steps_navigated"] == 28, "Browser mapping/step coverage is incomplete.")
+    require(browser_report["checks"]["step_7_replay_stops_at_24"] is True
+            and browser_report["checks"]["step_7_replay_elapsed_seconds"] <= 15
+            and browser_report["checks"]["play_button_matches_state"] is True,
+            "Keeper-step playback timing/stop verification is incomplete.")
+    require(set(browser_report["media_files"]) == {
+        "docs/images/B-guide-start.png", "docs/images/B-guide-front.png", "docs/images/B-guide-base-front.gif",
+    }, "Actual-render media inventory differs.")
+    for filename, digest in browser_report["media_files"].items():
+        require(sha((ROOT / filename).read_bytes()) == digest, "Guide render media differs from browser verification.")
+    shared = json.loads((ROOT / "verification/guide-source-import.json").read_text())
+    expected_shared = {
+        "scripts/build_assembly_guide.py", "scripts/bundle_assembly_guide.mjs",
+        "web/assembly-guide/model.js", "web/assembly-guide/viewer.js",
+        "web/assembly-guide/template.html", "web/assembly-guide/style.css",
+        "web/assembly-guide/runtime.js", "notices/THREE-LICENSE.txt",
+    }
+    require(shared["source_commit_verified"] is True
+            and re.fullmatch(r"[0-9a-f]{40}", shared["source_commit"])
+            and len(shared["files"]) == len(expected_shared)
+            and {row["destination"] for row in shared["files"]} == expected_shared,
+            "Shared guide provenance is incomplete or unpinned.")
+    for row in shared["files"]:
+        require(sha((ROOT / row["destination"]).read_bytes()) == row["sha256"],
+                "Shared guide source/runtime differs from its pinned provenance.")
     verify_package()
     report = {
-        "status": "PASS", "revision": "4.0-B-personal-kit.1", "model": "B", "units": "mm",
+        "status": "PASS", "revision": REVISION, "model": "B", "units": "mm",
         "assembly_parts": 150, "B_unique_parts": 21, "B_bom_rows": 23, "B_plates": 14,
         "color_quantities": dict(Counter(row["color"] for row in assembly["placements"])),
         "steps": 28, "pdf_pages": 54, "trial_parts": 7, "fit_masters": 12,
         "nameplate_lines": LINES, "native_reopen_report": "verification/native.json",
         "relative_links_checked": relative_links, "zip_duplicate_members": 0,
+        "offline_guide": {"entry": guide["entry"], **offline_document, **guide_report,
+                          "browser_report": "verification/guide-browser.json",
+                          "common_source_commit": shared["source_commit"],
+                          "common_ui_revision": shared["common_ui_revision"]},
         "sliced": False, "pause_encoded": False, "physical_fit_strength_stability": "NOT_TESTED",
         "libraries": {"numpy": np.__version__, "trimesh": trimesh.__version__}, "meshes": mesh_reports,
     }
     if args.write_report:
         (ROOT / "verification/kit.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
         print("Wrote verification/kit.json. Rebuild the ZIP/checksums, then verify again without --write-report.")
-    print(f"PASS: 150 parts / 14 plates / 34 closed vertex-manifold STL masters / {relative_links} relative links / offline ZIP")
+    print(f"PASS: 150 parts / 14 plates / 34 closed vertex-manifold STL masters / {relative_links} relative links / offline 3D + ZIP")
 
 
 if __name__ == "__main__":

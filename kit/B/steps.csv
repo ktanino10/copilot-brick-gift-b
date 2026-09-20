@@ -1,29 +1,29 @@
-step,title,quantity,placement_ids,drawing
-1,黒い台座 1 / 5段目を積む（縦の継ぎ目をずらす）,1,B-001,drawings/step-01.svg
-2,黒い台座 2 / 5段目を積む（縦の継ぎ目をずらす）,4,B-002 B-003 B-004 B-005,drawings/step-02.svg
-3,黒い台座 3 / 5段目を積む（縦の継ぎ目をずらす）,5,B-006 B-007 B-008 B-009 B-010,drawings/step-03.svg
-4,黒い台座 4 / 5段目を積む（縦の継ぎ目をずらす）,4,B-011 B-012 B-013 B-014,drawings/step-04.svg
-5,黒い台座 5 / 5段目を積む（縦の継ぎ目をずらす）,5,B-015 B-016 B-017 B-018 B-019,drawings/step-05.svg
-6,大きい2行銘板と、その右隣のロゴを別々に前面の溝へ差し込む,2,B-020 B-021,drawings/step-06.svg
-7,銘板用2個・ロゴ用1個の黒いキーパーを2列目のスタッドに載せる,3,B-022 B-023 B-024,drawings/step-07.svg
-8,本体 1 段目を左から載せる,3,B-025 B-026 B-027,drawings/step-08.svg
-9,本体 2 段目を左から載せる,5,B-028 B-029 B-030 B-031 B-032,drawings/step-09.svg
-10,本体 3 段目を左から載せる,5,B-033 B-034 B-035 B-036 B-037,drawings/step-10.svg
-11,本体 4 段目を左から載せる,6,B-038 B-039 B-040 B-041 B-042 B-043,drawings/step-11.svg
-12,本体 5 段目を左から載せる,7,B-044 B-045 B-046 B-047 B-048 B-049 B-050,drawings/step-12.svg
-13,本体 6 段目を左から載せる,10,B-051 B-052 B-053 B-054 B-055 B-056 B-057 B-058 B-059 B-060,drawings/step-13.svg
-14,本体 7 段目を左から載せる,7,B-061 B-062 B-063 B-064 B-065 B-066 B-067,drawings/step-14.svg
-15,本体 8 段目を左から載せる,10,B-068 B-069 B-070 B-071 B-072 B-073 B-074 B-075 B-076 B-077,drawings/step-15.svg
-16,本体 9 段目を左から載せる,6,B-078 B-079 B-080 B-081 B-082 B-083,drawings/step-16.svg
-17,本体 10 段目を左から載せる,6,B-084 B-085 B-086 B-087 B-088 B-089,drawings/step-17.svg
-18,本体 11 段目を左から載せる,7,B-090 B-091 B-092 B-093 B-094 B-095 B-096,drawings/step-18.svg
-19,本体 12 段目を左から載せる,7,B-097 B-098 B-099 B-100 B-101 B-102 B-103,drawings/step-19.svg
-20,本体 13 段目を左から載せる,7,B-104 B-105 B-106 B-107 B-108 B-109 B-110,drawings/step-20.svg
-21,本体 14 段目を左から載せる,7,B-111 B-112 B-113 B-114 B-115 B-116 B-117,drawings/step-21.svg
-22,本体 15 段目を左から載せる,7,B-118 B-119 B-120 B-121 B-122 B-123 B-124,drawings/step-22.svg
-23,本体 16 段目を左から載せる,7,B-125 B-126 B-127 B-128 B-129 B-130 B-131,drawings/step-23.svg
-24,本体 17 段目を左から載せる,7,B-132 B-133 B-134 B-135 B-136 B-137 B-138,drawings/step-24.svg
-25,本体 18 段目を左から載せる,5,B-139 B-140 B-141 B-142 B-143,drawings/step-25.svg
-26,本体 19 段目を左から載せる,4,B-144 B-145 B-146 B-147,drawings/step-26.svg
-27,頭頂のマゼンタのプレートを載せる,3,B-148 B-149 B-150,drawings/step-27.svg
-28,2行と右ロゴが5段台座の正面内に収まること、保持と転倒を確認する,0,,drawings/step-28.svg
+step,title,quantity,placement_ids,drawing,source_slots,parts
+1,黒い台座 1 / 5段目を積む（縦の継ぎ目をずらす）,1,B-001,drawings/step-01.svg,B-black-02.3mf#3,BASE3-24x10-B-562406
+2,黒い台座 2 / 5段目を積む（縦の継ぎ目をずらす）,4,B-002 B-003 B-004 B-005,drawings/step-02.svg,B-black-02.3mf#1 B-black-03.3mf#3 B-black-03.3mf#1 B-black-01.3mf#7,BASE3-06x10-T-e1945a BASE3-06x10-T-838259 BASE3-06x10-T-3f87ac BASE3-06x10-T-6e100f
+3,黒い台座 3 / 5段目を積む（縦の継ぎ目をずらす）,5,B-006 B-007 B-008 B-009 B-010,drawings/step-03.svg,B-black-01.3mf#1 B-black-03.3mf#4 B-black-03.3mf#5 B-black-01.3mf#5 B-black-01.3mf#3,BASE3-03x10-T-aa77a9 BASE3-06x10-T-838259 BASE3-06x10-T-838259 BASE3-06x10-T-6159e6 BASE3-03x10-T-d79875
+4,黒い台座 4 / 5段目を積む（縦の継ぎ目をずらす）,4,B-011 B-012 B-013 B-014,drawings/step-04.svg,B-black-02.3mf#2 B-black-03.3mf#6 B-black-03.3mf#2 B-black-01.3mf#8,BASE3-06x10-T-e1945a BASE3-06x10-T-838259 BASE3-06x10-T-3f87ac BASE3-06x10-T-6e100f
+5,黒い台座 5 / 5段目を積む（縦の継ぎ目をずらす）,5,B-015 B-016 B-017 B-018 B-019,drawings/step-05.svg,B-black-01.3mf#2 B-black-04.3mf#1 B-black-04.3mf#2 B-black-01.3mf#6 B-black-01.3mf#4,BASE3-03x10-T-aa77a9 BASE3-06x10-T-838259 BASE3-06x10-T-838259 BASE3-06x10-T-6159e6 BASE3-03x10-T-d79875
+6,大きい2行銘板と、その右隣のロゴを別々に前面の溝へ差し込む,2,B-020 B-021,drawings/step-06.svg,B-black-to-white-z2p4-01.3mf#1 B-black-to-white-z2p8-01.3mf#1,NP3-TEXT-B NP3-LOGO-B
+7,銘板用2個・ロゴ用1個の黒いキーパーを2列目のスタッドに載せる,3,B-022 B-023 B-024,drawings/step-07.svg,B-black-07.3mf#8 B-black-07.3mf#9 B-black-07.3mf#10,NP3-KEEPER NP3-KEEPER NP3-KEEPER
+8,本体 1 段目を左から載せる,3,B-025 B-026 B-027,drawings/step-08.svg,B-magenta-02.3mf#1 B-magenta-02.3mf#2 B-magenta-01.3mf#19,BR-04x04-H096 BR-04x04-H096 BR-02x04-H096
+9,本体 2 段目を左から載せる,5,B-028 B-029 B-030 B-031 B-032,drawings/step-09.svg,B-magenta-01.3mf#1 B-black-04.3mf#3 B-black-05.3mf#15 B-black-04.3mf#4 B-magenta-01.3mf#2,BR-02x06-H096 BR-02x04-H096 BR-04x04-H096 BR-02x04-H096 BR-02x06-H096
+10,本体 3 段目を左から載せる,5,B-033 B-034 B-035 B-036 B-037,drawings/step-10.svg,B-magenta-01.3mf#3 B-black-05.3mf#16 B-black-05.3mf#17 B-black-04.3mf#5 B-magenta-01.3mf#4,BR-02x06-H096 BR-04x04-H096 BR-04x04-H096 BR-02x04-H096 BR-02x06-H096
+11,本体 4 段目を左から載せる,6,B-038 B-039 B-040 B-041 B-042 B-043,drawings/step-11.svg,B-magenta-01.3mf#5 B-black-04.3mf#6 B-black-05.3mf#18 B-black-05.3mf#19 B-black-04.3mf#7 B-magenta-01.3mf#6,BR-02x06-H096 BR-02x04-H096 BR-04x04-H096 BR-04x04-H096 BR-02x04-H096 BR-02x06-H096
+12,本体 5 段目を左から載せる,7,B-044 B-045 B-046 B-047 B-048 B-049 B-050,drawings/step-12.svg,B-magenta-01.3mf#7 B-black-05.3mf#20 B-green-01.3mf#1 B-black-06.3mf#1 B-green-01.3mf#2 B-black-06.3mf#2 B-magenta-01.3mf#8,BR-02x06-H096 BR-04x04-H096 BR-01x04-H096 BR-04x04-H096 BR-01x04-H096 BR-04x04-H096 BR-02x06-H096
+13,本体 6 段目を左から載せる,10,B-051 B-052 B-053 B-054 B-055 B-056 B-057 B-058 B-059 B-060,drawings/step-13.svg,B-magenta-01.3mf#9 B-black-04.3mf#8 B-black-05.3mf#3 B-green-01.3mf#3 B-black-04.3mf#9 B-black-04.3mf#10 B-green-01.3mf#4 B-black-04.3mf#11 B-black-05.3mf#4 B-magenta-01.3mf#10,BR-02x06-H096 BR-02x04-H096 BR-03x04-H096 BR-01x04-H096 BR-02x04-H096 BR-02x04-H096 BR-01x04-H096 BR-02x04-H096 BR-03x04-H096 BR-02x06-H096
+14,本体 7 段目を左から載せる,7,B-061 B-062 B-063 B-064 B-065 B-066 B-067,drawings/step-14.svg,B-magenta-01.3mf#11 B-black-06.3mf#16 B-green-01.3mf#5 B-black-06.3mf#3 B-green-01.3mf#6 B-black-07.3mf#1 B-magenta-01.3mf#12,BR-02x06-H096 BR-05x04-H096 BR-01x04-H096 BR-04x04-H096 BR-01x04-H096 BR-05x04-H096 BR-02x06-H096
+15,本体 8 段目を左から載せる,10,B-068 B-069 B-070 B-071 B-072 B-073 B-074 B-075 B-076 B-077,drawings/step-15.svg,B-magenta-01.3mf#13 B-black-04.3mf#12 B-black-05.3mf#5 B-green-01.3mf#7 B-black-04.3mf#13 B-black-04.3mf#14 B-green-01.3mf#8 B-black-04.3mf#15 B-black-05.3mf#6 B-magenta-01.3mf#14,BR-02x06-H096 BR-02x04-H096 BR-03x04-H096 BR-01x04-H096 BR-02x04-H096 BR-02x04-H096 BR-01x04-H096 BR-02x04-H096 BR-03x04-H096 BR-02x06-H096
+16,本体 9 段目を左から載せる,6,B-078 B-079 B-080 B-081 B-082 B-083,drawings/step-16.svg,B-magenta-01.3mf#15 B-black-06.3mf#4 B-black-06.3mf#5 B-black-06.3mf#6 B-black-06.3mf#7 B-magenta-01.3mf#16,BR-02x06-H096 BR-04x04-H096 BR-04x04-H096 BR-04x04-H096 BR-04x04-H096 BR-02x06-H096
+17,本体 10 段目を左から載せる,6,B-084 B-085 B-086 B-087 B-088 B-089,drawings/step-17.svg,B-cyan-01.3mf#1 B-cyan-01.3mf#25 B-cyan-01.3mf#26 B-cyan-02.3mf#1 B-cyan-02.3mf#2 B-cyan-01.3mf#2,BR-02x05-H096 BR-04x05-H096 BR-04x05-H096 BR-04x05-H096 BR-04x05-H096 BR-02x05-H096
+18,本体 11 段目を左から載せる,7,B-090 B-091 B-092 B-093 B-094 B-095 B-096,drawings/step-18.svg,B-cyan-01.3mf#3 B-black-06.3mf#8 B-black-05.3mf#7 B-cyan-01.3mf#4 B-black-06.3mf#9 B-black-05.3mf#8 B-cyan-01.3mf#5,BR-02x05-H096 BR-04x04-H096 BR-03x04-H096 BR-02x05-H096 BR-04x04-H096 BR-03x04-H096 BR-02x05-H096
+19,本体 12 段目を左から載せる,7,B-097 B-098 B-099 B-100 B-101 B-102 B-103,drawings/step-19.svg,B-cyan-01.3mf#6 B-black-04.3mf#16 B-black-07.3mf#2 B-cyan-01.3mf#7 B-black-04.3mf#17 B-black-07.3mf#3 B-cyan-01.3mf#8,BR-02x05-H096 BR-02x04-H096 BR-05x04-H096 BR-02x05-H096 BR-02x04-H096 BR-05x04-H096 BR-02x05-H096
+20,本体 13 段目を左から載せる,7,B-104 B-105 B-106 B-107 B-108 B-109 B-110,drawings/step-20.svg,B-cyan-01.3mf#9 B-black-06.3mf#10 B-black-05.3mf#9 B-cyan-01.3mf#10 B-black-06.3mf#11 B-black-05.3mf#10 B-cyan-01.3mf#11,BR-02x05-H096 BR-04x04-H096 BR-03x04-H096 BR-02x05-H096 BR-04x04-H096 BR-03x04-H096 BR-02x05-H096
+21,本体 14 段目を左から載せる,7,B-111 B-112 B-113 B-114 B-115 B-116 B-117,drawings/step-21.svg,B-cyan-01.3mf#12 B-black-04.3mf#18 B-black-07.3mf#4 B-cyan-01.3mf#13 B-black-04.3mf#19 B-black-07.3mf#5 B-cyan-01.3mf#14,BR-02x05-H096 BR-02x04-H096 BR-05x04-H096 BR-02x05-H096 BR-02x04-H096 BR-05x04-H096 BR-02x05-H096
+22,本体 15 段目を左から載せる,7,B-118 B-119 B-120 B-121 B-122 B-123 B-124,drawings/step-22.svg,B-cyan-01.3mf#15 B-black-06.3mf#12 B-black-05.3mf#11 B-cyan-01.3mf#16 B-black-06.3mf#13 B-black-05.3mf#12 B-cyan-01.3mf#17,BR-02x05-H096 BR-04x04-H096 BR-03x04-H096 BR-02x05-H096 BR-04x04-H096 BR-03x04-H096 BR-02x05-H096
+23,本体 16 段目を左から載せる,7,B-125 B-126 B-127 B-128 B-129 B-130 B-131,drawings/step-23.svg,B-cyan-01.3mf#18 B-black-05.3mf#1 B-black-07.3mf#6 B-cyan-01.3mf#19 B-black-05.3mf#2 B-black-07.3mf#7 B-cyan-01.3mf#20,BR-02x05-H096 BR-02x04-H096 BR-05x04-H096 BR-02x05-H096 BR-02x04-H096 BR-05x04-H096 BR-02x05-H096
+24,本体 17 段目を左から載せる,7,B-132 B-133 B-134 B-135 B-136 B-137 B-138,drawings/step-24.svg,B-cyan-01.3mf#21 B-black-06.3mf#14 B-black-05.3mf#13 B-cyan-01.3mf#22 B-black-06.3mf#15 B-black-05.3mf#14 B-cyan-01.3mf#23,BR-02x05-H096 BR-04x04-H096 BR-03x04-H096 BR-02x05-H096 BR-04x04-H096 BR-03x04-H096 BR-02x05-H096
+25,本体 18 段目を左から載せる,5,B-139 B-140 B-141 B-142 B-143,drawings/step-25.svg,B-cyan-01.3mf#24 B-cyan-02.3mf#3 B-cyan-02.3mf#4 B-cyan-02.3mf#5 B-cyan-02.3mf#6,BR-02x05-H096 BR-04x05-H096 BR-04x05-H096 BR-04x05-H096 BR-04x05-H096
+26,本体 19 段目を左から載せる,4,B-144 B-145 B-146 B-147,drawings/step-26.svg,B-cyan-02.3mf#7 B-cyan-02.3mf#8 B-cyan-02.3mf#9 B-cyan-02.3mf#10,BR-04x05-H096 BR-04x05-H096 BR-04x05-H096 BR-04x05-H096
+27,頭頂のマゼンタのプレートを載せる,3,B-148 B-149 B-150,drawings/step-27.svg,B-magenta-01.3mf#17 B-magenta-01.3mf#20 B-magenta-01.3mf#18,BR-02x04-H064 BR-04x04-H064 BR-02x04-H064
+28,2行と右ロゴが5段台座の正面内に収まること、保持と転倒を確認する,0,,drawings/step-28.svg,,

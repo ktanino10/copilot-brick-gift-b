@@ -1,5 +1,5 @@
 {
-  "revision": "4.0-B-personal-kit.1",
+  "revision": "4.0-B-personal-kit.2",
   "visibility": "private",
   "model": "B",
   "units": "mm",
@@ -32,6 +32,29 @@
     "lines": [
       "Same icon, New adventures",
       "github.com/tomokota"
+    ]
+  },
+  "offline_guide": {
+    "entry": "guide/index.html",
+    "self_contained": true,
+    "mapping": "guide/index.mapping.json",
+    "occurrence_csv": "kit/B/part-map.csv",
+    "network_required": false,
+    "server_required": false,
+    "webgl_required": true,
+    "assembly_placements": 150,
+    "plate_slots": 150,
+    "files": [
+      {
+        "file": "guide/index.html",
+        "bytes": 9117585,
+        "sha256": "5ccd9e0eee7da263e20a75a3dcf36a43102de0582147f87c2c0dc4d203a51822"
+      },
+      {
+        "file": "guide/index.mapping.json",
+        "bytes": 260891,
+        "sha256": "ef56e5395f83b07ceee22bbc9c05e6de8a159db62583018e50219bd97eba3105"
+      }
     ]
   },
   "files": [
@@ -311,6 +334,11 @@
       "sha256": "ddb35332e23b5f6bee755392aa8aff4acaa18381cbdb8e7c44df74c63ce5c78c"
     },
     {
+      "file": "B/part-map.csv",
+      "bytes": 63806,
+      "sha256": "6cbdb1976bbf8175c340f5e56c9b1ec57d61772d98922f81df66af8d362107ca"
+    },
+    {
       "file": "B/parts/BASE3-03x10-T-aa77a9.stl",
       "bytes": 1034384,
       "sha256": "0eedec766e01cdbef5539540873c80f90309018d6958a6b77b19516be633f18e"
@@ -492,8 +520,8 @@
     },
     {
       "file": "B/steps.csv",
-      "bytes": 3057,
-      "sha256": "b962de6e9acd24a7dd5978ea4e7b09218667d550d2a94a8c099320bb7a910f08"
+      "bytes": 7940,
+      "sha256": "d2a332cb925ff3797bf54dffd0a67337ff6eb1f27d4f3121d1fc340c6d1e0919"
     },
     {
       "file": "fit/FIT-F-CM04.stl",

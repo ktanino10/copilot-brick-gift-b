@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "entry": "guide/index.html",
+  "entry_sha256": "5ccd9e0eee7da263e20a75a3dcf36a43102de0582147f87c2c0dc4d203a51822",
+  "navigation_scheme": "file",
+  "browser_network_offline": true,
+  "external_network_requests": 0,
+  "console_or_page_errors": 0,
+  "browser": "140.0.7339.16",
+  "playwright": "1.55.0",
+  "pillow": "11.3.0",
+  "document": {
+    "inline_runtime_scripts": 1,
+    "connect_src": "'none'",
+    "external_active_resources": 0,
+    "charset": "utf-8",
+    "language": "ja"
+  },
+  "checks": {
+    "mapping_slots_checked": 150,
+    "mapping_placements_checked": 150,
+    "plate_ui_selections": 14,
+    "part_color_groups_ui_checked": 23,
+    "slot_ui_selections": 23,
+    "placement_ui_selections": 23,
+    "steps_navigated": 28,
+    "responsive_widths": [
+      320,
+      768,
+      1024,
+      1440
+    ],
+    "empty_start_and_restart": true,
+    "large_base_canvas_click": true,
+    "seated_count_at_progress_one": true,
+    "prefix_preserved": true,
+    "play_pause_step_replay": true,
+    "step_navigation_stops_play": true,
+    "play_button_matches_state": true,
+    "step_7_replay_stops_at_24": true,
+    "step_7_replay_max_seconds": 15,
+    "step_7_replay_elapsed_seconds": 5.426,
+    "front_rotation_degrees": 90,
+    "black_and_white_relief_visible": true,
+    "views": [
+      "iso",
+      "front",
+      "side",
+      "top",
+      "back",
+      "bottom"
+    ],
+    "keyboard_selection_and_rotation": true,
+    "wheel_zoom": true,
+    "camera_framing": true
+  },
+  "physical_fit_strength_stability": "NOT_TESTED",
+  "sliced": false,
+  "media": {
+    "frames": 81,
+    "duration_ms": 24350,
+    "last_placement": "B-024",
+    "source": "actual standalone viewer, deterministic insertion progress; not a physical simulation"
+  },
+  "media_files": {
+    "docs/images/B-guide-start.png": "5610a34b7b0a54bfe6b8ec876807acdbb46c75decb8ed43c618e1307bf297a27",
+    "docs/images/B-guide-front.png": "bbffd51aef4b654329c07f2d347e82968a13e66a9c1bd643a8a81d594eb71c17",
+    "docs/images/B-guide-base-front.gif": "26b487e6e2a9709c0f10516aac1ac1771d6b45241ab554b66c80e16819047a50"
+  }
+}

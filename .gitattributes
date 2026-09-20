@@ -6,7 +6,11 @@
 *.step binary
 *.pdf binary
 *.png binary
+*.gif binary
 *.ttf binary
 *.zip binary
 *.csv whitespace=cr-at-eol
 source/resources/fonts/barlow-condensed/OFL.txt whitespace=-blank-at-eol
+# Preserve the vendored Three.js shader strings in both generated bundles.
+guide/index.html whitespace=-blank-at-eol
+web/assembly-guide/runtime.js whitespace=-blank-at-eol
