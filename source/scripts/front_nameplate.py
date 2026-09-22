@@ -40,6 +40,38 @@ def carrier(message):
 
 def message_faces(spec, parameters):
     message = parameters["message"]
+    if message.get("lettering_strategy") == "legibility-v2":
+        from legible_lettering import raw_row, edited_glyph
+        plan = json.loads((ROOT / message["lettering_plan"]).read_text())
+        if plan["lines"] != message["lines"] or len(plan["rows"]) != 2:
+            raise ValueError("The measured lettering plan must match the exact two lines.")
+        results = []
+        for index, text in enumerate(message["lines"]):
+            shapes, _, _ = raw_row(
+                text, ROOT / message["row_fonts"][index], spec["text_sizes"][index],
+                spec["text_heights"][index], message["row_scale_modes"][index] == "uniform",
+            )
+            instructions = {item["index"]: item for item in plan["rows"][index]["glyphs"]}
+            edited = []
+            for glyph_index, character, shape in shapes:
+                operation = instructions[glyph_index]
+                if operation["character"] != character:
+                    raise ValueError("The measured glyph plan is stale.")
+                shape = edited_glyph(shape, operation)
+                shape.translate(V(operation["extra_x_mm"], 0, 0))
+                edited.extend(shape.Faces)
+            bound = Part.makeCompound(edited).BoundBox
+            if bound.XLength > spec["width"] - 2 * message["side_taper"] - 4 + 1e-5:
+                raise ValueError("Approved lettering no longer fits the unchanged face.")
+            shift = V((spec["width"] - bound.XLength) / 2 - bound.XMin,
+                      message["line_bottoms"][index] - bound.YMin, message["thickness"])
+            for face in edited:
+                face.translate(shift)
+            gauges = straight_strokes(edited)
+            if min(item["width_mm"] for item in gauges) < message["minimum_straight_stroke"]:
+                raise ValueError("Approved lettering failed its positive-stroke screening.")
+            results.append((text, edited, gauges))
+        return results
     font = ROOT / message["font"]
     results = []
     for text, size, target_height, baseline in zip(message["lines"], spec["text_sizes"],

@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "entry": "guide/index.html",
-  "entry_sha256": "5ccd9e0eee7da263e20a75a3dcf36a43102de0582147f87c2c0dc4d203a51822",
+  "entry_sha256": "451fa61cd36b1772fb5f96baef971ff3d4c809874d31f26f6a475056b4c86c1c",
   "navigation_scheme": "file",
   "browser_network_offline": true,
   "external_network_requests": 0,
@@ -39,7 +39,7 @@
     "play_button_matches_state": true,
     "step_7_replay_stops_at_24": true,
     "step_7_replay_max_seconds": 15,
-    "step_7_replay_elapsed_seconds": 5.426,
+    "step_7_replay_elapsed_seconds": 6.661,
     "front_rotation_degrees": 90,
     "black_and_white_relief_visible": true,
     "views": [
@@ -63,8 +63,8 @@
     "source": "actual standalone viewer, deterministic insertion progress; not a physical simulation"
   },
   "media_files": {
-    "docs/images/B-guide-start.png": "5610a34b7b0a54bfe6b8ec876807acdbb46c75decb8ed43c618e1307bf297a27",
-    "docs/images/B-guide-front.png": "bbffd51aef4b654329c07f2d347e82968a13e66a9c1bd643a8a81d594eb71c17",
-    "docs/images/B-guide-base-front.gif": "26b487e6e2a9709c0f10516aac1ac1771d6b45241ab554b66c80e16819047a50"
+    "docs/images/B-guide-start.png": "cb54aafa73ae17201e2937eabbc79a35550d304437a1333cf69818375c0b4de8",
+    "docs/images/B-guide-front.png": "a534cc047358d84583ddb2602040ca2c9c11e177a3d4871e9860cc0d92c4ffcd",
+    "docs/images/B-guide-base-front.gif": "8afc5b70204e9766f3fb76c78a0863d9c22bd6b3bbdbc5b00f989f25b2248f45"
   }
 }

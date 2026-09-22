@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "source/scripts"))
 from freecad_geometry import bounds_list, placement_for
 from letter_metrics import straight_strokes
+from native_compare import compare_brep_geometry
 
 LINES = ["Same icon, New adventures", "github.com/tomokota"]
 
@@ -59,7 +60,7 @@ def main():
     compound = Part.makeCompound([obj.Shape for obj in objects])
     bounds = bounds_list(compound)
     require(bounds == assembly["bounds"], "Native assembly envelope differs.")
-    require([round(b - a, 6) for a, b in zip(*bounds)] == [191.8, 79.8, 238.6],
+    require([round(b - a, 6) for a, b in zip(*bounds)] == [191.8, 80.2, 238.6],
             "Unexpected B assembly size.")
     target = next(obj for obj in objects if obj.PartID == "NP3-TEXT-B")
     require(json.loads(target.MessageLines) == LINES, "Assembly lettering metadata differs.")
@@ -70,18 +71,18 @@ def main():
     plate = replacement.Shape.copy()
     require(plate.isValid() and len(plate.Solids) == 1 and plate.Volume > 0,
             "Invalid standalone nameplate.")
-    require(bounds_list(plate) == [[0, 0, 0], [142, 40, 3.2]], "Nameplate dimensions differ.")
+    require(bounds_list(plate) == [[0, 0, 0], [142, 40, 3.6]], "Nameplate dimensions differ.")
     native_local = target.Shape.copy()
     native_local.Placement = App.Placement()
-    difference = native_local.cut(plate).Volume + plate.cut(native_local).Volume
-    require(difference < 1e-5, "Assembly plate and standalone personal plate differ.")
+    comparison = compare_brep_geometry(native_local, plate)
+    require(comparison["equal"], "Assembly plate and standalone personal plate differ.")
     step_shape = Part.read(str(ROOT / "source/native/NP3-TEXT-B.step"))
     require(step_shape.isValid() and len(step_shape.Solids) == 1, "Invalid personal STEP.")
     require(abs(step_shape.Volume - plate.Volume) < .001, "STEP and native volume differ.")
     cap_faces = [face for face in plate.Faces
-                 if face.BoundBox.ZLength < 1e-5 and abs(face.BoundBox.ZMin - 3.2) < 1e-5]
+                 if face.BoundBox.ZLength < 1e-5 and abs(face.BoundBox.ZMin - 3.6) < 1e-5]
     stroke = min(item["width_mm"] for item in straight_strokes(cap_faces))
-    require(stroke >= .84, "The native straight-stroke requirement is not met.")
+    require(stroke >= 1.0, "The native straight-stroke screening requirement is not met.")
 
     maximum_overlap = 0.0
     candidates = 0
@@ -133,9 +134,10 @@ def main():
         "status": "PASS", "freecad_version": ".".join(App.Version()[:3]),
         "native_files_sha256": before, "native_files_modified": False,
         "model": "B", "assembly_objects": 150, "steps": len(assembly["steps"]),
-        "bounds_mm": bounds, "dimensions_mm": [191.8, 79.8, 238.6],
-        "nameplate_lines": LINES, "nameplate_dimensions_mm": [142, 40, 3.2],
-        "assembly_plate_symmetric_difference_mm3": difference,
+        "bounds_mm": bounds, "dimensions_mm": [191.8, 80.2, 238.6],
+        "nameplate_lines": LINES, "nameplate_dimensions_mm": [142, 40, 3.6],
+        "nameplate_ink_heights_mm": [12, 10], "nameplate_white_relief_mm": 1.2,
+        "assembly_plate_geometry_comparison": comparison,
         "nameplate_native_volume_mm3": plate.Volume,
         "minimum_measured_straight_stroke_mm": stroke,
         "nameplate_interference_candidates": candidates,
@@ -144,6 +146,9 @@ def main():
     }
     (ROOT / "verification/native.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps(report, ensure_ascii=False), file=sys.__stdout__, flush=True)
+    sys.__stdout__.flush()
+    sys.__stderr__.flush()
+    os._exit(0)
 
 
 if __name__ == "__main__":

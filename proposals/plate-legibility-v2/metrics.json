@@ -1,0 +1,1595 @@
+{
+  "revision": "plate-legibility-v2-candidate-1",
+  "status": "CANDIDATE_NOT_SLICED_NOT_PHYSICALLY_TESTED",
+  "definitions": {
+    "source": "Reopened native cap faces matched to per-glyph FreeCAD faces; boundaries sampled with0.002mm deflection. Closed-wire endpoints differing by less than1e-8mm are identified as the same endpoint; no polygon healing or CAD geometry repair is performed.",
+    "closed_counter": "Largest inscribed disk plus 101 horizontal and 101 vertical chords spanning the middle 25%-75% of the counter bounding box. The shortest middle-band chord is a defined effective throat, not the zero-width tip.",
+    "open_c_e": "Largest convex-hull pocket seed, then the widest negative-space escape to the right with a 0.01mm distance-transform grid. Diameter resolution approximately +/-0.03mm; not a universal nozzle rule.",
+    "glyph_spacing": "Exact OpenCASCADE minimum distance between adjacent visible glyph compounds; spaces and punctuation retained.",
+    "spacing_plan_tolerance": "The1.05mm planning target uses boundaries with0.002mm deflection per glyph. Exact BRep gaps are reported without substituting the target; the check allows0.004mm planning error and separately requires at least1mm.",
+    "straight_stroke": "Existing parallel straight-edge material gauges; not a guarantee for all curves or terminals.",
+    "material_core": "First 0.005mm erosion-radius sample splitting one ink component into two cores of at least 0.05mm2. Report diameter 2r; this screens sustained material necks, not taper tips. Null means no such split found up to2.4mm, not a minimum-width guarantee.",
+    "dot_slash": "Inscribed diameters of actual disconnected i/dot/slash components, without claiming constant width at mathematical endpoints.",
+    "scope": "Digital candidate screening only. Actual nozzle0.2mm is known; no verified slicer profile or physical pass is implied."
+  },
+  "current": [
+    {
+      "number": 1,
+      "text": "Same icon, New adventures",
+      "font": "BarlowCondensed-Black.ttf",
+      "font_sha256": "e74b750df582c608f35db467b711b2b60d2217618e85e60b72b42dfd00446cab",
+      "x_scale": 1.0,
+      "y_scale": 1.097770154373928,
+      "bottom_mm": 22.0,
+      "bounds_mm": [
+        [
+          4.15625,
+          22.0,
+          -0.0
+        ],
+        [
+          137.84375,
+          34.0,
+          0.0
+        ]
+      ],
+      "width_mm": 133.6875,
+      "ink_height_mm": 12.0,
+      "adjacent_glyphs": [
+        {
+          "indices": [
+            0,
+            1
+          ],
+          "pair": "Sa",
+          "clearance_mm": 0.3423794719924902
+        },
+        {
+          "indices": [
+            1,
+            2
+          ],
+          "pair": "am",
+          "clearance_mm": 0.5079166666666666
+        },
+        {
+          "indices": [
+            2,
+            3
+          ],
+          "pair": "me",
+          "clearance_mm": 0.4833333333333343
+        },
+        {
+          "indices": [
+            3,
+            5
+          ],
+          "pair": "ei",
+          "clearance_mm": 3.0100000000000016
+        },
+        {
+          "indices": [
+            5,
+            6
+          ],
+          "pair": "ic",
+          "clearance_mm": 0.4479166666666572
+        },
+        {
+          "indices": [
+            6,
+            7
+          ],
+          "pair": "co",
+          "clearance_mm": 0.42458333333333087
+        },
+        {
+          "indices": [
+            7,
+            8
+          ],
+          "pair": "on",
+          "clearance_mm": 0.5045833333333292
+        },
+        {
+          "indices": [
+            8,
+            9
+          ],
+          "pair": "n,",
+          "clearance_mm": 0.6693219916446508
+        },
+        {
+          "indices": [
+            9,
+            11
+          ],
+          "pair": ",N",
+          "clearance_mm": 3.2493778538812705
+        },
+        {
+          "indices": [
+            11,
+            12
+          ],
+          "pair": "Ne",
+          "clearance_mm": 0.5516666666666623
+        },
+        {
+          "indices": [
+            12,
+            13
+          ],
+          "pair": "ew",
+          "clearance_mm": 0.7001092204520627
+        },
+        {
+          "indices": [
+            13,
+            15
+          ],
+          "pair": "wa",
+          "clearance_mm": 3.238493375449182
+        },
+        {
+          "indices": [
+            15,
+            16
+          ],
+          "pair": "ad",
+          "clearance_mm": 0.45666666666667766
+        },
+        {
+          "indices": [
+            16,
+            17
+          ],
+          "pair": "dv",
+          "clearance_mm": 0.4408333333333303
+        },
+        {
+          "indices": [
+            17,
+            18
+          ],
+          "pair": "ve",
+          "clearance_mm": 0.768726348366674
+        },
+        {
+          "indices": [
+            18,
+            19
+          ],
+          "pair": "en",
+          "clearance_mm": 0.4758333333333269
+        },
+        {
+          "indices": [
+            19,
+            20
+          ],
+          "pair": "nt",
+          "clearance_mm": 0.3615847232714872
+        },
+        {
+          "indices": [
+            20,
+            21
+          ],
+          "pair": "tu",
+          "clearance_mm": 0.3999999999999915
+        },
+        {
+          "indices": [
+            21,
+            22
+          ],
+          "pair": "ur",
+          "clearance_mm": 0.5695833333333269
+        },
+        {
+          "indices": [
+            22,
+            23
+          ],
+          "pair": "re",
+          "clearance_mm": 0.553174488211546
+        },
+        {
+          "indices": [
+            23,
+            24
+          ],
+          "pair": "es",
+          "clearance_mm": 0.3898057136542407
+        }
+      ],
+      "minimum_reliable_straight_stroke_mm": 1.8264150943396231,
+      "glyph_metrics": [
+        {
+          "index": 0,
+          "character": "S",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 2.270000000000002
+        },
+        {
+          "index": 1,
+          "character": "a",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.7279359634076634,
+              "minimum_horizontal_chord_in_central_half_mm": 0.6553942404618542,
+              "minimum_vertical_chord_in_central_half_mm": 0.7406436675198407,
+              "area_mm2": 0.5170937474424194
+            }
+          ],
+          "material_core_split_diameter_mm": 1.720000000000001
+        },
+        {
+          "index": 2,
+          "character": "m",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.540000000000001
+        },
+        {
+          "index": 3,
+          "character": "e",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.575399514008005,
+              "minimum_horizontal_chord_in_central_half_mm": 0.5011137911024974,
+              "minimum_vertical_chord_in_central_half_mm": 0.8127434819846826,
+              "area_mm2": 0.4467367524759022
+            }
+          ],
+          "material_core_split_diameter_mm": 2.270000000000002,
+          "right_aperture_effective_width_mm": 0.32
+        },
+        {
+          "index": 5,
+          "character": "i",
+          "components": 2,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": null,
+          "component_inscribed_diameters_mm": [
+            2.4066666666666663,
+            2.403597166302772
+          ]
+        },
+        {
+          "index": 6,
+          "character": "c",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 2.270000000000002,
+          "right_aperture_effective_width_mm": 1.359979248046875
+        },
+        {
+          "index": 7,
+          "character": "o",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.6275000000000119,
+              "minimum_horizontal_chord_in_central_half_mm": 0.6275000000000119,
+              "minimum_vertical_chord_in_central_half_mm": 2.8939204062645594,
+              "area_mm2": 1.77315544564695
+            }
+          ],
+          "material_core_split_diameter_mm": 2.270000000000002
+        },
+        {
+          "index": 8,
+          "character": "n",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.720000000000001
+        },
+        {
+          "index": 9,
+          "character": ",",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": null
+        },
+        {
+          "index": 11,
+          "character": "N",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.5100000000000011
+        },
+        {
+          "index": 12,
+          "character": "e",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.5753995140080121,
+              "minimum_horizontal_chord_in_central_half_mm": 0.5011137911024832,
+              "minimum_vertical_chord_in_central_half_mm": 0.8127434819846826,
+              "area_mm2": 0.44673675247590316
+            }
+          ],
+          "material_core_split_diameter_mm": 2.270000000000002,
+          "right_aperture_effective_width_mm": 0.32
+        },
+        {
+          "index": 13,
+          "character": "w",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.8700000000000014
+        },
+        {
+          "index": 15,
+          "character": "a",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.7279359634076741,
+              "minimum_horizontal_chord_in_central_half_mm": 0.6553942404618738,
+              "minimum_vertical_chord_in_central_half_mm": 0.7406436675198336,
+              "area_mm2": 0.5170937474424254
+            }
+          ],
+          "material_core_split_diameter_mm": 1.720000000000001
+        },
+        {
+          "index": 16,
+          "character": "d",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.5633333333333326,
+              "minimum_horizontal_chord_in_central_half_mm": 0.5633333333333326,
+              "minimum_vertical_chord_in_central_half_mm": 2.887022414594007,
+              "area_mm2": 1.592459545021222
+            }
+          ],
+          "material_core_split_diameter_mm": 1.620000000000001
+        },
+        {
+          "index": 17,
+          "character": "v",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 2.1300000000000017
+        },
+        {
+          "index": 18,
+          "character": "e",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.5753995140080121,
+              "minimum_horizontal_chord_in_central_half_mm": 0.5011137911024974,
+              "minimum_vertical_chord_in_central_half_mm": 0.8127434819846897,
+              "area_mm2": 0.4467367524759055
+            }
+          ],
+          "material_core_split_diameter_mm": 2.270000000000002,
+          "right_aperture_effective_width_mm": 0.32
+        },
+        {
+          "index": 19,
+          "character": "n",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.720000000000001
+        },
+        {
+          "index": 20,
+          "character": "t",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 2.310000000000002
+        },
+        {
+          "index": 21,
+          "character": "u",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.8300000000000014
+        },
+        {
+          "index": 22,
+          "character": "r",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": null
+        },
+        {
+          "index": 23,
+          "character": "e",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.5753995140079837,
+              "minimum_horizontal_chord_in_central_half_mm": 0.5011137911025116,
+              "minimum_vertical_chord_in_central_half_mm": 0.8127434819846897,
+              "area_mm2": 0.4467367524759012
+            }
+          ],
+          "material_core_split_diameter_mm": 2.270000000000002,
+          "right_aperture_effective_width_mm": 0.32
+        },
+        {
+          "index": 24,
+          "character": "s",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.9400000000000013
+        }
+      ],
+      "minimum_adjacent_glyph_clearance_mm": 0.3423794719924902,
+      "front_face_side_margin_mm": 2.15625
+    },
+    {
+      "number": 2,
+      "text": "github.com/tomokota",
+      "font": "BarlowCondensed-Black.ttf",
+      "font_sha256": "e74b750df582c608f35db467b711b2b60d2217618e85e60b72b42dfd00446cab",
+      "x_scale": 1.0,
+      "y_scale": 1.0247301543926766,
+      "bottom_mm": 8.0,
+      "bounds_mm": [
+        [
+          37.004267,
+          8.0,
+          -0.0
+        ],
+        [
+          104.995733,
+          16.0,
+          0.0
+        ]
+      ],
+      "width_mm": 67.991466,
+      "ink_height_mm": 8.0,
+      "adjacent_glyphs": [
+        {
+          "indices": [
+            0,
+            1
+          ],
+          "pair": "gi",
+          "clearance_mm": 0.34746666666666925
+        },
+        {
+          "indices": [
+            1,
+            2
+          ],
+          "pair": "it",
+          "clearance_mm": 0.17200000000000415
+        },
+        {
+          "indices": [
+            2,
+            3
+          ],
+          "pair": "th",
+          "clearance_mm": 0.2725333333333353
+        },
+        {
+          "indices": [
+            3,
+            4
+          ],
+          "pair": "hu",
+          "clearance_mm": 0.33173333333333943
+        },
+        {
+          "indices": [
+            4,
+            5
+          ],
+          "pair": "ub",
+          "clearance_mm": 0.36453333333332694
+        },
+        {
+          "indices": [
+            5,
+            6
+          ],
+          "pair": "b.",
+          "clearance_mm": 0.4406985376109543
+        },
+        {
+          "indices": [
+            6,
+            7
+          ],
+          "pair": ".c",
+          "clearance_mm": 0.4566346950950516
+        },
+        {
+          "indices": [
+            7,
+            8
+          ],
+          "pair": "co",
+          "clearance_mm": 0.27173333333333716
+        },
+        {
+          "indices": [
+            8,
+            9
+          ],
+          "pair": "om",
+          "clearance_mm": 0.3229333333333386
+        },
+        {
+          "indices": [
+            9,
+            10
+          ],
+          "pair": "m/",
+          "clearance_mm": 0.26651749268822117
+        },
+        {
+          "indices": [
+            10,
+            11
+          ],
+          "pair": "/t",
+          "clearance_mm": 0.7279169706174349
+        },
+        {
+          "indices": [
+            11,
+            12
+          ],
+          "pair": "to",
+          "clearance_mm": 0.28730269530316555
+        },
+        {
+          "indices": [
+            12,
+            13
+          ],
+          "pair": "om",
+          "clearance_mm": 0.3229333333333386
+        },
+        {
+          "indices": [
+            13,
+            14
+          ],
+          "pair": "mo",
+          "clearance_mm": 0.3093333333333419
+        },
+        {
+          "indices": [
+            14,
+            15
+          ],
+          "pair": "ok",
+          "clearance_mm": 0.3229333333333386
+        },
+        {
+          "indices": [
+            15,
+            16
+          ],
+          "pair": "ko",
+          "clearance_mm": 0.616848204825969
+        },
+        {
+          "indices": [
+            16,
+            17
+          ],
+          "pair": "ot",
+          "clearance_mm": 0.22424926565137143
+        },
+        {
+          "indices": [
+            17,
+            18
+          ],
+          "pair": "ta",
+          "clearance_mm": 0.29570598822535904
+        }
+      ],
+      "minimum_reliable_straight_stroke_mm": 1.4746666666666712,
+      "glyph_metrics": [
+        {
+          "index": 0,
+          "character": "g",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.36053333333333626,
+              "minimum_horizontal_chord_in_central_half_mm": 0.36053333333333626,
+              "minimum_vertical_chord_in_central_half_mm": 1.7242441670866029,
+              "area_mm2": 0.6084041659959551
+            }
+          ],
+          "material_core_split_diameter_mm": 1.1200000000000006
+        },
+        {
+          "index": 1,
+          "character": "i",
+          "components": 2,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": null,
+          "component_inscribed_diameters_mm": [
+            1.5402666666666534,
+            1.5372815295003321
+          ]
+        },
+        {
+          "index": 2,
+          "character": "t",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.4800000000000009
+        },
+        {
+          "index": 3,
+          "character": "h",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.0300000000000007
+        },
+        {
+          "index": 4,
+          "character": "u",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.1000000000000005
+        },
+        {
+          "index": 5,
+          "character": "b",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.36053333333332205,
+              "minimum_horizontal_chord_in_central_half_mm": 0.36053333333332915,
+              "minimum_vertical_chord_in_central_half_mm": 1.724016696352658,
+              "area_mm2": 0.6083854885875152
+            }
+          ],
+          "material_core_split_diameter_mm": 0.9900000000000005
+        },
+        {
+          "index": 6,
+          "character": ".",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": null,
+          "component_inscribed_diameters_mm": [
+            1.5372815295003321
+          ]
+        },
+        {
+          "index": 7,
+          "character": "c",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.3600000000000008,
+          "right_aperture_effective_width_mm": 0.8199874877929688
+        },
+        {
+          "index": 8,
+          "character": "o",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.40160000000000196,
+              "minimum_horizontal_chord_in_central_half_mm": 0.40160000000000196,
+              "minimum_vertical_chord_in_central_half_mm": 1.7291155431205993,
+              "area_mm2": 0.6774514898185704
+            }
+          ],
+          "material_core_split_diameter_mm": 1.3600000000000008
+        },
+        {
+          "index": 9,
+          "character": "m",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 0.9300000000000005
+        },
+        {
+          "index": 10,
+          "character": "/",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": null,
+          "component_inscribed_diameters_mm": [
+            1.449973575343573
+          ]
+        },
+        {
+          "index": 11,
+          "character": "t",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.4800000000000009
+        },
+        {
+          "index": 12,
+          "character": "o",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.40160000000000196,
+              "minimum_horizontal_chord_in_central_half_mm": 0.40160000000000196,
+              "minimum_vertical_chord_in_central_half_mm": 1.7291155431205922,
+              "area_mm2": 0.677451489818572
+            }
+          ],
+          "material_core_split_diameter_mm": 1.3600000000000008
+        },
+        {
+          "index": 13,
+          "character": "m",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 0.9300000000000005
+        },
+        {
+          "index": 14,
+          "character": "o",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.40160000000000196,
+              "minimum_horizontal_chord_in_central_half_mm": 0.40160000000000196,
+              "minimum_vertical_chord_in_central_half_mm": 1.72911554312061,
+              "area_mm2": 0.6774514898185716
+            }
+          ],
+          "material_core_split_diameter_mm": 1.3600000000000008
+        },
+        {
+          "index": 15,
+          "character": "k",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": null
+        },
+        {
+          "index": 16,
+          "character": "o",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.40160000000000196,
+              "minimum_horizontal_chord_in_central_half_mm": 0.40160000000000196,
+              "minimum_vertical_chord_in_central_half_mm": 1.7291155431206295,
+              "area_mm2": 0.6774514898185697
+            }
+          ],
+          "material_core_split_diameter_mm": 1.3600000000000008
+        },
+        {
+          "index": 17,
+          "character": "t",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.4800000000000009
+        },
+        {
+          "index": 18,
+          "character": "a",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 0.46452304045621867,
+              "minimum_horizontal_chord_in_central_half_mm": 0.4191403557156832,
+              "minimum_vertical_chord_in_central_half_mm": 0.4424959830742594,
+              "area_mm2": 0.1972172679144153
+            }
+          ],
+          "material_core_split_diameter_mm": 1.0300000000000007
+        }
+      ],
+      "minimum_adjacent_glyph_clearance_mm": 0.17200000000000415,
+      "front_face_side_margin_mm": 35.004267
+    }
+  ],
+  "candidate": [
+    {
+      "number": 1,
+      "text": "Same icon, New adventures",
+      "font": "BarlowCondensed-Bold.ttf",
+      "font_sha256": "e476562ec9c1e16cf16475895b511f08c804f438cc9a9f80a44ea50a0eeb5b65",
+      "x_scale": 1.0,
+      "y_scale": 1.1322089869088336,
+      "bottom_mm": 22.0,
+      "bounds_mm": [
+        [
+          4.934936,
+          22.0,
+          -0.0
+        ],
+        [
+          137.065064,
+          34.0,
+          0.0
+        ]
+      ],
+      "width_mm": 132.130128,
+      "ink_height_mm": 12.0,
+      "adjacent_glyphs": [
+        {
+          "indices": [
+            0,
+            1
+          ],
+          "pair": "Sa",
+          "clearance_mm": 1.048599281213327
+        },
+        {
+          "indices": [
+            1,
+            2
+          ],
+          "pair": "am",
+          "clearance_mm": 1.050000000440825
+        },
+        {
+          "indices": [
+            2,
+            3
+          ],
+          "pair": "me",
+          "clearance_mm": 1.050000000397361
+        },
+        {
+          "indices": [
+            3,
+            5
+          ],
+          "pair": "ei",
+          "clearance_mm": 3.410416666666663
+        },
+        {
+          "indices": [
+            5,
+            6
+          ],
+          "pair": "ic",
+          "clearance_mm": 1.050000000391158
+        },
+        {
+          "indices": [
+            6,
+            7
+          ],
+          "pair": "co",
+          "clearance_mm": 1.0500000001241858
+        },
+        {
+          "indices": [
+            7,
+            8
+          ],
+          "pair": "on",
+          "clearance_mm": 1.0500000003849408
+        },
+        {
+          "indices": [
+            8,
+            9
+          ],
+          "pair": "n,",
+          "clearance_mm": 1.0495357845977178
+        },
+        {
+          "indices": [
+            9,
+            11
+          ],
+          "pair": ",N",
+          "clearance_mm": 3.5443594646271492
+        },
+        {
+          "indices": [
+            11,
+            12
+          ],
+          "pair": "Ne",
+          "clearance_mm": 1.0500000000186276
+        },
+        {
+          "indices": [
+            12,
+            13
+          ],
+          "pair": "ew",
+          "clearance_mm": 1.0497335166678814
+        },
+        {
+          "indices": [
+            13,
+            15
+          ],
+          "pair": "wa",
+          "clearance_mm": 3.4992187633884746
+        },
+        {
+          "indices": [
+            15,
+            16
+          ],
+          "pair": "ad",
+          "clearance_mm": 1.0500000000372438
+        },
+        {
+          "indices": [
+            16,
+            17
+          ],
+          "pair": "dv",
+          "clearance_mm": 1.0500000002173095
+        },
+        {
+          "indices": [
+            17,
+            18
+          ],
+          "pair": "ve",
+          "clearance_mm": 1.0499909422775078
+        },
+        {
+          "indices": [
+            18,
+            19
+          ],
+          "pair": "en",
+          "clearance_mm": 1.0500000001614325
+        },
+        {
+          "indices": [
+            19,
+            20
+          ],
+          "pair": "nt",
+          "clearance_mm": 1.0481254323138067
+        },
+        {
+          "indices": [
+            20,
+            21
+          ],
+          "pair": "tu",
+          "clearance_mm": 1.0500000004159773
+        },
+        {
+          "indices": [
+            21,
+            22
+          ],
+          "pair": "ur",
+          "clearance_mm": 1.0500000000124174
+        },
+        {
+          "indices": [
+            22,
+            23
+          ],
+          "pair": "re",
+          "clearance_mm": 1.049982132493154
+        },
+        {
+          "indices": [
+            23,
+            24
+          ],
+          "pair": "es",
+          "clearance_mm": 1.0486089088020532
+        }
+      ],
+      "minimum_reliable_straight_stroke_mm": 1.2609977591697152,
+      "glyph_metrics": [
+        {
+          "index": 0,
+          "character": "S",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.7600000000000011
+        },
+        {
+          "index": 1,
+          "character": "a",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.3499278466317197,
+              "minimum_horizontal_chord_in_central_half_mm": 1.203410396573359,
+              "minimum_vertical_chord_in_central_half_mm": 1.4081211313523418,
+              "area_mm2": 1.8053394116299273
+            }
+          ],
+          "material_core_split_diameter_mm": 1.4400000000000008
+        },
+        {
+          "index": 2,
+          "character": "m",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.0900000000000007
+        },
+        {
+          "index": 3,
+          "character": "e",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.2280352285794294,
+              "minimum_horizontal_chord_in_central_half_mm": 1.040381627159661,
+              "minimum_vertical_chord_in_central_half_mm": 1.3653516775887304,
+              "area_mm2": 1.5920873919286174
+            }
+          ],
+          "material_core_split_diameter_mm": 1.7600000000000011,
+          "right_aperture_effective_width_mm": 1.0999869443111205
+        },
+        {
+          "index": 5,
+          "character": "i",
+          "components": 2,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": null,
+          "component_inscribed_diameters_mm": [
+            1.8045833333333263,
+            2.0073015236485916
+          ]
+        },
+        {
+          "index": 6,
+          "character": "c",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.7600000000000011,
+          "right_aperture_effective_width_mm": 1.9599908650546967
+        },
+        {
+          "index": 7,
+          "character": "o",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.267083333333332,
+              "minimum_horizontal_chord_in_central_half_mm": 1.267083333333332,
+              "minimum_vertical_chord_in_central_half_mm": 3.9611964556987402,
+              "area_mm2": 4.852129948884819
+            }
+          ],
+          "material_core_split_diameter_mm": 1.7700000000000014
+        },
+        {
+          "index": 8,
+          "character": "n",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.2400000000000007
+        },
+        {
+          "index": 9,
+          "character": ",",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": null
+        },
+        {
+          "index": 11,
+          "character": "N",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.310000000000001
+        },
+        {
+          "index": 12,
+          "character": "e",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.2280352285794436,
+              "minimum_horizontal_chord_in_central_half_mm": 1.040381627159661,
+              "minimum_vertical_chord_in_central_half_mm": 1.3653516775887304,
+              "area_mm2": 1.5920873919286214
+            }
+          ],
+          "material_core_split_diameter_mm": 1.7600000000000011,
+          "right_aperture_effective_width_mm": 1.0999869443111205
+        },
+        {
+          "index": 13,
+          "character": "w",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.2100000000000009
+        },
+        {
+          "index": 15,
+          "character": "a",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.3499278466316837,
+              "minimum_horizontal_chord_in_central_half_mm": 1.2034103965733607,
+              "minimum_vertical_chord_in_central_half_mm": 1.4081211313523347,
+              "area_mm2": 1.8053394116299168
+            }
+          ],
+          "material_core_split_diameter_mm": 1.4400000000000008
+        },
+        {
+          "index": 16,
+          "character": "d",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.203333333333319,
+              "minimum_horizontal_chord_in_central_half_mm": 1.2033333333333331,
+              "minimum_vertical_chord_in_central_half_mm": 3.9840056362128955,
+              "area_mm2": 4.641492743277136
+            }
+          ],
+          "material_core_split_diameter_mm": 1.270000000000001
+        },
+        {
+          "index": 17,
+          "character": "v",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.6500000000000012
+        },
+        {
+          "index": 18,
+          "character": "e",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.2280352285794436,
+              "minimum_horizontal_chord_in_central_half_mm": 1.040381627159661,
+              "minimum_vertical_chord_in_central_half_mm": 1.3653516775887233,
+              "area_mm2": 1.5920873919286243
+            }
+          ],
+          "material_core_split_diameter_mm": 1.7600000000000011,
+          "right_aperture_effective_width_mm": 1.0999869443111205
+        },
+        {
+          "index": 19,
+          "character": "n",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.2400000000000007
+        },
+        {
+          "index": 20,
+          "character": "t",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.7500000000000013
+        },
+        {
+          "index": 21,
+          "character": "u",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.2600000000000007
+        },
+        {
+          "index": 22,
+          "character": "r",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.4200000000000008
+        },
+        {
+          "index": 23,
+          "character": "e",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.228035228579472,
+              "minimum_horizontal_chord_in_central_half_mm": 1.0403816271596895,
+              "minimum_vertical_chord_in_central_half_mm": 1.3653516775887162,
+              "area_mm2": 1.592087391928638
+            }
+          ],
+          "material_core_split_diameter_mm": 1.7600000000000011,
+          "right_aperture_effective_width_mm": 1.0999869443111205
+        },
+        {
+          "index": 24,
+          "character": "s",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.5300000000000011
+        }
+      ],
+      "minimum_adjacent_glyph_clearance_mm": 1.0481254323138067,
+      "front_face_side_margin_mm": 2.9349359999999933
+    },
+    {
+      "number": 2,
+      "text": "github.com/tomokota",
+      "font": "BarlowCondensed-Black.ttf",
+      "font_sha256": "e74b750df582c608f35db467b711b2b60d2217618e85e60b72b42dfd00446cab",
+      "x_scale": 1.2809126929908456,
+      "y_scale": 1.2809126929908456,
+      "bottom_mm": 7.0,
+      "bounds_mm": [
+        [
+          22.030413,
+          7.0,
+          -0.0
+        ],
+        [
+          119.969587,
+          17.0,
+          0.0
+        ]
+      ],
+      "width_mm": 97.93917400000001,
+      "ink_height_mm": 10.0,
+      "adjacent_glyphs": [
+        {
+          "indices": [
+            0,
+            1
+          ],
+          "pair": "gi",
+          "clearance_mm": 1.050000000275137
+        },
+        {
+          "indices": [
+            1,
+            2
+          ],
+          "pair": "it",
+          "clearance_mm": 1.0500000001800842
+        },
+        {
+          "indices": [
+            2,
+            3
+          ],
+          "pair": "th",
+          "clearance_mm": 1.0500000002288772
+        },
+        {
+          "indices": [
+            3,
+            4
+          ],
+          "pair": "hu",
+          "clearance_mm": 1.0500000000019298
+        },
+        {
+          "indices": [
+            4,
+            5
+          ],
+          "pair": "ub",
+          "clearance_mm": 1.0500000001216065
+        },
+        {
+          "indices": [
+            5,
+            6
+          ],
+          "pair": "b.",
+          "clearance_mm": 1.0478448214528875
+        },
+        {
+          "indices": [
+            6,
+            7
+          ],
+          "pair": ".c",
+          "clearance_mm": 1.0479608211035143
+        },
+        {
+          "indices": [
+            7,
+            8
+          ],
+          "pair": "co",
+          "clearance_mm": 1.0500000001123908
+        },
+        {
+          "indices": [
+            8,
+            9
+          ],
+          "pair": "om",
+          "clearance_mm": 1.0500000001174783
+        },
+        {
+          "indices": [
+            9,
+            10
+          ],
+          "pair": "m/",
+          "clearance_mm": 1.0496973134676393
+        },
+        {
+          "indices": [
+            10,
+            11
+          ],
+          "pair": "/t",
+          "clearance_mm": 1.0491757782512072
+        },
+        {
+          "indices": [
+            11,
+            12
+          ],
+          "pair": "to",
+          "clearance_mm": 1.0482416369037915
+        },
+        {
+          "indices": [
+            12,
+            13
+          ],
+          "pair": "om",
+          "clearance_mm": 1.0500000001174783
+        },
+        {
+          "indices": [
+            13,
+            14
+          ],
+          "pair": "mo",
+          "clearance_mm": 1.0500000004653884
+        },
+        {
+          "indices": [
+            14,
+            15
+          ],
+          "pair": "ok",
+          "clearance_mm": 1.0500000001174783
+        },
+        {
+          "indices": [
+            15,
+            16
+          ],
+          "pair": "ko",
+          "clearance_mm": 1.048785337323631
+        },
+        {
+          "indices": [
+            16,
+            17
+          ],
+          "pair": "ot",
+          "clearance_mm": 1.0488372151828242
+        },
+        {
+          "indices": [
+            17,
+            18
+          ],
+          "pair": "ta",
+          "clearance_mm": 1.0484512313971392
+        }
+      ],
+      "minimum_reliable_straight_stroke_mm": 1.6935114086623813,
+      "glyph_metrics": [
+        {
+          "index": 0,
+          "character": "g",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.019999999999996,
+              "minimum_horizontal_chord_in_central_half_mm": 1.0199999999999996,
+              "minimum_vertical_chord_in_central_half_mm": 2.154431085700839,
+              "area_mm2": 2.153865601106291
+            }
+          ],
+          "material_core_split_diameter_mm": 1.4000000000000008
+        },
+        {
+          "index": 1,
+          "character": "i",
+          "components": 2,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": null,
+          "component_inscribed_diameters_mm": [
+            1.9729471239240297,
+            1.9697223245410087
+          ]
+        },
+        {
+          "index": 2,
+          "character": "t",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.8900000000000015
+        },
+        {
+          "index": 3,
+          "character": "h",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.290000000000001
+        },
+        {
+          "index": 4,
+          "character": "u",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.370000000000001
+        },
+        {
+          "index": 5,
+          "character": "b",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.019999999999996,
+              "minimum_horizontal_chord_in_central_half_mm": 1.0200000000000031,
+              "minimum_vertical_chord_in_central_half_mm": 2.1542166260115962,
+              "area_mm2": 2.153819828339298
+            }
+          ],
+          "material_core_split_diameter_mm": 1.2300000000000009
+        },
+        {
+          "index": 6,
+          "character": ".",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": null,
+          "component_inscribed_diameters_mm": [
+            1.9695557896055225
+          ]
+        },
+        {
+          "index": 7,
+          "character": "c",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.6900000000000013,
+          "right_aperture_effective_width_mm": 1.0199844360351562
+        },
+        {
+          "index": 8,
+          "character": "o",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.019999999999996,
+              "minimum_horizontal_chord_in_central_half_mm": 1.019999999999996,
+              "minimum_vertical_chord_in_central_half_mm": 2.160074028763699,
+              "area_mm2": 2.152976618023779
+            }
+          ],
+          "material_core_split_diameter_mm": 1.6900000000000013
+        },
+        {
+          "index": 9,
+          "character": "m",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.1700000000000008
+        },
+        {
+          "index": 10,
+          "character": "/",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": null,
+          "component_inscribed_diameters_mm": [
+            1.8521103037616051
+          ]
+        },
+        {
+          "index": 11,
+          "character": "t",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.8900000000000015
+        },
+        {
+          "index": 12,
+          "character": "o",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.0199999999999818,
+              "minimum_horizontal_chord_in_central_half_mm": 1.019999999999996,
+              "minimum_vertical_chord_in_central_half_mm": 2.1600740287637024,
+              "area_mm2": 2.152976618023784
+            }
+          ],
+          "material_core_split_diameter_mm": 1.6900000000000013
+        },
+        {
+          "index": 13,
+          "character": "m",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.1700000000000008
+        },
+        {
+          "index": 14,
+          "character": "o",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.0200000000000102,
+              "minimum_horizontal_chord_in_central_half_mm": 1.0200000000000102,
+              "minimum_vertical_chord_in_central_half_mm": 2.160074028763699,
+              "area_mm2": 2.152976618023806
+            }
+          ],
+          "material_core_split_diameter_mm": 1.6900000000000013
+        },
+        {
+          "index": 15,
+          "character": "k",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": null
+        },
+        {
+          "index": 16,
+          "character": "o",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.0200000000000102,
+              "minimum_horizontal_chord_in_central_half_mm": 1.0200000000000102,
+              "minimum_vertical_chord_in_central_half_mm": 2.1600740287636935,
+              "area_mm2": 2.152976618023802
+            }
+          ],
+          "material_core_split_diameter_mm": 1.6900000000000013
+        },
+        {
+          "index": 17,
+          "character": "t",
+          "components": 1,
+          "closed_counters": [],
+          "material_core_split_diameter_mm": 1.8900000000000015
+        },
+        {
+          "index": 18,
+          "character": "a",
+          "components": 1,
+          "closed_counters": [
+            {
+              "maximum_inscribed_diameter_mm": 1.1243757515611588,
+              "minimum_horizontal_chord_in_central_half_mm": 1.0248417960132485,
+              "minimum_vertical_chord_in_central_half_mm": 1.019546846665346,
+              "area_mm2": 1.1086568665848946
+            }
+          ],
+          "material_core_split_diameter_mm": 1.0200000000000005
+        }
+      ],
+      "minimum_adjacent_glyph_clearance_mm": 1.0478448214528875,
+      "front_face_side_margin_mm": 20.030412999999996
+    }
+  ],
+  "row_gap_mm": {
+    "current": 6.0,
+    "candidate": 5.0
+  },
+  "relief_mm": {
+    "current": 0.8,
+    "candidate": 1.2
+  }
+}

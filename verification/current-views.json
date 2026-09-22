@@ -1,0 +1,75 @@
+{
+  "revision": "4.1-B-legibility.1",
+  "source": "actual current STL meshes in the offline orthographic viewer",
+  "entry_sha256": "451fa61cd36b1772fb5f96baef971ff3d4c809874d31f26f6a475056b4c86c1c",
+  "external_requests": 0,
+  "page_errors": [],
+  "captures": {
+    "B-hero.png": {
+      "sha256": "a91eaccee74ee9de9498ba26cf2982b0ec43c6825aa9de7a6ac431e461284110",
+      "view": "iso",
+      "cursor": 150,
+      "progress": 0,
+      "seated_count": 150,
+      "image_dimensions": [
+        392,
+        481
+      ]
+    },
+    "B-overview-front.png": {
+      "sha256": "3d6a7dde6617baec4c32f7077ee2e84ca697aedc208a6f9778f889042e19354c",
+      "view": "front",
+      "cursor": 150,
+      "progress": 0,
+      "seated_count": 150,
+      "image_dimensions": [
+        430,
+        531
+      ]
+    },
+    "B-overview-right.png": {
+      "sha256": "3357934174de79717824b7bac2daf175be6ed3cadc2df1decabdad0f7c09c5f6",
+      "view": "side",
+      "cursor": 150,
+      "progress": 0,
+      "seated_count": 150,
+      "image_dimensions": [
+        191,
+        529
+      ]
+    },
+    "B-overview-top.png": {
+      "sha256": "8ebe6d5ebf2b719ba5a0d6decd2caa57c803fc21024be8dff7846685ab2e0f56",
+      "view": "top",
+      "cursor": 150,
+      "progress": 0,
+      "seated_count": 150,
+      "image_dimensions": [
+        570,
+        252
+      ]
+    },
+    "B-base-front.png": {
+      "sha256": "c7b2b1c453030e09122ecce6951fda9b2e7ae57e3a7d89729e6e9b6770e682b8",
+      "view": "front",
+      "cursor": 23,
+      "progress": 1,
+      "seated_count": 24,
+      "image_dimensions": [
+        570,
+        174
+      ]
+    },
+    "B-front-release.png": {
+      "sha256": "2d2398909d4300a4a035d360845dfd44149bd6f36c5303d377fa739775f82278",
+      "view": "iso",
+      "cursor": 19,
+      "progress": 0.65,
+      "seated_count": 19,
+      "image_dimensions": [
+        532,
+        358
+      ]
+    }
+  }
+}

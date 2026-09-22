@@ -5,7 +5,8 @@
 ## 採用範囲
 
 このリポジトリは **B DESK CLASSICの個人向けキット**です。
-既存Bの形状・取付け・配置を変更せず、通常の銘板1個を確定済みの個人銘板へ置き換えています。
+非文字20形状・黒い取付け基材・150配置を維持し、文字銘板1個だけを
+2026-09-22承認の可読性改訂版へ更新しています。
 追加キャラクター、別サイズ案、旧試験の4 mmピンは配布対象ではありません。
 原本のGit履歴・バックアップ全体は取り込まず、明示された現行ファイルとBの保存済み媒体だけを
 ハッシュ照合して選別しました。公開元のリポジトリ・worktreeを変更していません。
@@ -15,9 +16,9 @@
 | 共通の現行source | `ktanino10/copilot-brick-display`、commit `1eaae1288816ec9575eeb6e2abbe74ed53289d74` |
 | 元の別PC・段階試作手順 | 同repo、生成／手順更新commit `7af459e5c5c9f0e3956bf785e34db20135a7ba97`。上記最新commitは検証記録の追記 |
 | 共通形状revision | `4.0-public-template`。B非文字20形状、150配置、取付け仕様を再利用 |
-| 個人銘板 | 元担当が検証したB用 `plate.stl`／`plate.3mf`／native。正確な2行、142×40×3.2 mm |
-| 個人B完成native・PDF・画像 | 元担当が指定した保存済みBだけを選別。21 masterすべてが今回の採用STLとbyte一致 |
-| 今回のキットrevision | `4.0-B-personal-kit.2`。梱包・B専用文書・オフライン3D案内の更新であり、機構の再設計ではない |
+| 個人銘板 | 現行は実ink高12／10 mm・白1.2 mmの承認形状。142×40×3.6 mm。正確な2行は不変 |
+| 個人B完成native・PDF・画像 | 保存済みBの文字部品だけ差し替え、関係する投影・実STL画像を更新。他149組込solidは幾何一致 |
+| 今回のキットrevision | `4.1-B-legibility.1`。文字面だけの改訂。白が0.4 mm前に出るため全体奥行は80.2 mm |
 
 各採用ファイルの出典相対パス、取得時のbytesとSHA-256は
 [source-import.json](../verification/source-import.json)にあります。
@@ -25,21 +26,26 @@
 同記録は取得時点の記録で、後のメタデータ更新を含む**納品時の全ハッシュは
 [SHA256SUMS.txt](../SHA256SUMS.txt)** を正とします。
 
-## 形状の置換は1枚だけ
+## 現行と旧版を分ける
 
-| 採用ファイル | SHA-256 |
+| 現行ファイル | 対応 |
 |---|---|
-| `kit/B/parts/NP3-TEXT-B.stl` | `83ff7a42af4062b0e4a405edd64a8828ab218843d111d13961843fc0fe7044af` |
-| `kit/B/plates/B-black-to-white-z2p4-01.3mf` | `45d3d3a47243b9d994aeab5b6c3744cbf7e6805912e0441db23acbb38fa2629c` |
-| `source/native/NP3-TEXT-B.FCStd` | `72e2284f25cd3190ef9993cf12e5751e88d27718e8b0d2628bcbc547a1ab3b22` |
-| `source/native/B.FCStd` | `c76b0dbbc6b3280b2efd2d2d97ca5e63a89a50864e897650e4d4914b23982755` |
+| `kit/B/parts/NP3-TEXT-B.stl` | 新版の文字銘板1個 |
+| `kit/B/plates/B-black-to-white-z2p4-01.3mf` | 同じ新版1個の代替形式。Pauseは未設定 |
+| `source/native/NP3-TEXT-B.FCStd` | 新版の実native、実STEPも同じ形状 |
+| `source/native/B.FCStd`／`B.step` | 同じ150配置へ新版だけを差し替えた完成native／STEP |
+
+現行のSHA-256は[配布一覧](../SHA256SUMS.txt)を参照してください。
+旧銘板（下段8 mm・白0.8 mm）は
+[revision付きの保管先](https://github.com/ktanino10/copilot-brick-gift-b/tree/main/revisions/4.0-B-personal-kit.2)
+に残しました。現行印刷ZIPには旧板を混ぜません。
 
 通常版の文字入りSTLと対応3MFは、この印刷対象には含めていません。
 個人板と同じ右ロゴを各1個、残り148個と合わせて**150個**です。
 同じ銘板のSTL／3MFは代替形式であり、2個作る意味ではありません。
 右ロゴと本体の単色3MFは元ファイルを無変更で使用しています。
 
-元担当から引き継いだデジタル確認：
+旧版の元担当から引き継いだデジタル確認（新版の値と混同しません）：
 
 - [銘板nativeの確認](../verification/inherited-plate-native.json)：
   現行Bキャリアとの対称差0、完成配置の候補9ペアの最大干渉0、
@@ -50,21 +56,27 @@
 
 今回の専用worktreeでも、[nativeを再openした結果](../verification/native.json)で
 150個のID・色・配置、完成外形、2行、銘板寸法、個人plateとの対称差0、
-候補9ペアの最大干渉0を確認しています。nativeは書き換えていません。
+候補9ペアの最大干渉0を確認しています。
+今回は実際に文字nativeを更新し、完成native中の他149個は幾何的に同じまま保存しました。
+曲線方向ベクトルの丸めにより旧BRep文字列とbyte差が出た右ロゴも、体積対称差0・面数・外形一致です。
+印刷用の非文字20 STL／他13枚の3MFはbyte不変更です。
 元の公開キャリアとの比較結果は、元担当の記録として区別して保持します。
 
 ## 画像・図面を混同しない
 
 `docs/images/B-hero.png` と `B-base-front.png` は、個人2行が入った
-保存済みの実STL由来Blenderレンダーです。この2画像は再レンダーしていません。
-`nameplate-front.png` は直近の個人銘板の実CAD正面投影で、白背景の輪郭図です。
+現行の実STLを同じオフラインビューアで描画した画像です。
+初回の旧Blender画像を、新版の完成画像と称していません。
+`nameplate-front.png` は新版の実CAD正面投影です。
 `nameplate-print-orientation.svg` だけは、姿勢と色替え高さを説明する模式図です。
 いずれも実物写真・実スライス成功例ではありません。
 
-個人BのPDFとB工程SVGには、保存時のヘッダー **`REV3`** が残っています。
-その保存済みBの非文字20 masterは現行共通形状とbyte一致、文字masterも直近個人板とbyte一致、
-配置JSONとBOMも現行と一致するため、同じ形状・配置の図として採用しました。
-印刷時は「REV3」というヘッダーだけを理由に別の旧ZIPを探さず、このキット内の対応表を使います。
+非文字部品のSVGには保存時のヘッダー **`REV3`** が残っています。
+変更していない共通部品の図として使用します。文字が見える全体図・分解図・銘板図、
+前面の実断面、銘板を含む工程の平面範囲は新版に対応させ、PDFをまとめ直しています。
+全体の前・右・上の図は、実STLの少し見下ろす正投影ビューです。
+寸法ラベルはnativeの外接値で、画像の画素を測る図ではありません。
+銘板の輪郭・断面と前面取付け断面は実native由来です。
 
 `kit/fit/interface.*`、`front-interface.svg`、非文字部品の寸法SVGは**共通形状の参考図**です。
 `PUBLIC TEMPLATE` という元ヘッダーは来歴の表示で、個人完成図や公開配布の指示ではありません。
@@ -76,7 +88,8 @@
 描画ランタイムと圧縮STLを1つのHTMLへ埋め込んだものです。
 `guide/index.mapping.json`はその対応表、`kit/B/part-map.csv`は全150slotの表です。
 同形同色の全候補と便宜割当を分け、刻印や実物個体の識別とは扱いません。
-STL、3MF、native、取付け機構、色、150配置は再設計・再配置していません。
+取付け機構、色、150配置は再設計・再配置していません。
+埋め込まれた銘板メッシュだけが今回の新版へ更新されています。
 
 共通のviewer／mapping generatorだけを`ktanino10/copilot-brick-display`の担当者から
 限定pathでread-only取得しました。共通案内コードの固定commitは
@@ -90,7 +103,7 @@ privateではPagesを作らず、保存したローカルHTMLを開きます。
 `docs/images/B-guide-start.png`、`B-guide-front.png`、
 `B-guide-base-front.gif`は、この同梱ビューアをオフラインの実ブラウザで描画・撮影したものです。
 GIFは空の机から`B-001`〜`B-024`の24個を追加し、台座5段・前面2個・keeper3個までを示します。
-銘板の90度回転、黒2.4 mm／白0.8 mmとロゴ黒2.8 mm後の白は実形状の高さ・配置を使います。
+銘板の90度回転、黒2.4 mm／白1.2 mmと、変更していないロゴ黒2.8 mm／白0.8 mmは実形状です。
 軌跡や着地点の透過表示は説明用で、物理シミュレーションではありません。
 [ブラウザ検証](../verification/guide-browser.json)は表示・操作の確認であり、実機の合格証拠ではありません。
 
@@ -102,11 +115,16 @@ GIFは空の机から`B-001`〜`B-024`の24個を追加し、台座5段・前面
 通常版の文字の集計値を残していません。
 
 `source/scripts/` に、元の機械geometry・前面機構・文字幅測定・配置generatorを保持しています。
-`freecad_geometry.py`、`front_nameplate.py`、`letter_metrics.py` はそのままです。
+`freecad_geometry.py`、`letter_metrics.py` の共通機械・既存正線測定はそのままです。
+`front_nameplate.py` は承認済みの文字計画に対応し、`legible_lettering.py`と
+`legible_metrics.py`が閉孔・e出口・追加字間の限定処理と定義済み測定を提供します。
+`source/design/nameplate-plan.json`は正確な個人2行に対する計画で、公開側へ流用しません。
 `design.py` はBと確定2行のみ許可し、公開用ポリシーや公開サイト出力に依存せず、
 新しいローカル出力先だけを使うよう入口を適応しました。配置・寸法の計算は変えていません。
 
-Barlow Condensed BlackとOFL、元マークの派生輪郭を保持しました。
+Barlow Condensed BlackとOFL、元マークの派生輪郭を保持し、正規のBoldを追加しました。
+Boldの出典は`google/fonts` commit `e44c4b011a820c2cbe2fd2cfa8052037d7edb571`です。
+公開側へ渡したのは個人値を持たない共通関数とBold/OFLだけです。
 元写真・人物画像、不要なBlenderファイル／旧動画／中間フレーム、公開用workflow・CNAME・Pages設定、
 会話履歴、端末の絶対パス、プリンタID・tokenは含めません。
 元プロジェクト全体のビルドやサイト公開手順は、このキットの利用に必要ありません。
@@ -115,5 +133,6 @@ Barlow Condensed BlackとOFL、元マークの派生輪郭を保持しました�
 
 closed／manifold、CAD干渉0、正しい配置、ハッシュ一致は**印刷成功の保証ではありません**。
 現物の嵌合、keeper保持、台座の反り、強度、転倒、P1SでのPause・手動交換・再開は未試験です。
-実装ノズル、PLA銘柄／色、plate、処理profile、AMS有無、実設定入りBambuプロジェクトは
-まだ確認できていません。本人の実スライスと段階試作を省略しないでください。
+旧銘板の0.2 mmノズル印刷と写真の申告はありますが、新版の成功や模型全体の実証ではありません。
+PLA銘柄／色、plate、処理profile、AMS有無、実設定入りBambuプロジェクトは未照合です。
+本人の実スライスと段階試作を省略しないでください。

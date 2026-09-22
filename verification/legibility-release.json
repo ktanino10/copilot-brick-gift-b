@@ -1,0 +1,38 @@
+{
+  "revision": "4.1-B-legibility.1",
+  "status": "PASS",
+  "approved_plate_sha256": "1deaa5329e35022f8f4410501cfca4f3287f5566b6cd6d2c06c5846178dba5c8",
+  "approved_plate_triangle_fingerprint": "427c764986d475f9e788bce46fac47071193cb180910b1489215fc47e52fb6f3",
+  "coupon_sha256": "0b587534582160e6e7561da2e7469941064125455fa7d098923e7506e59a0493",
+  "coupon_dimensions_mm": [
+    65.4000015258789,
+    30.899999618530273,
+    3.5999999046325684
+  ],
+  "unchanged_non_text_master_count": 20,
+  "unchanged_other_print_plates": 13,
+  "unchanged_placements": 150,
+  "unchanged_bom": true,
+  "native_reopened": true,
+  "assembly_step_valid_solids": 150,
+  "plate_dimensions_mm": [
+    142.0,
+    40.0,
+    3.5999999046325684
+  ],
+  "assembly_dimensions_mm": [
+    191.8,
+    80.2,
+    238.6
+  ],
+  "actual_ink_heights_mm": [
+    12,
+    10
+  ],
+  "black_height_mm": 2.4,
+  "white_height_mm": 1.2,
+  "current_guide_sha256": "451fa61cd36b1772fb5f96baef971ff3d4c809874d31f26f6a475056b4c86c1c",
+  "current_pdf_pages": 54,
+  "new_design_physically_tested": false,
+  "sliced": false
+}

@@ -11,7 +11,7 @@ ZIPを展開して`guide/index.html`をダブルクリックし、[印刷手順]
 | 確認 | 記録・方法 |
 |---|---|
 | 150個、21形状、23 BOM行、14枚3MF、28工程 | [kit.json](../verification/kit.json)／`scripts/verify_kit.py` |
-| STLの閉鎖、辺の向き、頂点manifold、単一連結、正体積 | 同上。B21＋fit12＋試作用の追加1＝34 STL master |
+| STLの閉鎖、辺の向き、頂点manifold、単一連結、正体積 | 同上。B21＋fit12＋接続試作1＝34 masterに、別の文字試験片1を追加 |
 | 3MFの実ジオメトリ・数量・色・配置・Z=0 | XMLを再読込し、対応STL・BOM・manifestと照合 |
 | 個人Bのnative再open | [native.json](../verification/native.json)。150配置、正確な2行、外形・銘板寸法、銘板干渉候補 |
 | 元担当の取付け確認 | [引継ぎnative記録](../verification/inherited-plate-native.json)。元のキャリアとの対称差0 |
@@ -38,8 +38,12 @@ Get-FileHash .\kit\B\parts\NP3-TEXT-B.stl -Algorithm SHA256
 shasum -a 256 kit/B/parts/NP3-TEXT-B.stl
 ```
 
-期待する銘板SHA-256：
-`83ff7a42af4062b0e4a405edd64a8828ab218843d111d13961843fc0fe7044af`
+期待する新版銘板SHA-256は[現行一覧](../SHA256SUMS.txt)の
+`kit/B/parts/NP3-TEXT-B.stl`と照合します。旧版のhashを新版の合格値にしません。
+
+今回の可読性改訂は[変更説明と測定値](NAMEPLATE-V2.md)を参照してください。
+`requirements-cad.txt`は図面をまとめ直すReportLab／svglib／pypdfと、輪郭測定のShapely／SciPyを追加します。
+変更したのは銘板1形状だけで、元の20形状／13プレート／150配置の不変を別途検査します。
 
 ZIP自身のハッシュは、GitHub上の
 [downloads/SHA256SUMS.txt](https://github.com/ktanino10/copilot-brick-gift-b/blob/main/downloads/SHA256SUMS.txt)
@@ -78,6 +82,8 @@ npm run test:guide-model
 最初の梱包を検査して報告を書き、その報告を含めて梱包・ハッシュを確定し、
 最後は書き換えず再検査します。ZIPは固定のmember順・時刻で作ります。
 各ZIP memberは相対パスで、B以外の模型、重複するmaster、nested ZIPを含みません。
+文字試験片は`samples/nameplate-v2/`に別区分で入れ、150個の組立プレートへ加えません。
+revision付きの旧銘板や未選択の候補フォルダは現行印刷ZIPの収録対象外です。
 生成ファイルは `guide/index.html`／`index.mapping.json`、実ビューアのPNG／GIF、
 `docs/FILES.md`、`docs/STEPS.md`、`kit/B/steps.csv`／`part-map.csv`、
 `kit/manifest.json`、検証記録、ハッシュ一覧、全キットZIPです。

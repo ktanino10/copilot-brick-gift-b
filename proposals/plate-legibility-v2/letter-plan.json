@@ -1,0 +1,384 @@
+{
+  "revision": "plate-legibility-v2-candidate-1",
+  "lines": [
+    "Same icon, New adventures",
+    "github.com/tomokota"
+  ],
+  "method": "Preserve exterior font contours except the e mouth; widen only inner counter loops. Add spacing only where original kerning is below the target; never compress the text horizontally.",
+  "raw_outlines_sha256": "3c881db5dbd2f598abf8cf7ab9f2d1387664d62a198d5beee5c3802dc14bb5b4",
+  "rows": [
+    {
+      "row": 1,
+      "width_mm": 132.13012759831423,
+      "glyphs": [
+        {
+          "index": 0,
+          "character": "S",
+          "counters": [],
+          "extra_x_mm": 0.0
+        },
+        {
+          "index": 1,
+          "character": "a",
+          "counters": [],
+          "extra_x_mm": 0.43574590189382434
+        },
+        {
+          "index": 2,
+          "character": "m",
+          "counters": [],
+          "extra_x_mm": 0.617412569001317
+        },
+        {
+          "index": 3,
+          "character": "e",
+          "counters": [],
+          "e_channel": [
+            22.506467043155936,
+            3.4071352753862487,
+            25.01625,
+            4.507135275386249
+          ],
+          "extra_x_mm": 0.8357459027320147
+        },
+        {
+          "index": 5,
+          "character": "i",
+          "counters": [],
+          "extra_x_mm": 0.8357459027320147
+        },
+        {
+          "index": 6,
+          "character": "c",
+          "counters": [],
+          "extra_x_mm": 1.0057459031231701
+        },
+        {
+          "index": 7,
+          "character": "o",
+          "counters": [],
+          "extra_x_mm": 1.3474125699140131
+        },
+        {
+          "index": 8,
+          "character": "n",
+          "counters": [],
+          "extra_x_mm": 1.5315792369656265
+        },
+        {
+          "index": 9,
+          "character": ",",
+          "counters": [],
+          "extra_x_mm": 1.6367210033349693
+        },
+        {
+          "index": 11,
+          "character": "N",
+          "counters": [],
+          "extra_x_mm": 1.6367210033349693
+        },
+        {
+          "index": 12,
+          "character": "e",
+          "counters": [],
+          "e_channel": [
+            62.21313370982259,
+            3.4071352753862487,
+            64.72291666666666,
+            4.507135275386249
+          ],
+          "extra_x_mm": 1.7192210033535957
+        },
+        {
+          "index": 13,
+          "character": "w",
+          "counters": [],
+          "extra_x_mm": 1.8913295143283904
+        },
+        {
+          "index": 15,
+          "character": "a",
+          "counters": [],
+          "extra_x_mm": 1.8913295143283904
+        },
+        {
+          "index": 16,
+          "character": "d",
+          "counters": [],
+          "extra_x_mm": 2.1500795143656433
+        },
+        {
+          "index": 17,
+          "character": "v",
+          "counters": [],
+          "extra_x_mm": 2.4979961812496185
+        },
+        {
+          "index": 18,
+          "character": "e",
+          "counters": [],
+          "e_channel": [
+            95.17313370982261,
+            3.4071352753862487,
+            97.68291666666666,
+            4.507135275386249
+          ],
+          "extra_x_mm": 2.584591708611697
+        },
+        {
+          "index": 19,
+          "character": "n",
+          "counters": [],
+          "extra_x_mm": 2.810008375439793
+        },
+        {
+          "index": 20,
+          "character": "t",
+          "counters": [],
+          "extra_x_mm": 3.1511985659599304
+        },
+        {
+          "index": 21,
+          "character": "u",
+          "counters": [],
+          "extra_x_mm": 3.5145318997092545
+        },
+        {
+          "index": 22,
+          "character": "r",
+          "counters": [],
+          "extra_x_mm": 3.579948566388339
+        },
+        {
+          "index": 23,
+          "character": "e",
+          "counters": [],
+          "e_channel": [
+            120.10646704315594,
+            3.4071352753862487,
+            122.61625,
+            4.507135275386249
+          ],
+          "extra_x_mm": 3.8710576775483787
+        },
+        {
+          "index": 24,
+          "character": "s",
+          "counters": [],
+          "extra_x_mm": 4.219710931647569
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "width_mm": 97.93917442494158,
+      "glyphs": [
+        {
+          "index": 0,
+          "character": "g",
+          "counters": [
+            {
+              "face_index": 0,
+              "hole_index": 0,
+              "center_xy": [
+                2.2035114086623855,
+                4.931684656373822
+              ],
+              "scale_xy": [
+                2.2086923076923073,
+                1.0
+              ]
+            }
+          ],
+          "extra_x_mm": 0.0
+        },
+        {
+          "index": 1,
+          "character": "i",
+          "counters": [],
+          "extra_x_mm": 0.6049255365505815
+        },
+        {
+          "index": 2,
+          "character": "t",
+          "counters": [],
+          "extra_x_mm": 1.4346085535362363
+        },
+        {
+          "index": 3,
+          "character": "h",
+          "counters": [],
+          "extra_x_mm": 2.135517147835344
+        },
+        {
+          "index": 4,
+          "character": "u",
+          "counters": [],
+          "extra_x_mm": 2.7605957104824483
+        },
+        {
+          "index": 5,
+          "character": "b",
+          "counters": [
+            {
+              "face_index": 0,
+              "hole_index": 0,
+              "center_xy": [
+                22.357562508539417,
+                4.931684656373822
+              ],
+              "scale_xy": [
+                2.2086923076923095,
+                1.0
+              ]
+            }
+          ],
+          "extra_x_mm": 3.343660336919129
+        },
+        {
+          "index": 6,
+          "character": ".",
+          "counters": [],
+          "extra_x_mm": 3.8330945931375027
+        },
+        {
+          "index": 7,
+          "character": "c",
+          "counters": [],
+          "extra_x_mm": 4.3069426151923835
+        },
+        {
+          "index": 8,
+          "character": "o",
+          "counters": [
+            {
+              "face_index": 0,
+              "hole_index": 0,
+              "center_xy": [
+                34.518376827435446,
+                4.931684656373822
+              ],
+              "scale_xy": [
+                1.982836653386448,
+                1.0
+              ]
+            }
+          ],
+          "extra_x_mm": 5.008875939529389
+        },
+        {
+          "index": 9,
+          "character": "m",
+          "counters": [],
+          "extra_x_mm": 5.645226533990353
+        },
+        {
+          "index": 10,
+          "character": "/",
+          "counters": [],
+          "extra_x_mm": 6.35440081730485
+        },
+        {
+          "index": 11,
+          "character": "t",
+          "counters": [],
+          "extra_x_mm": 6.481427095364779
+        },
+        {
+          "index": 12,
+          "character": "o",
+          "counters": [
+            {
+              "face_index": 0,
+              "hole_index": 0,
+              "center_xy": [
+                54.783440360705015,
+                4.931684656373822
+              ],
+              "scale_xy": [
+                1.982836653386448,
+                1.0
+              ]
+            }
+          ],
+          "extra_x_mm": 7.174866197630763
+        },
+        {
+          "index": 13,
+          "character": "m",
+          "counters": [],
+          "extra_x_mm": 7.811216792091727
+        },
+        {
+          "index": 14,
+          "character": "o",
+          "counters": [
+            {
+              "face_index": 0,
+              "hole_index": 0,
+              "center_xy": [
+                66.89438447875392,
+                4.931684656373822
+              ],
+              "scale_xy": [
+                1.9828366533864756,
+                1.0
+              ]
+            }
+          ],
+          "extra_x_mm": 8.464987799525261
+        },
+        {
+          "index": 15,
+          "character": "k",
+          "counters": [],
+          "extra_x_mm": 9.101338393986225
+        },
+        {
+          "index": 16,
+          "character": "o",
+          "counters": [
+            {
+              "face_index": 0,
+              "hole_index": 0,
+              "center_xy": [
+                76.75365487088399,
+                4.931684656373822
+              ],
+              "scale_xy": [
+                1.9828366533864208,
+                1.0
+              ]
+            }
+          ],
+          "extra_x_mm": 9.384382643271238
+        },
+        {
+          "index": 17,
+          "character": "t",
+          "counters": [],
+          "extra_x_mm": 10.16098613012582
+        },
+        {
+          "index": 18,
+          "character": "a",
+          "counters": [
+            {
+              "face_index": 0,
+              "hole_index": 0,
+              "center_xy": [
+                84.81947670446783,
+                3.8509359202076787
+              ],
+              "scale_xy": [
+                1.8996612653948324,
+                1.8416369978348843
+              ]
+            }
+          ],
+          "extra_x_mm": 10.848041756544262
+        }
+      ]
+    }
+  ]
+}

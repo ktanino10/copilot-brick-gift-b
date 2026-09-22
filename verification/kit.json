@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "revision": "4.0-B-personal-kit.2",
+  "revision": "4.1-B-legibility.1",
   "model": "B",
   "units": "mm",
   "assembly_parts": 150,
@@ -17,12 +17,17 @@
   "pdf_pages": 54,
   "trial_parts": 7,
   "fit_masters": 12,
+  "separate_lettering_coupon": {
+    "part": "NP3-LETTER-TEST-B-V2",
+    "quantity": 1,
+    "included_in_assembly": false
+  },
   "nameplate_lines": [
     "Same icon, New adventures",
     "github.com/tomokota"
   ],
   "native_reopen_report": "verification/native.json",
-  "relative_links_checked": 710,
+  "relative_links_checked": 734,
   "zip_duplicate_members": 0,
   "offline_guide": {
     "entry": "guide/index.html",
@@ -38,7 +43,7 @@
     "bidirectional_groups": 23,
     "stl_masters": 21,
     "embedded_meshes": 21,
-    "embedded_triangles": 620496,
+    "embedded_triangles": 718870,
     "embedded_stl_byte_identical": true,
     "browser_report": "verification/guide-browser.json",
     "common_source_commit": "35ebc11234779424ebbda83b3f1b7d31d8518b24",
@@ -474,8 +479,8 @@
     },
     {
       "file": "kit/B/parts/NP3-TEXT-B.stl",
-      "sha256": "83ff7a42af4062b0e4a405edd64a8828ab218843d111d13961843fc0fe7044af",
-      "triangles": 54280,
+      "sha256": "1deaa5329e35022f8f4410501cfca4f3287f5566b6cd6d2c06c5846178dba5c8",
+      "triangles": 152654,
       "bounds_mm": [
         [
           0.0,
@@ -485,13 +490,13 @@
         [
           142.0,
           40.0,
-          3.200000047683716
+          3.5999999046325684
         ]
       ],
       "closed": true,
       "vertex_manifold": true,
       "connected_bodies": 1,
-      "positive_volume_mm3": 13696.40998809369
+      "positive_volume_mm3": 14091.200866782963
     },
     {
       "file": "kit/fit/FIT-F-CM04.stl",

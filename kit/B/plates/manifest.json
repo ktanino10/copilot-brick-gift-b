@@ -2223,7 +2223,7 @@
     }
   ],
   "model": "B",
-  "revision": "4.0-B-personal-kit.1",
+  "revision": "4.1-B-legibility.1",
   "status": "NOT_SLICED",
   "pause_encoded": false,
   "assembly_part_count": 150,
@@ -2234,6 +2234,14 @@
     "lines": [
       "Same icon, New adventures",
       "github.com/tomokota"
-    ]
+    ],
+    "lettering_revision": "legibility-v2",
+    "ink_heights_mm": [
+      12,
+      10
+    ],
+    "black_support_mm": 2.4,
+    "white_relief_mm": 1.2,
+    "total_thickness_mm": 3.6
   }
 }

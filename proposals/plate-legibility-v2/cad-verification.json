@@ -1,0 +1,43 @@
+{
+  "revision": "plate-legibility-v2-candidate-1",
+  "status": "CANDIDATE_NOT_SLICED_NOT_PHYSICALLY_TESTED",
+  "lines": [
+    "Same icon, New adventures",
+    "github.com/tomokota"
+  ],
+  "units": "mm",
+  "plate_dimensions_mm": [
+    142,
+    40,
+    3.6
+  ],
+  "reconstructed_current_symmetric_difference_mm3": 0.0,
+  "carrier_symmetric_difference_mm3": 0.0,
+  "native_saved_and_reopened": true,
+  "step_reopened": true,
+  "plate_native_volume_mm3": 14092.203500817215,
+  "plate_stl_triangles": 152654,
+  "candidate_native_top_equals_measured_glyphs": true,
+  "coupon_dimensions_mm": [
+    65.4,
+    30.9,
+    3.6
+  ],
+  "coupon_stl_triangles": 62404,
+  "coupon_lines": [
+    "icon, New ad",
+    "b.com/to"
+  ],
+  "coupon_uses_same_glyph_solids_and_spacing": true,
+  "coupon_source_character_ranges_inclusive": [
+    [
+      5,
+      16
+    ],
+    [
+      5,
+      12
+    ]
+  ],
+  "physical_print_and_fit": "NOT_TESTED"
+}

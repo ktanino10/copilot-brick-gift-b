@@ -13,12 +13,12 @@ from verify_guide_mapping import verify_mapping
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE = ROOT / "downloads/B-personal-print-kit.zip"
-DELIVERY_DIRS = ("docs", "guide", "kit", "source", "web", "notices", "scripts", "verification")
+DELIVERY_DIRS = ("docs", "guide", "kit", "samples", "source", "web", "notices", "scripts", "verification")
 DELIVERY_FILES = (
-    ".gitattributes", ".gitignore", "README.md", "requirements-verify.txt", "requirements-guide.txt",
+    ".gitattributes", ".gitignore", "README.md", "requirements-verify.txt", "requirements-guide.txt", "requirements-cad.txt",
     "package.json", "package-lock.json",
 )
-REVISION = "4.0-B-personal-kit.2"
+REVISION = "4.1-B-legibility.1"
 COLORS = {"black": "黒", "cyan": "シアン", "magenta": "マゼンタ", "green": "緑"}
 
 
@@ -31,7 +31,7 @@ def payload_files():
     for folder in DELIVERY_DIRS:
         paths.extend(path for path in (ROOT / folder).rglob("*")
                      if path.is_file() and "__pycache__" not in path.parts
-                     and path.suffix != ".pyc")
+                     and path.suffix not in (".pyc", ".FCBak", ".FCStd1"))
     return sorted(paths)
 
 
@@ -97,6 +97,8 @@ def write_indexes():
         "# Bの28工程", "", "[入口](../README.md) · [オフライン3D](../guide/index.html) · "
         "[3Dの使い方](GUIDE.md) · [組立・交換・分解](ASSEMBLY.md) · "
         "[全図PDF](../kit/B/drawings.pdf)", "",
+        "**現行の銘板は上12／下10 mm・白1.2 mmの改訂版。"
+        "[文字試験片](NAMEPLATE-V2.md)は完成150個とは別です。**", "",
         "**ZIPを展開して `guide/index.html` をダブルクリック。空の机から全28工程を3Dで進められます。**",
         "Python／Node／ネット接続は閲覧に不要です。印刷順と組立順は別です。",
         "**工程1は `B-black-02.3mf` のslot 3、`BASE3-24x10-B-562406` → `B-001`。**",
@@ -158,6 +160,8 @@ def write_indexes():
         "# Bのファイル一覧と数量", "",
         "[入口](../README.md) · [オフライン3D](../guide/index.html) · [3Dの使い方](GUIDE.md) · "
         "[印刷手順](PRINTING.md) · [少量試作](TRIAL.md)", "",
+        "**2026-09-22の変更は文字銘板1枚だけです。全厚3.6 mm・上12／下10 mm・白1.2 mm。"
+        "まず[小さな文字試験片](NAMEPLATE-V2.md)から。台座・顔・右ロゴは刷り直し不要です。**", "",
         "**印刷したファイルから探す：ZIPを展開して `guide/index.html` をダブルクリックし、"
         "3MFとslotを選びます。実プレートの配置と完成／途中の対応位置が3Dで見られます。**",
         "全14枚／150配置を照合しています。slotは案内用の番号で、実物には刻印されていません。",
@@ -248,11 +252,19 @@ def write_indexes():
         "revision": REVISION, "visibility": "private",
         "model": "B", "units": "mm", "status": "NOT_SLICED", "sliced": False,
         "printer_settings_validated": False, "pause_encoded": False, "physical_tested": False,
-        "assembly_dimensions_mm": [191.8, 79.8, 238.6], "assembly_quantity": 150,
+        "assembly_dimensions_mm": [191.8, 80.2, 238.6], "assembly_quantity": 150,
         "base_color_quantities": dict(Counter(row["color"] for row in assembly["placements"])),
         "unique_assembly_stl": 21, "assembly_bom_rows": 23, "plates": 14,
         "trial_quantity_separate_from_assembly": 7, "fit_master_count": 12,
         "nameplate": manifest["nameplate"],
+        "lettering_sample": {
+            "manifest": "samples/nameplate-v2/manifest.json", "quantity": 1,
+            "included_in_assembly_bom": False, "dimensions_mm": [65.4, 30.9, 3.6],
+            "files": [
+                {"file": path.relative_to(ROOT).as_posix(), "bytes": path.stat().st_size, "sha256": sha(path)}
+                for path in sorted((ROOT / "samples/nameplate-v2").iterdir()) if path.is_file()
+            ],
+        },
         "offline_guide": {
             "entry": "guide/index.html", "self_contained": True,
             "mapping": "guide/index.mapping.json", "occurrence_csv": "kit/B/part-map.csv",

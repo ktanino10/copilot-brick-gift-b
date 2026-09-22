@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "guide_revision": "print-to-place-1",
-  "geometry_revision": "4.0-B-personal-kit.1",
+  "geometry_revision": "4.1-B-legibility.1",
   "model": "B",
   "title": "B DESK CLASSIC / 個人版・印刷ファイルから組み立てる3Dガイド",
   "units": "mm",
@@ -16,8 +16,8 @@
   "bounds": [
     [
       0.1,
-      0.1,
-      -0.0
+      -0.3,
+      0
     ],
     [
       191.9,
@@ -523,15 +523,15 @@
         [
           142.0,
           40.0,
-          3.2
+          3.6
         ]
       ],
-      "sha256": "83ff7a42af4062b0e4a405edd64a8828ab218843d111d13961843fc0fe7044af",
+      "sha256": "1deaa5329e35022f8f4410501cfca4f3287f5566b6cd6d2c06c5846178dba5c8",
       "orientation": "flat_rear_on_bed_letters_up",
       "dimensions": [
         142.0,
         40.0,
-        3.2
+        3.6
       ],
       "finish_color": "white",
       "color_change_z_mm": 2.4
@@ -10266,7 +10266,7 @@
     {
       "file": "B-black-to-white-z2p4-01.3mf",
       "color": "black",
-      "sha256": "45d3d3a47243b9d994aeab5b6c3744cbf7e6805912e0441db23acbb38fa2629c",
+      "sha256": "c80190e4ad487f90e279dd4ea99e7d33d032d93e9d45eac8ee32eb3e4d91d75b",
       "slots": [
         {
           "id": "B-black-to-white-z2p4-01.3mf#1",
@@ -12092,8 +12092,8 @@
     "keeper_lift_mm": 16
   },
   "inputs_sha256": {
-    "catalog": "991f14c1db9d1706995f2918a3228cc0c3317d64f457e7c20fb4ef77fc9e6878",
-    "assembly": "17a0b15408e2bb97a4e303f5576c42d71ba7f37a5bff08f8537bb82bf36d8adb",
-    "plates": "f556c56ba662472218f8e0079e203d128448e1bce0adf2ed14bccaf4ded96239"
+    "catalog": "411a22015f15f041185c47c5b204af2926e2b340be326ef569f7dcf4fdc3f9f4",
+    "assembly": "45699664a709fea69e57c276b0cda229c8efee79a5d7194eb28776949a86ea20",
+    "plates": "c3f9457d03eeb0015ced5e29dc1491a6507dbb468ea2293cf677cc1721f7f197"
   }
 }

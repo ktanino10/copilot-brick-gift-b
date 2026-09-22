@@ -1,0 +1,54 @@
+{
+  "revision": "4.1-B-legibility.1",
+  "part": "NP3-LETTER-TEST-B-V2",
+  "quantity": 1,
+  "included_in_assembly_bom": false,
+  "sliced": false,
+  "pause_encoded": false,
+  "dimensions_mm": [
+    65.4,
+    30.9,
+    3.6
+  ],
+  "lines": [
+    "icon, New ad",
+    "b.com/to"
+  ],
+  "black_height_mm": 2.4,
+  "white_relief_mm": 1.2,
+  "source_rows": [
+    1,
+    2
+  ],
+  "source_character_ranges_inclusive": [
+    [
+      5,
+      16
+    ],
+    [
+      5,
+      12
+    ]
+  ],
+  "position": [
+    95.29999923706055,
+    112.55000019073486,
+    0
+  ],
+  "bounds_mm": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      65.4000015258789,
+      30.899999618530273,
+      3.5999999046325684
+    ]
+  ],
+  "files": {
+    "NP3-LETTER-TEST-B-V2.stl": "0b587534582160e6e7561da2e7469941064125455fa7d098923e7506e59a0493",
+    "NP3-LETTER-TEST-B-V2.3mf": "ca818077e597becbbaababe305b53b05ed92762abf09c9ac5b0a0efcae41a3cc"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "4.0-B-personal-kit.1",
+  "revision": "4.1-B-legibility.1",
   "units": "mm",
   "status": "digital_prototype_physical_fit_unverified",
   "interface": {
@@ -43,12 +43,12 @@
     ],
     "height": 40.0,
     "thickness": 2.4,
-    "relief": 0.8,
-    "minimum_straight_stroke": 0.84,
-    "font": "resources/fonts/barlow-condensed/BarlowCondensed-Black.ttf",
+    "relief": 1.2,
+    "minimum_straight_stroke": 1.0,
+    "font": "resources/fonts/barlow-condensed/BarlowCondensed-Bold.ttf",
     "line_bottoms": [
-      22.0,
-      8.0
+      22,
+      7
     ],
     "side_taper": 2.0,
     "rear_vertical_margin": 1.2,
@@ -61,7 +61,17 @@
     "letter_color": "white",
     "base_courses": 5,
     "x": 4.0,
-    "retention": "Vertical dovetail slide; two removable stud-mounted top keepers."
+    "retention": "Vertical dovetail slide; two removable stud-mounted top keepers.",
+    "lettering_strategy": "legibility-v2",
+    "lettering_plan": "design/nameplate-plan.json",
+    "row_fonts": [
+      "resources/fonts/barlow-condensed/BarlowCondensed-Bold.ttf",
+      "resources/fonts/barlow-condensed/BarlowCondensed-Black.ttf"
+    ],
+    "row_scale_modes": [
+      "retain_x",
+      "uniform"
+    ]
   },
   "logo": {
     "outline": "resources/github-mark-relief.json",
@@ -132,8 +142,8 @@
         3.2
       ],
       "text_heights": [
-        12.0,
-        8.0
+        12,
+        10
       ],
       "logo_x": 148.0,
       "logo_module_width": 40.0,

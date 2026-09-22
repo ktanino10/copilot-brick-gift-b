@@ -232,8 +232,8 @@ def verify_package():
                 "Unsafe ZIP paths.")
         for name in names:
             require(archive.read(name) == (ROOT / name).read_bytes(), f"ZIP content differs: {name}")
-        require(sum(name.endswith(".stl") for name in names) == 34, "ZIP must contain 21+12+1 STL masters.")
-        require(sum(name.endswith(".3mf") for name in names) == 14, "ZIP must contain 14 unsliced 3MFs.")
+        require(sum(name.endswith(".stl") for name in names) == 35, "ZIP must contain 34 original masters plus1 lettering coupon.")
+        require(sum(name.endswith(".3mf") for name in names) == 15, "ZIP must contain 14 assembly plates plus1 lettering coupon.")
         require("guide/index.html" in names, "ZIP is missing the offline 3D guide entry.")
         require(not any(name.endswith(".zip") for name in names), "No nested duplicate kits.")
     digest, filename = (ROOT / "downloads/SHA256SUMS.txt").read_text().strip().split("  ", 1)
@@ -272,7 +272,7 @@ def main():
                              "positive_volume_mm3": float(mesh.volume)})
     require(len(meshes) == 34, "Expected only 21 B + 12 fit + 1 extra trial masters.")
     require(set(meshes) == set(catalog["parts"]), "Catalog master selection differs.")
-    require(np.allclose(meshes["NP3-TEXT-B"][0].extents, [142, 40, 3.2], atol=1e-5), "Plate size differs.")
+    require(np.allclose(meshes["NP3-TEXT-B"][0].extents, [142, 40, 3.6], atol=1e-5), "Plate size differs.")
     manifest = json.loads((ROOT / "kit/B/plates/manifest.json").read_text())
     require(manifest["nameplate"]["lines"] == LINES and manifest["sliced"] is False
             and manifest["pause_encoded"] is False and manifest["printer_settings_validated"] is False,
@@ -290,6 +290,27 @@ def main():
                     "A body or front plate has the wrong color-change guidance.")
         actual.update(check_3mf(ROOT / "kit/B/plates" / plate["file"], plate, meshes, catalog["colors"]))
     require(actual == expected, "3MF aggregate part/color counts differ from BOM.")
+    sample_root = ROOT / "samples/nameplate-v2"
+    sample = json.loads((sample_root / "manifest.json").read_text())
+    require(sample["part"] == "NP3-LETTER-TEST-B-V2" and sample["quantity"] == 1
+            and sample["included_in_assembly_bom"] is False and sample["sliced"] is False
+            and sample["pause_encoded"] is False and sample["white_relief_mm"] == 1.2
+            and sample["black_height_mm"] == 2.4, "Lettering sample contract differs.")
+    sample_mesh, sample_triangles = read_stl(sample_root / (sample["part"] + ".stl"))
+    require(np.allclose(sample_mesh.extents, sample["dimensions_mm"], atol=2e-5),
+            "Lettering sample dimensions differ.")
+    for filename, expected_hash in sample["files"].items():
+        require(sha((sample_root / filename).read_bytes()) == expected_hash, "Lettering sample hash differs.")
+    position = sample["position"]
+    lower, upper = sample_mesh.bounds
+    brim = [lower[0] + position[0] - 6, lower[1] + position[1] - 6,
+            upper[0] + position[0] + 6, upper[1] + position[1] + 6]
+    sample_counts = check_3mf(
+        sample_root / (sample["part"] + ".3mf"),
+        {"color": "black", "items": [{"part": sample["part"], "position": position, "brim_box": brim}]},
+        {sample["part"]: (sample_mesh, sample_triangles)}, catalog["colors"],
+    )
+    require(sample_counts == Counter({(sample["part"], "black"): 1}), "Expected one separate lettering sample.")
     trial = read_csv(ROOT / "kit/trial/bom.csv")
     require({row["part"]: int(row["quantity"]) for row in trial} == {
         "BR-02x02-H096": 2, "BR-02x04-H096": 2, "NP3-KEEPER": 1, "BASE3-03x10-T-aa77a9": 2,
@@ -412,6 +433,7 @@ def main():
         "assembly_parts": 150, "B_unique_parts": 21, "B_bom_rows": 23, "B_plates": 14,
         "color_quantities": dict(Counter(row["color"] for row in assembly["placements"])),
         "steps": 28, "pdf_pages": 54, "trial_parts": 7, "fit_masters": 12,
+        "separate_lettering_coupon": {"part": sample["part"], "quantity": 1, "included_in_assembly": False},
         "nameplate_lines": LINES, "native_reopen_report": "verification/native.json",
         "relative_links_checked": relative_links, "zip_duplicate_members": 0,
         "offline_guide": {"entry": guide["entry"], **offline_document, **guide_report,

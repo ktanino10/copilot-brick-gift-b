@@ -1,0 +1,2627 @@
+{
+  "revision": "4.0-B-personal-kit.2",
+  "status": "HISTORICAL_NOT_CURRENT",
+  "plate_sha256": "83ff7a42af4062b0e4a405edd64a8828ab218843d111d13961843fc0fe7044af",
+  "unchanged_part_sha256": {
+    "BASE3-03x10-T-aa77a9.stl": "0eedec766e01cdbef5539540873c80f90309018d6958a6b77b19516be633f18e",
+    "BASE3-03x10-T-d79875.stl": "a0fbfcb0972918c1e99392650ad64f4b674b7211fb0a1d1c94f74d892edc6415",
+    "BASE3-06x10-T-3f87ac.stl": "a14b55f137996d1bf3fcaa7210e0c15a3dc034c6a28b2b3f1256a1439be2fc61",
+    "BASE3-06x10-T-6159e6.stl": "ef3308e68f08ba88b8fa4fbeb067a16780fa958bf9b64b3922859d97e835d73f",
+    "BASE3-06x10-T-6e100f.stl": "f782d20a7cef5f8ac290a0b8487a5334463b54b22aaa140fc82f895a17c0a5a3",
+    "BASE3-06x10-T-838259.stl": "a14b55f137996d1bf3fcaa7210e0c15a3dc034c6a28b2b3f1256a1439be2fc61",
+    "BASE3-06x10-T-e1945a.stl": "adf23aa19fd6aa1485d943e4b28c904b8e58a903d4e8b66279c12461b6627be7",
+    "BASE3-24x10-B-562406.stl": "b5ba60b51926f20171f8238979d43b4331b451db7b3b87f6d51d56b5c75dba24",
+    "BR-01x04-H096.stl": "4eeb53d6220950e593a63baa8a388498f41bc509ad26df642cbaffbca772a8f8",
+    "BR-02x04-H064.stl": "743dcbaca56491a9be99b04f088ee6153fcbaf3234132d7e37f3b2c38a1c917f",
+    "BR-02x04-H096.stl": "31b61fbf103450546cda92dfe50bfc24393e776bbe62a45d24d6084cb0c7a269",
+    "BR-02x05-H096.stl": "121dd98b5c43f0e231eafa889dd696d3422f6d5b0b7fdeb27aec4cd0f2ad1014",
+    "BR-02x06-H096.stl": "28bfad450343c1aa8cfce2091efedd9434d16262e32e4abe29df62330ea749d1",
+    "BR-03x04-H096.stl": "8a1f560361a0e7792f9ddcb9315f45c521719eaa4dca9bd729e4a4c780079759",
+    "BR-04x04-H064.stl": "b2c741f948af015929774e3ef9d73fb06271d1229676f86ea60a09e972bbb614",
+    "BR-04x04-H096.stl": "20a7fe6e15bdfd5901d0776f55b5e5353feec8ca86817690276094c4564f74d7",
+    "BR-04x05-H096.stl": "5f9273b6b55e39f4f019499b5914fbb40ab4aa78e7114454880b82526d570bf5",
+    "BR-05x04-H096.stl": "db19a404e4b5dcbcdc0e80e13d3d775ba55c4667bb018b2a911f1e2c1d667b6a",
+    "NP3-KEEPER.stl": "b523f99637728aa9e51b4025ec778016f0c9d78f9959aa7823abb71ce691978f",
+    "NP3-LOGO-B.stl": "96135856f694c111da16975ad7d7948f20c9fa1c5c3ca11b102477df0a77a7e6"
+  },
+  "unchanged_plate_sha256": {
+    "B-black-01.3mf": "957b19685a7e5c7973e2b8ac62952a976cadefdf23e18d56fe0a075ebe1de101",
+    "B-black-02.3mf": "865ca3cfeb098702b4992561c017ff5b91aaccbf2b403a32aa6f99cdab2548ce",
+    "B-black-03.3mf": "57cbdbf4347abf6312957f078e18ed74470fd8c283e5eaff4500ef68227cdae2",
+    "B-black-04.3mf": "c7a46d0cb2c6474639e227b14a64c6365d930e36a49650f6964f386d33a0cedc",
+    "B-black-05.3mf": "2fe039f0aaa4cc5c84397fb2ad6a372c6af60531b06277e09ad24b1c7c2a67f5",
+    "B-black-06.3mf": "9d070e009fd94904c4d560167fe21c63df5a2f3ccfb19c7152294154c3ccc2ab",
+    "B-black-07.3mf": "182a2966bad178edf77f265a104817a22b599075df32cb15d8cd6f1de8ef4369",
+    "B-black-to-white-z2p8-01.3mf": "36b88a7b0b499d4346974e79307cdeea02d72963be3f0c727c792be7eb0e62ff",
+    "B-cyan-01.3mf": "a4e4f92fbc6b103d98db0fe4de40368fcc496239af946ed6cad22a8f314b867f",
+    "B-cyan-02.3mf": "0c55ba28ce790e5404afff3723c3b96e4160104dde8577dcb4d9c08efc61d898",
+    "B-green-01.3mf": "b3f3cc461a57327878a7951a21fe35a7791ad342bc6b3536080c21eef5753c78",
+    "B-magenta-01.3mf": "fdc528860447cce5a2623649da3469c971967f6b4962e4bc61c5599fbedb4e37",
+    "B-magenta-02.3mf": "62e828fc57ce0698ef68e9e82324782f453c10b9cd4ed3eaf25d6b7ba7156418"
+  },
+  "placements": [
+    {
+      "id": "B-001",
+      "part": "BASE3-24x10-B-562406",
+      "color": "black",
+      "position": [
+        0.0,
+        0,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 1,
+      "role": "base_course",
+      "course": 0
+    },
+    {
+      "id": "B-002",
+      "part": "BASE3-06x10-T-e1945a",
+      "color": "black",
+      "position": [
+        0.0,
+        0,
+        9.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 2,
+      "role": "base_course",
+      "course": 1
+    },
+    {
+      "id": "B-003",
+      "part": "BASE3-06x10-T-838259",
+      "color": "black",
+      "position": [
+        48.0,
+        0,
+        9.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 2,
+      "role": "base_course",
+      "course": 1
+    },
+    {
+      "id": "B-004",
+      "part": "BASE3-06x10-T-3f87ac",
+      "color": "black",
+      "position": [
+        96.0,
+        0,
+        9.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 2,
+      "role": "base_course",
+      "course": 1
+    },
+    {
+      "id": "B-005",
+      "part": "BASE3-06x10-T-6e100f",
+      "color": "black",
+      "position": [
+        144.0,
+        0,
+        9.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 2,
+      "role": "base_course",
+      "course": 1
+    },
+    {
+      "id": "B-006",
+      "part": "BASE3-03x10-T-aa77a9",
+      "color": "black",
+      "position": [
+        0.0,
+        0,
+        19.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 3,
+      "role": "base_course",
+      "course": 2
+    },
+    {
+      "id": "B-007",
+      "part": "BASE3-06x10-T-838259",
+      "color": "black",
+      "position": [
+        24.0,
+        0,
+        19.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 3,
+      "role": "base_course",
+      "course": 2
+    },
+    {
+      "id": "B-008",
+      "part": "BASE3-06x10-T-838259",
+      "color": "black",
+      "position": [
+        72.0,
+        0,
+        19.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 3,
+      "role": "base_course",
+      "course": 2
+    },
+    {
+      "id": "B-009",
+      "part": "BASE3-06x10-T-6159e6",
+      "color": "black",
+      "position": [
+        120.0,
+        0,
+        19.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 3,
+      "role": "base_course",
+      "course": 2
+    },
+    {
+      "id": "B-010",
+      "part": "BASE3-03x10-T-d79875",
+      "color": "black",
+      "position": [
+        168.0,
+        0,
+        19.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 3,
+      "role": "base_course",
+      "course": 2
+    },
+    {
+      "id": "B-011",
+      "part": "BASE3-06x10-T-e1945a",
+      "color": "black",
+      "position": [
+        0.0,
+        0,
+        28.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 4,
+      "role": "base_course",
+      "course": 3
+    },
+    {
+      "id": "B-012",
+      "part": "BASE3-06x10-T-838259",
+      "color": "black",
+      "position": [
+        48.0,
+        0,
+        28.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 4,
+      "role": "base_course",
+      "course": 3
+    },
+    {
+      "id": "B-013",
+      "part": "BASE3-06x10-T-3f87ac",
+      "color": "black",
+      "position": [
+        96.0,
+        0,
+        28.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 4,
+      "role": "base_course",
+      "course": 3
+    },
+    {
+      "id": "B-014",
+      "part": "BASE3-06x10-T-6e100f",
+      "color": "black",
+      "position": [
+        144.0,
+        0,
+        28.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 4,
+      "role": "base_course",
+      "course": 3
+    },
+    {
+      "id": "B-015",
+      "part": "BASE3-03x10-T-aa77a9",
+      "color": "black",
+      "position": [
+        0.0,
+        0,
+        38.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 5,
+      "role": "base_course",
+      "course": 4
+    },
+    {
+      "id": "B-016",
+      "part": "BASE3-06x10-T-838259",
+      "color": "black",
+      "position": [
+        24.0,
+        0,
+        38.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 5,
+      "role": "base_course",
+      "course": 4
+    },
+    {
+      "id": "B-017",
+      "part": "BASE3-06x10-T-838259",
+      "color": "black",
+      "position": [
+        72.0,
+        0,
+        38.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 5,
+      "role": "base_course",
+      "course": 4
+    },
+    {
+      "id": "B-018",
+      "part": "BASE3-06x10-T-6159e6",
+      "color": "black",
+      "position": [
+        120.0,
+        0,
+        38.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 5,
+      "role": "base_course",
+      "course": 4
+    },
+    {
+      "id": "B-019",
+      "part": "BASE3-03x10-T-d79875",
+      "color": "black",
+      "position": [
+        168.0,
+        0,
+        38.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 5,
+      "role": "base_course",
+      "course": 4
+    },
+    {
+      "id": "B-020",
+      "part": "NP3-TEXT-B",
+      "color": "black",
+      "position": [
+        4.0,
+        3.3,
+        4.0
+      ],
+      "rotation": [
+        90,
+        0,
+        0
+      ],
+      "step": 6,
+      "role": "front_module",
+      "module": "text"
+    },
+    {
+      "id": "B-021",
+      "part": "NP3-LOGO-B",
+      "color": "black",
+      "position": [
+        148.0,
+        3.7,
+        4.0
+      ],
+      "rotation": [
+        90,
+        0,
+        0
+      ],
+      "step": 6,
+      "role": "front_module",
+      "module": "logo"
+    },
+    {
+      "id": "B-022",
+      "part": "NP3-KEEPER",
+      "color": "black",
+      "position": [
+        0,
+        0,
+        48.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 7,
+      "role": "keeper",
+      "module": "text"
+    },
+    {
+      "id": "B-023",
+      "part": "NP3-KEEPER",
+      "color": "black",
+      "position": [
+        128.0,
+        0,
+        48.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 7,
+      "role": "keeper",
+      "module": "text"
+    },
+    {
+      "id": "B-024",
+      "part": "NP3-KEEPER",
+      "color": "black",
+      "position": [
+        160.0,
+        0,
+        48.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 7,
+      "role": "keeper",
+      "module": "logo"
+    },
+    {
+      "id": "B-025",
+      "part": "BR-04x04-H096",
+      "color": "magenta",
+      "position": [
+        56.0,
+        24.0,
+        48.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 8,
+      "role": "face"
+    },
+    {
+      "id": "B-026",
+      "part": "BR-04x04-H096",
+      "color": "magenta",
+      "position": [
+        88.0,
+        24.0,
+        48.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 8,
+      "role": "face"
+    },
+    {
+      "id": "B-027",
+      "part": "BR-02x04-H096",
+      "color": "magenta",
+      "position": [
+        120.0,
+        24.0,
+        48.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 8,
+      "role": "face"
+    },
+    {
+      "id": "B-028",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        48.0,
+        16.0,
+        57.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 9,
+      "role": "face"
+    },
+    {
+      "id": "B-029",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        64.0,
+        24.0,
+        57.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 9,
+      "role": "face"
+    },
+    {
+      "id": "B-030",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        80.0,
+        24.0,
+        57.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 9,
+      "role": "face"
+    },
+    {
+      "id": "B-031",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        112.0,
+        24.0,
+        57.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 9,
+      "role": "face"
+    },
+    {
+      "id": "B-032",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        128.0,
+        16.0,
+        57.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 9,
+      "role": "face"
+    },
+    {
+      "id": "B-033",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        40.0,
+        16.0,
+        67.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 10,
+      "role": "face"
+    },
+    {
+      "id": "B-034",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        56.0,
+        24.0,
+        67.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 10,
+      "role": "face"
+    },
+    {
+      "id": "B-035",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        88.0,
+        24.0,
+        67.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 10,
+      "role": "face"
+    },
+    {
+      "id": "B-036",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        120.0,
+        24.0,
+        67.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 10,
+      "role": "face"
+    },
+    {
+      "id": "B-037",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        136.0,
+        16.0,
+        67.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 10,
+      "role": "face"
+    },
+    {
+      "id": "B-038",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        32.0,
+        16.0,
+        76.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 11,
+      "role": "face"
+    },
+    {
+      "id": "B-039",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        48.0,
+        24.0,
+        76.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 11,
+      "role": "face"
+    },
+    {
+      "id": "B-040",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        64.0,
+        24.0,
+        76.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 11,
+      "role": "face"
+    },
+    {
+      "id": "B-041",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        96.0,
+        24.0,
+        76.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 11,
+      "role": "face"
+    },
+    {
+      "id": "B-042",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        128.0,
+        24.0,
+        76.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 11,
+      "role": "face"
+    },
+    {
+      "id": "B-043",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        144.0,
+        16.0,
+        76.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 11,
+      "role": "face"
+    },
+    {
+      "id": "B-044",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        24.0,
+        16.0,
+        86.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 12,
+      "role": "face"
+    },
+    {
+      "id": "B-045",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        40.0,
+        24.0,
+        86.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 12,
+      "role": "face"
+    },
+    {
+      "id": "B-046",
+      "part": "BR-01x04-H096",
+      "color": "green",
+      "position": [
+        72.0,
+        24.0,
+        86.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 12,
+      "role": "face"
+    },
+    {
+      "id": "B-047",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        80.0,
+        24.0,
+        86.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 12,
+      "role": "face"
+    },
+    {
+      "id": "B-048",
+      "part": "BR-01x04-H096",
+      "color": "green",
+      "position": [
+        112.0,
+        24.0,
+        86.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 12,
+      "role": "face"
+    },
+    {
+      "id": "B-049",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        120.0,
+        24.0,
+        86.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 12,
+      "role": "face"
+    },
+    {
+      "id": "B-050",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        152.0,
+        16.0,
+        86.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 12,
+      "role": "face"
+    },
+    {
+      "id": "B-051",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        16.0,
+        16.0,
+        96.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 13,
+      "role": "face"
+    },
+    {
+      "id": "B-052",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        32.0,
+        24.0,
+        96.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 13,
+      "role": "face"
+    },
+    {
+      "id": "B-053",
+      "part": "BR-03x04-H096",
+      "color": "black",
+      "position": [
+        48.0,
+        24.0,
+        96.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 13,
+      "role": "face"
+    },
+    {
+      "id": "B-054",
+      "part": "BR-01x04-H096",
+      "color": "green",
+      "position": [
+        72.0,
+        24.0,
+        96.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 13,
+      "role": "face"
+    },
+    {
+      "id": "B-055",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        80.0,
+        24.0,
+        96.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 13,
+      "role": "face"
+    },
+    {
+      "id": "B-056",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        96.0,
+        24.0,
+        96.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 13,
+      "role": "face"
+    },
+    {
+      "id": "B-057",
+      "part": "BR-01x04-H096",
+      "color": "green",
+      "position": [
+        112.0,
+        24.0,
+        96.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 13,
+      "role": "face"
+    },
+    {
+      "id": "B-058",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        120.0,
+        24.0,
+        96.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 13,
+      "role": "face"
+    },
+    {
+      "id": "B-059",
+      "part": "BR-03x04-H096",
+      "color": "black",
+      "position": [
+        136.0,
+        24.0,
+        96.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 13,
+      "role": "face"
+    },
+    {
+      "id": "B-060",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        160.0,
+        16.0,
+        96.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 13,
+      "role": "face"
+    },
+    {
+      "id": "B-061",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        16.0,
+        16.0,
+        105.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 14,
+      "role": "face"
+    },
+    {
+      "id": "B-062",
+      "part": "BR-05x04-H096",
+      "color": "black",
+      "position": [
+        32.0,
+        24.0,
+        105.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 14,
+      "role": "face"
+    },
+    {
+      "id": "B-063",
+      "part": "BR-01x04-H096",
+      "color": "green",
+      "position": [
+        72.0,
+        24.0,
+        105.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 14,
+      "role": "face"
+    },
+    {
+      "id": "B-064",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        80.0,
+        24.0,
+        105.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 14,
+      "role": "face"
+    },
+    {
+      "id": "B-065",
+      "part": "BR-01x04-H096",
+      "color": "green",
+      "position": [
+        112.0,
+        24.0,
+        105.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 14,
+      "role": "face"
+    },
+    {
+      "id": "B-066",
+      "part": "BR-05x04-H096",
+      "color": "black",
+      "position": [
+        120.0,
+        24.0,
+        105.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 14,
+      "role": "face"
+    },
+    {
+      "id": "B-067",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        160.0,
+        16.0,
+        105.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 14,
+      "role": "face"
+    },
+    {
+      "id": "B-068",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        16.0,
+        16.0,
+        115.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 15,
+      "role": "face"
+    },
+    {
+      "id": "B-069",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        32.0,
+        24.0,
+        115.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 15,
+      "role": "face"
+    },
+    {
+      "id": "B-070",
+      "part": "BR-03x04-H096",
+      "color": "black",
+      "position": [
+        48.0,
+        24.0,
+        115.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 15,
+      "role": "face"
+    },
+    {
+      "id": "B-071",
+      "part": "BR-01x04-H096",
+      "color": "green",
+      "position": [
+        72.0,
+        24.0,
+        115.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 15,
+      "role": "face"
+    },
+    {
+      "id": "B-072",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        80.0,
+        24.0,
+        115.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 15,
+      "role": "face"
+    },
+    {
+      "id": "B-073",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        96.0,
+        24.0,
+        115.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 15,
+      "role": "face"
+    },
+    {
+      "id": "B-074",
+      "part": "BR-01x04-H096",
+      "color": "green",
+      "position": [
+        112.0,
+        24.0,
+        115.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 15,
+      "role": "face"
+    },
+    {
+      "id": "B-075",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        120.0,
+        24.0,
+        115.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 15,
+      "role": "face"
+    },
+    {
+      "id": "B-076",
+      "part": "BR-03x04-H096",
+      "color": "black",
+      "position": [
+        136.0,
+        24.0,
+        115.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 15,
+      "role": "face"
+    },
+    {
+      "id": "B-077",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        160.0,
+        16.0,
+        115.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 15,
+      "role": "face"
+    },
+    {
+      "id": "B-078",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        16.0,
+        16.0,
+        124.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 16,
+      "role": "face"
+    },
+    {
+      "id": "B-079",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        32.0,
+        24.0,
+        124.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 16,
+      "role": "face"
+    },
+    {
+      "id": "B-080",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        64.0,
+        24.0,
+        124.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 16,
+      "role": "face"
+    },
+    {
+      "id": "B-081",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        96.0,
+        24.0,
+        124.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 16,
+      "role": "face"
+    },
+    {
+      "id": "B-082",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        128.0,
+        24.0,
+        124.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 16,
+      "role": "face"
+    },
+    {
+      "id": "B-083",
+      "part": "BR-02x06-H096",
+      "color": "magenta",
+      "position": [
+        160.0,
+        16.0,
+        124.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 16,
+      "role": "face"
+    },
+    {
+      "id": "B-084",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        16.0,
+        16.0,
+        134.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 17,
+      "role": "face"
+    },
+    {
+      "id": "B-085",
+      "part": "BR-04x05-H096",
+      "color": "cyan",
+      "position": [
+        32.0,
+        16.0,
+        134.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 17,
+      "role": "face"
+    },
+    {
+      "id": "B-086",
+      "part": "BR-04x05-H096",
+      "color": "cyan",
+      "position": [
+        64.0,
+        16.0,
+        134.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 17,
+      "role": "face"
+    },
+    {
+      "id": "B-087",
+      "part": "BR-04x05-H096",
+      "color": "cyan",
+      "position": [
+        96.0,
+        16.0,
+        134.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 17,
+      "role": "face"
+    },
+    {
+      "id": "B-088",
+      "part": "BR-04x05-H096",
+      "color": "cyan",
+      "position": [
+        128.0,
+        16.0,
+        134.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 17,
+      "role": "face"
+    },
+    {
+      "id": "B-089",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        160.0,
+        16.0,
+        134.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 17,
+      "role": "face"
+    },
+    {
+      "id": "B-090",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        16.0,
+        16.0,
+        144.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 18,
+      "role": "face"
+    },
+    {
+      "id": "B-091",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        32.0,
+        24.0,
+        144.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 18,
+      "role": "face"
+    },
+    {
+      "id": "B-092",
+      "part": "BR-03x04-H096",
+      "color": "black",
+      "position": [
+        64.0,
+        24.0,
+        144.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 18,
+      "role": "face"
+    },
+    {
+      "id": "B-093",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        88.0,
+        16.0,
+        144.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 18,
+      "role": "face"
+    },
+    {
+      "id": "B-094",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        104.0,
+        24.0,
+        144.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 18,
+      "role": "face"
+    },
+    {
+      "id": "B-095",
+      "part": "BR-03x04-H096",
+      "color": "black",
+      "position": [
+        136.0,
+        24.0,
+        144.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 18,
+      "role": "face"
+    },
+    {
+      "id": "B-096",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        160.0,
+        16.0,
+        144.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 18,
+      "role": "face"
+    },
+    {
+      "id": "B-097",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        16.0,
+        16.0,
+        153.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 19,
+      "role": "face"
+    },
+    {
+      "id": "B-098",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        32.0,
+        24.0,
+        153.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 19,
+      "role": "face"
+    },
+    {
+      "id": "B-099",
+      "part": "BR-05x04-H096",
+      "color": "black",
+      "position": [
+        48.0,
+        24.0,
+        153.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 19,
+      "role": "face"
+    },
+    {
+      "id": "B-100",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        88.0,
+        16.0,
+        153.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 19,
+      "role": "face"
+    },
+    {
+      "id": "B-101",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        104.0,
+        24.0,
+        153.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 19,
+      "role": "face"
+    },
+    {
+      "id": "B-102",
+      "part": "BR-05x04-H096",
+      "color": "black",
+      "position": [
+        120.0,
+        24.0,
+        153.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 19,
+      "role": "face"
+    },
+    {
+      "id": "B-103",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        160.0,
+        16.0,
+        153.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 19,
+      "role": "face"
+    },
+    {
+      "id": "B-104",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        16.0,
+        16.0,
+        163.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 20,
+      "role": "face"
+    },
+    {
+      "id": "B-105",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        32.0,
+        24.0,
+        163.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 20,
+      "role": "face"
+    },
+    {
+      "id": "B-106",
+      "part": "BR-03x04-H096",
+      "color": "black",
+      "position": [
+        64.0,
+        24.0,
+        163.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 20,
+      "role": "face"
+    },
+    {
+      "id": "B-107",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        88.0,
+        16.0,
+        163.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 20,
+      "role": "face"
+    },
+    {
+      "id": "B-108",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        104.0,
+        24.0,
+        163.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 20,
+      "role": "face"
+    },
+    {
+      "id": "B-109",
+      "part": "BR-03x04-H096",
+      "color": "black",
+      "position": [
+        136.0,
+        24.0,
+        163.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 20,
+      "role": "face"
+    },
+    {
+      "id": "B-110",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        160.0,
+        16.0,
+        163.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 20,
+      "role": "face"
+    },
+    {
+      "id": "B-111",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        16.0,
+        16.0,
+        172.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 21,
+      "role": "face"
+    },
+    {
+      "id": "B-112",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        32.0,
+        24.0,
+        172.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 21,
+      "role": "face"
+    },
+    {
+      "id": "B-113",
+      "part": "BR-05x04-H096",
+      "color": "black",
+      "position": [
+        48.0,
+        24.0,
+        172.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 21,
+      "role": "face"
+    },
+    {
+      "id": "B-114",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        88.0,
+        16.0,
+        172.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 21,
+      "role": "face"
+    },
+    {
+      "id": "B-115",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        104.0,
+        24.0,
+        172.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 21,
+      "role": "face"
+    },
+    {
+      "id": "B-116",
+      "part": "BR-05x04-H096",
+      "color": "black",
+      "position": [
+        120.0,
+        24.0,
+        172.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 21,
+      "role": "face"
+    },
+    {
+      "id": "B-117",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        160.0,
+        16.0,
+        172.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 21,
+      "role": "face"
+    },
+    {
+      "id": "B-118",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        16.0,
+        16.0,
+        182.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 22,
+      "role": "face"
+    },
+    {
+      "id": "B-119",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        32.0,
+        24.0,
+        182.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 22,
+      "role": "face"
+    },
+    {
+      "id": "B-120",
+      "part": "BR-03x04-H096",
+      "color": "black",
+      "position": [
+        64.0,
+        24.0,
+        182.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 22,
+      "role": "face"
+    },
+    {
+      "id": "B-121",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        88.0,
+        16.0,
+        182.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 22,
+      "role": "face"
+    },
+    {
+      "id": "B-122",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        104.0,
+        24.0,
+        182.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 22,
+      "role": "face"
+    },
+    {
+      "id": "B-123",
+      "part": "BR-03x04-H096",
+      "color": "black",
+      "position": [
+        136.0,
+        24.0,
+        182.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 22,
+      "role": "face"
+    },
+    {
+      "id": "B-124",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        160.0,
+        16.0,
+        182.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 22,
+      "role": "face"
+    },
+    {
+      "id": "B-125",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        16.0,
+        16.0,
+        192.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 23,
+      "role": "face"
+    },
+    {
+      "id": "B-126",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        32.0,
+        24.0,
+        192.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 23,
+      "role": "face"
+    },
+    {
+      "id": "B-127",
+      "part": "BR-05x04-H096",
+      "color": "black",
+      "position": [
+        48.0,
+        24.0,
+        192.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 23,
+      "role": "face"
+    },
+    {
+      "id": "B-128",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        88.0,
+        16.0,
+        192.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 23,
+      "role": "face"
+    },
+    {
+      "id": "B-129",
+      "part": "BR-02x04-H096",
+      "color": "black",
+      "position": [
+        104.0,
+        24.0,
+        192.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 23,
+      "role": "face"
+    },
+    {
+      "id": "B-130",
+      "part": "BR-05x04-H096",
+      "color": "black",
+      "position": [
+        120.0,
+        24.0,
+        192.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 23,
+      "role": "face"
+    },
+    {
+      "id": "B-131",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        160.0,
+        16.0,
+        192.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 23,
+      "role": "face"
+    },
+    {
+      "id": "B-132",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        16.0,
+        16.0,
+        201.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 24,
+      "role": "face"
+    },
+    {
+      "id": "B-133",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        32.0,
+        24.0,
+        201.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 24,
+      "role": "face"
+    },
+    {
+      "id": "B-134",
+      "part": "BR-03x04-H096",
+      "color": "black",
+      "position": [
+        64.0,
+        24.0,
+        201.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 24,
+      "role": "face"
+    },
+    {
+      "id": "B-135",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        88.0,
+        16.0,
+        201.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 24,
+      "role": "face"
+    },
+    {
+      "id": "B-136",
+      "part": "BR-04x04-H096",
+      "color": "black",
+      "position": [
+        104.0,
+        24.0,
+        201.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 24,
+      "role": "face"
+    },
+    {
+      "id": "B-137",
+      "part": "BR-03x04-H096",
+      "color": "black",
+      "position": [
+        136.0,
+        24.0,
+        201.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 24,
+      "role": "face"
+    },
+    {
+      "id": "B-138",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        160.0,
+        16.0,
+        201.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 24,
+      "role": "face"
+    },
+    {
+      "id": "B-139",
+      "part": "BR-02x05-H096",
+      "color": "cyan",
+      "position": [
+        24.0,
+        16.0,
+        211.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 25,
+      "role": "face"
+    },
+    {
+      "id": "B-140",
+      "part": "BR-04x05-H096",
+      "color": "cyan",
+      "position": [
+        40.0,
+        16.0,
+        211.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 25,
+      "role": "face"
+    },
+    {
+      "id": "B-141",
+      "part": "BR-04x05-H096",
+      "color": "cyan",
+      "position": [
+        72.0,
+        16.0,
+        211.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 25,
+      "role": "face"
+    },
+    {
+      "id": "B-142",
+      "part": "BR-04x05-H096",
+      "color": "cyan",
+      "position": [
+        104.0,
+        16.0,
+        211.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 25,
+      "role": "face"
+    },
+    {
+      "id": "B-143",
+      "part": "BR-04x05-H096",
+      "color": "cyan",
+      "position": [
+        136.0,
+        16.0,
+        211.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 25,
+      "role": "face"
+    },
+    {
+      "id": "B-144",
+      "part": "BR-04x05-H096",
+      "color": "cyan",
+      "position": [
+        32.0,
+        16.0,
+        220.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 26,
+      "role": "face"
+    },
+    {
+      "id": "B-145",
+      "part": "BR-04x05-H096",
+      "color": "cyan",
+      "position": [
+        64.0,
+        16.0,
+        220.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 26,
+      "role": "face"
+    },
+    {
+      "id": "B-146",
+      "part": "BR-04x05-H096",
+      "color": "cyan",
+      "position": [
+        96.0,
+        16.0,
+        220.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 26,
+      "role": "face"
+    },
+    {
+      "id": "B-147",
+      "part": "BR-04x05-H096",
+      "color": "cyan",
+      "position": [
+        128.0,
+        16.0,
+        220.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 26,
+      "role": "face"
+    },
+    {
+      "id": "B-148",
+      "part": "BR-02x04-H064",
+      "color": "magenta",
+      "position": [
+        64.0,
+        24.0,
+        230.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 27,
+      "role": "face"
+    },
+    {
+      "id": "B-149",
+      "part": "BR-04x04-H064",
+      "color": "magenta",
+      "position": [
+        80.0,
+        24.0,
+        230.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 27,
+      "role": "face"
+    },
+    {
+      "id": "B-150",
+      "part": "BR-02x04-H064",
+      "color": "magenta",
+      "position": [
+        112.0,
+        24.0,
+        230.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "step": 27,
+      "role": "face"
+    }
+  ],
+  "bom_sha256": "98f9988e8ea58ac1414b348cbfdba479d5ff811da91aac7922083c0ee43ba889",
+  "files": {
+    "nameplate/plate.stl": "83ff7a42af4062b0e4a405edd64a8828ab218843d111d13961843fc0fe7044af",
+    "nameplate/plate.3mf": "45d3d3a47243b9d994aeab5b6c3744cbf7e6805912e0441db23acbb38fa2629c",
+    "nameplate/plate.FCStd": "72e2284f25cd3190ef9993cf12e5751e88d27718e8b0d2628bcbc547a1ab3b22",
+    "nameplate/plate.step": "e757b88bcb91c33c3f396d80449e5a3cfa5391829696a85021153cc750977be6",
+    "nameplate/drawing.svg": "563b2431a6b5ccdb3ade632507047dbe64a6753fdf31c624a6fe8cd9da71e6f6",
+    "parameters.json": "6d994ff9f400b3732fcd01e8bf98ddd6a993ce45e924369b21b20c47ae13931e"
+  }
+}

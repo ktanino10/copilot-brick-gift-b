@@ -1,0 +1,30 @@
+{
+  "revision": "4.1-B-legibility.1",
+  "status": "PASS",
+  "replaced_instance": "B-020",
+  "replaced_part": "NP3-TEXT-B",
+  "other_assembly_solids_geometry_identical": 149,
+  "other_assembly_solids_brep_byte_identical": 148,
+  "serialization_roundoff_only_instances": [
+    "B-021"
+  ],
+  "native_comparison_method": "Canonical cleaned BRep tokens, topology and analytic geometry; numeric tolerance1e-12. No coincident-solid Boolean needed.",
+  "assembly_placements_unchanged": 150,
+  "assembly_step_valid_solids": 150,
+  "assembly_step_volume_difference_mm3": 1.3405224308371544e-06,
+  "approved_plate_source_reproduced": true,
+  "native_view_colors_preserved": true,
+  "assembly_bounds_mm": [
+    [
+      0.1,
+      -0.3,
+      0
+    ],
+    [
+      191.9,
+      79.9,
+      238.6
+    ]
+  ],
+  "physical_print_and_fit": "NOT_TESTED"
+}

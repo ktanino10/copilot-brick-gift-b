@@ -2,6 +2,8 @@
 
 [入口](../README.md) · [オフライン3D](../guide/index.html) · [3Dの使い方](GUIDE.md) · [組立・交換・分解](ASSEMBLY.md) · [全図PDF](../kit/B/drawings.pdf)
 
+**現行の銘板は上12／下10 mm・白1.2 mmの改訂版。[文字試験片](NAMEPLATE-V2.md)は完成150個とは別です。**
+
 **ZIPを展開して `guide/index.html` をダブルクリック。空の机から全28工程を3Dで進められます。**
 Python／Node／ネット接続は閲覧に不要です。印刷順と組立順は別です。
 **工程1は `B-black-02.3mf` のslot 3、`BASE3-24x10-B-562406` → `B-001`。**
@@ -110,7 +112,7 @@ slot番号は案内用で刻印なし。同一ID・色の実物は可換で、�
 
 | 配置番号 | 部品ID | 3MF | slot | 印刷姿勢の外形 mm |
 |---|---|---|---:|---|
-| `B-020` | [NP3-TEXT-B](../kit/B/parts/NP3-TEXT-B.stl) | [B-black-to-white-z2p4-01.3mf](../kit/B/plates/B-black-to-white-z2p4-01.3mf) | 1 | 142 × 40 × 3.2 |
+| `B-020` | [NP3-TEXT-B](../kit/B/parts/NP3-TEXT-B.stl) | [B-black-to-white-z2p4-01.3mf](../kit/B/plates/B-black-to-white-z2p4-01.3mf) | 1 | 142 × 40 × 3.6 |
 | `B-021` | [NP3-LOGO-B](../kit/B/parts/NP3-LOGO-B.stl) | [B-black-to-white-z2p8-01.3mf](../kit/B/plates/B-black-to-white-z2p8-01.3mf) | 1 | 40 × 40 × 3.6 |
 
 ### 工程7：銘板用2個・ロゴ用1個の黒いキーパーを2列目のスタッドに載せる

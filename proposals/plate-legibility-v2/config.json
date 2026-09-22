@@ -1,0 +1,42 @@
+{
+  "revision": "plate-legibility-v2-candidate-1",
+  "status": "CANDIDATE_NOT_SLICED_NOT_PHYSICALLY_TESTED",
+  "production_replacement_approved": true,
+  "part": "NP3-TEXT-B-V2-C01",
+  "replaces_only_if_selected": "NP3-TEXT-B",
+  "lines": ["Same icon, New adventures", "github.com/tomokota"],
+  "carrier_mm": [142.0, 40.0, 2.4],
+  "relief_mm": 1.2,
+  "confirmed_nozzle_mm": 0.2,
+  "rows": [
+    {
+      "font": "resources/BarlowCondensed-Bold.ttf",
+      "font_root": "proposal",
+      "initial_size": 5.0,
+      "ink_height_mm": 12.0,
+      "scale_mode": "retain_font_x_scale_match_existing_row_height",
+      "bottom_mm": 22.0
+    },
+    {
+      "font": "source/resources/fonts/barlow-condensed/BarlowCondensed-Black.ttf",
+      "font_root": "repository",
+      "initial_size": 3.2,
+      "ink_height_mm": 10.0,
+      "scale_mode": "uniform",
+      "bottom_mm": 7.0
+    }
+  ],
+  "screening_targets_mm": {
+    "counter_central_half_chord": 1.02,
+    "e_exit_channel": 1.1,
+    "adjacent_glyph_clearance": 1.05,
+    "positive_material_reference": 1.0,
+    "front_face_side_margin": 2.0
+  },
+  "coupon": {
+    "part": "NP3-TEXT-B-V2-COUPON-01",
+    "source_character_ranges_inclusive": [[5, 16], [5, 12]],
+    "margin_mm": 3.0,
+    "note": "Exact full-scale candidate glyphs and within-row spacing; simple black test backing, no mounting interface."
+  }
+}

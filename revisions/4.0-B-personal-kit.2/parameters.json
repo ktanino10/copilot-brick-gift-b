@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "revision": "4.0-B-personal-kit.1",
+  "units": "mm",
+  "status": "digital_prototype_physical_fit_unverified",
+  "interface": {
+    "pitch": 8.0,
+    "brick_height": 9.6,
+    "plate_height": 3.2,
+    "body_gap": 0.2,
+    "reference_stud_diameter": 4.8,
+    "stud_diameter_correction": 0.0,
+    "stud_height": 1.8,
+    "stud_lead_in": 0.25,
+    "female_radial_clearance": 0.04,
+    "socket_lead_in": 0.2,
+    "socket_lead_in_height": 0.3,
+    "roof": 1.6,
+    "thin_plate_roof": 1.0,
+    "tube_inner_diameter": 3.2,
+    "roof_support_rib_width": 1.2
+  },
+  "fit_candidates": {
+    "male_diameter_corrections": [
+      -0.1,
+      0.0,
+      0.1
+    ],
+    "female_radial_clearances": [
+      -0.04,
+      0.0,
+      0.04,
+      0.08,
+      0.12
+    ],
+    "test_order": "loosest first; test commercial-to-printed, printed-to-commercial, then printed-to-printed"
+  },
+  "message": {
+    "interface_id": "BASE-FRONT-NP3",
+    "lines": [
+      "Same icon, New adventures",
+      "github.com/tomokota"
+    ],
+    "height": 40.0,
+    "thickness": 2.4,
+    "relief": 0.8,
+    "minimum_straight_stroke": 0.84,
+    "font": "resources/fonts/barlow-condensed/BarlowCondensed-Black.ttf",
+    "line_bottoms": [
+      22.0,
+      8.0
+    ],
+    "side_taper": 2.0,
+    "rear_vertical_margin": 1.2,
+    "rear_flat_thickness": 0.8,
+    "clearance": 0.2,
+    "back_y": 3.3,
+    "bottom_z": 4.0,
+    "front_beam_depth": 5.6,
+    "base_color": "black",
+    "letter_color": "white",
+    "base_courses": 5,
+    "x": 4.0,
+    "retention": "Vertical dovetail slide; two removable stud-mounted top keepers."
+  },
+  "logo": {
+    "outline": "resources/github-mark-relief.json",
+    "disc_height": 0.4,
+    "relief": 0.8,
+    "back_y": 3.7,
+    "base_color": "black",
+    "relief_color": "white",
+    "finish_color_change_z": 2.8,
+    "provenance": "Printable relief derived from user-provided artwork; no original raster distributed."
+  },
+  "colors": {
+    "black": {
+      "hex": "#171d28",
+      "name_ja": "ブラック"
+    },
+    "cyan": {
+      "hex": "#21bdd6",
+      "name_ja": "シアン"
+    },
+    "magenta": {
+      "hex": "#c42eaa",
+      "name_ja": "マゼンタ"
+    },
+    "green": {
+      "hex": "#42df83",
+      "name_ja": "グリーン"
+    },
+    "white": {
+      "hex": "#f5f3eb",
+      "name_ja": "ホワイト"
+    }
+  },
+  "presentation": {
+    "exploded_course_gap_mm": 20.0,
+    "keeper_release_mm": 6.0,
+    "keeper_forward_mm": 20.0,
+    "plaque_release_mm": 45.0,
+    "plaque_front_clearance_mm": 14.0,
+    "plaque_display_drop_mm": 56.0,
+    "note": "Display-only centered vertical separation; not a physical disassembly simulation."
+  },
+  "variants": [
+    {
+      "id": "B",
+      "name": "DESK CLASSIC",
+      "name_ja": "輪郭と厚みの標準型",
+      "target_mm": [
+        192,
+        80,
+        238.4
+      ],
+      "initial_target_mm": [
+        192,
+        80,
+        200
+      ],
+      "base_studs": [
+        24,
+        10
+      ],
+      "base_segments_x": [
+        24
+      ],
+      "message_width": 142.0,
+      "text_sizes": [
+        5.0,
+        3.2
+      ],
+      "text_heights": [
+        12.0,
+        8.0
+      ],
+      "logo_x": 148.0,
+      "logo_module_width": 40.0,
+      "logo_diameter": 36.0,
+      "body_width": 20,
+      "body_courses": 19,
+      "bottom_inset": 5,
+      "goggle_bottom": 9,
+      "eye_courses": [
+        4,
+        7
+      ],
+      "eye_columns": [
+        7,
+        12
+      ],
+      "face_y": [
+        3,
+        7
+      ],
+      "goggle_y": [
+        2,
+        7
+      ],
+      "headset_y": [
+        2,
+        8
+      ],
+      "chin_y": [
+        3,
+        7
+      ],
+      "crest_width": 8,
+      "crest_height": 6.4,
+      "description_ja": "32 mm厚の顔、段差のあるゴーグル。写真の印象に近い推奨標準型。"
+    }
+  ]
+}

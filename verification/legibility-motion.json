@@ -1,0 +1,138 @@
+{
+  "status": "PASS_DIGITAL_CANDIDATE_ONLY",
+  "revision": "plate-legibility-v2-candidate-1",
+  "freecad_version": "1.1.3",
+  "native_file_sha256": {
+    "source/native/B.FCStd": "c76b0dbbc6b3280b2efd2d2d97ca5e63a89a50864e897650e4d4914b23982755",
+    "source/native/NP3-TEXT-B.FCStd": "72e2284f25cd3190ef9993cf12e5751e88d27718e8b0d2628bcbc547a1ab3b22",
+    "proposals/plate-legibility-v2/candidate/plate.FCStd": "1abb5fc6bf4d6bcb8148ef1980bd5e49398f485860793926a13f37d457b0a638",
+    "proposals/plate-legibility-v2/coupon/coupon.FCStd": "c21022757d53eed91bca2aaea8d7e4c326ec0571116583b5eeff7c04136cd8e9"
+  },
+  "files_modified": false,
+  "lines": [
+    "Same icon, New adventures",
+    "github.com/tomokota"
+  ],
+  "black_support_mm": 2.4,
+  "white_relief_mm": 1.2,
+  "carrier_symmetric_difference_mm3": 0.0,
+  "steps": [
+    {
+      "stage": "installed_candidate_vs149_parts",
+      "candidate_pairs": 9,
+      "maximum_intersection_mm3": 0.0,
+      "checked_ids": [
+        "B-001",
+        "B-002",
+        "B-005",
+        "B-006",
+        "B-009",
+        "B-011",
+        "B-014",
+        "B-015",
+        "B-018"
+      ]
+    },
+    {
+      "stage": "B-022_up6",
+      "candidate_pairs": 0,
+      "maximum_intersection_mm3": 0,
+      "checked_ids": []
+    },
+    {
+      "stage": "B-022_forward32_after_up6",
+      "candidate_pairs": 0,
+      "maximum_intersection_mm3": 0,
+      "checked_ids": []
+    },
+    {
+      "stage": "B-023_up6",
+      "candidate_pairs": 0,
+      "maximum_intersection_mm3": 0,
+      "checked_ids": []
+    },
+    {
+      "stage": "B-023_forward32_after_up6",
+      "candidate_pairs": 0,
+      "maximum_intersection_mm3": 0,
+      "checked_ids": []
+    },
+    {
+      "stage": "continuous_carrier_lift0_to45",
+      "candidate_pairs": 9,
+      "maximum_intersection_mm3": 0.0,
+      "checked_ids": [
+        "B-001",
+        "B-002",
+        "B-005",
+        "B-006",
+        "B-009",
+        "B-011",
+        "B-014",
+        "B-015",
+        "B-018"
+      ]
+    },
+    {
+      "stage": "continuous_white_relief_lift0_to45_conservative_envelope",
+      "candidate_pairs": 7,
+      "maximum_intersection_mm3": 0.0,
+      "checked_ids": [
+        "B-001",
+        "B-002",
+        "B-006",
+        "B-009",
+        "B-011",
+        "B-015",
+        "B-018"
+      ]
+    },
+    {
+      "stage": "continuous_forward0_to14_after_lift45",
+      "candidate_pairs": 2,
+      "maximum_intersection_mm3": 0.0,
+      "checked_ids": [
+        "B-015",
+        "B-018"
+      ]
+    }
+  ],
+  "native_step_checks": {
+    "candidate/plate": {
+      "valid": true,
+      "volume_difference_mm3": 2.0245352061465383e-09
+    },
+    "coupon/coupon": {
+      "valid": true,
+      "volume_difference_mm3": 8.185452315956354e-12
+    }
+  },
+  "if_substituted_assembly_bounds_mm": [
+    [
+      0.1,
+      -0.3,
+      -0.0
+    ],
+    [
+      191.9,
+      79.9,
+      238.6
+    ]
+  ],
+  "if_substituted_assembly_dimensions_mm": [
+    191.8,
+    80.2,
+    238.6
+  ],
+  "additional_forward_protrusion_mm": 0.4,
+  "production_assembly_or_kit_updated": false,
+  "release_scope": "Text keepers up6 then forward32, plaque up45 then forward14. Continuous conservative envelopes or exact ruled-loft sweep, not just discrete sampled poses. Place removed keepers aside before further handling.",
+  "physical_fit_retention_strength": "NOT_TESTED",
+  "production_applicability": {
+    "revision": "4.1-B-legibility.1",
+    "basis": "Current STL is byte-identical to the approved candidate;20 non-text masters and150 placements are unchanged. The input hashes above record the pre-adoption check, not the current file versions.",
+    "approved_and_current_plate_sha256": "1deaa5329e35022f8f4410501cfca4f3287f5566b6cd6d2c06c5846178dba5c8",
+    "current_native_comparison_report": "verification/native.json",
+    "adoption_report": "verification/legibility-native-adoption.json"
+  }
+}

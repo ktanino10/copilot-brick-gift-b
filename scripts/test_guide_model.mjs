@@ -68,5 +68,5 @@ test('the unique first base and the fifth-course sources are not print-order gue
   assert.deepEqual(index.slots.get('B-black-01.3mf#1').candidate_placements, ['B-006', 'B-015']);
   assert.equal(index.placements.get('B-016').suggested_source.slot_id, 'B-black-04.3mf#1');
   assert.equal(index.placements.get('B-017').suggested_source.slot_id, 'B-black-04.3mf#2');
-  assert.deepEqual(data.parts['NP3-TEXT-B'].dimensions, [142, 40, 3.2]);
+  assert.deepEqual(data.parts['NP3-TEXT-B'].dimensions, [142, 40, 3.6]);
 });

@@ -2,8 +2,8 @@
   "status": "PASS",
   "freecad_version": "1.1.3",
   "native_files_sha256": {
-    "source/native/B.FCStd": "c76b0dbbc6b3280b2efd2d2d97ca5e63a89a50864e897650e4d4914b23982755",
-    "source/native/NP3-TEXT-B.FCStd": "72e2284f25cd3190ef9993cf12e5751e88d27718e8b0d2628bcbc547a1ab3b22"
+    "source/native/B.FCStd": "7ef424956b35d80f4e29a93cf6e42c65354b1ea17eb197ef3d54b91980fade38",
+    "source/native/NP3-TEXT-B.FCStd": "cf694a62181aabc5234c7fa9123bd49f14f2abe08021efc88f670d189c88f083"
   },
   "native_files_modified": false,
   "model": "B",
@@ -12,7 +12,7 @@
   "bounds_mm": [
     [
       0.1,
-      0.1,
+      -0.3,
       -0.0
     ],
     [
@@ -23,7 +23,7 @@
   ],
   "dimensions_mm": [
     191.8,
-    79.8,
+    80.2,
     238.6
   ],
   "nameplate_lines": [
@@ -33,11 +33,23 @@
   "nameplate_dimensions_mm": [
     142,
     40,
-    3.2
+    3.6
   ],
-  "assembly_plate_symmetric_difference_mm3": 0.0,
-  "nameplate_native_volume_mm3": 13697.339570953634,
-  "minimum_measured_straight_stroke_mm": 1.4746666666666712,
+  "nameplate_ink_heights_mm": [
+    12,
+    10
+  ],
+  "nameplate_white_relief_mm": 1.2,
+  "assembly_plate_geometry_comparison": {
+    "equal": true,
+    "method": "cleaned BRep topology/curve/surface token comparison",
+    "absolute_tolerance_mm": 1e-12,
+    "relative_tolerance": 1e-12,
+    "numeric_roundoff_tokens": 15,
+    "maximum_numeric_roundoff": 1.0658141036401503e-13
+  },
+  "nameplate_native_volume_mm3": 14092.203500817215,
+  "minimum_measured_straight_stroke_mm": 1.2609977591697152,
   "nameplate_interference_candidates": 9,
   "maximum_nameplate_intersection_mm3": 0.0,
   "physical_fit_strength_stability": "NOT_TESTED",
