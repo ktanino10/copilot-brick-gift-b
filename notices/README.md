@@ -11,15 +11,17 @@ privateに保存されていることは、商用利用・再配布・商標利�
 | 既存Bのコード・形状・媒体 | [provenance](../docs/PROVENANCE.md)に固定commit・再利用範囲を記載 |
 | 元プロジェクトのnotice | [原文をそのまま保存](upstream-rights.md) |
 | Three.js 0.180.0、同版のOrbitControls／STLLoader | [MIT原文](THREE-LICENSE.txt)。オフライン3Dランタイムへ同梱。生成HTMLとruntimeのbannerにも全文を保持 |
+| 制作記録の実写真9枚 | ユーザー提供・掲載許可済み。[写真の取扱い](../docs/BUILD-LOG.md#写真の取扱い)。写真の権利はユーザーに帰属し、モデル／フォント／ソフトウェアのライセンスを自動適用しない |
 
 原文noticeには元サイトで使われるThree.jsとB612への言及があります。
 この版ではThree.jsをブラウザのオフライン3D案内へ再配布しますが、公開サイトやPagesは作りません。
 B612フォント本体は収録していません。同梱フォントはBarlow Condensed BoldとBlackで、
 そのOFLを保持しています。ガイドの画面文字は端末のシステムフォントを利用します。
 
-FreeCAD、Blender、ReportLab、Python、NumPy、trimesh、Shapely、SciPy、svglib、pypdf、Playwright、Pillow、esbuild等は作成・検証のツールです。
+FreeCAD、Blender、ReportLab、Python、NumPy、trimesh、Shapely、SciPy、svglib、pypdf、Playwright、Pillow、Markdown、esbuild等は作成・検証のツールです。
 それらのアプリ／ライブラリ本体は同梱しません。各ツールのライセンスはそれぞれに適用されます。
-元の人物・写真・バッグ画像、参考資料PDF、依頼会話、機器の認証情報は収録しません。
+制作記録に含めるのは許可された加工済み写真だけです。加工前の原画像・EXIF、無関係な人物・バッグ画像、
+参考資料PDF、依頼会話、機器の認証情報は収録しません。写真の掲載許可は第三者への包括的な再利用許諾ではありません。
 
 GitHub、LEGO、Bambu Lab等の名称は、図柄・接続の参考・使用機器を示すものです。
 この模型は非公式の個人用卓上オブジェで、各社の公式商品・認定品・互換保証品ではありません。

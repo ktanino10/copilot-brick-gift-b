@@ -27,7 +27,7 @@
     "github.com/tomokota"
   ],
   "native_reopen_report": "verification/native.json",
-  "relative_links_checked": 734,
+  "relative_links_checked": 756,
   "zip_duplicate_members": 0,
   "offline_guide": {
     "entry": "guide/index.html",
@@ -48,6 +48,13 @@
     "browser_report": "verification/guide-browser.json",
     "common_source_commit": "35ebc11234779424ebbda83b3f1b7d31d8518b24",
     "common_ui_revision": "1.3"
+  },
+  "build_record": {
+    "report": "verification/build-log.json",
+    "photo_count": 9,
+    "status": "PASS_DOCUMENTATION_STATIC",
+    "browser_execution": "NOT_RUN_ENVIRONMENT",
+    "formal_physical_validation": "NOT_PROVIDED"
   },
   "sliced": false,
   "pause_encoded": false,

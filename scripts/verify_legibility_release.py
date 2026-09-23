@@ -7,6 +7,7 @@ import subprocess
 
 from build_assembly_guide import triangle_fingerprint
 from verify_kit import read_stl, require
+from build_log_navigation import canonical_guide_hash
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -53,7 +54,9 @@ def main():
     current_views = json.loads((ROOT / "verification/current-views.json").read_text())
     browser = json.loads((ROOT / "verification/guide-browser.json").read_text())
     entry_hash = sha(ROOT / "guide/index.html")
-    require(current_views["entry_sha256"] == browser["entry_sha256"] == entry_hash,
+    require(current_views.get("canonical_guide_sha256", current_views["entry_sha256"])
+            == browser.get("canonical_guide_sha256", browser["entry_sha256"])
+            == canonical_guide_hash(ROOT / "guide/index.html"),
             "Current views and animation are not from the same new guide.")
     for name, record in current_views["captures"].items():
         require(sha(ROOT / "docs/images" / name) == record["sha256"], f"Stale current view:{name}")

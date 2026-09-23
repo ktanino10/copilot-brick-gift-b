@@ -6,6 +6,7 @@ from collections import Counter
 import csv
 import hashlib
 import json
+import posixpath
 from pathlib import Path, PurePosixPath
 import re
 import struct
@@ -21,6 +22,8 @@ import trimesh
 from build_print_kit import ARCHIVE, REVISION, ROOT, payload_files
 from verify_guide_mapping import verify_embedded, verify_mapping
 from verify_offline_html import verify_file as verify_offline_html
+from build_log_navigation import canonical_guide_hash
+from verify_build_log import JournalDocument
 
 NS = {"m": "http://schemas.microsoft.com/3dmanufacturing/core/2015/02"}
 LINES = ["Same icon, New adventures", "github.com/tomokota"]
@@ -235,6 +238,11 @@ def verify_package():
         require(sum(name.endswith(".stl") for name in names) == 35, "ZIP must contain 34 original masters plus1 lettering coupon.")
         require(sum(name.endswith(".3mf") for name in names) == 15, "ZIP must contain 14 assembly plates plus1 lettering coupon.")
         require("guide/index.html" in names, "ZIP is missing the offline 3D guide entry.")
+        journal = JournalDocument()
+        journal.feed(archive.read("docs/BUILD-LOG.html").decode("utf-8"))
+        for link in journal.links + [image["src"] for image in journal.images]:
+            target = posixpath.normpath(posixpath.join("docs", link.split("#")[0]))
+            require(target in names, f"Offline journal target is missing from ZIP:{target}")
         require(not any(name.endswith(".zip") for name in names), "No nested duplicate kits.")
     digest, filename = (ROOT / "downloads/SHA256SUMS.txt").read_text().strip().split("  ", 1)
     require(filename == ARCHIVE.name and digest == sha(ARCHIVE.read_bytes()), "ZIP checksum differs.")
@@ -396,8 +404,20 @@ def main():
     require(browser_report["status"] == "PASS" and browser_report["navigation_scheme"] == "file"
             and browser_report["browser_network_offline"] is True and browser_report["external_network_requests"] == 0
             and browser_report["console_or_page_errors"] == 0
-            and browser_report["entry_sha256"] == sha((ROOT / guide["entry"]).read_bytes()),
+            and browser_report.get("canonical_guide_sha256", browser_report["entry_sha256"])
+            == canonical_guide_hash(ROOT / guide["entry"]),
             "Offline browser verification is missing or stale.")
+    journal = json.loads((ROOT / "verification/build-log.json").read_text())
+    require(journal["status"] in ("PASS", "PASS_DOCUMENTATION_STATIC")
+            and journal["guide_entry_sha256"] == sha((ROOT / guide["entry"]).read_bytes())
+            and journal["guide_base_sha256"] == canonical_guide_hash(ROOT / guide["entry"])
+            and journal["photo_count"] == 9 and journal["all_image_files_decoded"] is True
+            and journal["all_relative_image_paths_resolve"] is True
+            and journal["browser_execution"] in ("PASS", "NOT_RUN_ENVIRONMENT"),
+            "Current build-log navigation or image verification is missing.")
+    for filename, expected_hash in journal["inputs_sha256"].items():
+        require(sha((ROOT / filename).read_bytes()) == expected_hash,
+                f"A verified build-log document or photo changed:{filename}")
     require(browser_report["checks"]["mapping_slots_checked"] == 150
             and browser_report["checks"]["mapping_placements_checked"] == 150
             and browser_report["checks"]["plate_ui_selections"] == 14
@@ -440,6 +460,9 @@ def main():
                           "browser_report": "verification/guide-browser.json",
                           "common_source_commit": shared["source_commit"],
                           "common_ui_revision": shared["common_ui_revision"]},
+        "build_record": {"report": "verification/build-log.json", "photo_count": journal["photo_count"],
+                         "status": journal["status"], "browser_execution": journal["browser_execution"],
+                         "formal_physical_validation": "NOT_PROVIDED"},
         "sliced": False, "pause_encoded": False, "physical_fit_strength_stability": "NOT_TESTED",
         "libraries": {"numpy": np.__version__, "trimesh": trimesh.__version__}, "meshes": mesh_reports,
     }

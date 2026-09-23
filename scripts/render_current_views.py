@@ -9,6 +9,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 from playwright.sync_api import sync_playwright
+from build_log_navigation import canonical_guide_hash
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -70,6 +71,7 @@ def main():
     (ROOT / "verification/current-views.json").write_text(json.dumps({
         "revision": "4.1-B-legibility.1", "source": "actual current STL meshes in the offline orthographic viewer",
         "entry_sha256": hashlib.sha256((ROOT / "guide/index.html").read_bytes()).hexdigest(),
+        "canonical_guide_sha256": canonical_guide_hash(ROOT / "guide/index.html"),
         "external_requests": 0, "page_errors": [], "captures": captures,
     }, indent=2) + "\n")
     print(json.dumps(captures, indent=2))

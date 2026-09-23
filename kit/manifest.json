@@ -8,6 +8,7 @@
   "printer_settings_validated": false,
   "pause_encoded": false,
   "physical_tested": false,
+  "physical_tested_scope": "Formal fit, retention, load and stability validation is not provided; see separate photographic observations.",
   "assembly_dimensions_mm": [
     191.8,
     80.2,
@@ -41,6 +42,17 @@
     "black_support_mm": 2.4,
     "white_relief_mm": 1.2,
     "total_thickness_mm": 3.6
+  },
+  "build_record": {
+    "markdown": "docs/BUILD-LOG.md",
+    "offline_html": "docs/BUILD-LOG.html",
+    "photo_manifest": "docs/images/build-log-2026-09-23/manifest.json",
+    "reported_through": "2026-09-23",
+    "photo_count": 9,
+    "observed_milestone": "nameplate trial and base/front-module assembly",
+    "formal_physical_validation": "NOT_PROVIDED",
+    "full_model_completion": "NOT_CONFIRMED",
+    "photo_input_revision_hash_match": "NOT_CONFIRMED"
   },
   "lettering_sample": {
     "manifest": "samples/nameplate-v2/manifest.json",
@@ -87,8 +99,8 @@
     "files": [
       {
         "file": "guide/index.html",
-        "bytes": 11446918,
-        "sha256": "451fa61cd36b1772fb5f96baef971ff3d4c809874d31f26f6a475056b4c86c1c"
+        "bytes": 11447558,
+        "sha256": "08ce841707c7ba1b4a74e1f82ef8434bf611c3c8d24fe76ad31c8ba9cf12c4d0"
       },
       {
         "file": "guide/index.mapping.json",

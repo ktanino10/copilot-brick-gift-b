@@ -19,6 +19,7 @@ from playwright.sync_api import sync_playwright
 
 from verify_guide_mapping import verify_embedded, verify_mapping
 from verify_offline_html import verify_file
+from build_log_navigation import canonical_guide_hash
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -387,6 +388,7 @@ def main():
             require(not errors, f"Browser errors: {errors}")
             report = {
                 "status": "PASS", "entry": "guide/index.html", "entry_sha256": hashlib.sha256(entry.read_bytes()).hexdigest(),
+                "canonical_guide_sha256": canonical_guide_hash(entry),
                 "navigation_scheme": urlsplit(page.url).scheme, "browser_network_offline": True,
                 "external_network_requests": len(network), "console_or_page_errors": len(errors),
                 "browser": browser.version, "playwright": version("playwright"), "pillow": version("Pillow"),

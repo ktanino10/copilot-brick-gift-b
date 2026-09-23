@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "scope": "private build journal",
+  "report_date": "2026-09-23",
+  "user_authorization": "User approved photo build journals in both repositories; public derivatives must conceal personal identifiers and unrelated background information.",
+  "copyright": "Photographs supplied by the user. Permission to include these records does not grant a blanket license for third-party reuse.",
+  "evidence_boundary": "User reports and photographs document the base and front modules, not completion or qualification of the full figure. Actual input hashes, settings, loads and retention forces are not provided.",
+  "photos": [
+    {
+      "id": "lettering-first",
+      "path": "lettering-first.jpg",
+      "size_bytes": 406979,
+      "pixels": [
+        1735,
+        545
+      ],
+      "sha256": "6390159dda947ca90bb8409424cf3a8f1f0281e5112fdd572606c7c843a715d9",
+      "caption_ja": "文字の隙間と印刷のしやすさについて相談があった銘板。白い文字の糸引きや表面の荒れも見える。",
+      "stage": "lettering-feedback",
+      "reported_date": "2026-09-22",
+      "capture_date": null,
+      "edits": [
+        "orientation corrected where needed",
+        "cropped to the printed object",
+        "metadata removed"
+      ]
+    },
+    {
+      "id": "lettering-follow-up",
+      "path": "lettering-follow-up.jpg",
+      "size_bytes": 716006,
+      "pixels": [
+        1795,
+        1460
+      ],
+      "sha256": "ae85f195bc2a4c9b5f9478cb22ecaf411d78599568fdc8e3f0c2953f53a3e154",
+      "caption_ja": "銘板を並べた追加写真。利用者から「いけているみたい」との報告。各板の印刷ファイルとの対応は未照合。",
+      "stage": "lettering-follow-up",
+      "reported_date": "2026-09-23",
+      "capture_date": null,
+      "edits": [
+        "orientation corrected where needed",
+        "cropped to the printed object",
+        "metadata removed"
+      ]
+    },
+    {
+      "id": "base-overview",
+      "path": "base-overview.jpg",
+      "size_bytes": 256965,
+      "pixels": [
+        1565,
+        635
+      ],
+      "sha256": "163bf413b35610a9ca6a2fc61067eeb61a4873975deccd3469dc5ca6ed3f0a54",
+      "caption_ja": "積み重ねた黒い台座。前面の銘板用・ロゴ用の領域にはまだパーツが入っていない状態。",
+      "stage": "base-without-front-modules",
+      "reported_date": "2026-09-23",
+      "capture_date": null,
+      "edits": [
+        "orientation corrected where needed",
+        "cropped to the printed object",
+        "metadata removed"
+      ]
+    },
+    {
+      "id": "front-modules-installed",
+      "path": "front-modules-installed.jpg",
+      "size_bytes": 287718,
+      "pixels": [
+        1710,
+        520
+      ],
+      "sha256": "8e0b69217e08e2f521cc148001c139a58cd7fdbf45e0123e6ec36106915f53bd",
+      "caption_ja": "台座に二行の銘板と右側のロゴが取り付けられた状態。利用者から土台が組み上がったとの報告。",
+      "stage": "front-modules-installed",
+      "reported_date": "2026-09-23",
+      "capture_date": null,
+      "edits": [
+        "orientation corrected where needed",
+        "cropped to the printed object",
+        "metadata removed"
+      ]
+    },
+    {
+      "id": "base-top-angle",
+      "path": "base-top-angle.jpg",
+      "size_bytes": 422628,
+      "pixels": [
+        1885,
+        750
+      ],
+      "sha256": "6684749b7dd340d92bdd3a014afd1db36d506f8539d0f8b8bcd17ad97d96c634",
+      "caption_ja": "上面のスタッドとブロックの継ぎ目が分かる角度。寸法や段数の実測記録ではない。",
+      "stage": "base-detail",
+      "reported_date": "2026-09-23",
+      "capture_date": null,
+      "edits": [
+        "orientation corrected where needed",
+        "cropped to the printed object",
+        "metadata removed"
+      ]
+    },
+    {
+      "id": "base-side-angle",
+      "path": "base-side-angle.jpg",
+      "size_bytes": 465083,
+      "pixels": [
+        1955,
+        695
+      ],
+      "sha256": "b660edb509fefc1be947d2969cda0a0e0af75cd21a2981cb4b8b97225b7e219e",
+      "caption_ja": "黒いブロックを組んだ台座を別の角度から撮影。未撮影の組み立て操作を補うものではない。",
+      "stage": "base-detail",
+      "reported_date": "2026-09-23",
+      "capture_date": null,
+      "edits": [
+        "orientation corrected where needed",
+        "cropped to the printed object",
+        "metadata removed"
+      ]
+    },
+    {
+      "id": "right-logo-installed",
+      "path": "right-logo-installed.jpg",
+      "size_bytes": 499438,
+      "pixels": [
+        1905,
+        765
+      ],
+      "sha256": "a407341c0d094b79f1ea37284682def7df7f388c2b73e8a3263735814ccfd831",
+      "caption_ja": "右側のロゴを取り付け、左側の銘板領域が空いている状態。保持力や着脱耐久の測定ではない。",
+      "stage": "right-logo-installed",
+      "reported_date": "2026-09-23",
+      "capture_date": null,
+      "edits": [
+        "orientation corrected where needed",
+        "cropped to the printed object",
+        "metadata removed"
+      ]
+    },
+    {
+      "id": "base-front-detail",
+      "path": "base-front-detail.jpg",
+      "size_bytes": 377697,
+      "pixels": [
+        1940,
+        740
+      ],
+      "sha256": "51b3ccc8599113ca6badf2f94623db9f28a367b0829c5293e8fd22fd5344d2b6",
+      "caption_ja": "前面の継ぎ目と二つの取り付け領域。写真から実際のクリアランス値は算定しない。",
+      "stage": "base-detail",
+      "reported_date": "2026-09-23",
+      "capture_date": null,
+      "edits": [
+        "orientation corrected where needed",
+        "cropped to the printed object",
+        "metadata removed"
+      ]
+    },
+    {
+      "id": "base-front-overview",
+      "path": "base-front-overview.jpg",
+      "size_bytes": 298984,
+      "pixels": [
+        1610,
+        640
+      ],
+      "sha256": "035c3f037f26aaa717308e07a4d7cb0a1ef268dd4a8330977192919523d01ac5",
+      "caption_ja": "前面パーツを入れる前の台座全景。写真番号は説明順で、撮影時刻の順番を保証しない。",
+      "stage": "base-without-front-modules",
+      "reported_date": "2026-09-23",
+      "capture_date": null,
+      "edits": [
+        "orientation corrected where needed",
+        "cropped to the printed object",
+        "metadata removed"
+      ]
+    }
+  ]
+}
