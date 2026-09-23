@@ -1,0 +1,15 @@
+{
+  "head": "a88274f345f23347c9ff3dba5522f1a9731e9e39",
+  "remote_refs": {
+    "refs/heads/main": "a88274f345f23347c9ff3dba5522f1a9731e9e39"
+  },
+  "reachable_commits": 5,
+  "scope": "Only history reachable from actual remote main; local Copilot checkpoint refs and untracked/session files are not published or pushed.",
+  "authorized_personal_content": "Two-line recipient plate and nine already-approved cropped, metadata-stripped photos.",
+  "git_blobs": 368,
+  "unique_expanded_contents": 569,
+  "containers": 28,
+  "images": 29,
+  "findings": [],
+  "status": "PASS"
+}

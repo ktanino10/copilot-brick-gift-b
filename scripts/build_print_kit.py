@@ -13,9 +13,9 @@ from verify_guide_mapping import verify_mapping
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE = ROOT / "downloads/B-personal-print-kit.zip"
-DELIVERY_DIRS = ("docs", "guide", "kit", "samples", "source", "web", "notices", "scripts", "verification")
+DELIVERY_DIRS = ("docs", "guide", "kit", "samples", "source", "web", "notices", "scripts", "verification", "publication")
 DELIVERY_FILES = (
-    ".gitattributes", ".gitignore", "README.md", "requirements-verify.txt", "requirements-guide.txt", "requirements-cad.txt",
+    ".gitattributes", ".gitignore", "README.md", "requirements-verify.txt", "requirements-guide.txt", "requirements-cad.txt", "requirements-site.txt",
     "package.json", "package-lock.json",
 )
 REVISION = "4.1-B-legibility.1"
@@ -249,7 +249,7 @@ def write_indexes():
     ]
     (ROOT / "docs/FILES.md").write_text("\n".join(file_lines))
     kit_manifest = {
-        "revision": REVISION, "visibility": "private",
+        "revision": REVISION, "visibility": "public",
         "model": "B", "units": "mm", "status": "NOT_SLICED", "sliced": False,
         "printer_settings_validated": False, "pause_encoded": False, "physical_tested": False,
         "physical_tested_scope": "Formal fit, retention, load and stability validation is not provided; see separate photographic observations.",

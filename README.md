@@ -1,5 +1,11 @@
 # B DESK CLASSIC — 個人向け印刷・組立キット
 
+**本人向けの公開案内： [説明・作り方・工程を見る](https://ktanino10.github.io/copilot-brick-gift-b/)**
+
+2026-09-23のユーザー承認により、この個人向けrepoをpublicに変更し、GitHub Pagesで案内します。
+個人銘板・許可済みの加工写真も公開内容です。原画像・EXIF・認証情報・ローカル監査資料は含めません。
+公開内容は第三者にコピー・cacheされ得ます。[公開範囲](publication/README.md)を参照してください。
+
 **2026-09-23：土台と前面まで、実制作の写真が届きました。**
 「いけているみたい」「土台が組み上がりました」という本人の報告と、
 文字試作から銘板・右ロゴ付き台座までの[写真付き制作記録](docs/BUILD-LOG.md)を追加しました。
@@ -12,11 +18,11 @@
 
 **通常GitHub CopilotのB・1種類だけ。個人銘板入りのデータと日本語の作り方です。**
 承認済みの顔、シアンのゴーグル、マゼンタの外周、緑の目、5段の黒台座を変更していません。
-別PCでも、この非公開リポジトリから保存して作業できます。GitHub Pagesは使いません。
+別PCでも、公開Webページを直接見るか、このリポジトリから保存して作業できます。
 
 **[B全キットをダウンロード](https://github.com/ktanino10/copilot-brick-gift-b/blob/main/downloads/B-personal-print-kit.zip)**
 
-GitHubへログイン後、リンク先で **Download raw file** → ZIPを展開。
+リンク先で **Download raw file** → ZIPを展開。公開repoなので閲覧・保存にログインは不要です。
 リポジトリ上部の **Code → Download ZIP** でも同じ内容を受け取れます。
 2つとも保存する必要はありません。
 

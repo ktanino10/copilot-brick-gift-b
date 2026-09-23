@@ -21,11 +21,11 @@ Bambu Studioプロジェクト、Pause設定、G-codeではありません。
 刷り上がった部品は捨てたり一律に再印刷したりせず、
 [3Dガイドの仕分け手順](GUIDE.md)で部品IDと色を確認して保管します。
 
-## 1. アクセス権のあるPCで保存する
+## 1. 別PCで見る・保存する
 
-1. 別PCのブラウザでGitHubへログインし、
-   [非公開リポジトリ](https://github.com/ktanino10/copilot-brick-gift-b)を開きます。
-   閲覧権限がなければ404になります。公開サイトを探すのではなく、権限を確認します。
+1. 別PCで[本人向けの公開案内](https://ktanino10.github.io/copilot-brick-gift-b/)を開くと、
+   説明・作り方・3D工程・制作記録をそのまま読めます。閲覧にログインは不要です。
+   印刷データを保存するときは、[公開リポジトリ](https://github.com/ktanino10/copilot-brick-gift-b)へ進みます。
 2. **Code → Download ZIP** で全体を保存します。印刷用だけなら
    [B-personal-print-kit.zip](https://github.com/ktanino10/copilot-brick-gift-b/blob/main/downloads/B-personal-print-kit.zip)のファイル画面で
    **Download raw file** を選びます。どちらか一方で十分です。
@@ -35,10 +35,10 @@ Bambu Studioプロジェクト、Pause設定、G-codeではありません。
    閲覧にPython／Node／サーバー／ネット接続は不要です。
 4. GitHubの閲覧HTMLを「ページとして保存」して `.stl` に改名しないでください。
    実ファイルの拡張子が `.zip`／`.3mf`／`.stl` かを確認します。
-   ログイン画面やHTMLが保存された場合は、ログイン後にダウンロードし直します。
+   閲覧ページのHTMLが保存された場合は、**Download raw file**から取り直します。
 
-このリポジトリはGitHub Pagesを使用しません。README内の相対リンクから必要な
-ファイルと手順を読めます。privateのrawファイルにも認証が必要です。
+2026-09-23の承認により、個人版の案内をGitHub Pagesでも公開しています。
+保存したZIP内の相対リンクも引き続き使えます。
 ダウンロード時の一時的な署名付きURLを共有・ブックマークする必要はありません。
 
 ## 2. 用意するものと実機の確認

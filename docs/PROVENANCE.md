@@ -98,7 +98,8 @@
 取り込みのファイル別SHA-256と版は
 [guide-source-import.json](../verification/guide-source-import.json)に記録しています。
 個人source、銘板、画像、生成HTMLを公開側へ送り返していません。
-privateではPagesを作らず、保存したローカルHTMLを開きます。
+当初はprivate／Pagesなしで保存しました。2026-09-23のユーザーによる追加承認後は
+個人版repoをpublic化し、選別した案内をPagesでも公開します。保存したローカルHTMLも引き続き使えます。
 
 `docs/images/B-guide-start.png`、`B-guide-front.png`、
 `B-guide-base-front.gif`は、この同梱ビューアをオフラインの実ブラウザで描画・撮影したものです。
@@ -127,6 +128,8 @@ Boldの出典は`google/fonts` commit `e44c4b011a820c2cbe2fd2cfa8052037d7edb571`
 公開側へ渡したのは個人値を持たない共通関数とBold/OFLだけです。
 制作記録にはユーザーが掲載を許可した回転・切り取り・メタデータ除去済みの実写真9枚だけを追加しました。
 加工前の原画像・元のファイル名・EXIF・元パス対応表は含めません。
+以前の記録にあるprivate生成モードは当時の来歴で、現在の公開設定を示すものではありません。
+[最新の公開方針](../publication/README.md)を参照してください。
 不要なBlenderファイル／旧動画／中間フレーム、公開用workflow・CNAME・Pages設定、
 会話履歴、端末の絶対パス、プリンタID・tokenも含めません。
 元プロジェクト全体のビルドやサイト公開手順は、このキットの利用に必要ありません。

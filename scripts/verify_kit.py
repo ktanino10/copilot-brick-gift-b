@@ -210,8 +210,14 @@ def privacy_scan():
             svg = ET.parse(path).getroot()
             require(not any(node.tag.endswith("}script") for node in svg.iter()),
                     f"Unexpected script in drawing: {path.name}")
-    require(not (ROOT / ".github/workflows").exists() and not (ROOT / "CNAME").exists(),
-            "No deployment workflows or Pages configuration may be included.")
+    publication = json.loads((ROOT / "publication/policy.json").read_text())
+    require(publication["repository"] == "ktanino10/copilot-brick-gift-b"
+            and publication["repository_visibility"] == "public" and publication["pages_enabled"] is True,
+            "Public distribution requires the explicit current publication policy.")
+    workflow_dir = ROOT / ".github/workflows"
+    workflow_files = {path.name for path in workflow_dir.iterdir() if path.is_file()} if workflow_dir.exists() else set()
+    require(workflow_files <= {"pages.yml"} and not (ROOT / "CNAME").exists(),
+            "Only the specifically authorized recipient Pages workflow may be present.")
 
 
 def verify_package():

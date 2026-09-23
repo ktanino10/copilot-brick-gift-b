@@ -5,5 +5,8 @@ __pycache__/
 .work/
 node_modules/
 build/
+_site/
+test-results/
+playwright-report/
 *.FCStd1
 *.FCBak

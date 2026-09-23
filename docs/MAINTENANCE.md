@@ -174,17 +174,30 @@ python3 source/scripts/design.py --output .work/new-layout-check
 機構や寸法を変える場合は、今回の「同形状再利用」の検証範囲外です。
 旧STLと混ぜず、変更範囲を定めて別途再検証・試作してください。
 
-## 非公開のまま保存する
+## 承認された公開先へ保存する
 
-uploadの直前に必ず以下を実行します。remoteのfetch／push先がこの独立private repoだけ、
-`private=true`、`visibility=private`、`has_pages=false`、`fork=false` でないと停止します。
+2026-09-23のユーザー承認後は、この個人向けrepoをpublicにしてPagesを使用します。
+uploadの直前に、remoteのfetch／push先がこの独立repoだけであること、
+`private=false`、`visibility=public`、`has_pages=true`、`fork=false`と明示公開方針を照合します。
 
 ```bash
-python3 scripts/check_private_target.py
+python3 scripts/check_repository_target.py
 ```
 
-公開元へのpush、visibility変更、Pages有効化、公開Releaseへのアップロードをしません。
-自動upload workflowも含めていません。通常のnonforce pushの直前にも、この確認を行います。
+既存の一般向けrepoへ個人ファイルを二重コピーしません。ReleaseやMakerWorldの操作も別範囲です。
+`.github/workflows/pages.yml`は、選別した`_site`だけを検査してPagesへ配信します。
+リポジトリのルート、未追跡データ、session資料をPages artifactへアップロードしません。
+通常のnonforce pushの直前にも、この確認を行います。
+
+Pagesの再生成は以下です。ローカルのブラウザ起動が利用できない場合も、
+実ブラウザの結果を捏造せず、GitHub ActionsのLinux検査と実配信を確認します。
+
+```bash
+python scripts/build_recipient_site.py
+python scripts/verify_recipient_site.py
+```
+
+公開前の許可・履歴点検・除外範囲は[公開方針](../publication/README.md)に残しています。
 
 native・図面の保存先を変更しても、機器のtoken・ID、Bambuの実設定入りプロジェクト、
 人物写真・会話履歴をそのまま追跡対象へ追加しないでください。

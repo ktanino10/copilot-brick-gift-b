@@ -1,6 +1,6 @@
 {
   "revision": "4.1-B-legibility.1",
-  "visibility": "private",
+  "visibility": "public",
   "model": "B",
   "units": "mm",
   "status": "NOT_SLICED",

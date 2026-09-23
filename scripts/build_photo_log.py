@@ -52,7 +52,7 @@ def main():
         'object-src \'none\'; base-uri \'none\'; form-action \'none\'">'
         f"<title>{escape(title)}</title><style>{STYLE}</style></head><body><main>"
         + body
-        + '<footer>私有版の実写真記録。掲載順は説明順です。撮影日時・版・実測条件は未照合です。'
+        + '<footer>公開許可済みの個人版制作記録。掲載順は説明順です。撮影日時・版・実測条件は未照合です。'
         '図面の設計値や3Dの説明用の動きと、写真で確認できる状態を分けてください。</footer>'
         "</main></body></html>\n"
     )

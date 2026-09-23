@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "repository": "ktanino10/copilot-brick-gift-b",
+  "repository_visibility": "public",
+  "pages_enabled": true,
+  "pages_url": "https://ktanino10.github.io/copilot-brick-gift-b/",
+  "authorization_date": "2026-09-23",
+  "authorization": "The user explicitly approved changing this repository from private to public after repository-history exposure was explained, and requested a recipient-facing GitHub Pages guide.",
+  "personal_content_authorized": [
+    "The existing two-line recipient nameplate and current display meshes",
+    "The nine previously approved cropped and metadata-stripped build photographs",
+    "Current instructions, assembly guide and design artifacts already tracked in this repository"
+  ],
+  "remain_local_and_excluded": [
+    "Original photo attachments and their EXIF/source filenames",
+    "Private source-to-derivative audit maps and machine paths",
+    "Credentials, tokens, machine identifiers and unrelated personal files",
+    "Local Copilot checkpoint refs, session state, untracked caches and private working folders"
+  ],
+  "pages_artifact_scope": "Current reader-facing pages,3D display and specifically allowed drawings/images/notices only. Do not upload the repository root, history, native source, verification internals or old revisions as the Pages artifact.",
+  "printing_data_change": false,
+  "scale_change": false,
+  "residual_risk": "Published personal text and photos may be copied or cached by third parties; later deletion cannot guarantee removal of those copies."
+}
