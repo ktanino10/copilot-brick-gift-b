@@ -13,6 +13,7 @@ from urllib.parse import unquote, urlsplit
 from PIL import Image
 
 from build_recipient_site import PAGE_SOURCES, ROOT, SiteBuilder
+from build_photo_log import PROGRESS_ANCHOR
 
 
 class Document(HTMLParser):
@@ -80,15 +81,20 @@ def verify(root):
                     raise ValueError(f"Broken HTML fragment:{name} -> {link}")
             checked_links += 1
     log = documents["docs/BUILD-LOG.html"]
-    if len(log.images) != 9:
-        raise ValueError("Expected exactly nine authorized build photographs.")
+    expected_photos = {path.removeprefix("docs/") for path in policy.photo_paths}
+    if len(log.images) != len(expected_photos) or set(log.images) != expected_photos:
+        raise ValueError("The dated journal does not contain exactly the approved photograph batches.")
+    if PROGRESS_ANCHOR not in log.ids:
+        raise ValueError("The latest dated progress anchor is missing from the public page.")
     return {"status": "PASS_STATIC", "files": len(actual), "relative_links": checked_links,
-            "photo_count": 9, "source_commit": manifest["source_commit"]}
+            "photo_count": len(expected_photos), "latest_progress_anchor": PROGRESS_ANCHOR,
+            "source_commit": manifest["source_commit"]}
 
 
 def browser_check(root):
     from playwright.sync_api import sync_playwright
     prefix = "/copilot-brick-gift-b"
+    expected_count = len(SiteBuilder(root, "").photo_paths)
 
     class Handler(http.server.SimpleHTTPRequestHandler):
         def translate_path(self, path):
@@ -122,10 +128,12 @@ def browser_check(root):
             state = page.evaluate("() => BrickAssemblyGuide.state()")
             if state["activeId"] != "B-001" or state["selectedSlot"] != "B-black-02.3mf#3":
                 raise ValueError("The recipient 3D guide does not start at the actual first base.")
-            page.goto(base + "docs/BUILD-LOG.html", wait_until="load")
-            page.locator("details").evaluate("element => {element.open=true}")
+            page.goto(base + "docs/BUILD-LOG.html#" + PROGRESS_ANCHOR, wait_until="load")
+            page.locator(f"#{PROGRESS_ANCHOR}").wait_for(state="attached")
+            page.locator("details").evaluate_all("elements => elements.forEach(element => {element.open=true})")
+            page.evaluate("() => Promise.all([...document.images].map(image => image.decode()))")
             images = page.evaluate("() => [...document.images].map(image => ({ok:image.complete&&image.naturalWidth>0}))")
-            if len(images) != 9 or not all(image["ok"] for image in images):
+            if len(images) != expected_count or not all(image["ok"] for image in images):
                 raise ValueError("Some recipient build photos failed to load.")
             for path in ("", "docs/PRINTING.html", "docs/ASSEMBLY.html", "docs/BUILD-LOG.html"):
                 page.goto(base + path, wait_until="load")
@@ -140,7 +148,8 @@ def browser_check(root):
     if errors or failures or external:
         raise ValueError(f"Site errors/failed or external requests:{errors}/{failures}/{external}")
     return {"browser": "PASS", "first_base": "B-black-02.3mf#3 -> B-001",
-            "photographs_loaded": 9, "page_errors": 0, "external_requests": 0, "mobile_overflow": False}
+            "photographs_loaded": expected_count, "latest_progress_anchor": PROGRESS_ANCHOR,
+            "page_errors": 0, "external_requests": 0, "mobile_overflow": False}
 
 
 if __name__ == "__main__":

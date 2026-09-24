@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' file: data:; style-src 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><title>Bの制作記録 — 文字の試作から、土台と前面まで</title><style>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' file: data:; style-src 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><title>Bの制作記録 — 文字試作・土台から顔下部の途中まで</title><style>
 :root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f3f5f1;color:#172433;
 font:16px/1.85 system-ui,-apple-system,"Yu Gothic",sans-serif}main{max-width:1060px;margin:auto;padding:28px 28px 60px}
 h1{font-size:clamp(25px,4vw,38px);line-height:1.4}h2{margin-top:36px;padding-top:12px;border-top:1px solid #c9d4dc}
@@ -12,13 +12,19 @@ details{padding:14px 20px;background:#fff;border:1px solid #c9d4dc;border-radius
 summary{cursor:pointer;font-weight:700}code{overflow-wrap:anywhere}footer{color:#526678;font-size:13px;margin-top:32px}
 @media(max-width:600px){main{padding:18px 14px 40px}body{font-size:15px}table{font-size:12px}th,td{padding:7px}
 img{max-height:460px}details{padding:12px}h3{font-size:20px}}
-</style></head><body><main><h1>Bの制作記録 — 文字の試作から、土台と前面まで</h1>
+</style></head><body><main><h1>Bの制作記録 — 文字試作・土台から顔下部の途中まで</h1>
 <p><a href="../guide/index.html">3D工程へ</a> · <a href="PRINTING.md">印刷手順</a> · <a href="ASSEMBLY.md">組立手順</a> · <a href="NAMEPLATE-V2.md">銘板の設計改訂</a></p>
-<p><strong>2026-09-23、「土台が組み上がりました」との報告が届きました。</strong>
+<p><strong>2026-09-24、顔下部の組立途中の写真が届きました。</strong>
+本人の言葉は「こちらは組み立ての途中記録になります」です。
+<a href="#progress-2026-09-24">9/24の追記へ</a>進むか、以下の文字試作・台座の記録から読めます。
+旧9枚を残し、新しい7枚を別の日付の記録として追加しています。
+上部ゴーグル・頭頂・全150部品の完成は、この写真ではまだ確認できません。</p>
+<p><strong>前の記録：2026-09-23、「土台が組み上がりました」との報告。</strong>
 黒い台座、前面の空き溝、右ロゴを入れた状態、2行の個人銘板と右ロゴがそろった状態を、
 ユーザー提供の実写真で記録します。ここまでの実制作の節目であり、
 <strong>顔・ゴーグル・150部品すべての完成写真ではありません。</strong></p>
-<p>写真は掲載許可を得て、向きと切り取りを整え、元のメタデータを除去したものです。
+<p>写真は各回の掲載許可を得て、必要な向き・切り取りを整え、元のメタデータを除去したものです。
+9/24の一部写真には、無関係な背景PC画面などを隠す薄グレーの不透明マスクもあります。
 造形の欠点・部品の段数・装着状態を変える合成はしていません。
 以下の日付は<strong>報告日</strong>です。撮影日時や撮影順は未確定で、
 別角度の写真がすべて別の工程・別の日を表すとは限りません。</p>
@@ -47,8 +53,14 @@ img{max-height:460px}details{padding:12px}h3{font-size:20px}}
 <td>「土台が組み上がりました」との報告。積層・継ぎ目・前面部品を取り付けた台座が写っている</td>
 <td>取付状態の写真はあるが、接着の有無、保持力、実測寸法、着脱回数、荷重・転倒の評価結果は未提供</td>
 </tr>
+<tr>
+<td>2026-09-24 22:27</td>
+<td>「こちらは組み立ての途中記録になります」との報告。土台の上の紫・黒の層、左右の段付き輪郭、黄色い縦2列が見える</td>
+<td>顔下部の途中記録。正確なCAD工程番号・部品数・撮影順・使用ファイル／実スライス版は未照合。上部ゴーグル・頭頂・全体完成は未確認</td>
+</tr>
 </tbody>
 </table>
+<h2>9/22〜23 — 文字試作と台座の記録</h2>
 <h3>1. 最初の文字試作で、余裕の少なさが見えた</h3>
 <p><img src="images/build-log-2026-09-23/lettering-first.jpg" width="760" alt="2026-09-22の文字相談に添えられた銘板。白文字の狭い孔や字間、糸状の樹脂と表面の荒れが見える"></p>
 <p><strong>報告日：2026-09-22。</strong> 2行の銘板を実際に作ったことで、
@@ -83,7 +95,8 @@ img{max-height:460px}details{padding:12px}h3{font-size:20px}}
 前面に2行の個人銘板と右ロゴがそろった状態です。
 今回は<strong>台座と前面部品の実制作マイルストーン</strong>として記録します。
 写真だけで無接着を証明したり、keeperの保持・分解耐久・完成模型の安定性が合格したとは言いません。
-顔・ゴーグル・完成150部品全体の制作写真は、まだ提供されていません。</p>
+<strong>9/23時点</strong>では顔・ゴーグル・完成150部品全体の制作写真は未提供でした。
+その後の顔下部の進捗は、下の<a href="#progress-2026-09-24">9/24追記</a>として区別しています。</p>
 <h2>補足ギャラリー — 同じ進捗の別角度も含む</h2>
 <details>
 <summary>台座の上面・側面・前面を、あと4枚で見る</summary>
@@ -96,9 +109,58 @@ img{max-height:460px}details{padding:12px}h3{font-size:20px}}
 <p><img src="images/build-log-2026-09-23/base-front-overview.jpg" width="660" alt="前面パーツが入っていない状態の台座全景"></p>
 <p><strong>前面全景。報告日：2026-09-23。</strong> 前面部品が入っていない状態です。写真の番号・掲載順は撮影時刻の順番を保証しません。</p>
 </details>
+<p><a id="progress-2026-09-24"></a></p>
+<h2>2026-09-24 — 土台の上へ、顔下部を組む途中記録</h2>
+<p>本人の言葉：<strong>「こちらは組み立ての途中記録になります」。</strong>
+銘板・右ロゴを取り付けた土台の上へ部品を積み、顔下部の輪郭が立ち上がってきました。
+以下は理解しやすい<strong>説明順</strong>です。添付順や元ファイルの時刻を撮影順・正式なCAD工程番号に変換していません。
+同じ進捗を別角度から撮った写真も含みます。</p>
+<p><strong>色も観察と設計を分けます。</strong> 実写真では紫と黄色に見える部品があります。
+設計データのマゼンタ／緑を変更したものではなく、この記録追加でSTL・BOM・3Dの配色を変えていません。
+部品を探すときは<a href="../guide/index.html">3D工程</a>や<a href="STEPS.md">工程表</a>を参考にできますが、
+写真だけで特定の<code>B-xxx</code>や正確な部品数・工程番号を認定しません。</p>
+<h3>1. 土台の上に、紫の低い横並び</h3>
+<p><img src="images/build-log-2026-09-24/first-purple-row.jpg" width="760" alt="銘板と右ロゴのある台座の上へ、紫色の低いパーツが横並びに載った途中の状態"></p>
+<p><strong>報告日：2026-09-24。</strong> 銘板と右ロゴの付いた土台の上に、
+紫の低いパーツが横並びに載った状態です。
+台座から顔側へ組立が進み始めた見え方として記録し、実際に何個追加したかは写真から補いません。</p>
+<h3>2. 黒い層と、紫の左右の段付き輪郭</h3>
+<p><img src="images/build-log-2026-09-24/lower-face.jpg" width="760" alt="台座の上へ黒い層と紫の左右の輪郭を積んだ顔下部。背面の黒い板状物の用途は未確認"></p>
+<p><strong>報告日：2026-09-24。</strong> 黒い層の左右に紫の段付き輪郭が見え、
+顔下部が土台より上へ立ち上がってきた状態です。
+写真で確認できるのはこの途中形状で、上部ゴーグルが完成した状態ではありません。</p>
+<h3>3. 黄色い縦2列が入った顔下部</h3>
+<p><img src="images/build-log-2026-09-24/face-eye-strips.jpg" width="680" alt="黒い顔下部と紫の段付き輪郭の中に黄色い縦2列が見える途中写真。上部ゴーグルは写っていない"></p>
+<p><strong>報告日：2026-09-24。</strong> 黒い顔下部の中に黄色い縦2列が見えます。
+写真の見た目をそのまま記述しており、設計上の緑色の部品を黄色へ変更する指示にはしていません。
+材料の銘柄や色名、使用した印刷ファイルの版までは未照合です。</p>
+<h3>4. その上へ黒い列を加えた状態</h3>
+<p><img src="images/build-log-2026-09-24/face-top-row.jpg" width="680" alt="黄色い縦2列の上に黒い横列がある顔下部の途中状態。上部ゴーグルと頭頂はまだ写っていない"></p>
+<p><strong>報告日：2026-09-24。</strong> 黄色い縦2列の上に黒い列が加わった状態が写っています。
+今回の記録はここまでの<strong>顔下部の組立途中</strong>です。上部ゴーグル・頭頂は写っておらず、
+全150部品の完成や模型全体の強度・保持・転倒の合格へ広げません。</p>
+<details>
+<summary>9/24の近い状態を、補足の3枚で見る</summary>
+<p><img src="images/build-log-2026-09-24/lower-face-detail.jpg" width="660" alt="黒い顔下部と紫色の段付き輪郭を近くから写した補足写真"></p>
+<p><strong>顔下部の詳細。報告日：2026-09-24。</strong> 継ぎ目と左右の輪郭を見られる角度です。
+上の写真と別工程だったとは断定しません。</p>
+<p><img src="images/build-log-2026-09-24/lower-face-wide.jpg" width="760" alt="顔下部を積んだ台座と、周囲に斜めに置かれた用途未確認の黒い板状物が写る補足写真"></p>
+<p><strong>少し離れた角度。報告日：2026-09-24。</strong> 周囲の板状物も写っています。
+その用途や固定方法を、写真から推定して部品表へ追加することはしません。</p>
+<p><img src="images/build-log-2026-09-24/face-top-row-angle.jpg" width="660" alt="黄色い縦2列と上の黒い列がある顔下部を別角度から写した途中写真"></p>
+<p><strong>上の黒い列がある状態の別角度。報告日：2026-09-24。</strong>
+同じ進捗の補足写真として扱い、新しい独立した工程や完成写真には数えません。</p>
+</details>
+<h4>写り込みと未確認事項</h4>
+<p>一部には背面に立つ黒い板や、左右へ斜めに置かれた板状物も写っています。
+用途・材質・固定方法は説明されていないため、保持具・構造部材・同梱パーツ・失敗対策等とは断定しません。
+造形物やこれらの板状物を、写真から都合よく消す加工はしていません。</p>
+<p>前の9/23記録から後に分かったのは、顔下部の実制作が途中まで進んだということです。
+接着の有無、各接続の保持力、荷重、寸法公差、着脱寿命、実スライスとの版対応は引き続き未確認です。</p>
 <h2>学びと、次に残る確認</h2>
-<p>実物の文字相談から設計を見直し、その後に手応えの報告と台座・前面の写真が届いた、
-という制作の流れを残しました。一方、設計改訂がどの造形上の問題をどれだけ改善したかは、
+<p>実物の文字相談から設計を見直し、その後に手応えの報告と台座・前面の写真、
+さらに9/24の顔下部の途中写真へと続く制作の流れを残しました。
+一方、設計改訂がどの造形上の問題をどれだけ改善したかは、
 使用データ・スライス条件・実測値をそろえてから判断する必要があります。</p>
 <table>
 <thead>
@@ -121,8 +183,12 @@ img{max-height:460px}details{padding:12px}h3{font-size:20px}}
 <td>接着の有無、挿入力、keeper保持力、着脱回数、荷重・転倒評価</td>
 </tr>
 <tr>
-<td>土台が組み上がったという本人報告</td>
-<td>顔・ゴーグル・完成模型全体の写真、全150部品の組立完了</td>
+<td>土台が組み上がったという本人報告と、9/24の顔下部の途中写真</td>
+<td>上部ゴーグル・頭頂・完成模型全体の写真、全150部品の組立完了</td>
+</tr>
+<tr>
+<td>紫・黒の層と黄色い縦2列が見える実写真</td>
+<td>正確な工程番号・部品ID・撮影順・設計色との材料対応。板状物の用途・固定方法</td>
 </tr>
 </tbody>
 </table>
@@ -136,9 +202,14 @@ img{max-height:460px}details{padding:12px}h3{font-size:20px}}
 この個人版には許可された銘板の文字を残し、無関係な背景を可能な範囲で切り取っています。
 2026-09-23の追加承認により、個人版repoとこの案内ページも公開対象になりました。
 一般向けrepoの伏字画像とは別系統です。加工前の原画像・EXIF・監査元パスは公開しません。</p>
-<p>このページに含むのは加工済みの実写真9枚です。元ファイル名・EXIF・位置・カメラ情報、
+<p>9/24の新しい7枚についても、個人版は銘板の文面を残し、一般向け版は個人URLを伏せ、
+両方で背景PC画面と撮影メタデータを除去する形での掲載を、本人が別途承認しています。
+親担当が一度だけ加工した派生をそのまま取り込み、このrepo内で再加工していません。
+9/24の背景の切り取り・不透明マスクは各画像のmanifestに記録しています。</p>
+<p>このページに含むのは加工済みの実写真<strong>16枚（前の9枚＋9/24の7枚）</strong>です。元ファイル名・EXIF・位置・カメラ情報、
 加工前の原画像、監査用の元パス対応表は収録していません。
-<a href="images/build-log-2026-09-23/manifest.json">画像一覧と加工範囲</a>には、
+<a href="images/build-log-2026-09-23/manifest.json">9/23までの画像一覧</a>と
+<a href="images/build-log-2026-09-24/manifest.json">9/24の画像一覧</a>には、
 中立ID・報告日・寸法・配布画像のhash・回転／切り取り／メタデータ除去の範囲など、
 配布用の情報を記録しています。
 写真のスライドショーを実組立動画と称していません。</p><footer>公開許可済みの個人版制作記録。掲載順は説明順です。撮影日時・版・実測条件は未照合です。図面の設計値や3Dの説明用の動きと、写真で確認できる状態を分けてください。</footer></main></body></html>

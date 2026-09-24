@@ -46,10 +46,14 @@
   "build_record": {
     "markdown": "docs/BUILD-LOG.md",
     "offline_html": "docs/BUILD-LOG.html",
-    "photo_manifest": "docs/images/build-log-2026-09-23/manifest.json",
-    "reported_through": "2026-09-23",
-    "photo_count": 9,
-    "observed_milestone": "nameplate trial and base/front-module assembly",
+    "photo_manifests": [
+      "docs/images/build-log-2026-09-23/manifest.json",
+      "docs/images/build-log-2026-09-24/manifest.json"
+    ],
+    "reported_through": "2026-09-24",
+    "photo_count": 16,
+    "latest_progress_anchor": "progress-2026-09-24",
+    "observed_milestone": "nameplate trial, base/front modules and partial lower-face assembly; upper goggles and crown not documented",
     "formal_physical_validation": "NOT_PROVIDED",
     "full_model_completion": "NOT_CONFIRMED",
     "photo_input_revision_hash_match": "NOT_CONFIRMED"
@@ -99,8 +103,8 @@
     "files": [
       {
         "file": "guide/index.html",
-        "bytes": 11447558,
-        "sha256": "08ce841707c7ba1b4a74e1f82ef8434bf611c3c8d24fe76ad31c8ba9cf12c4d0"
+        "bytes": 11447567,
+        "sha256": "986f0fef64d837eb28546046223177ac17878efa1f6ee176bdd2e409fb2fcb6d"
       },
       {
         "file": "guide/index.mapping.json",

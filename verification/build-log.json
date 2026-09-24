@@ -4,12 +4,23 @@
   "browser": null,
   "browser_channel": null,
   "browser_execution": "NOT_RUN_ENVIRONMENT",
-  "browser_limitation": "Local headless-shell launch crashed; other local browser launches stalled. Desktop stop-handler was unavailable. No permissions or stop controls were bypassed; no private photos were sent to an external renderer or public CI.",
-  "follow_up": "When the local browser environment is available, run this verifier without --static-only.",
-  "report_date": "2026-09-23",
-  "photo_count": 9,
-  "described_stages": 5,
-  "guide_entry_sha256": "08ce841707c7ba1b4a74e1f82ef8434bf611c3c8d24fe76ad31c8ba9cf12c4d0",
+  "browser_limitation": "Not run locally for this update because earlier local browser launches failed. No additional launch workarounds are attempted. The current approved public Pages workflow separately runs Linux HTTP and file checks; this static report does not claim that browser result.",
+  "follow_up": "Use the current Linux Pages workflow browser result; when the local environment is available this verifier can also run without --static-only.",
+  "report_date": "2026-09-24",
+  "photo_count": 16,
+  "photo_batches": [
+    {
+      "reported_date": "2026-09-23",
+      "photo_count": 9
+    },
+    {
+      "reported_date": "2026-09-24",
+      "photo_count": 7
+    }
+  ],
+  "described_stages": 9,
+  "latest_progress_anchor": "progress-2026-09-24",
+  "guide_entry_sha256": "986f0fef64d837eb28546046223177ac17878efa1f6ee176bdd2e409fb2fcb6d",
   "guide_base_sha256": "451fa61cd36b1772fb5f96baef971ff3d4c809874d31f26f6a475056b4c86c1c",
   "prior_unchanged_3d_report_reference": "verification/guide-browser.json",
   "all_image_files_decoded": true,
@@ -24,10 +35,12 @@
   "photo_metadata": "RGB single-frame JPEG; JFIF only",
   "capture_dates_inferred": false,
   "protected_input_hashes_unchanged": 61,
+  "prior_design_media_and_photo_hashes_unchanged": 147,
   "inputs_sha256": {
-    "docs/BUILD-LOG.md": "07ff96776d7b07ac45fbaf6654109f68ca850d7cad5facaf3a4a76a0aa71712c",
-    "docs/BUILD-LOG.html": "604d9aa6d2ebd368695d020f344a4e6f4f888dfe77b507ecb6bc0c44e4419132",
+    "docs/BUILD-LOG.md": "69cc6995970eb9d48e531133555b6a2214653efc650c411c690d06ea135859a6",
+    "docs/BUILD-LOG.html": "76375c2abcb5fbf90bfc9fdc5b0b21267cab1ade485bf41c2b5655badeff004a",
     "docs/images/build-log-2026-09-23/manifest.json": "7c7f87ac43ae37208c0a50ca52a933f57b26d4797ab81c716a4aee6d28993d47",
+    "docs/images/build-log-2026-09-24/manifest.json": "86759288e06b747fa864441547329aa5dc107a69e8c8ca77552b3356343284f8",
     "docs/images/build-log-2026-09-23/lettering-first.jpg": "6390159dda947ca90bb8409424cf3a8f1f0281e5112fdd572606c7c843a715d9",
     "docs/images/build-log-2026-09-23/lettering-follow-up.jpg": "ae85f195bc2a4c9b5f9478cb22ecaf411d78599568fdc8e3f0c2953f53a3e154",
     "docs/images/build-log-2026-09-23/base-overview.jpg": "163bf413b35610a9ca6a2fc61067eeb61a4873975deccd3469dc5ca6ed3f0a54",
@@ -36,9 +49,16 @@
     "docs/images/build-log-2026-09-23/base-side-angle.jpg": "b660edb509fefc1be947d2969cda0a0e0af75cd21a2981cb4b8b97225b7e219e",
     "docs/images/build-log-2026-09-23/right-logo-installed.jpg": "a407341c0d094b79f1ea37284682def7df7f388c2b73e8a3263735814ccfd831",
     "docs/images/build-log-2026-09-23/base-front-detail.jpg": "51b3ccc8599113ca6badf2f94623db9f28a367b0829c5293e8fd22fd5344d2b6",
-    "docs/images/build-log-2026-09-23/base-front-overview.jpg": "035c3f037f26aaa717308e07a4d7cb0a1ef268dd4a8330977192919523d01ac5"
+    "docs/images/build-log-2026-09-23/base-front-overview.jpg": "035c3f037f26aaa717308e07a4d7cb0a1ef268dd4a8330977192919523d01ac5",
+    "docs/images/build-log-2026-09-24/first-purple-row.jpg": "d60b48484cdd6460c5f828253b85afa970c6db9e5afaea9bb3074ba70d0413e1",
+    "docs/images/build-log-2026-09-24/lower-face.jpg": "e0c71f4482c4995db27f452e76f850774c4521e5ac92683cdaec9dffd35a915e",
+    "docs/images/build-log-2026-09-24/lower-face-detail.jpg": "33b873aab83ffca026a4710eed1dab46f87ebb874e87c9524e5ae9001b419c59",
+    "docs/images/build-log-2026-09-24/lower-face-wide.jpg": "4a2c7729bd8c84050f00a232cefb0d91793bcc079cc2084a0054bf6c7e872d09",
+    "docs/images/build-log-2026-09-24/face-eye-strips.jpg": "9a03e7bf43e4cd16ae505758c69e417c3c6fd2bbeaff616b0914679dbb0e994f",
+    "docs/images/build-log-2026-09-24/face-top-row.jpg": "6c3366739e33cd92da3c22f2ba46f0840b328bf070ffc6919896470dccfa46e7",
+    "docs/images/build-log-2026-09-24/face-top-row-angle.jpg": "a499bcb5d895778fea9578a2c4485917fecdc63185d5585c6469efed3c94fb31"
   },
-  "physical_evidence": "User-reported nameplate trial and base/front-module assembly photos.",
+  "physical_evidence": "User-reported nameplate/base/front-module construction and September24 partial lower-face assembly photographs. Purple/yellow are observed photo colors, not changes to the design's magenta/green palette.",
   "formal_physical_validation": "NOT_PROVIDED",
   "full_figure_completion": "NOT_CONFIRMED",
   "photo_to_STL_and_slicer_revision_match": "NOT_CONFIRMED"

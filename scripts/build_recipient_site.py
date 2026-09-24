@@ -14,7 +14,7 @@ from urllib.parse import unquote, urlsplit, urlunsplit
 import markdown
 from markdown.extensions.toc import slugify_unicode
 
-from build_photo_log import STYLE
+from build_photo_log import PHOTO_BATCHES, PROGRESS_ANCHOR, STYLE, approved_photos
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = "ktanino10/copilot-brick-gift-b"
@@ -33,7 +33,6 @@ DATA_FILES = {
     "kit/B/bom.csv", "kit/B/steps.csv", "kit/B/part-map.csv", "kit/B/assembly.json",
     "kit/B/drawings.pdf", "kit/fit/interface.pdf", "kit/fit/interface.svg",
     "kit/fit/front-interface.svg", "kit/fit-log.csv", "kit/trial/bom.csv",
-    "docs/images/build-log-2026-09-23/manifest.json",
 }
 EXTRA_STYLE = """
 .site-nav{display:flex;flex-wrap:wrap;gap:10px 22px;padding:14px 0;border-bottom:1px solid #c9d4dc;margin-bottom:28px}
@@ -61,8 +60,8 @@ class SiteBuilder:
         self.output = output
         self.commit = commit
         self.files = {}
-        photos = json.loads((ROOT / "docs/images/build-log-2026-09-23/manifest.json").read_text())
-        self.photo_paths = {"docs/images/build-log-2026-09-23/" + item["path"] for item in photos["photos"]}
+        self.photo_paths = {"docs/" + path for path in approved_photos()}
+        self.photo_manifest_paths = {batch["directory"] + "/manifest.json" for batch in PHOTO_BATCHES}
 
     def emit(self, destination, data, source):
         path = self.output / destination
@@ -74,7 +73,7 @@ class SiteBuilder:
 
     def allowed_asset(self, path):
         suffix = Path(path).suffix.lower()
-        if path in DATA_FILES or path == "notices/THREE-LICENSE.txt":
+        if path in DATA_FILES or path in self.photo_manifest_paths or path == "notices/THREE-LICENSE.txt":
             return True
         if path.startswith("docs/images/") and suffix in (".png", ".svg", ".gif"):
             return True
@@ -140,7 +139,7 @@ class SiteBuilder:
             f"<title>{escape(title)} | 個人Bの作り方</title><style>{STYLE}{EXTRA_STYLE}</style></head><body>"
             '<a class="skip" href="#content">本文へ</a><main>'
             + self.navigation(output) + '<article id="content">' + body + "</article>"
-            + '<footer>個人向けBの公開案内です。写真は台座・前面までの制作記録で、全体完成や保持・強度の合格を示しません。'
+            + '<footer>個人向けBの公開案内です。写真は台座・前面と顔下部の途中記録で、上部ゴーグル・頭頂を含む全体完成や保持・強度の合格を示しません。'
             '配布形状はNOT_SLICED。公開内容は第三者にコピー・保存され得ます。'
             f'<p>配信元: <a href="https://github.com/{REPO}/commit/{self.commit}">{self.commit[:12]}</a></p>'
             "</footer></main></body></html>\n"
@@ -163,6 +162,7 @@ class SiteBuilder:
             self.emit(output, self.document(output, title, intro + "".join(rewriter.result)), source)
         hero = self.asset("docs/images/B-hero.png")
         photograph = self.asset("docs/images/build-log-2026-09-23/front-modules-installed.jpg")
+        latest_photo = self.asset("docs/images/build-log-2026-09-24/face-top-row.jpg")
         body = (
             '<section class="hero"><div><p class="eyebrow">B DESK CLASSIC / PERSONAL BUILD GUIDE</p>'
             '<h1>つくる過程も、<br>贈る楽しみに。</h1>'
@@ -176,11 +176,15 @@ class SiteBuilder:
             '<a href="guide/index.html">3D工程へ →</a></div>'
             '<div class="card"><h2>2. 作り方を読む</h2><p>別PCでの保存、少量試作、色替え、台座からの組立・分解まで。</p>'
             '<a href="docs/PRINTING.html">印刷の仕方 →</a><br><a href="docs/ASSEMBLY.html">組立の仕方 →</a></div>'
-            '<div class="card"><h2>3. 制作の記録を見る</h2><p>文字の相談と改訂、その後の手応え、台座と前面までの9枚の実写真。</p>'
+            '<div class="card"><h2>3. 制作の記録を見る</h2><p>文字の試作から、土台、顔下部の組立途中まで。日付別に報告と実写真を記録しています。</p>'
             '<a href="docs/BUILD-LOG.html">写真付きの記録へ →</a></div></section>'
             '<div class="note"><strong>最初の台座はblack-01ではありません。</strong>'
             '<p>B-black-02.3mfのslot3にある大きな1枚がB-001です。印刷順と組立順を分けて案内します。</p></div>'
-            '<h2>土台と前面まで、組み上がりました</h2>'
+            f'<div class="note"><strong>2026-09-24：顔下部の途中写真7枚を追記しました。</strong>'
+            f'<p><a href="docs/BUILD-LOG.html#{PROGRESS_ANCHOR}">紫の輪郭・黄色い縦2列までの途中記録を見る →</a></p>'
+            '<p class="small">写真の紫・黄色は実物の観察です。設計データのマゼンタ・緑は変更していません。上部ゴーグル・頭頂・全体完成は未確認です。</p></div>'
+            f'<a href="docs/BUILD-LOG.html#{PROGRESS_ANCHOR}"><img src="{latest_photo}" alt="9/24の途中記録。黒い顔下部、紫色の輪郭と黄色い縦2列が見える。上部ゴーグル・頭頂はまだない"></a>'
+            '<h2>9/23の記録：土台と前面まで</h2>'
             f'<a href="docs/BUILD-LOG.html"><img src="{photograph}" alt="2行銘板と右ロゴ付きの台座。ユーザー提供の実写真"></a>'
             '<p>2026-09-23の本人報告と写真です。顔・ゴーグルを含む全体完成や、使用ファイルの版・寸法・保持力の実測を証明する写真ではありません。</p>'
             '<h2>このBについて</h2><p>設計上は150部品、黒い5段台座、独立した銘板と右ロゴ。'

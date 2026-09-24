@@ -11,7 +11,7 @@ publicになったことは、商用利用・再配布・商標利用を一律�
 | 既存Bのコード・形状・媒体 | [provenance](../docs/PROVENANCE.md)に固定commit・再利用範囲を記載 |
 | 元プロジェクトのnotice | [原文をそのまま保存](upstream-rights.md) |
 | Three.js 0.180.0、同版のOrbitControls／STLLoader | [MIT原文](THREE-LICENSE.txt)。オフライン3Dランタイムへ同梱。生成HTMLとruntimeのbannerにも全文を保持 |
-| 制作記録の実写真9枚 | ユーザー提供・掲載許可済み。[写真の取扱い](../docs/BUILD-LOG.md#写真の取扱い)。写真の権利はユーザーに帰属し、モデル／フォント／ソフトウェアのライセンスを自動適用しない |
+| 制作記録の実写真16枚 | ユーザー提供。9/23までの9枚と9/24の途中写真7枚は各回の掲載許可済み。[写真の取扱い](../docs/BUILD-LOG.md#写真の取扱い)。写真の権利はユーザーに帰属し、モデル／フォント／ソフトウェアのライセンスを自動適用しない |
 
 原文noticeには元サイトで使われるThree.jsとB612への言及があります。
 この版ではThree.jsをオフライン3D案内と、承認済みのGitHub Pages案内で使用します。

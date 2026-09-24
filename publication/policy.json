@@ -8,9 +8,15 @@
   "authorization": "The user explicitly approved changing this repository from private to public after repository-history exposure was explained, and requested a recipient-facing GitHub Pages guide.",
   "personal_content_authorized": [
     "The existing two-line recipient nameplate and current display meshes",
-    "The nine previously approved cropped and metadata-stripped build photographs",
+    "The nine earlier approved build photographs and the separately approved seven September24 in-progress photographs; all cropped and metadata-stripped",
     "Current instructions, assembly guide and design artifacts already tracked in this repository"
   ],
+  "additional_photo_authorization": {
+    "date": "2026-09-24",
+    "photo_count": 7,
+    "scope": "Append the user's in-progress assembly record to this existing public personal site with the nameplate text retained; remove background computer screens and capture metadata. The generic site's derivatives are separately masked and are not copied here.",
+    "does_not_authorize": "Raw attachments, original filenames, private transformation source maps, inferred physical qualification, or design/color changes."
+  },
   "remain_local_and_excluded": [
     "Original photo attachments and their EXIF/source filenames",
     "Private source-to-derivative audit maps and machine paths",

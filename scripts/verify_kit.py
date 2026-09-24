@@ -24,6 +24,7 @@ from verify_guide_mapping import verify_embedded, verify_mapping
 from verify_offline_html import verify_file as verify_offline_html
 from build_log_navigation import canonical_guide_hash
 from verify_build_log import JournalDocument
+from build_photo_log import PHOTO_BATCHES, PROGRESS_ANCHOR
 
 NS = {"m": "http://schemas.microsoft.com/3dmanufacturing/core/2015/02"}
 LINES = ["Same icon, New adventures", "github.com/tomokota"]
@@ -158,7 +159,11 @@ def check_3mf(path, expected, meshes, colors):
 def headings(path):
     result = set()
     repetitions = Counter()
-    for line in path.read_text().splitlines():
+    content = path.read_text()
+    explicit = JournalDocument()
+    explicit.feed(content)
+    result.update(explicit.ids)
+    for line in content.splitlines():
         if re.match(r"^#{1,6} ", line):
             text = re.sub(r"^#{1,6} ", "", line).lower()
             slug = re.sub(r"[^\w\s-]", "", text).replace(" ", "-")
@@ -247,7 +252,8 @@ def verify_package():
         journal = JournalDocument()
         journal.feed(archive.read("docs/BUILD-LOG.html").decode("utf-8"))
         for link in journal.links + [image["src"] for image in journal.images]:
-            target = posixpath.normpath(posixpath.join("docs", link.split("#")[0]))
+            path = link.split("#")[0]
+            target = posixpath.normpath(posixpath.join("docs", path)) if path else "docs/BUILD-LOG.html"
             require(target in names, f"Offline journal target is missing from ZIP:{target}")
         require(not any(name.endswith(".zip") for name in names), "No nested duplicate kits.")
     digest, filename = (ROOT / "downloads/SHA256SUMS.txt").read_text().strip().split("  ", 1)
@@ -417,7 +423,9 @@ def main():
     require(journal["status"] in ("PASS", "PASS_DOCUMENTATION_STATIC")
             and journal["guide_entry_sha256"] == sha((ROOT / guide["entry"]).read_bytes())
             and journal["guide_base_sha256"] == canonical_guide_hash(ROOT / guide["entry"])
-            and journal["photo_count"] == 9 and journal["all_image_files_decoded"] is True
+            and journal["photo_count"] == sum(batch["photo_count"] for batch in PHOTO_BATCHES)
+            and journal["latest_progress_anchor"] == PROGRESS_ANCHOR
+            and journal["all_image_files_decoded"] is True
             and journal["all_relative_image_paths_resolve"] is True
             and journal["browser_execution"] in ("PASS", "NOT_RUN_ENVIRONMENT"),
             "Current build-log navigation or image verification is missing.")

@@ -9,6 +9,7 @@ from pathlib import Path
 import zipfile
 
 from verify_guide_mapping import verify_mapping
+from build_photo_log import PHOTO_BATCHES, PROGRESS_ANCHOR
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -260,9 +261,11 @@ def write_indexes():
         "nameplate": manifest["nameplate"],
         "build_record": {
             "markdown": "docs/BUILD-LOG.md", "offline_html": "docs/BUILD-LOG.html",
-            "photo_manifest": "docs/images/build-log-2026-09-23/manifest.json",
-            "reported_through": "2026-09-23", "photo_count": 9,
-            "observed_milestone": "nameplate trial and base/front-module assembly",
+            "photo_manifests": [batch["directory"] + "/manifest.json" for batch in PHOTO_BATCHES],
+            "reported_through": PHOTO_BATCHES[-1]["reported_date"],
+            "photo_count": sum(batch["photo_count"] for batch in PHOTO_BATCHES),
+            "latest_progress_anchor": PROGRESS_ANCHOR,
+            "observed_milestone": "nameplate trial, base/front modules and partial lower-face assembly; upper goggles and crown not documented",
             "formal_physical_validation": "NOT_PROVIDED",
             "full_model_completion": "NOT_CONFIRMED",
             "photo_input_revision_hash_match": "NOT_CONFIRMED",

@@ -10,8 +10,51 @@ import markdown
 from build_log_navigation import add_navigation, base_document
 
 ROOT = Path(__file__).resolve().parents[1]
-PHOTO_DIR = ROOT / "docs/images/build-log-2026-09-23"
-BASELINE_MANIFEST_SHA256 = "7c7f87ac43ae37208c0a50ca52a933f57b26d4797ab81c716a4aee6d28993d47"
+PHOTO_BATCHES = (
+    {
+        "directory": "docs/images/build-log-2026-09-23",
+        "manifest_sha256": "7c7f87ac43ae37208c0a50ca52a933f57b26d4797ab81c716a4aee6d28993d47",
+        "photo_count": 9,
+        "described_stages": 5,
+        "reported_date": "2026-09-23",
+    },
+    {
+        "directory": "docs/images/build-log-2026-09-24",
+        "manifest_sha256": "86759288e06b747fa864441547329aa5dc107a69e8c8ca77552b3356343284f8",
+        "photo_count": 7,
+        "described_stages": 4,
+        "reported_date": "2026-09-24",
+    },
+)
+PROGRESS_ANCHOR = "progress-2026-09-24"
+JOURNAL_TITLE = "Bの制作記録 — 文字試作・土台から顔下部の途中まで"
+
+
+def approved_photos():
+    result = {}
+    for batch in PHOTO_BATCHES:
+        directory = ROOT / batch["directory"]
+        raw_manifest = (directory / "manifest.json").read_bytes()
+        if hashlib.sha256(raw_manifest).hexdigest() != batch["manifest_sha256"]:
+            raise ValueError("The approved parent photo manifest was changed.")
+        manifest = json.loads(raw_manifest)
+        if len(manifest["photos"]) != batch["photo_count"]:
+            raise ValueError("The photo batch does not match the approved count.")
+        expected_files = {"manifest.json"}
+        for photo in manifest["photos"]:
+            path = directory / photo["path"]
+            if path.name != photo["id"] + ".jpg" or path.parent != directory or path.is_symlink():
+                raise ValueError("Unexpected image path in the approved handoff.")
+            if hashlib.sha256(path.read_bytes()).hexdigest() != photo["sha256"]:
+                raise ValueError("Do not reprocess the parent's approved image derivatives.")
+            key = path.relative_to(ROOT / "docs").as_posix()
+            if key in result:
+                raise ValueError("Duplicate journal photo.")
+            result[key] = photo
+            expected_files.add(path.name)
+        if {path.name for path in directory.iterdir()} != expected_files:
+            raise ValueError("Only approved photos and their neutral manifest belong in the batch directory.")
+    return result
 
 STYLE = """
 :root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f3f5f1;color:#172433;
@@ -30,19 +73,10 @@ img{max-height:460px}details{padding:12px}h3{font-size:20px}}
 
 
 def main():
-    raw_manifest = (PHOTO_DIR / "manifest.json").read_bytes()
-    if hashlib.sha256(raw_manifest).hexdigest() != BASELINE_MANIFEST_SHA256:
-        raise ValueError("The approved parent photo manifest was changed.")
-    manifest = json.loads(raw_manifest)
-    for photo in manifest["photos"]:
-        path = PHOTO_DIR / photo["path"]
-        if path.name != photo["id"] + ".jpg" or path.parent != PHOTO_DIR:
-            raise ValueError("Unexpected image path in the approved handoff.")
-        if hashlib.sha256(path.read_bytes()).hexdigest() != photo["sha256"]:
-            raise ValueError("Do not reprocess the parent's approved image derivatives.")
+    photos = approved_photos()
     source = ROOT / "docs/BUILD-LOG.md"
     body = markdown.markdown(source.read_text(), extensions=["tables", "fenced_code", "md_in_html"])
-    title = "Bの制作記録 — 文字の試作から、土台と前面まで"
+    title = JOURNAL_TITLE
     document = (
         '<!doctype html>\n<html lang="ja"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -63,7 +97,7 @@ def main():
     if base_document(before) != base_document(after):
         raise ValueError("The documentation link must not change the guide or embedded geometry.")
     guide.write_text(after, encoding="utf-8")
-    print("Built the offline nine-photo journal and added only the fixed documentation navigation.")
+    print(f"Built the offline {len(photos)}-photo journal and added only the fixed documentation navigation.")
 
 
 if __name__ == "__main__":

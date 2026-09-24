@@ -4,7 +4,7 @@ import hashlib
 from pathlib import Path
 
 ANCHOR = '  <section class="start-card" aria-label="最初に読むこと">'
-NAVIGATION = '''  <!-- PRIVATE_BUILD_LOG_NAV -->
+PREVIOUS_NAVIGATION = '''  <!-- PRIVATE_BUILD_LOG_NAV -->
   <aside id="build-record-nav" class="start-card" aria-label="実写真の制作記録">
     <strong><a href="../docs/BUILD-LOG.html">実写真の制作記録を読む</a></strong>
     <p>文字の問題から、銘板の試作報告、台座・前面の組立まで。写真で見える状態と、未確認の保持・寸法・完成模型の検証を分けています。</p>
@@ -12,14 +12,18 @@ NAVIGATION = '''  <!-- PRIVATE_BUILD_LOG_NAV -->
   </aside>
   <!-- /PRIVATE_BUILD_LOG_NAV -->
 '''
+NAVIGATION = PREVIOUS_NAVIGATION.replace(
+    "文字の問題から、銘板の試作報告、台座・前面の組立まで。",
+    "文字の問題から、銘板の試作報告、台座と顔下部の途中記録まで。",
+)
 
 
 def base_document(document):
-    count = document.count(NAVIGATION)
+    count = sum(document.count(block) for block in (PREVIOUS_NAVIGATION, NAVIGATION))
     if count > 1:
         raise ValueError("The build-record navigation is duplicated.")
     if count == 1:
-        base = document.replace(NAVIGATION, "", 1)
+        base = document.replace(NAVIGATION, "", 1).replace(PREVIOUS_NAVIGATION, "", 1)
     else:
         base = document
     if "PRIVATE_BUILD_LOG_NAV" in base or 'id="build-record-nav"' in base:
