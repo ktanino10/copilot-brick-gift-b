@@ -1,6 +1,6 @@
 import unittest
 
-from build_log_navigation import ANCHOR, NAVIGATION, PREVIOUS_NAVIGATION, add_navigation, base_document
+from build_log_navigation import ANCHOR, LOWER_FACE_NAVIGATION, NAVIGATION, PREVIOUS_NAVIGATION, add_navigation, base_document
 
 
 class BuildLogNavigationTests(unittest.TestCase):
@@ -24,9 +24,10 @@ class BuildLogNavigationTests(unittest.TestCase):
 
     def test_previous_fixed_navigation_migrates_without_renderer_changes(self):
         original = "<html>\n" + ANCHOR + "\n<canvas></canvas>\n</html>\n"
-        previous = original.replace(ANCHOR, PREVIOUS_NAVIGATION + ANCHOR)
-        self.assertEqual(base_document(previous), original)
-        self.assertEqual(add_navigation(previous), add_navigation(original))
+        for block in (PREVIOUS_NAVIGATION, LOWER_FACE_NAVIGATION):
+            previous = original.replace(ANCHOR, block + ANCHOR)
+            self.assertEqual(base_document(previous), original)
+            self.assertEqual(add_navigation(previous), add_navigation(original))
         with self.assertRaisesRegex(ValueError, "duplicated"):
             base_document(PREVIOUS_NAVIGATION + NAVIGATION + original)
 

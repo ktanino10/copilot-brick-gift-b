@@ -86,6 +86,16 @@ def verify(root):
         raise ValueError("The dated journal does not contain exactly the approved photograph batches.")
     if PROGRESS_ANCHOR not in log.ids:
         raise ValueError("The latest dated progress anchor is missing from the public page.")
+    if "progress-2026-09-24" not in log.ids:
+        raise ValueError("Do not break the previous dated journal link.")
+    log_text = (root / "docs/BUILD-LOG.html").read_text()
+    if "これで完成ですね" not in log_text or "制作過程の写真です" not in log_text:
+        raise ValueError("The current journal must include the user's actual completion and construction reports.")
+    completed_photo = "docs/images/build-log-2026-09-25/finished-portrait.jpg"
+    if completed_photo not in documents["index.html"].images:
+        raise ValueError("The landing page is missing the authorized actual completion photograph.")
+    if "実物の完成写真" not in (root / "index.html").read_text():
+        raise ValueError("The completion photo must be labeled as an actual photograph, not a CG.")
     return {"status": "PASS_STATIC", "files": len(actual), "relative_links": checked_links,
             "photo_count": len(expected_photos), "latest_progress_anchor": PROGRESS_ANCHOR,
             "source_commit": manifest["source_commit"]}
@@ -122,6 +132,11 @@ def browser_check(root):
             page.on("requestfailed", lambda request: failures.append(request.url))
             page.on("request", lambda request: external.append(request.url) if request.url.startswith("http") and not request.url.startswith(base) else None)
             page.goto(base, wait_until="load")
+            page.locator('img[src="docs/images/build-log-2026-09-25/finished-portrait.jpg"]').click()
+            page.locator(f"#{PROGRESS_ANCHOR}").wait_for(state="attached")
+            if urlsplit(page.url).fragment != PROGRESS_ANCHOR:
+                raise ValueError("The actual completion photo does not link to the dated completion record.")
+            page.goto(base, wait_until="load")
             page.get_by_role("link", name="3Dで工程を見る", exact=True).click()
             page.locator('#guide-app[data-ready="true"]').wait_for(timeout=120000)
             page.locator("#start-first").click()
@@ -149,6 +164,7 @@ def browser_check(root):
         raise ValueError(f"Site errors/failed or external requests:{errors}/{failures}/{external}")
     return {"browser": "PASS", "first_base": "B-black-02.3mf#3 -> B-001",
             "photographs_loaded": expected_count, "latest_progress_anchor": PROGRESS_ANCHOR,
+            "completion_photo_navigation": True,
             "page_errors": 0, "external_requests": 0, "mobile_overflow": False}
 
 

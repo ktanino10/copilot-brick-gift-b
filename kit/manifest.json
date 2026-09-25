@@ -48,14 +48,16 @@
     "offline_html": "docs/BUILD-LOG.html",
     "photo_manifests": [
       "docs/images/build-log-2026-09-23/manifest.json",
-      "docs/images/build-log-2026-09-24/manifest.json"
+      "docs/images/build-log-2026-09-24/manifest.json",
+      "docs/images/build-log-2026-09-25/manifest.json"
     ],
-    "reported_through": "2026-09-24",
-    "photo_count": 16,
-    "latest_progress_anchor": "progress-2026-09-24",
-    "observed_milestone": "nameplate trial, base/front modules and partial lower-face assembly; upper goggles and crown not documented",
+    "reported_through": "2026-09-25",
+    "photo_count": 24,
+    "latest_progress_anchor": "progress-2026-09-25",
+    "observed_milestone": "construction through the closed goggle top and purple crown, with the user's September25 completion report and photographs",
     "formal_physical_validation": "NOT_PROVIDED",
-    "full_model_completion": "NOT_CONFIRMED",
+    "full_model_completion": "USER_REPORTED_WITH_COMPLETION_PHOTOS",
+    "individual_150_part_inspection": "NOT_PROVIDED",
     "photo_input_revision_hash_match": "NOT_CONFIRMED"
   },
   "lettering_sample": {
@@ -103,8 +105,8 @@
     "files": [
       {
         "file": "guide/index.html",
-        "bytes": 11447567,
-        "sha256": "986f0fef64d837eb28546046223177ac17878efa1f6ee176bdd2e409fb2fcb6d"
+        "bytes": 11447547,
+        "sha256": "ccb2924cc8e05c36cb3c93bc6bc9f05ffff3843d17d8613d9ea68c1a78962e41"
       },
       {
         "file": "guide/index.mapping.json",

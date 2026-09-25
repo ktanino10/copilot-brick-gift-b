@@ -74,6 +74,9 @@ def main():
                 "The journal must retain each dated batch's described stages.")
         require(len(document.images) == len(approved), "All approved photos must appear once, not as invented extra milestones.")
         require(PROGRESS_ANCHOR in document.ids, "The new dated progress anchor is missing.")
+        require("progress-2026-09-24" in document.ids, "The earlier dated progress link must remain valid.")
+        require("これで完成ですね" in content and "制作過程の写真です" in content,
+                "The user's construction and completion reports must be retained accurately.")
         expected = set(approved)
         require({image.get("src") for image in document.images} == expected
                 and all(image.get("alt") for image in document.images), "Image links or accessible captions differ.")
@@ -138,8 +141,10 @@ def main():
         "capture_dates_inferred": False, "protected_input_hashes_unchanged": len(baseline["files"]),
         "prior_design_media_and_photo_hashes_unchanged": len(progress_baseline["files"]),
         "inputs_sha256": {path.relative_to(ROOT).as_posix(): sha(path) for path in sources},
-        "physical_evidence": "User-reported nameplate/base/front-module construction and September24 partial lower-face assembly photographs. Purple/yellow are observed photo colors, not changes to the design's magenta/green palette.",
-        "formal_physical_validation": "NOT_PROVIDED", "full_figure_completion": "NOT_CONFIRMED",
+        "physical_evidence": "User-reported construction through September25 completion, with photographs showing the closed upper goggle frame and purple crown. Purple/yellow are observed photo colors, not changes to the design's magenta/green palette.",
+        "formal_physical_validation": "NOT_PROVIDED",
+        "full_figure_completion": "USER_REPORTED_WITH_COMPLETION_PHOTOS",
+        "individual_150_part_inspection": "NOT_PROVIDED",
         "photo_to_STL_and_slicer_revision_match": "NOT_CONFIRMED",
     }
     args.report.parent.mkdir(parents=True, exist_ok=True)

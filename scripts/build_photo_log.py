@@ -25,9 +25,16 @@ PHOTO_BATCHES = (
         "described_stages": 4,
         "reported_date": "2026-09-24",
     },
+    {
+        "directory": "docs/images/build-log-2026-09-25",
+        "manifest_sha256": "8eb650fbd40b126206568a23e5df42dbc1a2a4e679bb2ce2ee1a47ad941e1159",
+        "photo_count": 8,
+        "described_stages": 4,
+        "reported_date": "2026-09-25",
+    },
 )
-PROGRESS_ANCHOR = "progress-2026-09-24"
-JOURNAL_TITLE = "Bの制作記録 — 文字試作・土台から顔下部の途中まで"
+PROGRESS_ANCHOR = "progress-2026-09-25"
+JOURNAL_TITLE = "Bの制作記録 — 文字試作・土台から完成まで"
 
 
 def approved_photos():

@@ -38,6 +38,7 @@ EXTRA_STYLE = """
 .site-nav{display:flex;flex-wrap:wrap;gap:10px 22px;padding:14px 0;border-bottom:1px solid #c9d4dc;margin-bottom:28px}
 .site-nav a{font-weight:650;text-decoration:none}.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:center}
 .hero h1{font-size:clamp(30px,5vw,52px)}.hero img{max-height:420px;margin:auto;border:0}
+.hero figure{margin:0}.hero figcaption{font-size:13px;color:#506375;text-align:center;margin-top:10px}
 .eyebrow{font-size:13px;letter-spacing:.12em;color:#006d75;font-weight:750}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
 .card{padding:22px;border:1px solid #c9d4dc;border-radius:12px;background:#fff}.card h2{border:0;margin:0 0 12px;padding:0;font-size:21px}
 .button{display:inline-block;padding:10px 18px;border-radius:7px;background:#006d75;color:white;font-weight:700;text-decoration:none}
@@ -139,8 +140,8 @@ class SiteBuilder:
             f"<title>{escape(title)} | 個人Bの作り方</title><style>{STYLE}{EXTRA_STYLE}</style></head><body>"
             '<a class="skip" href="#content">本文へ</a><main>'
             + self.navigation(output) + '<article id="content">' + body + "</article>"
-            + '<footer>個人向けBの公開案内です。写真は台座・前面と顔下部の途中記録で、上部ゴーグル・頭頂を含む全体完成や保持・強度の合格を示しません。'
-            '配布形状はNOT_SLICED。公開内容は第三者にコピー・保存され得ます。'
+            + '<footer>個人向けBの公開案内です。9/25にゴーグル・頭頂までの完成写真と本人の完成報告が届きました。'
+            '制作の完成と、寸法・荷重・耐久等の測定記録は分けています。公開内容は第三者にコピー・保存され得ます。'
             f'<p>配信元: <a href="https://github.com/{REPO}/commit/{self.commit}">{self.commit[:12]}</a></p>'
             "</footer></main></body></html>\n"
         )
@@ -163,6 +164,7 @@ class SiteBuilder:
         hero = self.asset("docs/images/B-hero.png")
         photograph = self.asset("docs/images/build-log-2026-09-23/front-modules-installed.jpg")
         latest_photo = self.asset("docs/images/build-log-2026-09-24/face-top-row.jpg")
+        completed_photo = self.asset("docs/images/build-log-2026-09-25/finished-portrait.jpg")
         body = (
             '<section class="hero"><div><p class="eyebrow">B DESK CLASSIC / PERSONAL BUILD GUIDE</p>'
             '<h1>つくる過程も、<br>贈る楽しみに。</h1>'
@@ -170,25 +172,31 @@ class SiteBuilder:
             '閲覧にGitHubへのログインやアプリのインストールは不要です。</p>'
             '<p><a class="button" href="guide/index.html">3Dで工程を見る</a></p>'
             '<p class="small">Same icon, New adventures<br>github.com/tomokota</p></div>'
-            f'<img src="{hero}" alt="個人銘板入りBの設計完成イメージ。実物写真ではない"></section>'
+            f'<figure><a href="docs/BUILD-LOG.html#{PROGRESS_ANCHOR}"><img src="{completed_photo}" '
+            'alt="9/25の実物完成写真。ゴーグル上枠と紫の頭頂、個人銘板付き台座までそろった姿。背景処理済み"></a>'
+            '<figcaption>実物の完成写真 · 2026-09-25報告<br>背景を切り取り・マスク処理しています。</figcaption></figure></section>'
             '<section class="cards" aria-label="見る順番">'
             '<div class="card"><h2>1. どこに付く部品？</h2><p>刷った3MFと部品を選び、取付位置を確認。1個ずつ再生できます。</p>'
             '<a href="guide/index.html">3D工程へ →</a></div>'
             '<div class="card"><h2>2. 作り方を読む</h2><p>別PCでの保存、少量試作、色替え、台座からの組立・分解まで。</p>'
             '<a href="docs/PRINTING.html">印刷の仕方 →</a><br><a href="docs/ASSEMBLY.html">組立の仕方 →</a></div>'
-            '<div class="card"><h2>3. 制作の記録を見る</h2><p>文字の試作から、土台、顔下部の組立途中まで。日付別に報告と実写真を記録しています。</p>'
+            '<div class="card"><h2>3. 制作の記録を見る</h2><p>文字の試作から、土台、顔、ゴーグルを組んで完成へ。日付別に報告と実写真を記録しています。</p>'
             '<a href="docs/BUILD-LOG.html">写真付きの記録へ →</a></div></section>'
             '<div class="note"><strong>最初の台座はblack-01ではありません。</strong>'
             '<p>B-black-02.3mfのslot3にある大きな1枚がB-001です。印刷順と組立順を分けて案内します。</p></div>'
-            f'<div class="note"><strong>2026-09-24：顔下部の途中写真7枚を追記しました。</strong>'
-            f'<p><a href="docs/BUILD-LOG.html#{PROGRESS_ANCHOR}">紫の輪郭・黄色い縦2列までの途中記録を見る →</a></p>'
-            '<p class="small">写真の紫・黄色は実物の観察です。設計データのマゼンタ・緑は変更していません。上部ゴーグル・頭頂・全体完成は未確認です。</p></div>'
-            f'<a href="docs/BUILD-LOG.html#{PROGRESS_ANCHOR}"><img src="{latest_photo}" alt="9/24の途中記録。黒い顔下部、紫色の輪郭と黄色い縦2列が見える。上部ゴーグル・頭頂はまだない"></a>'
+            '<div class="note"><strong>2026-09-25：ついに完成。「これで完成ですね」とご報告いただきました。</strong>'
+            f'<p><a href="docs/BUILD-LOG.html#{PROGRESS_ANCHOR}">ゴーグルの組立から、上枠と紫の頭頂がそろった完成写真へ →</a></p>'
+            '<p class="small">新しい制作過程と完成の8枚を追記。前の16枚も、各日の記録として残しています。</p></div>'
+            '<h2>9/24の記録：顔下部の途中</h2>'
+            f'<a href="docs/BUILD-LOG.html#progress-2026-09-24"><img src="{latest_photo}" alt="9/24時点の顔下部。黒い層と紫色の輪郭、黄色い縦2列が見える途中写真"></a>'
             '<h2>9/23の記録：土台と前面まで</h2>'
             f'<a href="docs/BUILD-LOG.html"><img src="{photograph}" alt="2行銘板と右ロゴ付きの台座。ユーザー提供の実写真"></a>'
             '<p>2026-09-23の本人報告と写真です。顔・ゴーグルを含む全体完成や、使用ファイルの版・寸法・保持力の実測を証明する写真ではありません。</p>'
             '<h2>このBについて</h2><p>設計上は150部品、黒い5段台座、独立した銘板と右ロゴ。'
             '文字銘板は2行を維持し、下段10 mm・白い浮彫1.2 mmへ改訂しています。</p>'
+            f'<details><summary>設計の完成CGを見る（実物写真とは別）</summary><img src="{hero}" '
+            'alt="設計上の配色によるBの完成CG。上の実物写真ではない">'
+            '<p class="small">既存の設計CGです。実制作の紫・黄色に合わせた再生成はしていません。</p></details>'
             '<p><a href="docs/NAMEPLATE-V2.html">銘板の比較と小試験片</a> ／ '
             '<a href="docs/FILES.html">全ファイルと部品の対応</a> ／ <a href="docs/STEPS.html">全28工程</a></p>'
             '<p class="small">模型の寸法は変えていません。印刷は配布データのmm・100%を維持し、'

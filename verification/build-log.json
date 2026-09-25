@@ -6,8 +6,8 @@
   "browser_execution": "NOT_RUN_ENVIRONMENT",
   "browser_limitation": "Not run locally for this update because earlier local browser launches failed. No additional launch workarounds are attempted. The current approved public Pages workflow separately runs Linux HTTP and file checks; this static report does not claim that browser result.",
   "follow_up": "Use the current Linux Pages workflow browser result; when the local environment is available this verifier can also run without --static-only.",
-  "report_date": "2026-09-24",
-  "photo_count": 16,
+  "report_date": "2026-09-25",
+  "photo_count": 24,
   "photo_batches": [
     {
       "reported_date": "2026-09-23",
@@ -16,11 +16,15 @@
     {
       "reported_date": "2026-09-24",
       "photo_count": 7
+    },
+    {
+      "reported_date": "2026-09-25",
+      "photo_count": 8
     }
   ],
-  "described_stages": 9,
-  "latest_progress_anchor": "progress-2026-09-24",
-  "guide_entry_sha256": "986f0fef64d837eb28546046223177ac17878efa1f6ee176bdd2e409fb2fcb6d",
+  "described_stages": 13,
+  "latest_progress_anchor": "progress-2026-09-25",
+  "guide_entry_sha256": "ccb2924cc8e05c36cb3c93bc6bc9f05ffff3843d17d8613d9ea68c1a78962e41",
   "guide_base_sha256": "451fa61cd36b1772fb5f96baef971ff3d4c809874d31f26f6a475056b4c86c1c",
   "prior_unchanged_3d_report_reference": "verification/guide-browser.json",
   "all_image_files_decoded": true,
@@ -35,12 +39,13 @@
   "photo_metadata": "RGB single-frame JPEG; JFIF only",
   "capture_dates_inferred": false,
   "protected_input_hashes_unchanged": 61,
-  "prior_design_media_and_photo_hashes_unchanged": 147,
+  "prior_design_media_and_photo_hashes_unchanged": 155,
   "inputs_sha256": {
-    "docs/BUILD-LOG.md": "69cc6995970eb9d48e531133555b6a2214653efc650c411c690d06ea135859a6",
-    "docs/BUILD-LOG.html": "76375c2abcb5fbf90bfc9fdc5b0b21267cab1ade485bf41c2b5655badeff004a",
+    "docs/BUILD-LOG.md": "bcfac517a3857565e4bf8f4f447451c9aae1dc0415cf8f553646a9beadad908c",
+    "docs/BUILD-LOG.html": "60db10e091525bc07de71e9c9c04d3fd612323e52485e8a46b8c7e9d9c5ff079",
     "docs/images/build-log-2026-09-23/manifest.json": "7c7f87ac43ae37208c0a50ca52a933f57b26d4797ab81c716a4aee6d28993d47",
     "docs/images/build-log-2026-09-24/manifest.json": "86759288e06b747fa864441547329aa5dc107a69e8c8ca77552b3356343284f8",
+    "docs/images/build-log-2026-09-25/manifest.json": "8eb650fbd40b126206568a23e5df42dbc1a2a4e679bb2ce2ee1a47ad941e1159",
     "docs/images/build-log-2026-09-23/lettering-first.jpg": "6390159dda947ca90bb8409424cf3a8f1f0281e5112fdd572606c7c843a715d9",
     "docs/images/build-log-2026-09-23/lettering-follow-up.jpg": "ae85f195bc2a4c9b5f9478cb22ecaf411d78599568fdc8e3f0c2953f53a3e154",
     "docs/images/build-log-2026-09-23/base-overview.jpg": "163bf413b35610a9ca6a2fc61067eeb61a4873975deccd3469dc5ca6ed3f0a54",
@@ -56,10 +61,19 @@
     "docs/images/build-log-2026-09-24/lower-face-wide.jpg": "4a2c7729bd8c84050f00a232cefb0d91793bcc079cc2084a0054bf6c7e872d09",
     "docs/images/build-log-2026-09-24/face-eye-strips.jpg": "9a03e7bf43e4cd16ae505758c69e417c3c6fd2bbeaff616b0914679dbb0e994f",
     "docs/images/build-log-2026-09-24/face-top-row.jpg": "6c3366739e33cd92da3c22f2ba46f0840b328bf070ffc6919896470dccfa46e7",
-    "docs/images/build-log-2026-09-24/face-top-row-angle.jpg": "a499bcb5d895778fea9578a2c4485917fecdc63185d5585c6469efed3c94fb31"
+    "docs/images/build-log-2026-09-24/face-top-row-angle.jpg": "a499bcb5d895778fea9578a2c4485917fecdc63185d5585c6469efed3c94fb31",
+    "docs/images/build-log-2026-09-25/goggle-lower-band.jpg": "b2060158e550777ae81b9392fcea994863fea0af831b89560ea68cf7c489126f",
+    "docs/images/build-log-2026-09-25/goggle-first-row.jpg": "336956bb31ad3015b88fbaa1661d5a4b9e1c30941c2307a5c747cc5e084f0c55",
+    "docs/images/build-log-2026-09-25/goggle-growing.jpg": "eb426f1a7e2aa4da0d4b1b44415d58e469bfd79e49c256e96dfbc18b15b0bbb8",
+    "docs/images/build-log-2026-09-25/goggle-midway.jpg": "6c415dea39d12747df5ada1d3ee183b2d83078605f023b90f7138e48adae89f1",
+    "docs/images/build-log-2026-09-25/goggle-higher.jpg": "e0a66b67c740456fb62eb86db9bf850887016979055a2f2dad332a9d5b2579ab",
+    "docs/images/build-log-2026-09-25/goggle-near-top.jpg": "075830b007173e1949e0c3cc9277b96037b36dc0b7220aefc500aaadce6bda06",
+    "docs/images/build-log-2026-09-25/goggle-before-closure.jpg": "10ead812933bcf7d43c880320c54852b211618a4e98aa25241f74301ac32dceb",
+    "docs/images/build-log-2026-09-25/finished-portrait.jpg": "9eb201b47ca73366cb5905149d2327e0f7229744d0147fa21570bd597d27b77a"
   },
-  "physical_evidence": "User-reported nameplate/base/front-module construction and September24 partial lower-face assembly photographs. Purple/yellow are observed photo colors, not changes to the design's magenta/green palette.",
+  "physical_evidence": "User-reported construction through September25 completion, with photographs showing the closed upper goggle frame and purple crown. Purple/yellow are observed photo colors, not changes to the design's magenta/green palette.",
   "formal_physical_validation": "NOT_PROVIDED",
-  "full_figure_completion": "NOT_CONFIRMED",
+  "full_figure_completion": "USER_REPORTED_WITH_COMPLETION_PHOTOS",
+  "individual_150_part_inspection": "NOT_PROVIDED",
   "photo_to_STL_and_slicer_revision_match": "NOT_CONFIRMED"
 }

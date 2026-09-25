@@ -265,9 +265,10 @@ def write_indexes():
             "reported_through": PHOTO_BATCHES[-1]["reported_date"],
             "photo_count": sum(batch["photo_count"] for batch in PHOTO_BATCHES),
             "latest_progress_anchor": PROGRESS_ANCHOR,
-            "observed_milestone": "nameplate trial, base/front modules and partial lower-face assembly; upper goggles and crown not documented",
+            "observed_milestone": "construction through the closed goggle top and purple crown, with the user's September25 completion report and photographs",
             "formal_physical_validation": "NOT_PROVIDED",
-            "full_model_completion": "NOT_CONFIRMED",
+            "full_model_completion": "USER_REPORTED_WITH_COMPLETION_PHOTOS",
+            "individual_150_part_inspection": "NOT_PROVIDED",
             "photo_input_revision_hash_match": "NOT_CONFIRMED",
         },
         "lettering_sample": {

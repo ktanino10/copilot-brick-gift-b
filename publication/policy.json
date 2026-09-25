@@ -8,7 +8,7 @@
   "authorization": "The user explicitly approved changing this repository from private to public after repository-history exposure was explained, and requested a recipient-facing GitHub Pages guide.",
   "personal_content_authorized": [
     "The existing two-line recipient nameplate and current display meshes",
-    "The nine earlier approved build photographs and the separately approved seven September24 in-progress photographs; all cropped and metadata-stripped",
+    "The earlier nine build photographs, seven September24 in-progress photographs, and eight September25 construction/completion photographs; each batch separately approved, cropped and metadata-stripped",
     "Current instructions, assembly guide and design artifacts already tracked in this repository"
   ],
   "additional_photo_authorization": {
@@ -16,6 +16,12 @@
     "photo_count": 7,
     "scope": "Append the user's in-progress assembly record to this existing public personal site with the nameplate text retained; remove background computer screens and capture metadata. The generic site's derivatives are separately masked and are not copied here.",
     "does_not_authorize": "Raw attachments, original filenames, private transformation source maps, inferred physical qualification, or design/color changes."
+  },
+  "completion_photo_authorization": {
+    "date": "2026-09-25",
+    "photo_count": 8,
+    "scope": "Append the user's construction photographs and completion report to both existing build journals. Retain recipient lettering on this site; generic derivatives conceal the personal URL. Remove background computer screens and capture metadata.",
+    "does_not_authorize": "Raw/source-map publication, transfer of recipient derivatives to the generic repository, MakerWorld/Release distribution, design changes, or inferred150-part inspection/measurement qualification."
   },
   "remain_local_and_excluded": [
     "Original photo attachments and their EXIF/source filenames",

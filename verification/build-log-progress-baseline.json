@@ -1,6 +1,6 @@
 {
-  "baseline_commit": "57796a3a064af548da5a618e3b4c50e9ea786274",
-  "purpose": "9/24 photo/documentation update: protect all original images/drawings/3D runtime, print/native/input data and earlier photos",
+  "baseline_commit": "1c51537da5b29bb9796e6ed568181e8e5c17362c",
+  "purpose": "9/25 completion photo/documentation append: protect all original inputs/native/BOM/placements, drawings,3D runtime and media, and both prior photo batches",
   "files": {
     "docs/images/B-base-front.png": "c7b2b1c453030e09122ecce6951fda9b2e7ae57e3a7d89729e6e9b6770e682b8",
     "docs/images/B-front-release.png": "2d2398909d4300a4a035d360845dfd44149bd6f36c5303d377fa739775f82278",
@@ -21,6 +21,14 @@
     "docs/images/build-log-2026-09-23/lettering-follow-up.jpg": "ae85f195bc2a4c9b5f9478cb22ecaf411d78599568fdc8e3f0c2953f53a3e154",
     "docs/images/build-log-2026-09-23/manifest.json": "7c7f87ac43ae37208c0a50ca52a933f57b26d4797ab81c716a4aee6d28993d47",
     "docs/images/build-log-2026-09-23/right-logo-installed.jpg": "a407341c0d094b79f1ea37284682def7df7f388c2b73e8a3263735814ccfd831",
+    "docs/images/build-log-2026-09-24/face-eye-strips.jpg": "9a03e7bf43e4cd16ae505758c69e417c3c6fd2bbeaff616b0914679dbb0e994f",
+    "docs/images/build-log-2026-09-24/face-top-row-angle.jpg": "a499bcb5d895778fea9578a2c4485917fecdc63185d5585c6469efed3c94fb31",
+    "docs/images/build-log-2026-09-24/face-top-row.jpg": "6c3366739e33cd92da3c22f2ba46f0840b328bf070ffc6919896470dccfa46e7",
+    "docs/images/build-log-2026-09-24/first-purple-row.jpg": "d60b48484cdd6460c5f828253b85afa970c6db9e5afaea9bb3074ba70d0413e1",
+    "docs/images/build-log-2026-09-24/lower-face-detail.jpg": "33b873aab83ffca026a4710eed1dab46f87ebb874e87c9524e5ae9001b419c59",
+    "docs/images/build-log-2026-09-24/lower-face-wide.jpg": "4a2c7729bd8c84050f00a232cefb0d91793bcc079cc2084a0054bf6c7e872d09",
+    "docs/images/build-log-2026-09-24/lower-face.jpg": "e0c71f4482c4995db27f452e76f850774c4521e5ac92683cdaec9dffd35a915e",
+    "docs/images/build-log-2026-09-24/manifest.json": "86759288e06b747fa864441547329aa5dc107a69e8c8ca77552b3356343284f8",
     "docs/images/nameplate-front.png": "f6d8d4a57eeeb4f8e83677cf2c0db5cee1f72ebf2b9456a329c110167e65f2ab",
     "docs/images/nameplate-front.svg": "4bcee3f1028d4e2f299551fc22b23b874413b5cc9fae5c8fa9d6f7ea6f79b5b8",
     "docs/images/nameplate-print-orientation.svg": "c35f6fc18aad1b05cee59b0c3a19c08b34558cddb4922cb9d7c34230d91637e2",
