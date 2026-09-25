@@ -17,9 +17,9 @@ def player_state(frame):
       const video = document.querySelector('video');
       const player = document.querySelector('#movie_player');
       const data = typeof player?.getVideoData === 'function' ? player.getVideoData() : null;
-      const error = document.querySelector('.ytp-error-content-wrap');
-      const playSelector = ['.ytp-large-play-button', '.ytp-play-button',
-        'button[aria-label="Play"]', 'button[aria-label="再生"]'].find(selector => {
+      const error = document.querySelector('.ytp-error-content-wrap,ytm-player-error-message-renderer,[role="alert"]');
+      const playSelector = ['.ytmCuedOverlayPlayButton', '.ytp-large-play-button', '.ytp-play-button',
+        'button[aria-label="Play video"]', 'button[aria-label="Play"]', 'button[aria-label="再生"]'].find(selector => {
           const button = document.querySelector(selector);
           return button && button.getClientRects().length && !button.disabled;
         }) || null;
