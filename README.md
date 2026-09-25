@@ -11,8 +11,8 @@
 [制作過程と完成の写真8枚](docs/BUILD-LOG.md#progress-2026-09-25)を追記しています。
 前の16枚も残し、文字の試作から完成までを24枚の実写真でたどれます。
 写真の紫・黄色は実制作の配色で、設計色や印刷データは変更していません。
-[印刷後の超音波洗浄の参考動画](docs/BUILD-LOG.md#post-processing-ultrasonic-2026-09-25)も、
-ユーザー提供のYouTubeリンクとして追記しました（視聴にはネット接続が必要です）。
+[印刷後の超音波洗浄をページ内で見る](https://ktanino10.github.io/copilot-brick-gift-b/docs/BUILD-LOG.html#post-processing-ultrasonic-2026-09-25)。
+ユーザー提供の参考動画をWeb版のYouTubeプレイヤーで再生できます（ネット接続が必要、自動再生なし）。
 
 **2026-09-22承認：文字銘板を読みやすい版へ更新しました。**
 1行目12 mmを維持して孔・字間を広げ、2行目10 mm、白い浮彫1.2 mmにしています。

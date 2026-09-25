@@ -6,7 +6,7 @@ import unittest
 from unittest.mock import patch
 
 import build_photo_log
-from verify_build_log import JournalDocument, USER_VIDEO_URL, verify_user_video_link
+from verify_build_log import JournalDocument, USER_VIDEO_PAGE_URL, USER_VIDEO_URL, verify_user_video_link
 
 
 class ApprovedPhotoBatchTests(unittest.TestCase):
@@ -62,14 +62,19 @@ class UserVideoLinkTests(unittest.TestCase):
 
     def test_exact_safe_user_link_is_allowed(self):
         verify_user_video_link(self.document(
+            f'<a href="{USER_VIDEO_PAGE_URL}" target="_blank" rel="noopener noreferrer">Web player</a>'
             f'<a href="{USER_VIDEO_URL}" target="_blank" rel="noopener noreferrer">YouTube</a>'
         ))
 
     def test_missing_safety_or_changed_tracking_url_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "safe new-tab"):
-            verify_user_video_link(self.document(f'<a href="{USER_VIDEO_URL}" target="_blank">YouTube</a>'))
+            verify_user_video_link(self.document(
+                f'<a href="{USER_VIDEO_PAGE_URL}" target="_blank" rel="noopener noreferrer">Web player</a>'
+                f'<a href="{USER_VIDEO_URL}" target="_blank">YouTube</a>'
+            ))
         with self.assertRaisesRegex(ValueError, "exact"):
             verify_user_video_link(self.document(
+                f'<a href="{USER_VIDEO_PAGE_URL}" target="_blank" rel="noopener noreferrer">Web player</a>'
                 f'<a href="{USER_VIDEO_URL}?tracking=1" target="_blank" rel="noopener noreferrer">YouTube</a>'
             ))
 

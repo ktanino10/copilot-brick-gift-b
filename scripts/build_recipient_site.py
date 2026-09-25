@@ -15,6 +15,10 @@ import markdown
 from markdown.extensions.toc import slugify_unicode
 
 from build_photo_log import PHOTO_BATCHES, PROGRESS_ANCHOR, STYLE, approved_photos
+from user_video import (
+    USER_VIDEO_EMBED_ORIGIN, USER_VIDEO_EMBED_URL, USER_VIDEO_FRAME_ID,
+    USER_VIDEO_PLACEHOLDER, USER_VIDEO_TITLE,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = "ktanino10/copilot-brick-gift-b"
@@ -44,6 +48,8 @@ EXTRA_STYLE = """
 .button{display:inline-block;padding:10px 18px;border-radius:7px;background:#006d75;color:white;font-weight:700;text-decoration:none}
 .note{padding:16px 20px;border-left:4px solid #dd7247;background:#fff4e9;margin:24px 0}.small{font-size:14px;color:#506375}
 .skip{position:absolute;left:-10000px}.skip:focus{position:static}
+.user-video{width:100%;max-width:900px;aspect-ratio:16/9;margin:20px 0;background:#172433}
+.user-video iframe{display:block;width:100%;height:100%;border:0}
 @media(max-width:720px){.hero,.cards{grid-template-columns:1fr}.hero img{max-height:330px}.site-nav{gap:8px 14px}.card{padding:17px}}
 """
 
@@ -130,13 +136,17 @@ class SiteBuilder:
         ) + "</nav>"
 
     def document(self, output, title, body):
+        has_video = output == "docs/BUILD-LOG.html"
+        referrer = "strict-origin-when-cross-origin" if has_video else "no-referrer"
+        frame_policy = f"frame-src {USER_VIDEO_EMBED_ORIGIN}; " if has_video else ""
         content = (
             '<!doctype html><html lang="ja"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1">'
-            '<meta name="referrer" content="no-referrer">'
+            f'<meta name="referrer" content="{referrer}">'
             '<meta http-equiv="Content-Security-Policy" content="default-src \'none\'; '
             'img-src \'self\' data:; style-src \'unsafe-inline\'; connect-src \'none\'; '
-            'object-src \'none\'; base-uri \'none\'; form-action \'none\'">'
+            'object-src \'none\'; base-uri \'none\'; form-action \'none\'; '
+            f'{frame_policy}">'
             f"<title>{escape(title)} | 個人Bの作り方</title><style>{STYLE}{EXTRA_STYLE}</style></head><body>"
             '<a class="skip" href="#content">本文へ</a><main>'
             + self.navigation(output) + '<article id="content">' + body + "</article>"
@@ -154,13 +164,26 @@ class SiteBuilder:
                                      extension_configs={"toc": {"slugify": slugify_unicode}})
             rewriter = LinkRewriter(self, source, output)
             rewriter.feed(body)
+            rendered = "".join(rewriter.result)
+            if output == "docs/BUILD-LOG.html":
+                if rendered.count(USER_VIDEO_PLACEHOLDER) != 1:
+                    raise ValueError("Expected exactly one user-video placeholder in the photo journal.")
+                embed = (
+                    '<div id="user-video-player" class="user-video">'
+                    f'<iframe id="{USER_VIDEO_FRAME_ID}" name="{USER_VIDEO_FRAME_ID}" '
+                    f'src="{USER_VIDEO_EMBED_URL}" title="{escape(USER_VIDEO_TITLE, quote=True)}" '
+                    'width="560" height="315" loading="lazy" '
+                    'referrerpolicy="strict-origin-when-cross-origin" '
+                    'allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>'
+                )
+                rendered = rendered.replace(USER_VIDEO_PLACEHOLDER, embed, 1)
             intro = (
                 '<p class="note">このWeb版はURLからそのまま閲覧できます。'
                 f'<a href="{relative(output, "guide/index.html")}">3D工程を開く</a> ／ '
                 f'<a href="https://github.com/{REPO}/blob/{self.commit}/downloads/B-personal-print-kit.zip">'
                 '印刷キットを保存</a>。キットを保存した場合は展開してから使います。</p>'
             )
-            self.emit(output, self.document(output, title, intro + "".join(rewriter.result)), source)
+            self.emit(output, self.document(output, title, intro + rendered), source)
         hero = self.asset("docs/images/B-hero.png")
         photograph = self.asset("docs/images/build-log-2026-09-23/front-modules-installed.jpg")
         latest_photo = self.asset("docs/images/build-log-2026-09-24/face-top-row.jpg")

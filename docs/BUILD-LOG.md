@@ -264,15 +264,24 @@
 
 公開タイトル：**3Dプリント後のパーツを超音波洗浄｜Ultrasonic Cleaning of 3D-Printed Parts**
 
-<a href="https://youtu.be/Lc_enNE3nng" target="_blank" rel="noopener noreferrer">YouTubeで動画を見る（新しいタブ）</a>
+<div id="user-video-player"></div>
+
+Web版では、この場所のYouTubeプレイヤーの**▶を押してページ内で再生**できます。自動再生はしません。
+**視聴にはインターネット接続が必要です。** プレイヤーの読み込み・視聴時にはYouTubeへ通信し、
+環境により同意や接続の確認が表示されることがあります。
+
+GitHub上のMarkdownや保存したオフライン記録からは、
+<a href="https://ktanino10.github.io/copilot-brick-gift-b/docs/BUILD-LOG.html#post-processing-ultrasonic-2026-09-25" target="_blank" rel="noopener noreferrer">Web版のページ内プレイヤーで見る</a>。
+ファイルを直接開いた場合も写真と3Dは通信不要のままで、動画だけはWeb版で視聴してください。
+
+<a href="https://youtu.be/Lc_enNE3nng" target="_blank" rel="noopener noreferrer">埋込みで再生できない場合はYouTubeで開く（補助リンク・新しいタブ）</a>
 
 ユーザーから「3D Print後の超音波洗浄」として紹介された、実制作の参考動画です。
 洗浄条件や結果をこちらで確認したものではなく、必須の印刷手順や検証済みの洗浄レシピではありません。
 上の写真に洗浄の様子が写っているという意味でもありません。
 
-**視聴にはインターネット接続が必要です。** 保存したオフライン記録でも、
-このリンクを選んだときだけ外部のYouTubeを開きます。
-動画やサムネイルは同梱・再配信せず、このページの表示だけではYouTubeへ通信しません。
+動画本体やサムネイルのファイルをキットへコピー・再配信していません。
+保存版には外部プレイヤーを埋め込まず、オフラインの写真読込みをYouTubeへ依存させていません。
 
 ## 学びと、次に残る確認
 

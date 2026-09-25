@@ -14,13 +14,20 @@ from PIL import Image
 
 from build_recipient_site import PAGE_SOURCES, ROOT, SiteBuilder
 from build_photo_log import PROGRESS_ANCHOR
-from verify_build_log import USER_VIDEO_ANCHOR, USER_VIDEO_URL
+from user_video import (
+    USER_VIDEO_ANCHOR, USER_VIDEO_EMBED_ORIGIN, USER_VIDEO_EMBED_URL,
+    USER_VIDEO_FRAME_ID, USER_VIDEO_TITLE, USER_VIDEO_URL,
+)
 
 
 class Document(HTMLParser):
-    def __init__(self):
+    def __init__(self, allow_user_video=False):
         super().__init__()
         self.links, self.ids, self.images = [], set(), []
+        self.allow_user_video = allow_user_video
+        self.frames = []
+        self.csp = None
+        self.referrer = None
 
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
@@ -36,7 +43,20 @@ class Document(HTMLParser):
         if tag == "img":
             self.images.append(attrs["src"])
             self.links.append(attrs["src"])
-        if tag in ("iframe", "object", "embed", "form", "base"):
+        if tag == "meta":
+            if attrs.get("http-equiv", "").lower() == "content-security-policy":
+                self.csp = attrs.get("content")
+            if attrs.get("name", "").lower() == "referrer":
+                self.referrer = attrs.get("content")
+        if tag == "iframe":
+            if (not self.allow_user_video or attrs.get("src") != USER_VIDEO_EMBED_URL
+                    or attrs.get("id") != USER_VIDEO_FRAME_ID or attrs.get("name") != USER_VIDEO_FRAME_ID
+                    or attrs.get("title") != USER_VIDEO_TITLE
+                    or attrs.get("referrerpolicy") != "strict-origin-when-cross-origin"
+                    or "allowfullscreen" not in attrs or "autoplay" in attrs.get("allow", "")):
+                raise ValueError("Only the exact authorized, non-autoplay YouTube iframe is permitted in the public video section.")
+            self.frames.append(attrs)
+        if tag in ("object", "embed", "form", "base"):
             raise ValueError(f"Unexpected active site tag:{tag}")
 
 
@@ -67,7 +87,7 @@ def verify(root):
                 if image.getexif() or set(image.info) - {"jfif", "jfif_version", "jfif_unit", "jfif_density"}:
                     raise ValueError("Unexpected photograph metadata.")
         if path.suffix == ".html":
-            document = Document()
+            document = Document(allow_user_video=name == "docs/BUILD-LOG.html")
             document.feed(data.decode())
             documents[name] = document
     checked_links = 0
@@ -96,6 +116,13 @@ def verify(root):
         raise ValueError("Do not break the previous dated journal link.")
     if USER_VIDEO_ANCHOR not in log.ids or log.links.count(USER_VIDEO_URL) != 1:
         raise ValueError("The exact user-provided video reference is missing or duplicated.")
+    directives = {words[0]: words[1:] for directive in (log.csp or "").split(";")
+                  if (words := directive.split())}
+    if (len(log.frames) != 1 or directives.get("frame-src") != [USER_VIDEO_EMBED_ORIGIN]
+            or directives.get("connect-src") != ["'none'"]
+            or directives.get("default-src") != ["'none'"]
+            or log.referrer != "strict-origin-when-cross-origin"):
+        raise ValueError("The public video page must retain the least-scope frame CSP and compatible referrer policy.")
     log_text = (root / "docs/BUILD-LOG.html").read_text()
     if "これで完成ですね" not in log_text or "制作過程の写真です" not in log_text:
         raise ValueError("The current journal must include the user's actual completion and construction reports.")
@@ -106,7 +133,8 @@ def verify(root):
         raise ValueError("The completion photo must be labeled as an actual photograph, not a CG.")
     return {"status": "PASS_STATIC", "files": len(actual), "relative_links": checked_links,
             "photo_count": len(expected_photos), "latest_progress_anchor": PROGRESS_ANCHOR,
-            "source_commit": manifest["source_commit"]}
+            "source_commit": manifest["source_commit"],
+            "public_video_iframe": USER_VIDEO_EMBED_URL, "autoplay": False}
 
 
 def browser_check(root):
@@ -131,14 +159,31 @@ def browser_check(root):
     worker = threading.Thread(target=server.serve_forever, daemon=True)
     worker.start()
     base = f"http://127.0.0.1:{server.server_port}{prefix}/"
-    errors, failures, external = [], [], []
+    errors, failures, external, video_requests, video_failures = [], [], [], [], []
+
+    def is_video_request(request):
+        if request.url == USER_VIDEO_EMBED_URL:
+            return True
+        frame = request.frame
+        while frame:
+            if frame.name == USER_VIDEO_FRAME_ID:
+                return True
+            frame = frame.parent_frame
+        return False
+
+    def request_started(request):
+        if request.url.startswith("http") and not request.url.startswith(base):
+            (video_requests if is_video_request(request) else external).append(request.url)
+
+    def request_failed(request):
+        (video_failures if is_video_request(request) else failures).append(request.url)
     try:
         with sync_playwright() as playwright:
             browser = playwright.chromium.launch(headless=True)
-            page = browser.new_page(viewport={"width": 1280, "height": 960})
+            page = browser.new_context(viewport={"width": 1280, "height": 960}, service_workers="block").new_page()
             page.on("pageerror", lambda error: errors.append(str(error)))
-            page.on("requestfailed", lambda request: failures.append(request.url))
-            page.on("request", lambda request: external.append(request.url) if request.url.startswith("http") and not request.url.startswith(base) else None)
+            page.on("requestfailed", request_failed)
+            page.on("request", request_started)
             page.goto(base, wait_until="load")
             page.locator('img[src="docs/images/build-log-2026-09-25/finished-portrait.jpg"]').click()
             page.locator(f"#{PROGRESS_ANCHOR}").wait_for(state="attached")
@@ -163,6 +208,11 @@ def browser_check(root):
                 page.set_viewport_size({"width": 390, "height": 844})
                 if not page.evaluate("() => document.documentElement.scrollWidth <= innerWidth+1"):
                     raise ValueError(f"Mobile overflow:{path}")
+            iframe = page.locator("#" + USER_VIDEO_FRAME_ID)
+            iframe.scroll_into_view_if_needed()
+            box = iframe.bounding_box()
+            if box is None or box["width"] > 390 or abs(box["width"] / box["height"] - 16 / 9) > .01:
+                raise ValueError("The inline player does not fit the mobile page at16:9.")
             browser.close()
     finally:
         server.shutdown()
@@ -173,7 +223,11 @@ def browser_check(root):
     return {"browser": "PASS", "first_base": "B-black-02.3mf#3 -> B-001",
             "photographs_loaded": expected_count, "latest_progress_anchor": PROGRESS_ANCHOR,
             "completion_photo_navigation": True,
-            "page_errors": 0, "external_requests": 0, "mobile_overflow": False}
+            "page_errors": 0, "unexpected_parent_external_requests": 0,
+            "authorized_video_frame_requests": len(video_requests),
+            "authorized_video_frame_failed_requests": len(video_failures),
+            "video_playback": "SEPARATE_LIVE_CHECK_REQUIRED",
+            "mobile_overflow": False, "responsive_video_frame": True}
 
 
 if __name__ == "__main__":

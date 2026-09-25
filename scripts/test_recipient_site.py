@@ -3,6 +3,8 @@ import tempfile
 import unittest
 
 from build_recipient_site import SiteBuilder
+from verify_recipient_site import Document
+from user_video import USER_VIDEO_EMBED_URL, USER_VIDEO_FRAME_ID, USER_VIDEO_TITLE
 
 
 class RecipientSiteTests(unittest.TestCase):
@@ -34,6 +36,23 @@ class RecipientSiteTests(unittest.TestCase):
             self.site.url("https://example.invalid/photo.jpg", "docs/BUILD-LOG.md", "docs/BUILD-LOG.html", active=True)
         with self.assertRaisesRegex(ValueError, "escapes"):
             self.site.url("../../outside.jpg", "docs/BUILD-LOG.md", "docs/BUILD-LOG.html", active=True)
+
+    def test_only_the_explicit_public_video_frame_is_permitted(self):
+        markup = (f'<iframe id="{USER_VIDEO_FRAME_ID}" name="{USER_VIDEO_FRAME_ID}" '
+                  f'src="{USER_VIDEO_EMBED_URL}" title="{USER_VIDEO_TITLE}" '
+                  'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>')
+        document = Document(allow_user_video=True)
+        document.feed(markup)
+        self.assertEqual(len(document.frames), 1)
+        with self.assertRaisesRegex(ValueError, "authorized"):
+            Document().feed(markup)
+        for invalid in (
+            markup.replace("playsinline=1", "autoplay=1"),
+            markup.replace("youtube-nocookie.com", "example.invalid"),
+            markup.replace("strict-origin-when-cross-origin", "no-referrer"),
+        ):
+            with self.assertRaisesRegex(ValueError, "authorized"):
+                Document(allow_user_video=True).feed(invalid)
 
 
 if __name__ == "__main__":

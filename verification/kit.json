@@ -27,7 +27,7 @@
     "github.com/tomokota"
   ],
   "native_reopen_report": "verification/native.json",
-  "relative_links_checked": 770,
+  "relative_links_checked": 769,
   "zip_duplicate_members": 0,
   "offline_guide": {
     "entry": "guide/index.html",
