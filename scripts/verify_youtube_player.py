@@ -18,11 +18,21 @@ def player_state(frame):
       const player = document.querySelector('#movie_player');
       const data = typeof player?.getVideoData === 'function' ? player.getVideoData() : null;
       const error = document.querySelector('.ytp-error-content-wrap');
-      const button = document.querySelector('.ytp-large-play-button');
+      const playSelector = ['.ytp-large-play-button', '.ytp-play-button',
+        'button[aria-label="Play"]', 'button[aria-label="再生"]'].find(selector => {
+          const button = document.querySelector(selector);
+          return button && button.getClientRects().length && !button.disabled;
+        }) || null;
       return {
         playerDetected: Boolean(player), videoId: data?.video_id ?? null,
         advertisement: Boolean(player?.classList.contains('ad-showing')),
-        playButton: Boolean(button && button.getClientRects().length),
+        playButton: Boolean(playSelector), playSelector,
+        visibleControls: [...document.querySelectorAll('button,[role="button"]')]
+          .filter(button => button.getClientRects().length)
+          .map(button => ({
+            label: button.getAttribute('aria-label') || button.getAttribute('title') || button.textContent.trim(),
+            className: String(button.className)
+          })).slice(0, 20),
         errorText: error?.innerText?.trim() || '',
         video: video ? {
           currentTime: video.currentTime, paused: video.paused,
@@ -94,7 +104,7 @@ def main():
             raise ValueError("Video playback started without a user gesture.")
         if observed and observed["playButton"] and not observed["errorText"]:
             try:
-                frame.locator(".ytp-large-play-button").click(timeout=5000)
+                frame.locator(observed["playSelector"]).first.click(timeout=5000)
                 report["play_attempted"] = True
             except BrowserTimeout:
                 report["playback_status"] = "PLAY_CONTROL_NOT_ACTIONABLE"
