@@ -46,10 +46,10 @@ macOSで複数ブラウザの起動を繰り返したり、権限・停止機構
 印刷／native／図面／3D媒体／旧写真のhashと照合します。
 最新の直行リンクは`BUILD-LOG.html#progress-2026-09-25`です。9/24のanchorも維持します。
 
-超音波洗浄の参考動画は公開Pagesの該当小節だけに公式`youtube-nocookie.com`プレイヤーを埋め込みます。
+3Dプリントと超音波洗浄の動画は公開Pagesの各小節だけに、別々の公式`youtube-nocookie.com`プレイヤーを埋め込みます。
 保存版の写真ログにはiframeを入れず、オンラインの同小節への案内と補助リンクだけを残します。
 公開ページだけが限定した`frame-src`とreferrer設定を持ち、写真・3D自体のオフライン条件は変えません。
-Pages配信後に`verify_youtube_player.py`が実プレイヤー表示と通常の再生操作を観察します。
+Pages配信後に`verify_youtube_player.py`が2本の実プレイヤー表示と通常の再生・停止操作をまとめて観察します。
 YouTube側の同意・アクセス・動画提供の制限は正確な表示とともに記録し、
 iframeの存在や見た目だけを再生成功と扱いません。
 

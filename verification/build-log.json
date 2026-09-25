@@ -41,8 +41,8 @@
   "protected_input_hashes_unchanged": 61,
   "prior_design_media_and_photo_hashes_unchanged": 155,
   "inputs_sha256": {
-    "docs/BUILD-LOG.md": "4ea2acfbab8e6aaad97e6fcaf5102156348857266509d5238da55927f8bcd854",
-    "docs/BUILD-LOG.html": "2f901ebf0b7948e324c1876806b91a589045169834087f8a73b74e70aa7e28ff",
+    "docs/BUILD-LOG.md": "ba0132069aa4a6b264d041e19660e2e30538f455715e633f7de4ab644c2eff4e",
+    "docs/BUILD-LOG.html": "f68f90cae09a02ddf992fb3449af7b08e3143642ee6244e4278d01254fd20ca7",
     "docs/images/build-log-2026-09-23/manifest.json": "7c7f87ac43ae37208c0a50ca52a933f57b26d4797ab81c716a4aee6d28993d47",
     "docs/images/build-log-2026-09-24/manifest.json": "86759288e06b747fa864441547329aa5dc107a69e8c8ca77552b3356343284f8",
     "docs/images/build-log-2026-09-25/manifest.json": "8eb650fbd40b126206568a23e5df42dbc1a2a4e679bb2ce2ee1a47ad941e1159",
@@ -76,14 +76,26 @@
   "full_figure_completion": "USER_REPORTED_WITH_COMPLETION_PHOTOS",
   "individual_150_part_inspection": "NOT_PROVIDED",
   "photo_to_STL_and_slicer_revision_match": "NOT_CONFIRMED",
-  "user_provided_video": {
-    "url": "https://youtu.be/Lc_enNE3nng",
-    "anchor": "post-processing-ultrasonic-2026-09-25",
-    "requires_network_to_watch": true,
-    "public_web_player": "https://ktanino10.github.io/copilot-brick-gift-b/docs/BUILD-LOG.html#post-processing-ultrasonic-2026-09-25",
-    "embedded_in_offline_document": false,
-    "public_pages_embed_requested": true,
-    "downloaded_or_rehosted": false,
-    "conditions_or_results_independently_verified": false
-  }
+  "user_provided_videos": [
+    {
+      "url": "https://youtu.be/sinN3dKGwRg",
+      "anchor": "printing-video-2026-09-25",
+      "requires_network_to_watch": true,
+      "public_web_player": "https://ktanino10.github.io/copilot-brick-gift-b/docs/BUILD-LOG.html#printing-video-2026-09-25",
+      "embedded_in_offline_document": false,
+      "public_pages_embed_requested": true,
+      "downloaded_or_rehosted": false,
+      "conditions_or_results_independently_verified": false
+    },
+    {
+      "url": "https://youtu.be/Lc_enNE3nng",
+      "anchor": "post-processing-ultrasonic-2026-09-25",
+      "requires_network_to_watch": true,
+      "public_web_player": "https://ktanino10.github.io/copilot-brick-gift-b/docs/BUILD-LOG.html#post-processing-ultrasonic-2026-09-25",
+      "embedded_in_offline_document": false,
+      "public_pages_embed_requested": true,
+      "downloaded_or_rehosted": false,
+      "conditions_or_results_independently_verified": false
+    }
+  ]
 }

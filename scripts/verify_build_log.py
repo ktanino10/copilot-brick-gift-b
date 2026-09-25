@@ -12,7 +12,7 @@ from playwright.sync_api import sync_playwright
 
 from build_log_navigation import NAVIGATION, canonical_guide_hash
 from build_photo_log import PHOTO_BATCHES, PROGRESS_ANCHOR, ROOT, approved_photos
-from user_video import USER_VIDEO_ANCHOR, USER_VIDEO_PAGE_URL, USER_VIDEO_URL
+from user_video import ONLINE_VIDEO_LINKS, USER_VIDEOS
 
 
 def require(condition, message):
@@ -52,9 +52,8 @@ class JournalDocument(HTMLParser):
 
 
 def verify_user_video_link(document):
-    require(len(document.external_links) == 2
-            and set(document.external_links) == {USER_VIDEO_PAGE_URL, USER_VIDEO_URL},
-            "Only the exact Web-player and user-provided fallback links are allowed in the offline journal.")
+    require(tuple(document.external_links) == ONLINE_VIDEO_LINKS,
+            "Only the exact ordered Web-player and fallback links are allowed in the offline journal.")
     for attrs in document.external_link_attributes:
         require(attrs.get("target") == "_blank"
                 and {"noopener", "noreferrer"} <= set(attrs.get("rel", "").split()),
@@ -93,7 +92,7 @@ def main():
         require("progress-2026-09-24" in document.ids, "The earlier dated progress link must remain valid.")
         require("これで完成ですね" in content and "制作過程の写真です" in content,
                 "The user's construction and completion reports must be retained accurately.")
-        require(USER_VIDEO_ANCHOR in document.ids
+        require(all(item["anchor"] in document.ids for item in USER_VIDEOS)
                 and "視聴にはインターネット接続が必要です" in content,
                 "The user video must retain its online-only notice and stable section anchor.")
         verify_user_video_link(document)
@@ -101,7 +100,7 @@ def main():
         require({image.get("src") for image in document.images} == expected
                 and all(image.get("alt") for image in document.images), "Image links or accessible captions differ.")
         for link in document.links:
-            if link in (USER_VIDEO_URL, USER_VIDEO_PAGE_URL):
+            if link in ONLINE_VIDEO_LINKS:
                 continue
             if link:
                 target, _, fragment = link.partition("#")
@@ -167,12 +166,12 @@ def main():
         "full_figure_completion": "USER_REPORTED_WITH_COMPLETION_PHOTOS",
         "individual_150_part_inspection": "NOT_PROVIDED",
         "photo_to_STL_and_slicer_revision_match": "NOT_CONFIRMED",
-        "user_provided_video": {
-            "url": USER_VIDEO_URL, "anchor": USER_VIDEO_ANCHOR, "requires_network_to_watch": True,
-            "public_web_player": USER_VIDEO_PAGE_URL, "embedded_in_offline_document": False,
+        "user_provided_videos": [{
+            "url": item["url"], "anchor": item["anchor"], "requires_network_to_watch": True,
+            "public_web_player": item["page_url"], "embedded_in_offline_document": False,
             "public_pages_embed_requested": True, "downloaded_or_rehosted": False,
             "conditions_or_results_independently_verified": False,
-        },
+        } for item in USER_VIDEOS],
     }
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")

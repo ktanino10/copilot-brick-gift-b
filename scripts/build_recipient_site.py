@@ -15,10 +15,7 @@ import markdown
 from markdown.extensions.toc import slugify_unicode
 
 from build_photo_log import PHOTO_BATCHES, PROGRESS_ANCHOR, STYLE, approved_photos
-from user_video import (
-    USER_VIDEO_EMBED_ORIGIN, USER_VIDEO_EMBED_URL, USER_VIDEO_FRAME_ID,
-    USER_VIDEO_PLACEHOLDER, USER_VIDEO_TITLE,
-)
+from user_video import CLEANING_VIDEO, PRINTING_VIDEO, USER_VIDEO_EMBED_ORIGIN, USER_VIDEOS
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = "ktanino10/copilot-brick-gift-b"
@@ -43,7 +40,7 @@ EXTRA_STYLE = """
 .site-nav a{font-weight:650;text-decoration:none}.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:center}
 .hero h1{font-size:clamp(30px,5vw,52px)}.hero img{max-height:420px;margin:auto;border:0}
 .hero figure{margin:0}.hero figcaption{font-size:13px;color:#506375;text-align:center;margin-top:10px}
-.eyebrow{font-size:13px;letter-spacing:.12em;color:#006d75;font-weight:750}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
+.eyebrow{font-size:13px;letter-spacing:.12em;color:#006d75;font-weight:750}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin:28px 0}
 .card{padding:22px;border:1px solid #c9d4dc;border-radius:12px;background:#fff}.card h2{border:0;margin:0 0 12px;padding:0;font-size:21px}
 .button{display:inline-block;padding:10px 18px;border-radius:7px;background:#006d75;color:white;font-weight:700;text-decoration:none}
 .note{padding:16px 20px;border-left:4px solid #dd7247;background:#fff4e9;margin:24px 0}.small{font-size:14px;color:#506375}
@@ -166,17 +163,18 @@ class SiteBuilder:
             rewriter.feed(body)
             rendered = "".join(rewriter.result)
             if output == "docs/BUILD-LOG.html":
-                if rendered.count(USER_VIDEO_PLACEHOLDER) != 1:
-                    raise ValueError("Expected exactly one user-video placeholder in the photo journal.")
-                embed = (
-                    '<div id="user-video-player" class="user-video">'
-                    f'<iframe id="{USER_VIDEO_FRAME_ID}" name="{USER_VIDEO_FRAME_ID}" '
-                    f'src="{USER_VIDEO_EMBED_URL}" title="{escape(USER_VIDEO_TITLE, quote=True)}" '
-                    'width="560" height="315" loading="lazy" '
-                    'referrerpolicy="strict-origin-when-cross-origin" '
-                    'allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>'
-                )
-                rendered = rendered.replace(USER_VIDEO_PLACEHOLDER, embed, 1)
+                for item in USER_VIDEOS:
+                    if rendered.count(item["placeholder"]) != 1:
+                        raise ValueError("Expected one placeholder for each exact user video.")
+                    embed = (
+                        f'<div id="{item["placeholder_id"]}" class="user-video">'
+                        f'<iframe id="{item["frame_id"]}" name="{item["frame_id"]}" '
+                        f'src="{item["embed_url"]}" title="{escape(item["title"], quote=True)}" '
+                        'width="560" height="315" loading="lazy" '
+                        'referrerpolicy="strict-origin-when-cross-origin" '
+                        'allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>'
+                    )
+                    rendered = rendered.replace(item["placeholder"], embed, 1)
             intro = (
                 '<p class="note">このWeb版はURLからそのまま閲覧できます。'
                 f'<a href="{relative(output, "guide/index.html")}">3D工程を開く</a> ／ '
@@ -198,13 +196,19 @@ class SiteBuilder:
             f'<figure><a href="docs/BUILD-LOG.html#{PROGRESS_ANCHOR}"><img src="{completed_photo}" '
             'alt="9/25の実物完成写真。ゴーグル上枠と紫の頭頂、個人銘板付き台座までそろった姿。背景処理済み"></a>'
             '<figcaption>実物の完成写真 · 2026-09-25報告<br>背景を切り取り・マスク処理しています。</figcaption></figure></section>'
-            '<section class="cards" aria-label="見る順番">'
-            '<div class="card"><h2>1. どこに付く部品？</h2><p>刷った3MFと部品を選び、取付位置を確認。1個ずつ再生できます。</p>'
-            '<a href="guide/index.html">3D工程へ →</a></div>'
-            '<div class="card"><h2>2. 作り方を読む</h2><p>別PCでの保存、少量試作、色替え、台座からの組立・分解まで。</p>'
-            '<a href="docs/PRINTING.html">印刷の仕方 →</a><br><a href="docs/ASSEMBLY.html">組立の仕方 →</a></div>'
-            '<div class="card"><h2>3. 制作の記録を見る</h2><p>文字の試作から、土台、顔、ゴーグルを組んで完成へ。日付別に報告と実写真を記録しています。</p>'
-            '<a href="docs/BUILD-LOG.html">写真付きの記録へ →</a></div></section>'
+            '<h2>今回の制作の5工程</h2>'
+            '<section class="cards" aria-label="企画から組み立てまでの5工程">'
+            '<div class="card"><h2>1. 企画</h2><p>贈って飾る模型の形・用途・大きさを考える。</p>'
+            '<a href="docs/BUILD-LOG.html#process-planning">企画・仕様へ →</a></div>'
+            '<div class="card"><h2>2. 設計</h2><p>FreeCADの分割・取付け、設計CG、図面と銘板改良。</p>'
+            '<a href="docs/BUILD-LOG.html#process-design">設計資料へ →</a></div>'
+            '<div class="card"><h2>3. 3Dプリント</h2><p>設計したパーツを印刷。ユーザー提供動画をページ内で再生。</p>'
+            f'<a href="docs/BUILD-LOG.html#{PRINTING_VIDEO["anchor"]}">印刷動画へ →</a></div>'
+            '<div class="card"><h2>4. 超音波洗浄</h2><p>今回の印刷後の後処理。ページ内の動画で見る。</p>'
+            f'<a href="docs/BUILD-LOG.html#{CLEANING_VIDEO["anchor"]}">洗浄動画へ →</a></div>'
+            '<div class="card"><h2>5. アッセンブリー</h2><p>土台から顔・ゴーグルを積み上げて完成へ。</p>'
+            '<a href="docs/BUILD-LOG.html#process-assembly">実写真と3D工程へ →</a></div></section>'
+            '<p class="small">ユーザーが示した今回の制作フローです。写真の日付記録は保持し、未提示の印刷・洗浄条件を補っていません。</p>'
             '<div class="note"><strong>最初の台座はblack-01ではありません。</strong>'
             '<p>B-black-02.3mfのslot3にある大きな1枚がB-001です。印刷順と組立順を分けて案内します。</p></div>'
             '<div class="note"><strong>2026-09-25：ついに完成。「これで完成ですね」とご報告いただきました。</strong>'

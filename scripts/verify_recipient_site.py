@@ -14,10 +14,7 @@ from PIL import Image
 
 from build_recipient_site import PAGE_SOURCES, ROOT, SiteBuilder
 from build_photo_log import PROGRESS_ANCHOR
-from user_video import (
-    USER_VIDEO_ANCHOR, USER_VIDEO_EMBED_ORIGIN, USER_VIDEO_EMBED_URL,
-    USER_VIDEO_FRAME_ID, USER_VIDEO_TITLE, USER_VIDEO_URL,
-)
+from user_video import ONLINE_VIDEO_LINKS, USER_VIDEO_EMBED_ORIGIN, USER_VIDEOS
 
 
 class Document(HTMLParser):
@@ -35,7 +32,7 @@ class Document(HTMLParser):
             self.ids.add(attrs["id"])
         if tag == "a" and "href" in attrs:
             self.links.append(attrs["href"])
-            if attrs["href"] == USER_VIDEO_URL and (
+            if attrs["href"] in ONLINE_VIDEO_LINKS and (
                 attrs.get("target") != "_blank"
                 or not {"noopener", "noreferrer"} <= set(attrs.get("rel", "").split())
             ):
@@ -49,9 +46,9 @@ class Document(HTMLParser):
             if attrs.get("name", "").lower() == "referrer":
                 self.referrer = attrs.get("content")
         if tag == "iframe":
-            if (not self.allow_user_video or attrs.get("src") != USER_VIDEO_EMBED_URL
-                    or attrs.get("id") != USER_VIDEO_FRAME_ID or attrs.get("name") != USER_VIDEO_FRAME_ID
-                    or attrs.get("title") != USER_VIDEO_TITLE
+            item = next((video for video in USER_VIDEOS if video["frame_id"] == attrs.get("id")), None)
+            if (not self.allow_user_video or item is None or attrs.get("src") != item["embed_url"]
+                    or attrs.get("name") != item["frame_id"] or attrs.get("title") != item["title"]
                     or attrs.get("referrerpolicy") != "strict-origin-when-cross-origin"
                     or "allowfullscreen" not in attrs or "autoplay" in attrs.get("allow", "")):
                 raise ValueError("Only the exact authorized, non-autoplay YouTube iframe is permitted in the public video section.")
@@ -114,11 +111,12 @@ def verify(root):
         raise ValueError("The latest dated progress anchor is missing from the public page.")
     if "progress-2026-09-24" not in log.ids:
         raise ValueError("Do not break the previous dated journal link.")
-    if USER_VIDEO_ANCHOR not in log.ids or log.links.count(USER_VIDEO_URL) != 1:
-        raise ValueError("The exact user-provided video reference is missing or duplicated.")
+    if any(item["anchor"] not in log.ids or log.links.count(item["url"]) != 1 for item in USER_VIDEOS):
+        raise ValueError("An exact user-provided video reference is missing or duplicated.")
     directives = {words[0]: words[1:] for directive in (log.csp or "").split(";")
                   if (words := directive.split())}
-    if (len(log.frames) != 1 or directives.get("frame-src") != [USER_VIDEO_EMBED_ORIGIN]
+    if ([frame["src"] for frame in log.frames] != [item["embed_url"] for item in USER_VIDEOS]
+            or directives.get("frame-src") != [USER_VIDEO_EMBED_ORIGIN]
             or directives.get("connect-src") != ["'none'"]
             or directives.get("default-src") != ["'none'"]
             or log.referrer != "strict-origin-when-cross-origin"):
@@ -131,10 +129,17 @@ def verify(root):
         raise ValueError("The landing page is missing the authorized actual completion photograph.")
     if "実物の完成写真" not in (root / "index.html").read_text():
         raise ValueError("The completion photo must be labeled as an actual photograph, not a CG.")
+    process_anchors = ("process-planning", "process-design", USER_VIDEOS[0]["anchor"],
+                       USER_VIDEOS[1]["anchor"], "process-assembly")
+    homepage = (root / "index.html").read_text()
+    positions = [homepage.find(f'docs/BUILD-LOG.html#{anchor}') for anchor in process_anchors]
+    if any(position < 0 for position in positions) or positions != sorted(positions):
+        raise ValueError("The process navigation must follow planning, design, printing, cleaning, assembly.")
     return {"status": "PASS_STATIC", "files": len(actual), "relative_links": checked_links,
             "photo_count": len(expected_photos), "latest_progress_anchor": PROGRESS_ANCHOR,
             "source_commit": manifest["source_commit"],
-            "public_video_iframe": USER_VIDEO_EMBED_URL, "autoplay": False}
+            "public_video_iframes": [item["embed_url"] for item in USER_VIDEOS], "autoplay": False,
+            "process_order": ["企画", "設計", "3Dプリント", "超音波洗浄", "アッセンブリー"]}
 
 
 def browser_check(root):
@@ -162,11 +167,11 @@ def browser_check(root):
     errors, failures, external, video_requests, video_failures = [], [], [], [], []
 
     def is_video_request(request):
-        if request.url == USER_VIDEO_EMBED_URL:
+        if request.url in {item["embed_url"] for item in USER_VIDEOS}:
             return True
         frame = request.frame
         while frame:
-            if frame.name == USER_VIDEO_FRAME_ID:
+            if frame.name in {item["frame_id"] for item in USER_VIDEOS}:
                 return True
             frame = frame.parent_frame
         return False
@@ -208,11 +213,12 @@ def browser_check(root):
                 page.set_viewport_size({"width": 390, "height": 844})
                 if not page.evaluate("() => document.documentElement.scrollWidth <= innerWidth+1"):
                     raise ValueError(f"Mobile overflow:{path}")
-            iframe = page.locator("#" + USER_VIDEO_FRAME_ID)
-            iframe.scroll_into_view_if_needed()
-            box = iframe.bounding_box()
-            if box is None or box["width"] > 390 or abs(box["width"] / box["height"] - 16 / 9) > .01:
-                raise ValueError("The inline player does not fit the mobile page at16:9.")
+            for item in USER_VIDEOS:
+                iframe = page.locator("#" + item["frame_id"])
+                iframe.scroll_into_view_if_needed()
+                box = iframe.bounding_box()
+                if box is None or box["width"] > 390 or abs(box["width"] / box["height"] - 16 / 9) > .01:
+                    raise ValueError("An inline player does not fit the mobile page at16:9.")
             browser.close()
     finally:
         server.shutdown()

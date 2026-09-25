@@ -4,7 +4,7 @@ import unittest
 
 from build_recipient_site import SiteBuilder
 from verify_recipient_site import Document
-from user_video import USER_VIDEO_EMBED_URL, USER_VIDEO_FRAME_ID, USER_VIDEO_TITLE
+from user_video import CLEANING_VIDEO, PRINTING_VIDEO, USER_VIDEOS
 
 
 class RecipientSiteTests(unittest.TestCase):
@@ -38,12 +38,16 @@ class RecipientSiteTests(unittest.TestCase):
             self.site.url("../../outside.jpg", "docs/BUILD-LOG.md", "docs/BUILD-LOG.html", active=True)
 
     def test_only_the_explicit_public_video_frame_is_permitted(self):
-        markup = (f'<iframe id="{USER_VIDEO_FRAME_ID}" name="{USER_VIDEO_FRAME_ID}" '
-                  f'src="{USER_VIDEO_EMBED_URL}" title="{USER_VIDEO_TITLE}" '
-                  'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>')
+        markup = "".join(
+            f'<iframe id="{item["frame_id"]}" name="{item["frame_id"]}" '
+            f'src="{item["embed_url"]}" title="{item["title"]}" '
+            'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+            for item in USER_VIDEOS
+        )
         document = Document(allow_user_video=True)
         document.feed(markup)
-        self.assertEqual(len(document.frames), 1)
+        self.assertEqual([frame["src"] for frame in document.frames],
+                         [PRINTING_VIDEO["embed_url"], CLEANING_VIDEO["embed_url"]])
         with self.assertRaisesRegex(ValueError, "authorized"):
             Document().feed(markup)
         for invalid in (
