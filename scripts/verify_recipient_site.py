@@ -14,6 +14,7 @@ from PIL import Image
 
 from build_recipient_site import PAGE_SOURCES, ROOT, SiteBuilder
 from build_photo_log import PROGRESS_ANCHOR
+from verify_build_log import USER_VIDEO_ANCHOR, USER_VIDEO_URL
 
 
 class Document(HTMLParser):
@@ -27,6 +28,11 @@ class Document(HTMLParser):
             self.ids.add(attrs["id"])
         if tag == "a" and "href" in attrs:
             self.links.append(attrs["href"])
+            if attrs["href"] == USER_VIDEO_URL and (
+                attrs.get("target") != "_blank"
+                or not {"noopener", "noreferrer"} <= set(attrs.get("rel", "").split())
+            ):
+                raise ValueError("The user video needs safe new-tab attributes.")
         if tag == "img":
             self.images.append(attrs["src"])
             self.links.append(attrs["src"])
@@ -88,6 +94,8 @@ def verify(root):
         raise ValueError("The latest dated progress anchor is missing from the public page.")
     if "progress-2026-09-24" not in log.ids:
         raise ValueError("Do not break the previous dated journal link.")
+    if USER_VIDEO_ANCHOR not in log.ids or log.links.count(USER_VIDEO_URL) != 1:
+        raise ValueError("The exact user-provided video reference is missing or duplicated.")
     log_text = (root / "docs/BUILD-LOG.html").read_text()
     if "これで完成ですね" not in log_text or "制作過程の写真です" not in log_text:
         raise ValueError("The current journal must include the user's actual completion and construction reports.")

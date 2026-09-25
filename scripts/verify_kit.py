@@ -23,7 +23,7 @@ from build_print_kit import ARCHIVE, REVISION, ROOT, payload_files
 from verify_guide_mapping import verify_embedded, verify_mapping
 from verify_offline_html import verify_file as verify_offline_html
 from build_log_navigation import canonical_guide_hash
-from verify_build_log import JournalDocument
+from verify_build_log import JournalDocument, USER_VIDEO_URL, verify_user_video_link
 from build_photo_log import PHOTO_BATCHES, PROGRESS_ANCHOR
 
 NS = {"m": "http://schemas.microsoft.com/3dmanufacturing/core/2015/02"}
@@ -251,7 +251,10 @@ def verify_package():
         require("guide/index.html" in names, "ZIP is missing the offline 3D guide entry.")
         journal = JournalDocument()
         journal.feed(archive.read("docs/BUILD-LOG.html").decode("utf-8"))
+        verify_user_video_link(journal)
         for link in journal.links + [image["src"] for image in journal.images]:
+            if link == USER_VIDEO_URL:
+                continue
             path = link.split("#")[0]
             target = posixpath.normpath(posixpath.join("docs", path)) if path else "docs/BUILD-LOG.html"
             require(target in names, f"Offline journal target is missing from ZIP:{target}")

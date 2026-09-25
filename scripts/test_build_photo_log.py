@@ -6,6 +6,7 @@ import unittest
 from unittest.mock import patch
 
 import build_photo_log
+from verify_build_log import JournalDocument, USER_VIDEO_URL, verify_user_video_link
 
 
 class ApprovedPhotoBatchTests(unittest.TestCase):
@@ -51,6 +52,30 @@ class ApprovedPhotoBatchTests(unittest.TestCase):
         (self.directory / "source-map.json").write_text("{}")
         with self.assertRaisesRegex(ValueError, "Only approved photos"):
             self.read()
+
+
+class UserVideoLinkTests(unittest.TestCase):
+    def document(self, link):
+        document = JournalDocument()
+        document.feed(link)
+        return document
+
+    def test_exact_safe_user_link_is_allowed(self):
+        verify_user_video_link(self.document(
+            f'<a href="{USER_VIDEO_URL}" target="_blank" rel="noopener noreferrer">YouTube</a>'
+        ))
+
+    def test_missing_safety_or_changed_tracking_url_is_rejected(self):
+        with self.assertRaisesRegex(ValueError, "safe new-tab"):
+            verify_user_video_link(self.document(f'<a href="{USER_VIDEO_URL}" target="_blank">YouTube</a>'))
+        with self.assertRaisesRegex(ValueError, "exact"):
+            verify_user_video_link(self.document(
+                f'<a href="{USER_VIDEO_URL}?tracking=1" target="_blank" rel="noopener noreferrer">YouTube</a>'
+            ))
+
+    def test_automatic_video_embed_is_rejected(self):
+        with self.assertRaisesRegex(ValueError, "passive"):
+            self.document('<iframe src="https://www.youtube.com/embed/Lc_enNE3nng"></iframe>')
 
 
 if __name__ == "__main__":

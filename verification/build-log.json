@@ -41,8 +41,8 @@
   "protected_input_hashes_unchanged": 61,
   "prior_design_media_and_photo_hashes_unchanged": 155,
   "inputs_sha256": {
-    "docs/BUILD-LOG.md": "bcfac517a3857565e4bf8f4f447451c9aae1dc0415cf8f553646a9beadad908c",
-    "docs/BUILD-LOG.html": "60db10e091525bc07de71e9c9c04d3fd612323e52485e8a46b8c7e9d9c5ff079",
+    "docs/BUILD-LOG.md": "256c6e9e1a509d16411290223c05c2b061c45216893f8f44528e7fe492d99c1e",
+    "docs/BUILD-LOG.html": "f7553f1596ce190aac6f725cbeca648fdc14f5b21353a2b6f06212490a3defbd",
     "docs/images/build-log-2026-09-23/manifest.json": "7c7f87ac43ae37208c0a50ca52a933f57b26d4797ab81c716a4aee6d28993d47",
     "docs/images/build-log-2026-09-24/manifest.json": "86759288e06b747fa864441547329aa5dc107a69e8c8ca77552b3356343284f8",
     "docs/images/build-log-2026-09-25/manifest.json": "8eb650fbd40b126206568a23e5df42dbc1a2a4e679bb2ce2ee1a47ad941e1159",
@@ -75,5 +75,13 @@
   "formal_physical_validation": "NOT_PROVIDED",
   "full_figure_completion": "USER_REPORTED_WITH_COMPLETION_PHOTOS",
   "individual_150_part_inspection": "NOT_PROVIDED",
-  "photo_to_STL_and_slicer_revision_match": "NOT_CONFIRMED"
+  "photo_to_STL_and_slicer_revision_match": "NOT_CONFIRMED",
+  "user_provided_video": {
+    "url": "https://youtu.be/Lc_enNE3nng",
+    "anchor": "post-processing-ultrasonic-2026-09-25",
+    "requires_network_to_watch": true,
+    "embedded": false,
+    "downloaded_or_rehosted": false,
+    "conditions_or_results_independently_verified": false
+  }
 }

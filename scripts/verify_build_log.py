@@ -13,6 +13,9 @@ from playwright.sync_api import sync_playwright
 from build_log_navigation import NAVIGATION, canonical_guide_hash
 from build_photo_log import PHOTO_BATCHES, PROGRESS_ANCHOR, ROOT, approved_photos
 
+USER_VIDEO_URL = "https://youtu.be/Lc_enNE3nng"
+USER_VIDEO_ANCHOR = "post-processing-ultrasonic-2026-09-25"
+
 
 def require(condition, message):
     if not condition:
@@ -28,6 +31,8 @@ class JournalDocument(HTMLParser):
         super().__init__()
         self.images = []
         self.links = []
+        self.external_links = []
+        self.external_link_attributes = []
         self.stage_headings = 0
         self.ids = set()
 
@@ -39,10 +44,22 @@ class JournalDocument(HTMLParser):
             self.images.append(attrs)
         if tag == "a" and "href" in attrs:
             self.links.append(attrs["href"])
+            if attrs["href"].startswith(("http:", "https:", "//")):
+                self.external_links.append(attrs["href"])
+                self.external_link_attributes.append(attrs)
         if tag == "h3":
             self.stage_headings += 1
         if "id" in attrs:
             self.ids.add(attrs["id"])
+
+
+def verify_user_video_link(document):
+    require(document.external_links == [USER_VIDEO_URL],
+            "Only one exact user-provided online video link is allowed in the journal.")
+    attrs = document.external_link_attributes[0]
+    require(attrs.get("target") == "_blank"
+            and {"noopener", "noreferrer"} <= set(attrs.get("rel", "").split()),
+            "The video link needs safe new-tab attributes.")
 
 
 def main():
@@ -77,11 +94,16 @@ def main():
         require("progress-2026-09-24" in document.ids, "The earlier dated progress link must remain valid.")
         require("これで完成ですね" in content and "制作過程の写真です" in content,
                 "The user's construction and completion reports must be retained accurately.")
+        require(USER_VIDEO_ANCHOR in document.ids and document.external_links == [USER_VIDEO_URL]
+                and "視聴にはインターネット接続が必要です" in content,
+                "The user-provided video must remain one explicit online-only reference link.")
+        verify_user_video_link(document)
         expected = set(approved)
         require({image.get("src") for image in document.images} == expected
                 and all(image.get("alt") for image in document.images), "Image links or accessible captions differ.")
         for link in document.links:
-            require(not link.startswith(("http:", "https:", "//")), "The offline journal should use local links.")
+            if link == USER_VIDEO_URL:
+                continue
             if link:
                 target, _, fragment = link.partition("#")
                 require((ROOT / "docs" / target).resolve().is_file() if target else fragment in document.ids,
@@ -146,6 +168,11 @@ def main():
         "full_figure_completion": "USER_REPORTED_WITH_COMPLETION_PHOTOS",
         "individual_150_part_inspection": "NOT_PROVIDED",
         "photo_to_STL_and_slicer_revision_match": "NOT_CONFIRMED",
+        "user_provided_video": {
+            "url": USER_VIDEO_URL, "anchor": USER_VIDEO_ANCHOR, "requires_network_to_watch": True,
+            "embedded": False, "downloaded_or_rehosted": False,
+            "conditions_or_results_independently_verified": False,
+        },
     }
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
