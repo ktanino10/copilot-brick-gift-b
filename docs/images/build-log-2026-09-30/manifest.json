@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-09-30",
+  "date_note": "Journal addition date in JST, not a verified capture date.",
+  "user_reports_ja": [
+    "こちらはブロックを変えてCLI風にしたものになります。"
+  ],
+  "publication_authorization": "The user requested adding this one photograph to ktanino10/copilot-brick-gift-b and its existing GitHub Pages guide. No other photograph or publication target is included.",
+  "copyright": "User-supplied photograph. Journal publication permission does not create a blanket redistribution license.",
+  "evidence_boundary": "A user-described CLI-style block arrangement, distinct from the standard distributed B model. The photograph does not establish exact part or STL correspondence, fit, strength, durability or stability.",
+  "scope": "recipient CLI-style arrangement photograph",
+  "photos": [
+    {
+      "id": "cli-style-arrangement",
+      "path": "cli-style-arrangement.jpg",
+      "pixels": [
+        1205,
+        1600
+      ],
+      "size_bytes": 405668,
+      "sha256": "04e8f22eaa1d0f095c028c636cffb2ffda143a9061193a26464ed37813c4dfe1",
+      "caption_ja": "ブロックを変更してCLI風にアレンジした実物。シアンのゴーグル枠、黒い顔、マゼンタの輪郭と緑色の目。標準配布モデルとは異なるアレンジ例。",
+      "reported_date": "2026-09-30",
+      "capture_date": null,
+      "stage": "cli-style-arrangement",
+      "edits": [
+        "only the background monitor lettering region replaced with opaque dark pixels",
+        "model appearance left unretouched; no cropping or reconstruction",
+        "resized to a 1600-pixel long edge and encoded as RGB JPEG",
+        "embedded metadata removed; original image left unchanged"
+      ]
+    }
+  ]
+}

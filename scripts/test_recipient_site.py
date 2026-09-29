@@ -3,6 +3,7 @@ import tempfile
 import unittest
 
 from build_recipient_site import SiteBuilder
+from build_photo_log import CLI_ARRANGEMENT_ANCHOR, PROGRESS_ANCHOR
 from verify_recipient_site import Document
 from user_video import CLEANING_VIDEO, PRINTING_VIDEO, USER_VIDEOS
 
@@ -36,6 +37,21 @@ class RecipientSiteTests(unittest.TestCase):
             self.site.url("https://example.invalid/photo.jpg", "docs/BUILD-LOG.md", "docs/BUILD-LOG.html", active=True)
         with self.assertRaisesRegex(ValueError, "escapes"):
             self.site.url("../../outside.jpg", "docs/BUILD-LOG.md", "docs/BUILD-LOG.html", active=True)
+
+    def test_cli_photo_is_additive_and_uses_project_relative_links(self):
+        self.site.build()
+        log = Document(allow_user_video=True)
+        log.feed((self.site.output / "docs/BUILD-LOG.html").read_text())
+        self.assertEqual(len(log.images), 25)
+        self.assertIn("images/build-log-2026-09-25/finished-portrait.jpg", log.images)
+        self.assertIn("images/build-log-2026-09-30/cli-style-arrangement.jpg", log.images)
+        self.assertTrue({PROGRESS_ANCHOR, CLI_ARRANGEMENT_ANCHOR, "progress-2026-09-24"} <= log.ids)
+        homepage = Document()
+        homepage.feed((self.site.output / "index.html").read_text())
+        self.assertIn(f"docs/BUILD-LOG.html#{CLI_ARRANGEMENT_ANCHOR}", homepage.links)
+        self.assertIn("docs/images/build-log-2026-09-25/finished-portrait.jpg", homepage.images)
+        self.assertNotIn("docs/images/build-log-2026-09-30/original.png", self.site.files)
+        self.assertFalse(self.site.allowed_asset("docs/images/build-log-2026-09-30/unapproved.jpg"))
 
     def test_only_the_explicit_public_video_frame_is_permitted(self):
         markup = "".join(

@@ -32,8 +32,16 @@ PHOTO_BATCHES = (
         "described_stages": 4,
         "reported_date": "2026-09-25",
     },
+    {
+        "directory": "docs/images/build-log-2026-09-30",
+        "manifest_sha256": "9051d23da6ecb4ab227170d7f2d688f277f479cf076073451cf6b65e8c490fa9",
+        "photo_count": 1,
+        "described_stages": 0,
+        "reported_date": "2026-09-30",
+    },
 )
 PROGRESS_ANCHOR = "progress-2026-09-25"
+CLI_ARRANGEMENT_ANCHOR = "cli-arrangement-2026-09-30"
 JOURNAL_TITLE = "Bの制作記録 — 文字試作・土台から完成まで"
 
 
@@ -43,7 +51,7 @@ def approved_photos():
         directory = ROOT / batch["directory"]
         raw_manifest = (directory / "manifest.json").read_bytes()
         if hashlib.sha256(raw_manifest).hexdigest() != batch["manifest_sha256"]:
-            raise ValueError("The approved parent photo manifest was changed.")
+            raise ValueError("The approved photo manifest was changed.")
         manifest = json.loads(raw_manifest)
         if len(manifest["photos"]) != batch["photo_count"]:
             raise ValueError("The photo batch does not match the approved count.")
@@ -51,9 +59,9 @@ def approved_photos():
         for photo in manifest["photos"]:
             path = directory / photo["path"]
             if path.name != photo["id"] + ".jpg" or path.parent != directory or path.is_symlink():
-                raise ValueError("Unexpected image path in the approved handoff.")
+                raise ValueError("Unexpected image path in the approved photo batch.")
             if hashlib.sha256(path.read_bytes()).hexdigest() != photo["sha256"]:
-                raise ValueError("Do not reprocess the parent's approved image derivatives.")
+                raise ValueError("Do not reprocess approved image derivatives.")
             key = path.relative_to(ROOT / "docs").as_posix()
             if key in result:
                 raise ValueError("Duplicate journal photo.")

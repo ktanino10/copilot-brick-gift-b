@@ -11,7 +11,7 @@ from PIL import Image
 from playwright.sync_api import sync_playwright
 
 from build_log_navigation import NAVIGATION, canonical_guide_hash
-from build_photo_log import PHOTO_BATCHES, PROGRESS_ANCHOR, ROOT, approved_photos
+from build_photo_log import CLI_ARRANGEMENT_ANCHOR, PHOTO_BATCHES, PROGRESS_ANCHOR, ROOT, approved_photos
 from user_video import ONLINE_VIDEO_LINKS, USER_VIDEOS
 
 
@@ -90,6 +90,10 @@ def main():
         require(len(document.images) == len(approved), "All approved photos must appear once, not as invented extra milestones.")
         require(PROGRESS_ANCHOR in document.ids, "The new dated progress anchor is missing.")
         require("progress-2026-09-24" in document.ids, "The earlier dated progress link must remain valid.")
+        require(CLI_ARRANGEMENT_ANCHOR in document.ids
+                and "CLI風アレンジ（実物写真）" in content
+                and "標準配布モデルとは異なるアレンジ例です。" in content,
+                "The separate CLI arrangement photograph needs its anchor and standard-model distinction.")
         require("これで完成ですね" in content and "制作過程の写真です" in content,
                 "The user's construction and completion reports must be retained accurately.")
         require(all(item["anchor"] in document.ids for item in USER_VIDEOS)
@@ -148,6 +152,7 @@ def main():
         "photo_batches": [{"reported_date": batch["reported_date"], "photo_count": batch["photo_count"]}
                          for batch in PHOTO_BATCHES],
         "described_stages": expected_stages, "latest_progress_anchor": PROGRESS_ANCHOR,
+        "cli_arrangement_anchor": CLI_ARRANGEMENT_ANCHOR,
         "guide_entry_sha256": sha(guide), "guide_base_sha256": canonical_guide_hash(guide),
         "prior_unchanged_3d_report_reference": "verification/guide-browser.json",
         "all_image_files_decoded": True, "all_relative_image_paths_resolve": True,
@@ -157,11 +162,11 @@ def main():
         "external_network_requests": None if args.static_only else 0,
         "page_errors": None if args.static_only else 0,
         "mobile_browser_overflow": None if args.static_only else False,
-        "photo_bytes_match_parent": True, "photo_metadata": "RGB single-frame JPEG; JFIF only",
+        "photo_bytes_match_approved_manifests": True, "photo_metadata": "RGB single-frame JPEG; JFIF only",
         "capture_dates_inferred": False, "protected_input_hashes_unchanged": len(baseline["files"]),
         "prior_design_media_and_photo_hashes_unchanged": len(progress_baseline["files"]),
         "inputs_sha256": {path.relative_to(ROOT).as_posix(): sha(path) for path in sources},
-        "physical_evidence": "User-reported construction through September25 completion, with photographs showing the closed upper goggle frame and purple crown. Purple/yellow are observed photo colors, not changes to the design's magenta/green palette.",
+        "physical_evidence": "User-reported construction through September25 completion, with photographs showing the closed upper goggle frame and purple crown. Purple/yellow are observed photo colors, not changes to the design's magenta/green palette. One separate user-described CLI-style block arrangement photo was added September30; it does not revise or validate the standard distributed model.",
         "formal_physical_validation": "NOT_PROVIDED",
         "full_figure_completion": "USER_REPORTED_WITH_COMPLETION_PHOTOS",
         "individual_150_part_inspection": "NOT_PROVIDED",
@@ -199,6 +204,9 @@ def browser_checks(args, guide, approved, errors, network):
         page.locator("#build-record-nav a").click()
         page.wait_for_load_state("load")
         require(page.url == (ROOT / "docs/BUILD-LOG.html").as_uri(), "The guide did not open the local journal.")
+        page.get_by_role("link", name="CLI風アレンジの実物写真", exact=True).click()
+        require(page.url.endswith("#" + CLI_ARRANGEMENT_ANCHOR),
+                "The journal must link to the separate CLI arrangement record.")
         page.locator("details").evaluate_all("elements => elements.forEach(element => {element.open = true})")
         page.locator(f"#{PROGRESS_ANCHOR}").wait_for(state="attached")
         page.evaluate("() => Promise.all([...document.images].map(image => image.decode()))")
@@ -214,7 +222,7 @@ def browser_checks(args, guide, approved, errors, network):
         if args.screenshots:
             args.screenshots.mkdir(parents=True, exist_ok=True)
             page.screenshot(path=str(args.screenshots / "photo-log-desktop.png"), full_page=True)
-        page.set_viewport_size({"width": 390, "height": 844})
+        page.set_viewport_size({"width": 375, "height": 844})
         require(page.evaluate("() => document.documentElement.scrollWidth <= innerWidth"),
                 "The photo journal overflows a narrow screen.")
         if args.screenshots:

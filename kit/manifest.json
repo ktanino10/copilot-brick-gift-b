@@ -49,10 +49,11 @@
     "photo_manifests": [
       "docs/images/build-log-2026-09-23/manifest.json",
       "docs/images/build-log-2026-09-24/manifest.json",
-      "docs/images/build-log-2026-09-25/manifest.json"
+      "docs/images/build-log-2026-09-25/manifest.json",
+      "docs/images/build-log-2026-09-30/manifest.json"
     ],
-    "reported_through": "2026-09-25",
-    "photo_count": 24,
+    "reported_through": "2026-09-30",
+    "photo_count": 25,
     "latest_progress_anchor": "progress-2026-09-25",
     "observed_milestone": "construction through the closed goggle top and purple crown, with the user's September25 completion report and photographs",
     "formal_physical_validation": "NOT_PROVIDED",

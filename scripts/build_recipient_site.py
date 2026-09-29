@@ -14,7 +14,7 @@ from urllib.parse import unquote, urlsplit, urlunsplit
 import markdown
 from markdown.extensions.toc import slugify_unicode
 
-from build_photo_log import PHOTO_BATCHES, PROGRESS_ANCHOR, STYLE, approved_photos
+from build_photo_log import CLI_ARRANGEMENT_ANCHOR, PHOTO_BATCHES, PROGRESS_ANCHOR, STYLE, approved_photos
 from user_video import CLEANING_VIDEO, PRINTING_VIDEO, USER_VIDEO_EMBED_ORIGIN, USER_VIDEOS
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -214,6 +214,8 @@ class SiteBuilder:
             '<div class="note"><strong>2026-09-25：ついに完成。「これで完成ですね」とご報告いただきました。</strong>'
             f'<p><a href="docs/BUILD-LOG.html#{PROGRESS_ANCHOR}">ゴーグルの組立から、上枠と紫の頭頂がそろった完成写真へ →</a></p>'
             '<p class="small">新しい制作過程と完成の8枚を追記。前の16枚も、各日の記録として残しています。</p></div>'
+            f'<p><a href="docs/BUILD-LOG.html#{CLI_ARRANGEMENT_ANCHOR}">CLI風アレンジの実物写真（9/30追加） →</a>'
+            ' 標準配布モデルとは異なるアレンジ例です。</p>'
             '<h2>9/24の記録：顔下部の途中</h2>'
             f'<a href="docs/BUILD-LOG.html#progress-2026-09-24"><img src="{latest_photo}" alt="9/24時点の顔下部。黒い層と紫色の輪郭、黄色い縦2列が見える途中写真"></a>'
             '<h2>9/23の記録：土台と前面まで</h2>'

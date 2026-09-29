@@ -13,7 +13,7 @@ from urllib.parse import unquote, urlsplit
 from PIL import Image
 
 from build_recipient_site import PAGE_SOURCES, ROOT, SiteBuilder
-from build_photo_log import PROGRESS_ANCHOR
+from build_photo_log import CLI_ARRANGEMENT_ANCHOR, PROGRESS_ANCHOR
 from user_video import ONLINE_VIDEO_LINKS, USER_VIDEO_EMBED_ORIGIN, USER_VIDEOS
 
 
@@ -111,6 +111,9 @@ def verify(root):
         raise ValueError("The latest dated progress anchor is missing from the public page.")
     if "progress-2026-09-24" not in log.ids:
         raise ValueError("Do not break the previous dated journal link.")
+    if (CLI_ARRANGEMENT_ANCHOR not in log.ids
+            or f"docs/BUILD-LOG.html#{CLI_ARRANGEMENT_ANCHOR}" not in documents["index.html"].links):
+        raise ValueError("The separate CLI arrangement record must remain reachable from the public site.")
     if any(item["anchor"] not in log.ids or log.links.count(item["url"]) != 1 for item in USER_VIDEOS):
         raise ValueError("An exact user-provided video reference is missing or duplicated.")
     directives = {words[0]: words[1:] for directive in (log.csp or "").split(";")
@@ -124,6 +127,8 @@ def verify(root):
     log_text = (root / "docs/BUILD-LOG.html").read_text()
     if "これで完成ですね" not in log_text or "制作過程の写真です" not in log_text:
         raise ValueError("The current journal must include the user's actual completion and construction reports.")
+    if "CLI風アレンジ（実物写真）" not in log_text or "標準配布モデルとは異なるアレンジ例です。" not in log_text:
+        raise ValueError("The CLI photograph must be labeled as an arrangement, not the standard distributed model.")
     completed_photo = "docs/images/build-log-2026-09-25/finished-portrait.jpg"
     if completed_photo not in documents["index.html"].images:
         raise ValueError("The landing page is missing the authorized actual completion photograph.")
@@ -137,6 +142,7 @@ def verify(root):
         raise ValueError("The process navigation must follow planning, design, printing, cleaning, assembly.")
     return {"status": "PASS_STATIC", "files": len(actual), "relative_links": checked_links,
             "photo_count": len(expected_photos), "latest_progress_anchor": PROGRESS_ANCHOR,
+            "cli_arrangement_anchor": CLI_ARRANGEMENT_ANCHOR,
             "source_commit": manifest["source_commit"],
             "public_video_iframes": [item["embed_url"] for item in USER_VIDEOS], "autoplay": False,
             "process_order": ["企画", "設計", "3Dプリント", "超音波洗浄", "アッセンブリー"]}
@@ -201,7 +207,11 @@ def browser_check(root):
             state = page.evaluate("() => BrickAssemblyGuide.state()")
             if state["activeId"] != "B-001" or state["selectedSlot"] != "B-black-02.3mf#3":
                 raise ValueError("The recipient 3D guide does not start at the actual first base.")
-            page.goto(base + "docs/BUILD-LOG.html#" + PROGRESS_ANCHOR, wait_until="load")
+            page.locator("#build-record-nav a").click()
+            page.wait_for_load_state("load")
+            page.get_by_role("link", name="CLI風アレンジの実物写真", exact=True).click()
+            if urlsplit(page.url).fragment != CLI_ARRANGEMENT_ANCHOR:
+                raise ValueError("The guide must lead through the journal to the CLI arrangement photograph.")
             page.locator(f"#{PROGRESS_ANCHOR}").wait_for(state="attached")
             page.locator("details").evaluate_all("elements => elements.forEach(element => {element.open=true})")
             page.evaluate("() => Promise.all([...document.images].map(image => image.decode()))")
@@ -210,14 +220,14 @@ def browser_check(root):
                 raise ValueError("Some recipient build photos failed to load.")
             for path in ("", "docs/PRINTING.html", "docs/ASSEMBLY.html", "docs/BUILD-LOG.html"):
                 page.goto(base + path, wait_until="load")
-                page.set_viewport_size({"width": 390, "height": 844})
+                page.set_viewport_size({"width": 375, "height": 844})
                 if not page.evaluate("() => document.documentElement.scrollWidth <= innerWidth+1"):
                     raise ValueError(f"Mobile overflow:{path}")
             for item in USER_VIDEOS:
                 iframe = page.locator("#" + item["frame_id"])
                 iframe.scroll_into_view_if_needed()
                 box = iframe.bounding_box()
-                if box is None or box["width"] > 390 or abs(box["width"] / box["height"] - 16 / 9) > .01:
+                if box is None or box["width"] > 375 or abs(box["width"] / box["height"] - 16 / 9) > .01:
                     raise ValueError("An inline player does not fit the mobile page at16:9.")
             browser.close()
     finally:
@@ -229,11 +239,12 @@ def browser_check(root):
     return {"browser": "PASS", "first_base": "B-black-02.3mf#3 -> B-001",
             "photographs_loaded": expected_count, "latest_progress_anchor": PROGRESS_ANCHOR,
             "completion_photo_navigation": True,
+            "guide_to_cli_arrangement_navigation": True,
             "page_errors": 0, "unexpected_parent_external_requests": 0,
             "authorized_video_frame_requests": len(video_requests),
             "authorized_video_frame_failed_requests": len(video_failures),
             "video_playback": "SEPARATE_LIVE_CHECK_REQUIRED",
-            "mobile_overflow": False, "responsive_video_frame": True}
+            "mobile_overflow": False, "mobile_viewport_width": 375, "responsive_video_frame": True}
 
 
 if __name__ == "__main__":
